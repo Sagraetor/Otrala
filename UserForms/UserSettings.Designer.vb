@@ -23,6 +23,7 @@ Partial Class UserSettings
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UserSettings))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -156,7 +157,7 @@ Partial Class UserSettings
         Me.Label4.TabIndex = 11
         Me.Label4.Text = "Label4"
         '
-        'Form1
+        'UserSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 23.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -172,9 +173,10 @@ Partial Class UserSettings
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label1)
-        Me.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.Name = "Form1"
+        Me.Name = "UserSettings"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Otrala Main Page"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

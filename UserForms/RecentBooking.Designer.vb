@@ -22,6 +22,7 @@ Partial Class RecentBooking
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RecentBooking))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.txtSearch = New System.Windows.Forms.TextBox()
@@ -44,9 +45,14 @@ Partial Class RecentBooking
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label20 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -59,11 +65,6 @@ Partial Class RecentBooking
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxBooking.SuspendLayout()
         CType(Me.picPackage, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -211,7 +212,7 @@ Partial Class RecentBooking
         'lblDescription
         '
         Me.lblDescription.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblDescription.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblDescription.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.lblDescription.Location = New System.Drawing.Point(222, 94)
         Me.lblDescription.Name = "lblDescription"
         Me.lblDescription.Size = New System.Drawing.Size(225, 101)
@@ -222,7 +223,7 @@ Partial Class RecentBooking
         'lblTitle
         '
         Me.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblTitle.Font = New System.Drawing.Font("Arial Narrow", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.lblTitle.Font = New System.Drawing.Font("Arial Narrow", 10.2!, System.Drawing.FontStyle.Bold)
         Me.lblTitle.Location = New System.Drawing.Point(222, 43)
         Me.lblTitle.Name = "lblTitle"
         Me.lblTitle.Size = New System.Drawing.Size(225, 29)
@@ -264,7 +265,7 @@ Partial Class RecentBooking
         'lblTotal
         '
         Me.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblTotal.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.lblTotal.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
         Me.lblTotal.Location = New System.Drawing.Point(210, 383)
         Me.lblTotal.Name = "lblTotal"
         Me.lblTotal.Size = New System.Drawing.Size(175, 30)
@@ -273,7 +274,7 @@ Partial Class RecentBooking
         '
         'Label14
         '
-        Me.Label14.Font = New System.Drawing.Font("Arial Narrow", 7.8!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point)
+        Me.Label14.Font = New System.Drawing.Font("Arial Narrow", 7.8!, System.Drawing.FontStyle.Italic)
         Me.Label14.Location = New System.Drawing.Point(189, 413)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(196, 30)
@@ -283,7 +284,7 @@ Partial Class RecentBooking
         '
         'Label13
         '
-        Me.Label13.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label13.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
         Me.Label13.Location = New System.Drawing.Point(71, 383)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(112, 30)
@@ -309,9 +310,19 @@ Partial Class RecentBooking
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
         '
+        'Label20
+        '
+        Me.Label20.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label20.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label20.Location = New System.Drawing.Point(195, 236)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(158, 30)
+        Me.Label20.TabIndex = 12
+        Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'Label15
         '
-        Me.Label15.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label15.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
         Me.Label15.Location = New System.Drawing.Point(21, 236)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(158, 30)
@@ -319,9 +330,19 @@ Partial Class RecentBooking
         Me.Label15.Text = "Date"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'Label19
+        '
+        Me.Label19.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label19.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label19.Location = New System.Drawing.Point(195, 123)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(158, 30)
+        Me.Label19.TabIndex = 11
+        Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'Label12
         '
-        Me.Label12.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label12.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
         Me.Label12.Location = New System.Drawing.Point(21, 123)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(158, 30)
@@ -329,9 +350,19 @@ Partial Class RecentBooking
         Me.Label12.Text = "Phone Number"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'Label18
+        '
+        Me.Label18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label18.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label18.Location = New System.Drawing.Point(195, 75)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(158, 30)
+        Me.Label18.TabIndex = 10
+        Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'Label11
         '
-        Me.Label11.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label11.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
         Me.Label11.Location = New System.Drawing.Point(21, 75)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(158, 30)
@@ -339,9 +370,29 @@ Partial Class RecentBooking
         Me.Label11.Text = "IC Number/Passport"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'Label17
+        '
+        Me.Label17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label17.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label17.Location = New System.Drawing.Point(195, 170)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(158, 54)
+        Me.Label17.TabIndex = 9
+        Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label16
+        '
+        Me.Label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label16.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label16.Location = New System.Drawing.Point(195, 26)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(158, 30)
+        Me.Label16.TabIndex = 8
+        Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'Label10
         '
-        Me.Label10.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label10.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
         Me.Label10.Location = New System.Drawing.Point(21, 170)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(158, 54)
@@ -351,7 +402,7 @@ Partial Class RecentBooking
         '
         'Label9
         '
-        Me.Label9.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Label9.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
         Me.Label9.Location = New System.Drawing.Point(21, 26)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(158, 30)
@@ -362,7 +413,7 @@ Partial Class RecentBooking
         'Label8
         '
         Me.Label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label8.Font = New System.Drawing.Font("Arial", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label8.Font = New System.Drawing.Font("Arial", 10.2!)
         Me.Label8.Location = New System.Drawing.Point(32, 38)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(373, 34)
@@ -422,7 +473,7 @@ Partial Class RecentBooking
         '
         'Label7
         '
-        Me.Label7.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label7.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.Label7.Location = New System.Drawing.Point(267, 154)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(86, 30)
@@ -432,7 +483,7 @@ Partial Class RecentBooking
         '
         'Label6
         '
-        Me.Label6.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label6.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.Label6.Location = New System.Drawing.Point(67, 154)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(146, 30)
@@ -442,7 +493,7 @@ Partial Class RecentBooking
         '
         'Label5
         '
-        Me.Label5.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label5.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.Label5.Location = New System.Drawing.Point(26, 104)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(146, 30)
@@ -452,63 +503,13 @@ Partial Class RecentBooking
         '
         'Label3
         '
-        Me.Label3.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Label3.Font = New System.Drawing.Font("Arial", 9.0!)
         Me.Label3.Location = New System.Drawing.Point(26, 54)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(146, 30)
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Name Card "
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label16
-        '
-        Me.Label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label16.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label16.Location = New System.Drawing.Point(195, 26)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(158, 30)
-        Me.Label16.TabIndex = 8
-        Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label17
-        '
-        Me.Label17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label17.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label17.Location = New System.Drawing.Point(195, 170)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(158, 54)
-        Me.Label17.TabIndex = 9
-        Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label18
-        '
-        Me.Label18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label18.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label18.Location = New System.Drawing.Point(195, 75)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(158, 30)
-        Me.Label18.TabIndex = 10
-        Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label19
-        '
-        Me.Label19.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label19.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label19.Location = New System.Drawing.Point(195, 123)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(158, 30)
-        Me.Label19.TabIndex = 11
-        Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label20
-        '
-        Me.Label20.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label20.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label20.Location = New System.Drawing.Point(195, 236)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(158, 30)
-        Me.Label20.TabIndex = 12
-        Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'RecentBooking
         '
@@ -531,7 +532,8 @@ Partial Class RecentBooking
         Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label1)
-        Me.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.Name = "RecentBooking"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

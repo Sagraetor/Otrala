@@ -22,6 +22,7 @@ Partial Class Feedback
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Feedback))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -75,7 +76,7 @@ Partial Class Feedback
         Me.TextBox1.Location = New System.Drawing.Point(227, 37)
         Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(484, 35)
+        Me.TextBox1.Size = New System.Drawing.Size(484, 30)
         Me.TextBox1.TabIndex = 2
         '
         'Label2
@@ -159,7 +160,7 @@ Partial Class Feedback
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(1087, 40)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(84, 27)
+        Me.Label4.Size = New System.Drawing.Size(69, 23)
         Me.Label4.TabIndex = 11
         Me.Label4.Text = "Label4"
         '
@@ -176,7 +177,7 @@ Partial Class Feedback
         Me.Label3.AutoSize = True
         Me.Label3.Location = New System.Drawing.Point(255, 178)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(781, 27)
+        Me.Label3.Size = New System.Drawing.Size(641, 23)
         Me.Label3.TabIndex = 13
         Me.Label3.Text = "Otrala would love to hear your feedbacks regarding our service to you !!"
         '
@@ -196,10 +197,10 @@ Partial Class Feedback
         'RadioButton5
         '
         Me.RadioButton5.AutoSize = True
-        Me.RadioButton5.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.RadioButton5.Font = New System.Drawing.Font("Arial", 10.0!)
         Me.RadioButton5.Location = New System.Drawing.Point(589, 34)
         Me.RadioButton5.Name = "RadioButton5"
-        Me.RadioButton5.Size = New System.Drawing.Size(177, 27)
+        Me.RadioButton5.Size = New System.Drawing.Size(149, 23)
         Me.RadioButton5.TabIndex = 4
         Me.RadioButton5.TabStop = True
         Me.RadioButton5.Text = "Very Unsatisfied"
@@ -208,10 +209,10 @@ Partial Class Feedback
         'RadioButton4
         '
         Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.RadioButton4.Font = New System.Drawing.Font("Arial", 10.0!)
         Me.RadioButton4.Location = New System.Drawing.Point(439, 34)
         Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(131, 27)
+        Me.RadioButton4.Size = New System.Drawing.Size(110, 23)
         Me.RadioButton4.TabIndex = 3
         Me.RadioButton4.TabStop = True
         Me.RadioButton4.Text = "Unsatisfied"
@@ -220,10 +221,10 @@ Partial Class Feedback
         'RadioButton3
         '
         Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.RadioButton3.Font = New System.Drawing.Font("Arial", 10.0!)
         Me.RadioButton3.Location = New System.Drawing.Point(316, 34)
         Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(97, 27)
+        Me.RadioButton3.Size = New System.Drawing.Size(81, 23)
         Me.RadioButton3.TabIndex = 2
         Me.RadioButton3.TabStop = True
         Me.RadioButton3.Text = "Neutral"
@@ -232,10 +233,10 @@ Partial Class Feedback
         'RadioButton2
         '
         Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.RadioButton2.Font = New System.Drawing.Font("Arial", 10.0!)
         Me.RadioButton2.Location = New System.Drawing.Point(179, 34)
         Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(111, 27)
+        Me.RadioButton2.Size = New System.Drawing.Size(93, 23)
         Me.RadioButton2.TabIndex = 1
         Me.RadioButton2.TabStop = True
         Me.RadioButton2.Text = "Satisfied"
@@ -244,10 +245,10 @@ Partial Class Feedback
         'RadioButton1
         '
         Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Font = New System.Drawing.Font("Arial", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.RadioButton1.Font = New System.Drawing.Font("Arial", 10.0!)
         Me.RadioButton1.Location = New System.Drawing.Point(6, 34)
         Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(157, 27)
+        Me.RadioButton1.Size = New System.Drawing.Size(132, 23)
         Me.RadioButton1.TabIndex = 0
         Me.RadioButton1.TabStop = True
         Me.RadioButton1.Text = "Very Satisfied"
@@ -282,7 +283,7 @@ Partial Class Feedback
         '
         'Feedback
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(14.0!, 27.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 23.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1262, 673)
         Me.Controls.Add(Me.btnClear)
@@ -302,7 +303,8 @@ Partial Class Feedback
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label1)
-        Me.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.Name = "Feedback"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

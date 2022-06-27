@@ -23,6 +23,7 @@ Partial Class Package_Viewer
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Package_Viewer))
         Me.pctTravelPic = New System.Windows.Forms.PictureBox()
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.lblDescription = New System.Windows.Forms.Label()
@@ -56,9 +57,10 @@ Partial Class Package_Viewer
         '
         Me.pctTravelPic.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.pctTravelPic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pctTravelPic.Location = New System.Drawing.Point(12, 12)
+        Me.pctTravelPic.Location = New System.Drawing.Point(12, 10)
+        Me.pctTravelPic.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.pctTravelPic.Name = "pctTravelPic"
-        Me.pctTravelPic.Size = New System.Drawing.Size(600, 600)
+        Me.pctTravelPic.Size = New System.Drawing.Size(600, 480)
         Me.pctTravelPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pctTravelPic.TabIndex = 0
         Me.pctTravelPic.TabStop = False
@@ -66,11 +68,11 @@ Partial Class Package_Viewer
         'lblTitle
         '
         Me.lblTitle.BackColor = System.Drawing.SystemColors.HighlightText
-        Me.lblTitle.Font = New System.Drawing.Font("Arial", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.lblTitle.Font = New System.Drawing.Font("Arial", 24.0!, System.Drawing.FontStyle.Bold)
         Me.lblTitle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(3, Byte), Integer))
-        Me.lblTitle.Location = New System.Drawing.Point(618, 12)
+        Me.lblTitle.Location = New System.Drawing.Point(618, 10)
         Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(603, 116)
+        Me.lblTitle.Size = New System.Drawing.Size(603, 93)
         Me.lblTitle.TabIndex = 1
         Me.lblTitle.Text = "Title"
         '
@@ -79,12 +81,12 @@ Partial Class Package_Viewer
         Me.lblDescription.AutoSize = True
         Me.lblDescription.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.lblDescription.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lblDescription.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblDescription.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblDescription.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblDescription.Location = New System.Drawing.Point(3, 0)
         Me.lblDescription.Name = "lblDescription"
-        Me.lblDescription.Padding = New System.Windows.Forms.Padding(5)
-        Me.lblDescription.Size = New System.Drawing.Size(164, 33)
+        Me.lblDescription.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.lblDescription.Size = New System.Drawing.Size(164, 31)
         Me.lblDescription.TabIndex = 2
         Me.lblDescription.Text = "Description"
         '
@@ -93,10 +95,11 @@ Partial Class Package_Viewer
         Me.Panel1.AutoScroll = True
         Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Panel1.Controls.Add(Me.tableDetails)
-        Me.Panel1.Location = New System.Drawing.Point(618, 273)
+        Me.Panel1.Location = New System.Drawing.Point(618, 218)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Padding = New System.Windows.Forms.Padding(8)
-        Me.Panel1.Size = New System.Drawing.Size(603, 339)
+        Me.Panel1.Padding = New System.Windows.Forms.Padding(8, 6, 8, 6)
+        Me.Panel1.Size = New System.Drawing.Size(603, 271)
         Me.Panel1.TabIndex = 3
         '
         'tableDetails
@@ -117,7 +120,8 @@ Partial Class Package_Viewer
         Me.tableDetails.Controls.Add(Me.lblDurationValue, 1, 4)
         Me.tableDetails.Controls.Add(Me.lblTourOperator, 0, 5)
         Me.tableDetails.Controls.Add(Me.lblTourOperatorValue, 1, 5)
-        Me.tableDetails.Location = New System.Drawing.Point(11, 25)
+        Me.tableDetails.Location = New System.Drawing.Point(11, 20)
+        Me.tableDetails.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.tableDetails.Name = "tableDetails"
         Me.tableDetails.RowCount = 6
         Me.tableDetails.RowStyles.Add(New System.Windows.Forms.RowStyle())
@@ -126,7 +130,7 @@ Partial Class Package_Viewer
         Me.tableDetails.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tableDetails.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tableDetails.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tableDetails.Size = New System.Drawing.Size(573, 234)
+        Me.tableDetails.Size = New System.Drawing.Size(573, 187)
         Me.tableDetails.TabIndex = 5
         '
         'lblDuration
@@ -134,12 +138,12 @@ Partial Class Package_Viewer
         Me.lblDuration.AutoSize = True
         Me.lblDuration.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.lblDuration.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lblDuration.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblDuration.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblDuration.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblDuration.Location = New System.Drawing.Point(3, 132)
+        Me.lblDuration.Location = New System.Drawing.Point(3, 124)
         Me.lblDuration.Name = "lblDuration"
-        Me.lblDuration.Padding = New System.Windows.Forms.Padding(5)
-        Me.lblDuration.Size = New System.Drawing.Size(164, 33)
+        Me.lblDuration.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.lblDuration.Size = New System.Drawing.Size(164, 31)
         Me.lblDuration.TabIndex = 12
         Me.lblDuration.Text = "Duration"
         '
@@ -148,12 +152,12 @@ Partial Class Package_Viewer
         Me.lblLocation.AutoSize = True
         Me.lblLocation.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.lblLocation.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lblLocation.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblLocation.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblLocation.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblLocation.Location = New System.Drawing.Point(3, 33)
+        Me.lblLocation.Location = New System.Drawing.Point(3, 31)
         Me.lblLocation.Name = "lblLocation"
-        Me.lblLocation.Padding = New System.Windows.Forms.Padding(5)
-        Me.lblLocation.Size = New System.Drawing.Size(164, 33)
+        Me.lblLocation.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.lblLocation.Size = New System.Drawing.Size(164, 31)
         Me.lblLocation.TabIndex = 4
         Me.lblLocation.Text = "Location"
         '
@@ -162,36 +166,36 @@ Partial Class Package_Viewer
         Me.lblState.AutoSize = True
         Me.lblState.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.lblState.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lblState.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblState.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblState.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblState.Location = New System.Drawing.Point(3, 66)
+        Me.lblState.Location = New System.Drawing.Point(3, 62)
         Me.lblState.Name = "lblState"
-        Me.lblState.Padding = New System.Windows.Forms.Padding(5)
-        Me.lblState.Size = New System.Drawing.Size(164, 33)
+        Me.lblState.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.lblState.Size = New System.Drawing.Size(164, 31)
         Me.lblState.TabIndex = 5
         Me.lblState.Text = "State"
         '
         'lblLocationValue
         '
         Me.lblLocationValue.AutoSize = True
-        Me.lblLocationValue.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblLocationValue.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblLocationValue.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblLocationValue.Location = New System.Drawing.Point(173, 33)
+        Me.lblLocationValue.Location = New System.Drawing.Point(173, 31)
         Me.lblLocationValue.Name = "lblLocationValue"
-        Me.lblLocationValue.Padding = New System.Windows.Forms.Padding(5)
-        Me.lblLocationValue.Size = New System.Drawing.Size(48, 33)
+        Me.lblLocationValue.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.lblLocationValue.Size = New System.Drawing.Size(48, 31)
         Me.lblLocationValue.TabIndex = 7
         Me.lblLocationValue.Text = "null"
         '
         'lblStateValue
         '
         Me.lblStateValue.AutoSize = True
-        Me.lblStateValue.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblStateValue.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblStateValue.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblStateValue.Location = New System.Drawing.Point(173, 66)
+        Me.lblStateValue.Location = New System.Drawing.Point(173, 62)
         Me.lblStateValue.Name = "lblStateValue"
-        Me.lblStateValue.Padding = New System.Windows.Forms.Padding(5)
-        Me.lblStateValue.Size = New System.Drawing.Size(48, 33)
+        Me.lblStateValue.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.lblStateValue.Size = New System.Drawing.Size(48, 31)
         Me.lblStateValue.TabIndex = 8
         Me.lblStateValue.Text = "null"
         '
@@ -200,48 +204,48 @@ Partial Class Package_Viewer
         Me.lblPax.AutoSize = True
         Me.lblPax.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.lblPax.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lblPax.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblPax.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblPax.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblPax.Location = New System.Drawing.Point(3, 99)
+        Me.lblPax.Location = New System.Drawing.Point(3, 93)
         Me.lblPax.Name = "lblPax"
-        Me.lblPax.Padding = New System.Windows.Forms.Padding(5)
-        Me.lblPax.Size = New System.Drawing.Size(164, 33)
+        Me.lblPax.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.lblPax.Size = New System.Drawing.Size(164, 31)
         Me.lblPax.TabIndex = 9
         Me.lblPax.Text = "Pax"
         '
         'lblPaxValue
         '
         Me.lblPaxValue.AutoSize = True
-        Me.lblPaxValue.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblPaxValue.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblPaxValue.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblPaxValue.Location = New System.Drawing.Point(173, 99)
+        Me.lblPaxValue.Location = New System.Drawing.Point(173, 93)
         Me.lblPaxValue.Name = "lblPaxValue"
-        Me.lblPaxValue.Padding = New System.Windows.Forms.Padding(5)
-        Me.lblPaxValue.Size = New System.Drawing.Size(48, 33)
+        Me.lblPaxValue.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.lblPaxValue.Size = New System.Drawing.Size(48, 31)
         Me.lblPaxValue.TabIndex = 13
         Me.lblPaxValue.Text = "null"
         '
         'lblDescriptionValue
         '
         Me.lblDescriptionValue.AutoSize = True
-        Me.lblDescriptionValue.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblDescriptionValue.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblDescriptionValue.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblDescriptionValue.Location = New System.Drawing.Point(173, 0)
         Me.lblDescriptionValue.Name = "lblDescriptionValue"
-        Me.lblDescriptionValue.Padding = New System.Windows.Forms.Padding(5)
-        Me.lblDescriptionValue.Size = New System.Drawing.Size(48, 33)
+        Me.lblDescriptionValue.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.lblDescriptionValue.Size = New System.Drawing.Size(48, 31)
         Me.lblDescriptionValue.TabIndex = 6
         Me.lblDescriptionValue.Text = "null"
         '
         'lblDurationValue
         '
         Me.lblDurationValue.AutoSize = True
-        Me.lblDurationValue.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblDurationValue.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblDurationValue.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblDurationValue.Location = New System.Drawing.Point(173, 132)
+        Me.lblDurationValue.Location = New System.Drawing.Point(173, 124)
         Me.lblDurationValue.Name = "lblDurationValue"
-        Me.lblDurationValue.Padding = New System.Windows.Forms.Padding(5)
-        Me.lblDurationValue.Size = New System.Drawing.Size(48, 33)
+        Me.lblDurationValue.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.lblDurationValue.Size = New System.Drawing.Size(48, 31)
         Me.lblDurationValue.TabIndex = 11
         Me.lblDurationValue.Text = "null"
         '
@@ -250,35 +254,35 @@ Partial Class Package_Viewer
         Me.lblTourOperator.AutoSize = True
         Me.lblTourOperator.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.lblTourOperator.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lblTourOperator.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblTourOperator.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblTourOperator.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTourOperator.Location = New System.Drawing.Point(3, 165)
+        Me.lblTourOperator.Location = New System.Drawing.Point(3, 155)
         Me.lblTourOperator.Name = "lblTourOperator"
-        Me.lblTourOperator.Padding = New System.Windows.Forms.Padding(5)
-        Me.lblTourOperator.Size = New System.Drawing.Size(164, 69)
+        Me.lblTourOperator.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.lblTourOperator.Size = New System.Drawing.Size(164, 32)
         Me.lblTourOperator.TabIndex = 10
         Me.lblTourOperator.Text = "Tour Operator"
         '
         'lblTourOperatorValue
         '
         Me.lblTourOperatorValue.AutoSize = True
-        Me.lblTourOperatorValue.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.lblTourOperatorValue.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblTourOperatorValue.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTourOperatorValue.Location = New System.Drawing.Point(173, 165)
+        Me.lblTourOperatorValue.Location = New System.Drawing.Point(173, 155)
         Me.lblTourOperatorValue.Name = "lblTourOperatorValue"
-        Me.lblTourOperatorValue.Padding = New System.Windows.Forms.Padding(5)
-        Me.lblTourOperatorValue.Size = New System.Drawing.Size(48, 33)
+        Me.lblTourOperatorValue.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.lblTourOperatorValue.Size = New System.Drawing.Size(48, 31)
         Me.lblTourOperatorValue.TabIndex = 14
         Me.lblTourOperatorValue.Text = "null"
         '
         'lblPrice
         '
         Me.lblPrice.BackColor = System.Drawing.SystemColors.HighlightText
-        Me.lblPrice.Font = New System.Drawing.Font("Arial", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.lblPrice.Font = New System.Drawing.Font("Arial", 24.0!, System.Drawing.FontStyle.Bold)
         Me.lblPrice.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(3, Byte), Integer))
-        Me.lblPrice.Location = New System.Drawing.Point(618, 146)
+        Me.lblPrice.Location = New System.Drawing.Point(618, 117)
         Me.lblPrice.Name = "lblPrice"
-        Me.lblPrice.Size = New System.Drawing.Size(603, 105)
+        Me.lblPrice.Size = New System.Drawing.Size(603, 84)
         Me.lblPrice.TabIndex = 4
         Me.lblPrice.Text = "RM price"
         '
@@ -286,11 +290,12 @@ Partial Class Package_Viewer
         '
         Me.btnBook.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(3, Byte), Integer))
         Me.btnBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBook.Font = New System.Drawing.Font("Arial Black", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.btnBook.Font = New System.Drawing.Font("Arial Black", 20.0!, System.Drawing.FontStyle.Bold)
         Me.btnBook.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnBook.Location = New System.Drawing.Point(893, 702)
+        Me.btnBook.Location = New System.Drawing.Point(893, 562)
+        Me.btnBook.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnBook.Name = "btnBook"
-        Me.btnBook.Size = New System.Drawing.Size(328, 108)
+        Me.btnBook.Size = New System.Drawing.Size(328, 86)
         Me.btnBook.TabIndex = 5
         Me.btnBook.Text = "Book this Trip"
         Me.btnBook.UseVisualStyleBackColor = False
@@ -299,11 +304,12 @@ Partial Class Package_Viewer
         '
         Me.btnWishlist.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(3, Byte), Integer))
         Me.btnWishlist.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnWishlist.Font = New System.Drawing.Font("Arial Black", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.btnWishlist.Font = New System.Drawing.Font("Arial Black", 20.0!, System.Drawing.FontStyle.Bold)
         Me.btnWishlist.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnWishlist.Location = New System.Drawing.Point(559, 702)
+        Me.btnWishlist.Location = New System.Drawing.Point(559, 562)
+        Me.btnWishlist.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnWishlist.Name = "btnWishlist"
-        Me.btnWishlist.Size = New System.Drawing.Size(328, 108)
+        Me.btnWishlist.Size = New System.Drawing.Size(328, 86)
         Me.btnWishlist.TabIndex = 7
         Me.btnWishlist.Text = "Add to Wishlist"
         Me.btnWishlist.UseVisualStyleBackColor = False
@@ -317,11 +323,12 @@ Partial Class Package_Viewer
         '
         Me.btnSeller.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(3, Byte), Integer))
         Me.btnSeller.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSeller.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.btnSeller.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnSeller.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSeller.Location = New System.Drawing.Point(126, 702)
+        Me.btnSeller.Location = New System.Drawing.Point(126, 562)
+        Me.btnSeller.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSeller.Name = "btnSeller"
-        Me.btnSeller.Size = New System.Drawing.Size(251, 108)
+        Me.btnSeller.Size = New System.Drawing.Size(251, 86)
         Me.btnSeller.TabIndex = 8
         Me.btnSeller.Text = "More From seller_name"
         Me.btnSeller.UseVisualStyleBackColor = False
@@ -330,9 +337,10 @@ Partial Class Package_Viewer
         '
         Me.pctSeller.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.pctSeller.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pctSeller.Location = New System.Drawing.Point(12, 702)
+        Me.pctSeller.Location = New System.Drawing.Point(12, 562)
+        Me.pctSeller.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.pctSeller.Name = "pctSeller"
-        Me.pctSeller.Size = New System.Drawing.Size(108, 108)
+        Me.pctSeller.Size = New System.Drawing.Size(108, 87)
         Me.pctSeller.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pctSeller.TabIndex = 9
         Me.pctSeller.TabStop = False
@@ -340,17 +348,18 @@ Partial Class Package_Viewer
         'blocking_panel
         '
         Me.blocking_panel.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(3, Byte), Integer))
-        Me.blocking_panel.Location = New System.Drawing.Point(1, 837)
+        Me.blocking_panel.Location = New System.Drawing.Point(1, 670)
+        Me.blocking_panel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.blocking_panel.Name = "blocking_panel"
-        Me.blocking_panel.Size = New System.Drawing.Size(1240, 28)
+        Me.blocking_panel.Size = New System.Drawing.Size(1240, 22)
         Me.blocking_panel.TabIndex = 10
         '
         'Package_Viewer
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1262, 673)
+        Me.ClientSize = New System.Drawing.Size(1262, 538)
         Me.Controls.Add(Me.blocking_panel)
         Me.Controls.Add(Me.lblTitle)
         Me.Controls.Add(Me.lblPrice)
@@ -360,6 +369,8 @@ Partial Class Package_Viewer
         Me.Controls.Add(Me.btnBook)
         Me.Controls.Add(Me.btnWishlist)
         Me.Controls.Add(Me.pctTravelPic)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Package_Viewer"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Package Name"
