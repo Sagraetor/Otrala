@@ -94,6 +94,12 @@
     <Compile Include="UserForms\Feedback.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UserForms\UserSettings.Designer.vb">
+      <DependentUpon>UserSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\UserSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UserForms\Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\Feedback.resx">
       <DependentUpon>Feedback.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\UserSettings.resx">
+      <DependentUpon>UserSettings.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
