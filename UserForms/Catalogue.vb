@@ -129,7 +129,7 @@
 
     ' Code to view package details. (start)
 
-    Dim package As New Package
+    Shared package As New Package
     Private Sub Catalogue_Click(sender As Object, e As EventArgs)
 
         Dim retrieved As Object
