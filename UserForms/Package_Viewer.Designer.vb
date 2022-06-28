@@ -70,7 +70,7 @@ Partial Class Package_Viewer
         Me.lblTitle.BackColor = System.Drawing.SystemColors.HighlightText
         Me.lblTitle.Font = New System.Drawing.Font("Arial", 24.0!, System.Drawing.FontStyle.Bold)
         Me.lblTitle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(3, Byte), Integer))
-        Me.lblTitle.Location = New System.Drawing.Point(618, 10)
+        Me.lblTitle.Location = New System.Drawing.Point(647, 10)
         Me.lblTitle.Name = "lblTitle"
         Me.lblTitle.Size = New System.Drawing.Size(603, 93)
         Me.lblTitle.TabIndex = 1
@@ -95,7 +95,7 @@ Partial Class Package_Viewer
         Me.Panel1.AutoScroll = True
         Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Panel1.Controls.Add(Me.tableDetails)
-        Me.Panel1.Location = New System.Drawing.Point(618, 218)
+        Me.Panel1.Location = New System.Drawing.Point(647, 218)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Padding = New System.Windows.Forms.Padding(8, 6, 8, 6)
@@ -280,7 +280,7 @@ Partial Class Package_Viewer
         Me.lblPrice.BackColor = System.Drawing.SystemColors.HighlightText
         Me.lblPrice.Font = New System.Drawing.Font("Arial", 24.0!, System.Drawing.FontStyle.Bold)
         Me.lblPrice.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(3, Byte), Integer))
-        Me.lblPrice.Location = New System.Drawing.Point(618, 117)
+        Me.lblPrice.Location = New System.Drawing.Point(647, 117)
         Me.lblPrice.Name = "lblPrice"
         Me.lblPrice.Size = New System.Drawing.Size(603, 84)
         Me.lblPrice.TabIndex = 4
@@ -292,7 +292,7 @@ Partial Class Package_Viewer
         Me.btnBook.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnBook.Font = New System.Drawing.Font("Arial Black", 20.0!, System.Drawing.FontStyle.Bold)
         Me.btnBook.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnBook.Location = New System.Drawing.Point(893, 562)
+        Me.btnBook.Location = New System.Drawing.Point(922, 542)
         Me.btnBook.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnBook.Name = "btnBook"
         Me.btnBook.Size = New System.Drawing.Size(328, 86)
@@ -306,7 +306,7 @@ Partial Class Package_Viewer
         Me.btnWishlist.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnWishlist.Font = New System.Drawing.Font("Arial Black", 20.0!, System.Drawing.FontStyle.Bold)
         Me.btnWishlist.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnWishlist.Location = New System.Drawing.Point(559, 562)
+        Me.btnWishlist.Location = New System.Drawing.Point(580, 543)
         Me.btnWishlist.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnWishlist.Name = "btnWishlist"
         Me.btnWishlist.Size = New System.Drawing.Size(328, 86)
@@ -325,7 +325,7 @@ Partial Class Package_Viewer
         Me.btnSeller.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSeller.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnSeller.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSeller.Location = New System.Drawing.Point(126, 562)
+        Me.btnSeller.Location = New System.Drawing.Point(126, 542)
         Me.btnSeller.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSeller.Name = "btnSeller"
         Me.btnSeller.Size = New System.Drawing.Size(251, 86)
@@ -337,7 +337,7 @@ Partial Class Package_Viewer
         '
         Me.pctSeller.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.pctSeller.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pctSeller.Location = New System.Drawing.Point(12, 562)
+        Me.pctSeller.Location = New System.Drawing.Point(12, 542)
         Me.pctSeller.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.pctSeller.Name = "pctSeller"
         Me.pctSeller.Size = New System.Drawing.Size(108, 87)
@@ -348,10 +348,11 @@ Partial Class Package_Viewer
         'blocking_panel
         '
         Me.blocking_panel.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(3, Byte), Integer))
-        Me.blocking_panel.Location = New System.Drawing.Point(1, 670)
+        Me.blocking_panel.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.blocking_panel.Location = New System.Drawing.Point(0, 651)
         Me.blocking_panel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.blocking_panel.Name = "blocking_panel"
-        Me.blocking_panel.Size = New System.Drawing.Size(1240, 22)
+        Me.blocking_panel.Size = New System.Drawing.Size(1262, 22)
         Me.blocking_panel.TabIndex = 10
         '
         'Package_Viewer
@@ -359,7 +360,7 @@ Partial Class Package_Viewer
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1262, 542)
+        Me.ClientSize = New System.Drawing.Size(1262, 673)
         Me.Controls.Add(Me.blocking_panel)
         Me.Controls.Add(Me.lblTitle)
         Me.Controls.Add(Me.lblPrice)
@@ -369,8 +370,11 @@ Partial Class Package_Viewer
         Me.Controls.Add(Me.btnBook)
         Me.Controls.Add(Me.btnWishlist)
         Me.Controls.Add(Me.pctTravelPic)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "Package_Viewer"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Package Name"

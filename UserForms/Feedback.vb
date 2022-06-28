@@ -25,6 +25,7 @@
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles btnClear.Click
         'Clear
         txtfeedback.Clear()
+        txtfeedback.Text = "Enter your feedback..."
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles btnDelete.Click

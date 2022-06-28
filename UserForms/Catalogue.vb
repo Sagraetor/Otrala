@@ -165,7 +165,9 @@
             .Image = picbox.Image
         End With
 
-        Package_Viewer.ShowDialog()
+        Dim f As New Package_Viewer
+        f.ShowDialog()
+
     End Sub
     Function send_package()
         ' Sends package info to other forms.

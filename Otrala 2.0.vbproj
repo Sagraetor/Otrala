@@ -133,7 +133,7 @@
     <Compile Include="UserForms\Package_Viewer.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="program.vb" />
+    <Compile Include="Program.vb" />
     <Compile Include="UserForms\RecentBooking.Designer.vb">
       <DependentUpon>RecentBooking.vb</DependentUpon>
     </Compile>
