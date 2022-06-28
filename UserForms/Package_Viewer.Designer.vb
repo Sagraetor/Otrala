@@ -359,7 +359,7 @@ Partial Class Package_Viewer
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1262, 538)
+        Me.ClientSize = New System.Drawing.Size(1262, 542)
         Me.Controls.Add(Me.blocking_panel)
         Me.Controls.Add(Me.lblTitle)
         Me.Controls.Add(Me.lblPrice)

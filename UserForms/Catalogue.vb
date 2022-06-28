@@ -172,6 +172,10 @@
         Return package
     End Function
 
+    Private Sub DoneScroll(sender As Object, e As ScrollEventArgs) Handles PnlCatalogue.Scroll
+
+    End Sub
+
     ' Code to view package details. (end)
 
 

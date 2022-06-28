@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class RecentBooking
-    Inherits System.Windows.Forms.Form
+    Inherits BaseForm
 
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()>
@@ -23,17 +23,6 @@ Partial Class RecentBooking
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RecentBooking))
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnRecommend = New System.Windows.Forms.Button()
-        Me.btnTodaysDeal = New System.Windows.Forms.Button()
-        Me.btnOrder = New System.Windows.Forms.Button()
-        Me.btnLogout = New System.Windows.Forms.Button()
-        Me.btnAbout = New System.Windows.Forms.Button()
-        Me.btnFeedbacks = New System.Windows.Forms.Button()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.gbxBooking = New System.Windows.Forms.GroupBox()
         Me.lblDescription = New System.Windows.Forms.Label()
@@ -65,128 +54,12 @@ Partial Class RecentBooking
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxBooking.SuspendLayout()
         CType(Me.picPackage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxSummary.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.gbxPayment.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Label1
-        '
-        Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
-        Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label1.Location = New System.Drawing.Point(0, 0)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1262, 110)
-        Me.Label1.TabIndex = 0
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.Otrala_2._0.My.Resources.Resources.Otrala_Icon
-        Me.PictureBox1.Location = New System.Drawing.Point(22, 12)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(140, 91)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
-        '
-        'txtSearch
-        '
-        Me.txtSearch.Location = New System.Drawing.Point(227, 37)
-        Me.txtSearch.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(484, 30)
-        Me.txtSearch.TabIndex = 2
-        '
-        'Label2
-        '
-        Me.Label2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
-        Me.Label2.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Label2.Location = New System.Drawing.Point(0, 110)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(186, 563)
-        Me.Label2.TabIndex = 3
-        '
-        'btnRecommend
-        '
-        Me.btnRecommend.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnRecommend.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRecommend.Location = New System.Drawing.Point(0, 123)
-        Me.btnRecommend.Name = "btnRecommend"
-        Me.btnRecommend.Size = New System.Drawing.Size(186, 50)
-        Me.btnRecommend.TabIndex = 4
-        Me.btnRecommend.Text = "Recommendation"
-        Me.btnRecommend.UseVisualStyleBackColor = False
-        '
-        'btnTodaysDeal
-        '
-        Me.btnTodaysDeal.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnTodaysDeal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTodaysDeal.Location = New System.Drawing.Point(0, 179)
-        Me.btnTodaysDeal.Name = "btnTodaysDeal"
-        Me.btnTodaysDeal.Size = New System.Drawing.Size(186, 50)
-        Me.btnTodaysDeal.TabIndex = 5
-        Me.btnTodaysDeal.Text = "Today's Deal"
-        Me.btnTodaysDeal.UseVisualStyleBackColor = False
-        '
-        'btnOrder
-        '
-        Me.btnOrder.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnOrder.Location = New System.Drawing.Point(0, 235)
-        Me.btnOrder.Name = "btnOrder"
-        Me.btnOrder.Size = New System.Drawing.Size(186, 50)
-        Me.btnOrder.TabIndex = 6
-        Me.btnOrder.Text = "Order"
-        Me.btnOrder.UseVisualStyleBackColor = False
-        '
-        'btnLogout
-        '
-        Me.btnLogout.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLogout.Location = New System.Drawing.Point(0, 623)
-        Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(186, 50)
-        Me.btnLogout.TabIndex = 7
-        Me.btnLogout.Text = "Log Out"
-        Me.btnLogout.UseVisualStyleBackColor = False
-        '
-        'btnAbout
-        '
-        Me.btnAbout.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnAbout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnAbout.Location = New System.Drawing.Point(0, 567)
-        Me.btnAbout.Name = "btnAbout"
-        Me.btnAbout.Size = New System.Drawing.Size(186, 50)
-        Me.btnAbout.TabIndex = 8
-        Me.btnAbout.Text = "About"
-        Me.btnAbout.UseVisualStyleBackColor = False
-        '
-        'btnFeedbacks
-        '
-        Me.btnFeedbacks.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnFeedbacks.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnFeedbacks.Location = New System.Drawing.Point(0, 511)
-        Me.btnFeedbacks.Name = "btnFeedbacks"
-        Me.btnFeedbacks.Size = New System.Drawing.Size(186, 50)
-        Me.btnFeedbacks.TabIndex = 9
-        Me.btnFeedbacks.Text = "Feedbacks"
-        Me.btnFeedbacks.UseVisualStyleBackColor = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(1087, 40)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(69, 23)
-        Me.Label4.TabIndex = 11
-        Me.Label4.Text = "Label4"
         '
         'btnCancel
         '
@@ -521,24 +394,13 @@ Partial Class RecentBooking
         Me.Controls.Add(Me.btnConfirm)
         Me.Controls.Add(Me.gbxBooking)
         Me.Controls.Add(Me.btnCancel)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.btnFeedbacks)
-        Me.Controls.Add(Me.btnAbout)
-        Me.Controls.Add(Me.btnLogout)
-        Me.Controls.Add(Me.btnOrder)
-        Me.Controls.Add(Me.btnTodaysDeal)
-        Me.Controls.Add(Me.btnRecommend)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.txtSearch)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.Label1)
-        Me.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.Name = "RecentBooking"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "OTRALA"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Controls.SetChildIndex(Me.btnCancel, 0)
+        Me.Controls.SetChildIndex(Me.gbxBooking, 0)
+        Me.Controls.SetChildIndex(Me.btnConfirm, 0)
+        Me.Controls.SetChildIndex(Me.gbxSummary, 0)
+        Me.Controls.SetChildIndex(Me.gbxPayment, 0)
         Me.gbxBooking.ResumeLayout(False)
         CType(Me.picPackage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbxSummary.ResumeLayout(False)
@@ -549,18 +411,6 @@ Partial Class RecentBooking
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Label1 As Label
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents txtSearch As TextBox
-    Friend WithEvents Label2 As Label
-    Friend WithEvents btnRecommend As Button
-    Friend WithEvents btnTodaysDeal As Button
-    Friend WithEvents btnOrder As Button
-    Friend WithEvents btnLogout As Button
-    Friend WithEvents btnAbout As Button
-    Friend WithEvents btnFeedbacks As Button
-    Friend WithEvents Label4 As Label
     Friend WithEvents btnCancel As Button
     Friend WithEvents gbxBooking As GroupBox
     Friend WithEvents btnConfirm As Button
