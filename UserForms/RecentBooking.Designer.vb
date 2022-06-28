@@ -24,27 +24,26 @@ Partial Class RecentBooking
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RecentBooking))
         Me.btnCancel = New System.Windows.Forms.Button()
-        Me.gbxBooking = New System.Windows.Forms.GroupBox()
-        Me.lblDescription = New System.Windows.Forms.Label()
-        Me.lblTitle = New System.Windows.Forms.Label()
-        Me.picPackage = New System.Windows.Forms.PictureBox()
-        Me.btnConfirm = New System.Windows.Forms.Button()
-        Me.gbxSummary = New System.Windows.Forms.GroupBox()
-        Me.lblTotal = New System.Windows.Forms.Label()
+        Me.GbxBooking = New System.Windows.Forms.GroupBox()
+        Me.DTPickerStart = New System.Windows.Forms.DateTimePicker()
+        Me.LblDescription = New System.Windows.Forms.Label()
+        Me.LblEndDate = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.LblPax = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.LblPrice = New System.Windows.Forms.Label()
+        Me.PicPackage = New System.Windows.Forms.PictureBox()
+        Me.btnConfirm = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label20 = New System.Windows.Forms.Label()
+        Me.LblDateDuration = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.gbxPayment = New System.Windows.Forms.GroupBox()
         Me.mskCVV = New System.Windows.Forms.MaskedTextBox()
         Me.mskExpiration = New System.Windows.Forms.MaskedTextBox()
@@ -54,149 +53,167 @@ Partial Class RecentBooking
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.gbxBooking.SuspendLayout()
-        CType(Me.picPackage, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.gbxSummary.SuspendLayout()
+        Me.GbxBooking.SuspendLayout()
+        CType(Me.PicPackage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.gbxPayment.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(782, 611)
+        Me.btnCancel.Location = New System.Drawing.Point(782, 623)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(109, 30)
         Me.btnCancel.TabIndex = 12
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
-        'gbxBooking
+        'GbxBooking
         '
-        Me.gbxBooking.Controls.Add(Me.lblDescription)
-        Me.gbxBooking.Controls.Add(Me.lblTitle)
-        Me.gbxBooking.Controls.Add(Me.picPackage)
-        Me.gbxBooking.Location = New System.Drawing.Point(252, 141)
-        Me.gbxBooking.Name = "gbxBooking"
-        Me.gbxBooking.Size = New System.Drawing.Size(472, 219)
-        Me.gbxBooking.TabIndex = 13
-        Me.gbxBooking.TabStop = False
-        Me.gbxBooking.Text = "Booking Details"
+        Me.GbxBooking.Controls.Add(Me.DTPickerStart)
+        Me.GbxBooking.Controls.Add(Me.LblDescription)
+        Me.GbxBooking.Controls.Add(Me.LblEndDate)
+        Me.GbxBooking.Controls.Add(Me.Label14)
+        Me.GbxBooking.Controls.Add(Me.Label10)
+        Me.GbxBooking.Controls.Add(Me.LblPax)
+        Me.GbxBooking.Controls.Add(Me.Label4)
+        Me.GbxBooking.Controls.Add(Me.LblPrice)
+        Me.GbxBooking.Controls.Add(Me.PicPackage)
+        Me.GbxBooking.Location = New System.Drawing.Point(252, 141)
+        Me.GbxBooking.Name = "GbxBooking"
+        Me.GbxBooking.Size = New System.Drawing.Size(931, 211)
+        Me.GbxBooking.TabIndex = 13
+        Me.GbxBooking.TabStop = False
+        Me.GbxBooking.Text = "Booking Details"
         '
-        'lblDescription
+        'DTPickerStart
         '
-        Me.lblDescription.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblDescription.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.lblDescription.Location = New System.Drawing.Point(222, 94)
-        Me.lblDescription.Name = "lblDescription"
-        Me.lblDescription.Size = New System.Drawing.Size(225, 101)
-        Me.lblDescription.TabIndex = 2
-        Me.lblDescription.Text = "(description)"
-        Me.lblDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.DTPickerStart.CalendarFont = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DTPickerStart.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DTPickerStart.Location = New System.Drawing.Point(555, 45)
+        Me.DTPickerStart.Name = "DTPickerStart"
+        Me.DTPickerStart.Size = New System.Drawing.Size(347, 30)
+        Me.DTPickerStart.TabIndex = 15
         '
-        'lblTitle
+        'LblDescription
         '
-        Me.lblTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblTitle.Font = New System.Drawing.Font("Arial Narrow", 10.2!, System.Drawing.FontStyle.Bold)
-        Me.lblTitle.Location = New System.Drawing.Point(222, 43)
-        Me.lblTitle.Name = "lblTitle"
-        Me.lblTitle.Size = New System.Drawing.Size(225, 29)
-        Me.lblTitle.TabIndex = 1
-        Me.lblTitle.Text = "(title package)"
-        Me.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LblDescription.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.LblDescription.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.LblDescription.Location = New System.Drawing.Point(222, 94)
+        Me.LblDescription.Name = "LblDescription"
+        Me.LblDescription.Size = New System.Drawing.Size(225, 101)
+        Me.LblDescription.TabIndex = 2
+        Me.LblDescription.Text = "(description)"
+        Me.LblDescription.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'picPackage
+        'LblEndDate
         '
-        Me.picPackage.Location = New System.Drawing.Point(26, 38)
-        Me.picPackage.Name = "picPackage"
-        Me.picPackage.Size = New System.Drawing.Size(171, 157)
-        Me.picPackage.TabIndex = 0
-        Me.picPackage.TabStop = False
+        Me.LblEndDate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.LblEndDate.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblEndDate.Location = New System.Drawing.Point(555, 101)
+        Me.LblEndDate.Name = "LblEndDate"
+        Me.LblEndDate.Size = New System.Drawing.Size(347, 30)
+        Me.LblEndDate.TabIndex = 17
+        Me.LblEndDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label14
+        '
+        Me.Label14.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label14.Location = New System.Drawing.Point(454, 101)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(95, 30)
+        Me.Label14.TabIndex = 13
+        Me.Label14.Text = "End Date : "
+        Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label10
+        '
+        Me.Label10.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label10.Location = New System.Drawing.Point(453, 45)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(96, 30)
+        Me.Label10.TabIndex = 13
+        Me.Label10.Text = "Start Date : "
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'LblPax
+        '
+        Me.LblPax.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.LblPax.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.LblPax.Location = New System.Drawing.Point(555, 165)
+        Me.LblPax.Name = "LblPax"
+        Me.LblPax.Size = New System.Drawing.Size(175, 30)
+        Me.LblPax.TabIndex = 17
+        Me.LblPax.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label4
+        '
+        Me.Label4.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label4.Location = New System.Drawing.Point(492, 165)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(57, 30)
+        Me.Label4.TabIndex = 13
+        Me.Label4.Text = "Pax : "
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'LblPrice
+        '
+        Me.LblPrice.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.LblPrice.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblPrice.Location = New System.Drawing.Point(222, 43)
+        Me.LblPrice.Name = "LblPrice"
+        Me.LblPrice.Size = New System.Drawing.Size(225, 29)
+        Me.LblPrice.TabIndex = 1
+        Me.LblPrice.Text = "(title package)"
+        Me.LblPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'PicPackage
+        '
+        Me.PicPackage.Location = New System.Drawing.Point(26, 38)
+        Me.PicPackage.Name = "PicPackage"
+        Me.PicPackage.Size = New System.Drawing.Size(171, 157)
+        Me.PicPackage.TabIndex = 0
+        Me.PicPackage.TabStop = False
         '
         'btnConfirm
         '
-        Me.btnConfirm.Location = New System.Drawing.Point(1030, 611)
+        Me.btnConfirm.Location = New System.Drawing.Point(1030, 623)
         Me.btnConfirm.Name = "btnConfirm"
         Me.btnConfirm.Size = New System.Drawing.Size(109, 30)
         Me.btnConfirm.TabIndex = 14
         Me.btnConfirm.Text = "Confirm"
         Me.btnConfirm.UseVisualStyleBackColor = True
         '
-        'gbxSummary
-        '
-        Me.gbxSummary.Controls.Add(Me.lblTotal)
-        Me.gbxSummary.Controls.Add(Me.Label14)
-        Me.gbxSummary.Controls.Add(Me.Label13)
-        Me.gbxSummary.Controls.Add(Me.GroupBox1)
-        Me.gbxSummary.Controls.Add(Me.Label8)
-        Me.gbxSummary.Location = New System.Drawing.Point(754, 141)
-        Me.gbxSummary.Name = "gbxSummary"
-        Me.gbxSummary.Size = New System.Drawing.Size(446, 451)
-        Me.gbxSummary.TabIndex = 14
-        Me.gbxSummary.TabStop = False
-        Me.gbxSummary.Text = "Summary"
-        '
-        'lblTotal
-        '
-        Me.lblTotal.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.lblTotal.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.lblTotal.Location = New System.Drawing.Point(210, 383)
-        Me.lblTotal.Name = "lblTotal"
-        Me.lblTotal.Size = New System.Drawing.Size(175, 30)
-        Me.lblTotal.TabIndex = 17
-        Me.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label14
-        '
-        Me.Label14.Font = New System.Drawing.Font("Arial Narrow", 7.8!, System.Drawing.FontStyle.Italic)
-        Me.Label14.Location = New System.Drawing.Point(189, 413)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(196, 30)
-        Me.Label14.TabIndex = 14
-        Me.Label14.Text = "Pay with Credit Card"
-        Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label13
-        '
-        Me.Label13.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label13.Location = New System.Drawing.Point(71, 383)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(112, 30)
-        Me.Label13.TabIndex = 13
-        Me.Label13.Text = "Total "
-        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Label20)
+        Me.GroupBox1.Controls.Add(Me.LblDateDuration)
         Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.Label19)
         Me.GroupBox1.Controls.Add(Me.Label12)
         Me.GroupBox1.Controls.Add(Me.Label18)
         Me.GroupBox1.Controls.Add(Me.Label11)
-        Me.GroupBox1.Controls.Add(Me.Label17)
         Me.GroupBox1.Controls.Add(Me.Label16)
-        Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Location = New System.Drawing.Point(32, 75)
+        Me.GroupBox1.Location = New System.Drawing.Point(768, 374)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(385, 289)
+        Me.GroupBox1.Size = New System.Drawing.Size(415, 231)
         Me.GroupBox1.TabIndex = 12
         Me.GroupBox1.TabStop = False
         '
-        'Label20
+        'LblDateDuration
         '
-        Me.Label20.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label20.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label20.Location = New System.Drawing.Point(195, 236)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(158, 30)
-        Me.Label20.TabIndex = 12
-        Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LblDateDuration.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.LblDateDuration.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.LblDateDuration.Location = New System.Drawing.Point(195, 177)
+        Me.LblDateDuration.Name = "LblDateDuration"
+        Me.LblDateDuration.Size = New System.Drawing.Size(158, 30)
+        Me.LblDateDuration.TabIndex = 12
+        Me.LblDateDuration.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label15
         '
         Me.Label15.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label15.Location = New System.Drawing.Point(21, 236)
+        Me.Label15.Location = New System.Drawing.Point(21, 177)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(158, 30)
         Me.Label15.TabIndex = 12
@@ -243,16 +260,6 @@ Partial Class RecentBooking
         Me.Label11.Text = "IC Number/Passport"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label17
-        '
-        Me.Label17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label17.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label17.Location = New System.Drawing.Point(195, 170)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(158, 54)
-        Me.Label17.TabIndex = 9
-        Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'Label16
         '
         Me.Label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
@@ -263,16 +270,6 @@ Partial Class RecentBooking
         Me.Label16.TabIndex = 8
         Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label10
-        '
-        Me.Label10.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label10.Location = New System.Drawing.Point(21, 170)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(158, 54)
-        Me.Label10.TabIndex = 9
-        Me.Label10.Text = "Package" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Booked"
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'Label9
         '
         Me.Label9.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
@@ -282,17 +279,6 @@ Partial Class RecentBooking
         Me.Label9.TabIndex = 8
         Me.Label9.Text = "Name"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label8
-        '
-        Me.Label8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label8.Font = New System.Drawing.Font("Arial", 10.2!)
-        Me.Label8.Location = New System.Drawing.Point(32, 38)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(373, 34)
-        Me.Label8.TabIndex = 0
-        Me.Label8.Text = "The summary of your package choice"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'gbxPayment
         '
@@ -346,8 +332,8 @@ Partial Class RecentBooking
         '
         'Label7
         '
-        Me.Label7.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label7.Location = New System.Drawing.Point(267, 154)
+        Me.Label7.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(267, 158)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(86, 30)
         Me.Label7.TabIndex = 3
@@ -356,8 +342,8 @@ Partial Class RecentBooking
         '
         'Label6
         '
-        Me.Label6.Font = New System.Drawing.Font("Arial", 9.0!)
-        Me.Label6.Location = New System.Drawing.Point(67, 154)
+        Me.Label6.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(67, 158)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(146, 30)
         Me.Label6.TabIndex = 2
@@ -366,7 +352,7 @@ Partial Class RecentBooking
         '
         'Label5
         '
-        Me.Label5.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.Label5.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(26, 104)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(146, 30)
@@ -376,12 +362,12 @@ Partial Class RecentBooking
         '
         'Label3
         '
-        Me.Label3.Font = New System.Drawing.Font("Arial", 9.0!)
+        Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(26, 54)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(146, 30)
         Me.Label3.TabIndex = 0
-        Me.Label3.Text = "Name Card "
+        Me.Label3.Text = "Name"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'RecentBooking
@@ -390,20 +376,19 @@ Partial Class RecentBooking
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1262, 673)
         Me.Controls.Add(Me.gbxPayment)
-        Me.Controls.Add(Me.gbxSummary)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnConfirm)
-        Me.Controls.Add(Me.gbxBooking)
+        Me.Controls.Add(Me.GbxBooking)
         Me.Controls.Add(Me.btnCancel)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "RecentBooking"
         Me.Controls.SetChildIndex(Me.btnCancel, 0)
-        Me.Controls.SetChildIndex(Me.gbxBooking, 0)
+        Me.Controls.SetChildIndex(Me.GbxBooking, 0)
         Me.Controls.SetChildIndex(Me.btnConfirm, 0)
-        Me.Controls.SetChildIndex(Me.gbxSummary, 0)
+        Me.Controls.SetChildIndex(Me.GroupBox1, 0)
         Me.Controls.SetChildIndex(Me.gbxPayment, 0)
-        Me.gbxBooking.ResumeLayout(False)
-        CType(Me.picPackage, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.gbxSummary.ResumeLayout(False)
+        Me.GbxBooking.ResumeLayout(False)
+        CType(Me.PicPackage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.gbxPayment.ResumeLayout(False)
         Me.gbxPayment.PerformLayout()
@@ -412,13 +397,12 @@ Partial Class RecentBooking
 
     End Sub
     Friend WithEvents btnCancel As Button
-    Friend WithEvents gbxBooking As GroupBox
+    Friend WithEvents GbxBooking As GroupBox
     Friend WithEvents btnConfirm As Button
-    Friend WithEvents gbxSummary As GroupBox
     Friend WithEvents gbxPayment As GroupBox
-    Friend WithEvents lblDescription As Label
-    Friend WithEvents lblTitle As Label
-    Friend WithEvents picPackage As PictureBox
+    Friend WithEvents LblDescription As Label
+    Friend WithEvents LblPrice As Label
+    Friend WithEvents PicPackage As PictureBox
     Friend WithEvents mskCVV As MaskedTextBox
     Friend WithEvents mskExpiration As MaskedTextBox
     Friend WithEvents txtCardName As TextBox
@@ -427,19 +411,19 @@ Partial Class RecentBooking
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents lblTotal As Label
-    Friend WithEvents Label14 As Label
-    Friend WithEvents Label13 As Label
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label
-    Friend WithEvents Label8 As Label
     Friend WithEvents Label15 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label11 As Label
-    Friend WithEvents Label20 As Label
+    Friend WithEvents LblDateDuration As Label
     Friend WithEvents Label19 As Label
     Friend WithEvents Label18 As Label
-    Friend WithEvents Label17 As Label
     Friend WithEvents Label16 As Label
+    Friend WithEvents LblPax As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents DTPickerStart As DateTimePicker
+    Friend WithEvents LblEndDate As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label10 As Label
 End Class
