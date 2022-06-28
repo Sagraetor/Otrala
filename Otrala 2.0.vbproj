@@ -85,10 +85,10 @@
     <Compile Include="UserForms\Catalogue.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForms\AboutUs.Designer.vb">
-      <DependentUpon>AboutUs.vb</DependentUpon>
+    <Compile Include="UserForms\About_Us.Designer.vb">
+      <DependentUpon>About_Us.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserForms\AboutUs.vb">
+    <Compile Include="UserForms\About_Us.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserForms\Feedback.Designer.vb">
@@ -97,16 +97,17 @@
     <Compile Include="UserForms\Feedback.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForms\BaseForm.Designer.vb">
-      <DependentUpon>BaseForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UserForms\BaseForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="UserForms\UserSettings.Designer.vb">
       <DependentUpon>UserSettings.vb</DependentUpon>
     </Compile>
     <Compile Include="UserForms\UserSettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForms\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForms\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -145,17 +146,17 @@
     <EmbeddedResource Include="UserForms\Catalogue.resx">
       <DependentUpon>Catalogue.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForms\AboutUs.resx">
-      <DependentUpon>AboutUs.vb</DependentUpon>
+    <EmbeddedResource Include="UserForms\About_Us.resx">
+      <DependentUpon>About_Us.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\Feedback.resx">
       <DependentUpon>Feedback.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForms\BaseForm.resx">
-      <DependentUpon>BaseForm.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserForms\UserSettings.resx">
       <DependentUpon>UserSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
