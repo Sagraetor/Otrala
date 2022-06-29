@@ -111,6 +111,24 @@
     <Compile Include="UserForms\BaseForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UserForms\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForms\Form2.Designer.vb">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\Form2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForms\Form3.Designer.vb">
+      <DependentUpon>Form3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\Form3.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UserForms\UserSettings.Designer.vb">
       <DependentUpon>UserSettings.vb</DependentUpon>
     </Compile>
@@ -161,6 +179,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\BaseForm.resx">
       <DependentUpon>BaseForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\Form2.resx">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\Form3.resx">
+      <DependentUpon>Form3.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\UserSettings.resx">
       <DependentUpon>UserSettings.vb</DependentUpon>
