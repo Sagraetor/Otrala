@@ -240,11 +240,11 @@ Partial Class Catalogue
         Me.PackageGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.PackageGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PackageIDDataGridViewTextBoxColumn, Me.SellerIDDataGridViewTextBoxColumn, Me.PackageNameDataGridViewTextBoxColumn, Me.StateDataGridViewTextBoxColumn, Me.DestinationDataGridViewTextBoxColumn, Me.PriceDataGridViewTextBoxColumn, Me.PaxDataGridViewTextBoxColumn, Me.DescriptionDataGridViewTextBoxColumn, Me.PictureDataGridViewImageColumn, Me.DurationDataGridViewTextBoxColumn})
         Me.PackageGrid.DataSource = Me.PackageBindingSource
-        Me.PackageGrid.Location = New System.Drawing.Point(3, 3)
+        Me.PackageGrid.Location = New System.Drawing.Point(7, 3)
         Me.PackageGrid.Name = "PackageGrid"
         Me.PackageGrid.RowHeadersWidth = 51
         Me.PackageGrid.RowTemplate.Height = 24
-        Me.PackageGrid.Size = New System.Drawing.Size(776, 150)
+        Me.PackageGrid.Size = New System.Drawing.Size(42, 34)
         Me.PackageGrid.TabIndex = 13
         Me.PackageGrid.Visible = False
         '

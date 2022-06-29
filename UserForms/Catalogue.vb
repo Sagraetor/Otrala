@@ -215,21 +215,17 @@
         ReDim Preserve item_arr(item_arr.Length)
         Dim x = PackageGrid.Rows(i).Cells(cell).Value
         If Not IsDBNull(x) Then
+            x = byteArrayToImage(x)
             item_arr(item_arr.Length - 1) = x
         Else
             item_arr(item_arr.Length - 1) = Nothing
         End If
     End Sub
 
-    'Public Function byteArrayToImage(ByVal byteArrayIn As Byte()) As Image
-    '    Using mStream As New IO.MemoryStream(byteArrayIn)
-    '        Return Image.FromStream(mStream)
-    '    End Using
-    'End Function
+    Public Function byteArrayToImage(ByVal byteArrayIn As Byte()) As Image
+        Using mStream As New IO.MemoryStream(byteArrayIn)
+            Return Image.FromStream(mStream)
+        End Using
+    End Function
 
-    ' Code to view package details. (end)
-
-
-    ' What to Add Next:
-    ' add an invisible label with index (use this to access database) (can wait until database is made)
 End Class
