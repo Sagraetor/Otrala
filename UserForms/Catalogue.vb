@@ -18,7 +18,7 @@
                 .Name = "LblTitleCatalogue" & CatalogueIndex
                 .Size = New System.Drawing.Size(236, 48)
                 .TabIndex = 13
-                .Text = "Trip to KUALA LUMPUR" ' **
+                .Text = packageName(CatalogueIndex - 1)
             End With
 
             Dim NewLblSeller As New Label
@@ -40,7 +40,7 @@
                 .Name = "LblDescCatalogue" & CatalogueIndex
                 .Size = New System.Drawing.Size(236, 117)
                 .TabIndex = 13
-                .Text = "Desc Goes Here" ' **
+                .Text = packageDescription(CatalogueIndex - 1)
             End With
 
             Dim NewLblDuration As New Label
@@ -49,7 +49,7 @@
                 .Name = "LblDurationCatalogue" & CatalogueIndex
                 .Size = New System.Drawing.Size(107, 59)
                 .TabIndex = 13
-                .Text = "5 NIGHTS 4 DAYS" ' **
+                .Text = packageDuration(CatalogueIndex - 1) & " DAYS " & System.Environment.NewLine & CInt(packageDuration(CatalogueIndex - 1)) - 1 & " NIGHT"
             End With
 
             Dim NewLblPrice As New Label
@@ -58,7 +58,7 @@
                 .Name = "LblPriceCatalogue" & CatalogueIndex
                 .Size = New System.Drawing.Size(152, 24)
                 .TabIndex = 13
-                .Text = "RM1000.00" ' **
+                .Text = "RM " & packagePrice(CatalogueIndex - 1)
             End With
 
             Dim NewLblPax As New Label
@@ -67,12 +67,12 @@
                 .Name = "LblPaxCatalogue" & CatalogueIndex
                 .Size = New System.Drawing.Size(152, 24)
                 .TabIndex = 13
-                .Text = "5 Person" ' **
+                .Text = packagePax(CatalogueIndex - 1) & " Person"
             End With
 
             Dim NewPicBox As New PictureBox
             With NewPicBox
-                .Image = Nothing ' **
+                .Image = packagePicture(CatalogueIndex - 1)
                 .Location = New System.Drawing.Point(17, 29)
                 .Name = "PictureBox" & CatalogueIndex
                 .Size = New System.Drawing.Size(140, 140)
@@ -120,11 +120,10 @@
     End Sub
 
     Private Sub LoadForm() Handles Me.Load
-        GenerateCatalogue(10)
-    End Sub
-
-    Private Sub DoneScroll() Handles PnlCatalogue.Scroll
-
+        'TODO: This line of code loads data into the 'OtralaDBDataSet.Package' table. You can move, or remove it, as needed.
+        Me.PackageTableAdapter.Fill(Me.OtralaDBDataSet.Package)
+        get_data_from_package_db()
+        GenerateCatalogue(packageName.Length)
     End Sub
 
     ' Code to view package details. (start)
@@ -174,9 +173,59 @@
         Return package
     End Function
 
-    Private Sub DoneScroll(sender As Object, e As ScrollEventArgs) Handles PnlCatalogue.Scroll
+    Dim packageID As String() = {}
+    Dim sellerID As String() = {}
+    Dim packageName As String() = {}
+    Dim packageState As String() = {}
+    Dim packageDestination As String() = {}
+    Dim packagePrice As String() = {}
+    Dim packagePax As String() = {}
+    Dim packageDescription As String() = {}
+    Dim packagePicture As Image() = {}
+    Dim packageDuration As String() = {}
+
+    Private Sub get_data_from_package_db()
+
+        For i = 0 To PackageGrid.Rows.Count - 2
+            insert_into_string(packageID, i, 0)
+            insert_into_string(sellerID, i, 1)
+            insert_into_string(packageName, i, 2)
+            insert_into_string(packageState, i, 3)
+            insert_into_string(packageDestination, i, 4)
+            insert_into_string(packagePrice, i, 5)
+            insert_into_string(packagePax, i, 6)
+            insert_into_string(packageDescription, i, 7)
+            insert_into_image(packagePicture, i, 8)
+            insert_into_string(packageDuration, i, 9)
+        Next
 
     End Sub
+
+    Private Sub insert_into_string(ByRef item_arr As String(), ByVal i As Integer, ByVal cell As Integer)
+        ReDim Preserve item_arr(item_arr.Length)
+        Dim x = PackageGrid.Rows(i).Cells(cell).Value
+        If Not IsDBNull(x) Then
+            item_arr(item_arr.Length - 1) = x
+        Else
+            item_arr(item_arr.Length - 1) = Nothing
+        End If
+    End Sub
+
+    Private Sub insert_into_image(ByRef item_arr As Image(), ByVal i As Integer, ByVal cell As Integer)
+        ReDim Preserve item_arr(item_arr.Length)
+        Dim x = PackageGrid.Rows(i).Cells(cell).Value
+        If Not IsDBNull(x) Then
+            item_arr(item_arr.Length - 1) = x
+        Else
+            item_arr(item_arr.Length - 1) = Nothing
+        End If
+    End Sub
+
+    'Public Function byteArrayToImage(ByVal byteArrayIn As Byte()) As Image
+    '    Using mStream As New IO.MemoryStream(byteArrayIn)
+    '        Return Image.FromStream(mStream)
+    '    End Using
+    'End Function
 
     ' Code to view package details. (end)
 
