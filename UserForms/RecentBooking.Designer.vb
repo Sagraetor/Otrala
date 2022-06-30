@@ -172,6 +172,7 @@ Partial Class RecentBooking
         Me.PicPackage.Location = New System.Drawing.Point(26, 38)
         Me.PicPackage.Name = "PicPackage"
         Me.PicPackage.Size = New System.Drawing.Size(171, 157)
+        Me.PicPackage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PicPackage.TabIndex = 0
         Me.PicPackage.TabStop = False
         '
