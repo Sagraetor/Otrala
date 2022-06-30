@@ -25,20 +25,20 @@ Partial Class Form2
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -47,18 +47,18 @@ Partial Class Form2
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Label1.Font = New System.Drawing.Font("Showcard Gothic", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.Label1.Location = New System.Drawing.Point(14, 132)
+        Me.Label1.Font = New System.Drawing.Font("Showcard Gothic", 14.25!)
+        Me.Label1.Location = New System.Drawing.Point(16, 141)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(101, 23)
+        Me.Label1.Size = New System.Drawing.Size(123, 30)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "REGISTER"
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(14, 13)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(386, 103)
+        Me.PictureBox1.Size = New System.Drawing.Size(441, 110)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 2
         Me.PictureBox1.TabStop = False
@@ -79,148 +79,148 @@ Partial Class Form2
         Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Location = New System.Drawing.Point(12, 158)
+        Me.Panel1.Location = New System.Drawing.Point(14, 169)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(386, 185)
+        Me.Panel1.Size = New System.Drawing.Size(441, 197)
         Me.Panel1.TabIndex = 4
         '
-        'Button2
+        'ComboBox1
         '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Button2.Location = New System.Drawing.Point(323, 349)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(75, 31)
-        Me.Button2.TabIndex = 9
-        Me.Button2.Text = "Next"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'TextBox2
-        '
-        Me.TextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.TextBox2.Location = New System.Drawing.Point(30, 102)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(151, 23)
-        Me.TextBox2.TabIndex = 7
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label4.Location = New System.Drawing.Point(30, 84)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(71, 15)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Last Name :"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.TextBox1.Location = New System.Drawing.Point(30, 58)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(151, 23)
-        Me.TextBox1.TabIndex = 5
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label3.Location = New System.Drawing.Point(30, 40)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(73, 15)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "First Name :"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point)
-        Me.Label2.Location = New System.Drawing.Point(12, 11)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(198, 20)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Complete the registration."
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label5.Location = New System.Drawing.Point(30, 128)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(55, 15)
-        Me.Label5.TabIndex = 10
-        Me.Label5.Text = "Gender :"
+        Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(34, 156)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(172, 24)
+        Me.ComboBox1.TabIndex = 18
         '
         'TextBox4
         '
         Me.TextBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.TextBox4.Location = New System.Drawing.Point(204, 146)
+        Me.TextBox4.Location = New System.Drawing.Point(233, 156)
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(151, 23)
+        Me.TextBox4.Size = New System.Drawing.Size(172, 22)
         Me.TextBox4.TabIndex = 17
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label6.Location = New System.Drawing.Point(204, 128)
+        Me.Label6.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(233, 137)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(97, 15)
+        Me.Label6.Size = New System.Drawing.Size(122, 18)
         Me.Label6.TabIndex = 16
         Me.Label6.Text = "Phone Number :"
         '
         'TextBox5
         '
         Me.TextBox5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.TextBox5.Location = New System.Drawing.Point(204, 102)
+        Me.TextBox5.Location = New System.Drawing.Point(233, 109)
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(151, 23)
+        Me.TextBox5.Size = New System.Drawing.Size(172, 22)
         Me.TextBox5.TabIndex = 15
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label7.Location = New System.Drawing.Point(204, 84)
+        Me.Label7.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(233, 90)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(86, 15)
+        Me.Label7.Size = New System.Drawing.Size(106, 18)
         Me.Label7.TabIndex = 14
         Me.Label7.Text = "Date of Birth :"
         '
         'TextBox6
         '
         Me.TextBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.TextBox6.Location = New System.Drawing.Point(204, 58)
+        Me.TextBox6.Location = New System.Drawing.Point(233, 62)
         Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(151, 23)
+        Me.TextBox6.Size = New System.Drawing.Size(172, 22)
         Me.TextBox6.TabIndex = 13
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Label8.Location = New System.Drawing.Point(204, 40)
+        Me.Label8.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(233, 43)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(42, 15)
+        Me.Label8.Size = New System.Drawing.Size(54, 18)
         Me.Label8.TabIndex = 12
         Me.Label8.Text = "Email :"
         '
-        'ComboBox1
+        'Label5
         '
-        Me.ComboBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(30, 146)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(151, 23)
-        Me.ComboBox1.TabIndex = 18
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(34, 137)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(70, 18)
+        Me.Label5.TabIndex = 10
+        Me.Label5.Text = "Gender :"
+        '
+        'TextBox2
+        '
+        Me.TextBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TextBox2.Location = New System.Drawing.Point(34, 109)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(172, 22)
+        Me.TextBox2.TabIndex = 7
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(34, 90)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(90, 18)
+        Me.Label4.TabIndex = 6
+        Me.Label4.Text = "Last Name :"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.TextBox1.Location = New System.Drawing.Point(34, 62)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(172, 22)
+        Me.TextBox1.TabIndex = 5
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(34, 43)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(92, 18)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "First Name :"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Arial", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(14, 12)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(233, 21)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Complete the registration."
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button2.Location = New System.Drawing.Point(369, 372)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(86, 33)
+        Me.Button2.TabIndex = 9
+        Me.Button2.Text = "Next"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'Form2
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(410, 390)
+        Me.ClientSize = New System.Drawing.Size(469, 416)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)

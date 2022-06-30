@@ -24,6 +24,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>Otrala 2.0.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -54,7 +55,9 @@
     <ApplicationIcon>OtralaWinIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -83,9 +86,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="OtralaDBDataSet.vb">
       <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="UserForms\Catalogue.Designer.vb">
       <DependentUpon>Catalogue.vb</DependentUpon>
@@ -111,10 +116,16 @@
     <Compile Include="UserForms\BaseForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForms\Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="UserForms\LoginSignUp.Designer.vb">
+      <DependentUpon>LoginSignUp.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserForms\Form1.vb">
+    <Compile Include="UserForms\LoginSignUp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForms\LoginUnused.Designer.vb">
+      <DependentUpon>LoginUnused.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\LoginUnused.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserForms\Form2.Designer.vb">
@@ -127,6 +138,12 @@
       <DependentUpon>Form3.vb</DependentUpon>
     </Compile>
     <Compile Include="UserForms\Form3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForms\SignUpUnused.Designer.vb">
+      <DependentUpon>SignUpUnused.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\SignUpUnused.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserForms\UserSettings.Designer.vb">
@@ -180,14 +197,20 @@
     <EmbeddedResource Include="UserForms\BaseForm.resx">
       <DependentUpon>BaseForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForms\Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="UserForms\LoginSignUp.resx">
+      <DependentUpon>LoginSignUp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\LoginUnused.resx">
+      <DependentUpon>LoginUnused.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\Form2.resx">
       <DependentUpon>Form2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\Form3.resx">
       <DependentUpon>Form3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\SignUpUnused.resx">
+      <DependentUpon>SignUpUnused.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\UserSettings.resx">
       <DependentUpon>UserSettings.vb</DependentUpon>
@@ -219,21 +242,24 @@
     <None Include="App.config" />
     <None Include="OtralaDBDataSet.xsc">
       <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="OtralaDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>OtralaDBDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="OtralaDBDataSet.xss">
       <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <Content Include="Assets\Otrala Icon.png" />
     <Content Include="OtralaDB.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="OtralaWinIcon.ico" />
   </ItemGroup>

@@ -145,6 +145,9 @@ Partial Class BaseForm
         Me.LblName.TabIndex = 11
         Me.LblName.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'PackageBindingSource1
+        '
+        '
         'BaseForm
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
