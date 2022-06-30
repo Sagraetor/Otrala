@@ -109,7 +109,7 @@ Partial Class Form1
         Me.PackageBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.PackageBindingNavigator.Name = "PackageBindingNavigator"
         Me.PackageBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.PackageBindingNavigator.Size = New System.Drawing.Size(800, 27)
+        Me.PackageBindingNavigator.Size = New System.Drawing.Size(800, 31)
         Me.PackageBindingNavigator.TabIndex = 0
         Me.PackageBindingNavigator.Text = "BindingNavigator1"
         '
@@ -119,7 +119,7 @@ Partial Class Form1
         Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 28)
         Me.BindingNavigatorAddNewItem.Text = "Add new"
         '
         'BindingNavigatorCountItem
@@ -165,7 +165,6 @@ Partial Class Form1
         '
         Me.BindingNavigatorPositionItem.AccessibleName = "Position"
         Me.BindingNavigatorPositionItem.AutoSize = False
-        Me.BindingNavigatorPositionItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
         Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 27)
         Me.BindingNavigatorPositionItem.Text = "0"
@@ -303,73 +302,73 @@ Partial Class Form1
         'TextBox1
         '
         Me.TextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PackageBindingSource, "PackageID", True))
-        Me.TextBox1.Location = New System.Drawing.Point(110, 94)
+        Me.TextBox1.Location = New System.Drawing.Point(36, 94)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox1.Size = New System.Drawing.Size(174, 22)
         Me.TextBox1.TabIndex = 2
         '
         'TextBox2
         '
         Me.TextBox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PackageBindingSource, "SellerID", True))
-        Me.TextBox2.Location = New System.Drawing.Point(110, 122)
+        Me.TextBox2.Location = New System.Drawing.Point(36, 122)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox2.Size = New System.Drawing.Size(174, 22)
         Me.TextBox2.TabIndex = 3
         '
         'TextBox3
         '
         Me.TextBox3.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PackageBindingSource, "PackageName", True))
-        Me.TextBox3.Location = New System.Drawing.Point(110, 150)
+        Me.TextBox3.Location = New System.Drawing.Point(36, 150)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox3.Size = New System.Drawing.Size(174, 22)
         Me.TextBox3.TabIndex = 4
         '
         'TextBox4
         '
         Me.TextBox4.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PackageBindingSource, "State", True))
-        Me.TextBox4.Location = New System.Drawing.Point(110, 178)
+        Me.TextBox4.Location = New System.Drawing.Point(36, 178)
         Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox4.Size = New System.Drawing.Size(174, 22)
         Me.TextBox4.TabIndex = 5
         '
         'TextBox5
         '
         Me.TextBox5.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PackageBindingSource, "Destination", True))
-        Me.TextBox5.Location = New System.Drawing.Point(110, 206)
+        Me.TextBox5.Location = New System.Drawing.Point(36, 206)
         Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox5.Size = New System.Drawing.Size(174, 22)
         Me.TextBox5.TabIndex = 6
         '
         'TextBox6
         '
         Me.TextBox6.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PackageBindingSource, "Price", True))
-        Me.TextBox6.Location = New System.Drawing.Point(110, 234)
+        Me.TextBox6.Location = New System.Drawing.Point(36, 234)
         Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox6.Size = New System.Drawing.Size(174, 22)
         Me.TextBox6.TabIndex = 7
         '
         'TextBox7
         '
         Me.TextBox7.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PackageBindingSource, "Pax", True))
-        Me.TextBox7.Location = New System.Drawing.Point(110, 262)
+        Me.TextBox7.Location = New System.Drawing.Point(36, 262)
         Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox7.Size = New System.Drawing.Size(174, 22)
         Me.TextBox7.TabIndex = 8
         '
         'TextBox8
         '
         Me.TextBox8.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PackageBindingSource, "Description", True))
-        Me.TextBox8.Location = New System.Drawing.Point(110, 290)
+        Me.TextBox8.Location = New System.Drawing.Point(36, 290)
         Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox8.Size = New System.Drawing.Size(174, 22)
         Me.TextBox8.TabIndex = 9
         '
         'TextBox9
         '
         Me.TextBox9.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PackageBindingSource, "Duration", True))
-        Me.TextBox9.Location = New System.Drawing.Point(110, 318)
+        Me.TextBox9.Location = New System.Drawing.Point(36, 318)
         Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox9.Size = New System.Drawing.Size(174, 22)
         Me.TextBox9.TabIndex = 10
         '
         'picPackage
@@ -421,6 +420,7 @@ Partial Class Form1
         Me.Controls.Add(Me.PackageDataGridView)
         Me.Controls.Add(Me.PackageBindingNavigator)
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Form1"
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PackageBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

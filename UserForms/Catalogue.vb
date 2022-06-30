@@ -131,8 +131,21 @@
         Next
     End Sub
 
-    Private Sub LoadForm() Handles Me.Load
+    Private Sub LoadForm() Handles Me.Activated
         'TODO: This line of code loads data into the 'OtralaDBDataSet.Package' table. You can move, or remove it, as needed.
+        PnlCatalogue.Controls.Clear()
+        ReDim packageID(-1)
+        ReDim sellerID(-1)
+        ReDim packageName(-1)
+        ReDim packageState(-1)
+        ReDim packageDestination(-1)
+        ReDim packagePrice(-1)
+        ReDim packagePax(-1)
+        ReDim packageDescription(-1)
+        ReDim packagePicture(-1)
+        ReDim packageDuration(-1)
+        CatalogueIndex = 1
+        CatalogueYIndex = 0
         Me.PackageTableAdapter.Fill(Me.OtralaDBDataSet.Package)
         get_data_from_package_db()
         GenerateCatalogue(packageName.Length)
