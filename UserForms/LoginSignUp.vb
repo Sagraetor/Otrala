@@ -73,6 +73,8 @@
 
         If Pword = DecryptedPass Then
             MsgBox("Correct!")
+        ElseIf Pword <> DecryptedPass Then
+            MsgBox("Incorrect Password")
         End If
     End Sub
 
@@ -143,7 +145,4 @@
         SUPassHiden = Not SUPassHiden
     End Sub
 
-    Private Sub LoginToAcc(sender As Object, e As EventArgs) Handles BtnLoginLogin.Click
-
-    End Sub
 End Class
