@@ -1,8 +1,16 @@
 ﻿Public Class Package_Viewer
 
     Dim package = Catalogue.send_package()
-    Dim seller_id = package.SellerID
-    Dim package_id = package.PackageID
+    Dim seller_id = Catalogue.sellerID(package.Index)
+    Dim package_id = Catalogue.packageID(package.Index)
+    Dim packageName = Catalogue.packageName(package.Index)
+    Dim packageState = Catalogue.packageState(package.Index)
+    Dim packageDestination = Catalogue.packageDestination(package.Index)
+    Dim packagePrice = Catalogue.packagePrice(package.Index)
+    Dim packagePax = Catalogue.packagePax(package.Index)
+    Dim packageDescription = Catalogue.packageDescription(package.Index)
+    Dim packagePicture = Catalogue.packagePicture(package.Index)
+    Dim packageDuration = Catalogue.packageDuration(package.Index)
     ' Dim customer_id = customer.CustomerID (add later).
 
     Private Sub isExistingValue(label As Object, labelValue As Object)
@@ -16,22 +24,22 @@
     Private Sub Package_Viewer_Load() Handles Me.Load
 
         ' Change Form Name to Package Name.
-        Me.Text = package.Name
+        Me.Text = packageName
 
         ' Change Image to Package Image.
-        pctTravelPic.Image = package.Image
+        pctTravelPic.Image = packagePicture
 
         ' Change Seller Button Text.
         btnSeller.Text = "More From" + Environment.NewLine + package.SellerName
 
         ' Set Values to Labels in Details Table.
-        lblTitle.Text = package.Name
-        lblPrice.Text = package.Price
-        lblDescriptionValue.Text = package.Description
-        lblStateValue.Text = package.State
-        lblLocationValue.Text = package.Location
-        lblPaxValue.Text = package.Pax
-        lblDurationValue.Text = package.Duration
+        lblTitle.Text = packageName
+        lblPrice.Text = packagePrice
+        lblDescriptionValue.Text = packageDescription
+        lblStateValue.Text = packageState
+        lblLocationValue.Text = packageDestination
+        lblPaxValue.Text = packagePax
+        lblDurationValue.Text = packageDuration
         lblTourOperatorValue.Text = package.SellerName
 
         ' Clear Labels without Values.
@@ -62,11 +70,12 @@
     Private Sub btnBook_Click(sender As Object, e As EventArgs) Handles btnBook.Click
         ' Go to booking page (send over package_id and seller_id and customer_id).
         Dim BookingForm As New RecentBooking
-        BookingForm.Show()
+        BookingForm.ShowDialog()
         Me.Close()
     End Sub
 
     Private Sub btnSeller_Click(sender As Object, e As EventArgs) Handles btnSeller.Click
         ' Go to seller profile using seller_id.
     End Sub
+
 End Class

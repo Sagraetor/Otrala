@@ -35,4 +35,9 @@
             Me.Close()
         End If
     End Sub
+
+    Private Sub btnAddPackage_Click(sender As Object, e As EventArgs) Handles btnAddPackage.Click
+        temporaryInputForm.ShowDialog()
+    End Sub
+
 End Class
