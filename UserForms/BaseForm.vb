@@ -37,6 +37,6 @@
     End Sub
 
     Private Sub btnAddPackage_Click(sender As Object, e As EventArgs) Handles btnAddPackage.Click
-        Form1.Show()
+        temporaryInputForm.Show()
     End Sub
 End Class

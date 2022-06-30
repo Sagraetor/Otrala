@@ -115,10 +115,10 @@
     <Compile Include="UserForms\BaseForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForms\Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="UserForms\temporaryInputForm.Designer.vb">
+      <DependentUpon>temporaryInputForm.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserForms\Form1.vb">
+    <Compile Include="UserForms\temporaryInputForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserForms\UserSettings.Designer.vb">
@@ -172,8 +172,8 @@
     <EmbeddedResource Include="UserForms\BaseForm.resx">
       <DependentUpon>BaseForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForms\Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="UserForms\temporaryInputForm.resx">
+      <DependentUpon>temporaryInputForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\UserSettings.resx">
       <DependentUpon>UserSettings.vb</DependentUpon>
