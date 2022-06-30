@@ -39,4 +39,8 @@
     Private Sub btnAddPackage_Click(sender As Object, e As EventArgs) Handles btnAddPackage.Click
         temporaryInputForm.Show()
     End Sub
+
+    Private Sub closeAll(sender As Object, e As EventArgs) Handles Me.Closed
+        Application.Exit()
+    End Sub
 End Class
