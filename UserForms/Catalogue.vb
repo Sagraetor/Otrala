@@ -193,7 +193,6 @@
 
         Dim f As New Package_Viewer
         f.ShowDialog()
-        Me.Hide()
 
     End Sub
     Function send_package()

@@ -70,11 +70,12 @@
     Private Sub btnBook_Click(sender As Object, e As EventArgs) Handles btnBook.Click
         ' Go to booking page (send over package_id and seller_id and customer_id).
         Dim BookingForm As New RecentBooking
-        BookingForm.Show()
+        BookingForm.ShowDialog()
         Me.Close()
     End Sub
 
     Private Sub btnSeller_Click(sender As Object, e As EventArgs) Handles btnSeller.Click
         ' Go to seller profile using seller_id.
     End Sub
+
 End Class

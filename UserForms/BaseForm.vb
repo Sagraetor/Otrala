@@ -40,7 +40,4 @@
         temporaryInputForm.ShowDialog()
     End Sub
 
-    Private Sub closeAll(sender As Object, e As EventArgs) Handles Me.Closed
-        Application.Exit()
-    End Sub
 End Class
