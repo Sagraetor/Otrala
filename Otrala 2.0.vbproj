@@ -24,6 +24,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>Otrala 2.0.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -54,7 +55,9 @@
     <ApplicationIcon>OtralaWinIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -79,14 +82,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OtralaDBDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="OtralaDBDataSet.vb">
-      <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="UserForms\Catalogue.Designer.vb">
       <DependentUpon>Catalogue.vb</DependentUpon>
     </Compile>
@@ -190,24 +185,11 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="OtralaDBDataSet.xsc">
-      <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="OtralaDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>OtralaDBDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="OtralaDBDataSet.xss">
-      <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <Content Include="Assets\Otrala Icon.png" />
-    <Content Include="OtralaDB.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="OtralaDB.accdb" />
     <Content Include="OtralaWinIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
