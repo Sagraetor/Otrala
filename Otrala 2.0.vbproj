@@ -82,14 +82,16 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OtralaDBDataSet1.Designer.vb">
-      <AutoGen>True</AutoGen>
+    <Compile Include="OtralaDBDataSet.Designer.vb">
+      <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
       <DesignTime>True</DesignTime>
-      <DependentUpon>OtralaDBDataSet1.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="OtralaDBDataSet1.vb">
-      <DependentUpon>OtralaDBDataSet1.xsd</DependentUpon>
+    <Compile Include="OtralaDBDataSet.vb">
+      <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
+      <SubType>code</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="UserForms\Catalogue.Designer.vb">
       <DependentUpon>Catalogue.vb</DependentUpon>
@@ -168,6 +170,7 @@
   <ItemGroup>
     <EmbeddedResource Include="UserForms\Catalogue.resx">
       <DependentUpon>Catalogue.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\AboutUs.resx">
       <DependentUpon>AboutUs.vb</DependentUpon>
@@ -180,6 +183,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\LoginSignUp.resx">
       <DependentUpon>LoginSignUp.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\temporaryInputForm.resx">
       <DependentUpon>temporaryInputForm.vb</DependentUpon>
@@ -212,27 +216,25 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="OtralaDBDataSet1.xsc">
-      <DependentUpon>OtralaDBDataSet1.xsd</DependentUpon>
+    <None Include="OtralaDBDataSet.xsc">
+      <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="OtralaDBDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>OtralaDBDataSet1.Designer.vb</LastGenOutput>
+    <None Include="OtralaDBDataSet.xsd">
       <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OtralaDBDataSet.Designer.vb</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="OtralaDBDataSet1.xss">
-      <DependentUpon>OtralaDBDataSet1.xsd</DependentUpon>
+    <None Include="OtralaDBDataSet.xss">
+      <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <Content Include="Assets\Otrala Icon.png" />
-    <Content Include="OtralaDB.accdb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Content Include="OtralaDB.accdb" />
     <Content Include="OtralaWinIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

@@ -249,7 +249,7 @@ Partial Public Class OtralaDBDataSet
     Private Sub InitClass()
         Me.DataSetName = "OtralaDBDataSet"
         Me.Prefix = ""
-        Me.Namespace = "http://tempuri.org/OtralaDBDataSet.xsd"
+        Me.Namespace = "http://tempuri.org/OtralaDBDataSet1.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
         Me.tableLoginInfo = New LoginInfoDataTable()
@@ -689,7 +689,7 @@ Partial Public Class OtralaDBDataSet
         
         Private columnDescription As Global.System.Data.DataColumn
         
-        Private columnField1 As Global.System.Data.DataColumn
+        Private columnPicture As Global.System.Data.DataColumn
         
         Private columnDuration As Global.System.Data.DataColumn
         
@@ -794,9 +794,9 @@ Partial Public Class OtralaDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Field1Column() As Global.System.Data.DataColumn
+        Public ReadOnly Property PictureColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnField1
+                Return Me.columnPicture
             End Get
         End Property
         
@@ -845,9 +845,9 @@ Partial Public Class OtralaDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddPackageRow(ByVal SellerID As Integer, ByVal PackageName As String, ByVal State As String, ByVal Destination As String, ByVal Price As Decimal, ByVal Pax As Integer, ByVal Description As String, ByVal Field1 As String, ByVal Duration As Integer) As PackageRow
+        Public Overloads Function AddPackageRow(ByVal SellerID As Integer, ByVal PackageName As String, ByVal State As String, ByVal Destination As String, ByVal Price As Decimal, ByVal Pax As Integer, ByVal Description As String, ByVal Picture() As Byte, ByVal Duration As Integer) As PackageRow
             Dim rowPackageRow As PackageRow = CType(Me.NewRow,PackageRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, SellerID, PackageName, State, Destination, Price, Pax, Description, Field1, Duration}
+            Dim columnValuesArray() As Object = New Object() {Nothing, SellerID, PackageName, State, Destination, Price, Pax, Description, Picture, Duration}
             rowPackageRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowPackageRow)
             Return rowPackageRow
@@ -884,7 +884,7 @@ Partial Public Class OtralaDBDataSet
             Me.columnPrice = MyBase.Columns("Price")
             Me.columnPax = MyBase.Columns("Pax")
             Me.columnDescription = MyBase.Columns("Description")
-            Me.columnField1 = MyBase.Columns("Field1")
+            Me.columnPicture = MyBase.Columns("Picture")
             Me.columnDuration = MyBase.Columns("Duration")
         End Sub
         
@@ -907,8 +907,8 @@ Partial Public Class OtralaDBDataSet
             MyBase.Columns.Add(Me.columnPax)
             Me.columnDescription = New Global.System.Data.DataColumn("Description", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDescription)
-            Me.columnField1 = New Global.System.Data.DataColumn("Field1", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnField1)
+            Me.columnPicture = New Global.System.Data.DataColumn("Picture", GetType(Byte()), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPicture)
             Me.columnDuration = New Global.System.Data.DataColumn("Duration", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnDuration)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnPackageID}, true))
@@ -921,7 +921,6 @@ Partial Public Class OtralaDBDataSet
             Me.columnState.MaxLength = 255
             Me.columnDestination.MaxLength = 255
             Me.columnDescription.MaxLength = 536870910
-            Me.columnField1.MaxLength = 536870910
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1680,16 +1679,16 @@ Partial Public Class OtralaDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property Field1() As String
+        Public Property Picture() As Byte()
             Get
                 Try 
-                    Return CType(Me(Me.tablePackage.Field1Column),String)
+                    Return CType(Me(Me.tablePackage.PictureColumn),Byte())
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Field1' in table 'Package' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Picture' in table 'Package' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablePackage.Field1Column) = value
+                Me(Me.tablePackage.PictureColumn) = value
             End Set
         End Property
         
@@ -1794,14 +1793,14 @@ Partial Public Class OtralaDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsField1Null() As Boolean
-            Return Me.IsNull(Me.tablePackage.Field1Column)
+        Public Function IsPictureNull() As Boolean
+            Return Me.IsNull(Me.tablePackage.PictureColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetField1Null()
-            Me(Me.tablePackage.Field1Column) = Global.System.Convert.DBNull
+        Public Sub SetPictureNull()
+            Me(Me.tablePackage.PictureColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2688,7 +2687,7 @@ Namespace OtralaDBDataSetTableAdapters
             tableMapping.ColumnMappings.Add("Price", "Price")
             tableMapping.ColumnMappings.Add("Pax", "Pax")
             tableMapping.ColumnMappings.Add("Description", "Description")
-            tableMapping.ColumnMappings.Add("Field1", "Field1")
+            tableMapping.ColumnMappings.Add("Picture", "Picture")
             tableMapping.ColumnMappings.Add("Duration", "Duration")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
@@ -2718,8 +2717,8 @@ Namespace OtralaDBDataSetTableAdapters
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `Package` (`SellerID`, `PackageName`, `State`, `Destination`, `Price`"& _ 
-                ", `Pax`, `Description`, `Field1`, `Duration`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"& _ 
-                ""
+                ", `Pax`, `Description`, `Picture`, `Duration`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?"& _ 
+                ")"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("SellerID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SellerID", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("PackageName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PackageName", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -2728,18 +2727,18 @@ Namespace OtralaDBDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Price", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Price", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Pax", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Pax", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Description", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Description", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Field1", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Field1", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Picture", Global.System.Data.OleDb.OleDbType.LongVarBinary, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Picture", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Duration", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Duration", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE `Package` SET `SellerID` = ?, `PackageName` = ?, `State` = ?, `Destination"& _ 
-                "` = ?, `Price` = ?, `Pax` = ?, `Description` = ?, `Field1` = ?, `Duration` = ? W"& _ 
-                "HERE ((`PackageID` = ?) AND ((? = 1 AND `SellerID` IS NULL) OR (`SellerID` = ?))"& _ 
-                " AND ((? = 1 AND `PackageName` IS NULL) OR (`PackageName` = ?)) AND ((? = 1 AND "& _ 
-                "`State` IS NULL) OR (`State` = ?)) AND ((? = 1 AND `Destination` IS NULL) OR (`D"& _ 
-                "estination` = ?)) AND ((? = 1 AND `Price` IS NULL) OR (`Price` = ?)) AND ((? = 1"& _ 
-                " AND `Pax` IS NULL) OR (`Pax` = ?)) AND ((? = 1 AND `Duration` IS NULL) OR (`Dur"& _ 
-                "ation` = ?)))"
+                "` = ?, `Price` = ?, `Pax` = ?, `Description` = ?, `Picture` = ?, `Duration` = ? "& _ 
+                "WHERE ((`PackageID` = ?) AND ((? = 1 AND `SellerID` IS NULL) OR (`SellerID` = ?)"& _ 
+                ") AND ((? = 1 AND `PackageName` IS NULL) OR (`PackageName` = ?)) AND ((? = 1 AND"& _ 
+                " `State` IS NULL) OR (`State` = ?)) AND ((? = 1 AND `Destination` IS NULL) OR (`"& _ 
+                "Destination` = ?)) AND ((? = 1 AND `Price` IS NULL) OR (`Price` = ?)) AND ((? = "& _ 
+                "1 AND `Pax` IS NULL) OR (`Pax` = ?)) AND ((? = 1 AND `Duration` IS NULL) OR (`Du"& _ 
+                "ration` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("SellerID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SellerID", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("PackageName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PackageName", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -2748,7 +2747,7 @@ Namespace OtralaDBDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Price", Global.System.Data.OleDb.OleDbType.Currency, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Price", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Pax", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Pax", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Description", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Description", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Field1", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Field1", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Picture", Global.System.Data.OleDb.OleDbType.LongVarBinary, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Picture", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Duration", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Duration", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_PackageID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PackageID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_SellerID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SellerID", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -2781,7 +2780,7 @@ Namespace OtralaDBDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT PackageID, SellerID, PackageName, State, Destination, Price, Pax, Descript"& _ 
-                "ion, Field1, Duration FROM Package"
+                "ion, Picture, Duration FROM Package"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -2911,7 +2910,7 @@ Namespace OtralaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal SellerID As Global.System.Nullable(Of Integer), ByVal PackageName As String, ByVal State As String, ByVal Destination As String, ByVal Price As Global.System.Nullable(Of Decimal), ByVal Pax As Global.System.Nullable(Of Integer), ByVal Description As String, ByVal Field1 As String, ByVal Duration As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Insert(ByVal SellerID As Global.System.Nullable(Of Integer), ByVal PackageName As String, ByVal State As String, ByVal Destination As String, ByVal Price As Global.System.Nullable(Of Decimal), ByVal Pax As Global.System.Nullable(Of Integer), ByVal Description As String, ByVal Picture() As Byte, ByVal Duration As Global.System.Nullable(Of Integer)) As Integer
             If (SellerID.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(SellerID.Value,Integer)
             Else
@@ -2947,10 +2946,10 @@ Namespace OtralaDBDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(6).Value = CType(Description,String)
             End If
-            If (Field1 Is Nothing) Then
+            If (Picture Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(7).Value = CType(Field1,String)
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(Picture,Byte())
             End If
             If (Duration.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(8).Value = CType(Duration.Value,Integer)
@@ -2984,7 +2983,7 @@ Namespace OtralaDBDataSetTableAdapters
                     ByVal Price As Global.System.Nullable(Of Decimal),  _
                     ByVal Pax As Global.System.Nullable(Of Integer),  _
                     ByVal Description As String,  _
-                    ByVal Field1 As String,  _
+                    ByVal Picture() As Byte,  _
                     ByVal Duration As Global.System.Nullable(Of Integer),  _
                     ByVal Original_PackageID As Integer,  _
                     ByVal Original_SellerID As Global.System.Nullable(Of Integer),  _
@@ -3029,10 +3028,10 @@ Namespace OtralaDBDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Description,String)
             End If
-            If (Field1 Is Nothing) Then
+            If (Picture Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Field1,String)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Picture,Byte())
             End If
             If (Duration.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Duration.Value,Integer)
