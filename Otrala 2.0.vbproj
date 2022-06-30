@@ -118,27 +118,31 @@
     <Compile Include="UserForms\LoginSignUp.Designer.vb">
       <DependentUpon>LoginSignUp.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserForms\LoginSignUp.vb" />
+    <Compile Include="UserForms\LoginSignUp.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UserForms\LoginUnused.Designer.vb">
       <DependentUpon>LoginUnused.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserForms\LoginUnused.vb" />
+    <Compile Include="UserForms\LoginUnused.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UserForms\Form2.Designer.vb">
       <DependentUpon>Form2.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserForms\Form2.vb" />
+    <Compile Include="UserForms\Form2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UserForms\Form3.Designer.vb">
       <DependentUpon>Form3.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserForms\Form3.vb" />
+    <Compile Include="UserForms\Form3.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UserForms\SignUpUnused.Designer.vb">
       <DependentUpon>SignUpUnused.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserForms\SignUpUnused.vb" />
-    <Compile Include="UserForms\temporaryInputForm.Designer.vb">
-      <DependentUpon>temporaryInputForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UserForms\temporaryInputForm.vb">
+    <Compile Include="UserForms\SignUpUnused.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserForms\UserSettings.Designer.vb">

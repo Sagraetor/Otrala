@@ -10,10 +10,15 @@
     End Sub
 
     Private Sub ToUserSettings() Handles LblName.Click
-        If Me.Name <> "UserSettings" Then
-            UserSettings.Show()
-            Me.Hide()
-        End If
+        Dim LoginSignUnForm As New LoginSignUp
+        LoginSignUnForm.ShowDialog()
+
+
+
+        'If Me.Name <> "UserSettings" Then
+        'UserSettings.Show()
+        'Me.Hide()
+        'End If
     End Sub
 
     Private Sub PersonalizeGUI() Handles Me.Load

@@ -23,6 +23,15 @@
 
         Return (Encrypted, Key)
     End Function
+    Public Function IsEmailOrPhone(ToCheck As String)
+        If ToCheck.Contains("@") Then
+            Return "Email"
+        ElseIf IsNumeric(ToCheck) Then
+            Return "Phone"
+        Else
+            Return "No"
+        End If
+    End Function
 
     Public Function Decrypt(Info As List(Of Integer), Key As List(Of Integer))
         Dim Decrypted As String = ""
@@ -31,5 +40,24 @@
             Decrypted += ChrW(Info(i) - Key(i))
         Next
         Return Decrypted
+    End Function
+
+    Public Function LstIntToStr(Info As List(Of Integer))
+        Dim OutputString As String = ""
+        For Each Num In Info
+            OutputString += Num.ToString
+            OutputString += ","
+        Next
+        OutputString = OutputString.TrimEnd(CChar(","))
+        Return OutputString
+    End Function
+
+    Public Function StrToLstInt(Info As String)
+        Dim OutputList As New List(Of Integer)
+        Dim Temp() As String = Info.Split(",")
+        For Each Num In Temp
+            OutputList.Add(CInt(Num))
+        Next
+        Return OutputList
     End Function
 End Module
