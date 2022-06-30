@@ -10,6 +10,7 @@
     Private str_pax As String
     Private str_duration As String
     Private img_picture As Image
+    Private int_index As Integer
 
     Public Property SellerID() As String
         Get
@@ -97,6 +98,14 @@
         End Get
         Set(ByVal value As Image)
             img_picture = value
+        End Set
+    End Property
+    Public Property Index() As String
+        Get
+            Return int_index
+        End Get
+        Set(ByVal value As String)
+            int_index = value
         End Set
     End Property
 End Class

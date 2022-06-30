@@ -36,6 +36,7 @@ Partial Class BaseForm
         Me.LblName = New System.Windows.Forms.Label()
         Me.PackageBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PackageBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.btnAddPackage = New System.Windows.Forms.Button()
         CType(Me.PbOtralaIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PackageBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PackageBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -145,10 +146,22 @@ Partial Class BaseForm
         Me.LblName.TabIndex = 11
         Me.LblName.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'btnAddPackage
+        '
+        Me.btnAddPackage.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnAddPackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnAddPackage.Location = New System.Drawing.Point(0, 278)
+        Me.btnAddPackage.Name = "btnAddPackage"
+        Me.btnAddPackage.Size = New System.Drawing.Size(186, 50)
+        Me.btnAddPackage.TabIndex = 12
+        Me.btnAddPackage.Text = "Add Package"
+        Me.btnAddPackage.UseVisualStyleBackColor = False
+        '
         'BaseForm
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(1262, 673)
+        Me.Controls.Add(Me.btnAddPackage)
         Me.Controls.Add(Me.LblName)
         Me.Controls.Add(Me.BtnFeedback)
         Me.Controls.Add(Me.btnLogOut)
@@ -187,4 +200,5 @@ Partial Class BaseForm
     Friend WithEvents LblName As Label
     Friend WithEvents PackageBindingSource As BindingSource
     Friend WithEvents PackageBindingSource1 As BindingSource
+    Friend WithEvents btnAddPackage As Button
 End Class

@@ -86,7 +86,7 @@ Partial Class Package_Viewer
         Me.lblDescription.Location = New System.Drawing.Point(3, 0)
         Me.lblDescription.Name = "lblDescription"
         Me.lblDescription.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.lblDescription.Size = New System.Drawing.Size(164, 31)
+        Me.lblDescription.Size = New System.Drawing.Size(168, 31)
         Me.lblDescription.TabIndex = 2
         Me.lblDescription.Text = "Description"
         '
@@ -120,7 +120,8 @@ Partial Class Package_Viewer
         Me.tableDetails.Controls.Add(Me.lblDurationValue, 1, 4)
         Me.tableDetails.Controls.Add(Me.lblTourOperator, 0, 5)
         Me.tableDetails.Controls.Add(Me.lblTourOperatorValue, 1, 5)
-        Me.tableDetails.Location = New System.Drawing.Point(11, 20)
+        Me.tableDetails.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tableDetails.Location = New System.Drawing.Point(8, 6)
         Me.tableDetails.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.tableDetails.Name = "tableDetails"
         Me.tableDetails.RowCount = 6
@@ -130,7 +131,7 @@ Partial Class Package_Viewer
         Me.tableDetails.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tableDetails.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tableDetails.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.tableDetails.Size = New System.Drawing.Size(573, 187)
+        Me.tableDetails.Size = New System.Drawing.Size(587, 259)
         Me.tableDetails.TabIndex = 5
         '
         'lblDuration
@@ -143,7 +144,7 @@ Partial Class Package_Viewer
         Me.lblDuration.Location = New System.Drawing.Point(3, 124)
         Me.lblDuration.Name = "lblDuration"
         Me.lblDuration.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.lblDuration.Size = New System.Drawing.Size(164, 31)
+        Me.lblDuration.Size = New System.Drawing.Size(168, 31)
         Me.lblDuration.TabIndex = 12
         Me.lblDuration.Text = "Duration"
         '
@@ -157,7 +158,7 @@ Partial Class Package_Viewer
         Me.lblLocation.Location = New System.Drawing.Point(3, 31)
         Me.lblLocation.Name = "lblLocation"
         Me.lblLocation.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.lblLocation.Size = New System.Drawing.Size(164, 31)
+        Me.lblLocation.Size = New System.Drawing.Size(168, 31)
         Me.lblLocation.TabIndex = 4
         Me.lblLocation.Text = "Location"
         '
@@ -171,7 +172,7 @@ Partial Class Package_Viewer
         Me.lblState.Location = New System.Drawing.Point(3, 62)
         Me.lblState.Name = "lblState"
         Me.lblState.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.lblState.Size = New System.Drawing.Size(164, 31)
+        Me.lblState.Size = New System.Drawing.Size(168, 31)
         Me.lblState.TabIndex = 5
         Me.lblState.Text = "State"
         '
@@ -180,7 +181,7 @@ Partial Class Package_Viewer
         Me.lblLocationValue.AutoSize = True
         Me.lblLocationValue.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblLocationValue.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblLocationValue.Location = New System.Drawing.Point(173, 31)
+        Me.lblLocationValue.Location = New System.Drawing.Point(177, 31)
         Me.lblLocationValue.Name = "lblLocationValue"
         Me.lblLocationValue.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.lblLocationValue.Size = New System.Drawing.Size(48, 31)
@@ -192,7 +193,7 @@ Partial Class Package_Viewer
         Me.lblStateValue.AutoSize = True
         Me.lblStateValue.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblStateValue.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblStateValue.Location = New System.Drawing.Point(173, 62)
+        Me.lblStateValue.Location = New System.Drawing.Point(177, 62)
         Me.lblStateValue.Name = "lblStateValue"
         Me.lblStateValue.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.lblStateValue.Size = New System.Drawing.Size(48, 31)
@@ -209,7 +210,7 @@ Partial Class Package_Viewer
         Me.lblPax.Location = New System.Drawing.Point(3, 93)
         Me.lblPax.Name = "lblPax"
         Me.lblPax.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.lblPax.Size = New System.Drawing.Size(164, 31)
+        Me.lblPax.Size = New System.Drawing.Size(168, 31)
         Me.lblPax.TabIndex = 9
         Me.lblPax.Text = "Pax"
         '
@@ -218,7 +219,7 @@ Partial Class Package_Viewer
         Me.lblPaxValue.AutoSize = True
         Me.lblPaxValue.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblPaxValue.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblPaxValue.Location = New System.Drawing.Point(173, 93)
+        Me.lblPaxValue.Location = New System.Drawing.Point(177, 93)
         Me.lblPaxValue.Name = "lblPaxValue"
         Me.lblPaxValue.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.lblPaxValue.Size = New System.Drawing.Size(48, 31)
@@ -230,7 +231,7 @@ Partial Class Package_Viewer
         Me.lblDescriptionValue.AutoSize = True
         Me.lblDescriptionValue.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblDescriptionValue.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblDescriptionValue.Location = New System.Drawing.Point(173, 0)
+        Me.lblDescriptionValue.Location = New System.Drawing.Point(177, 0)
         Me.lblDescriptionValue.Name = "lblDescriptionValue"
         Me.lblDescriptionValue.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.lblDescriptionValue.Size = New System.Drawing.Size(48, 31)
@@ -242,7 +243,7 @@ Partial Class Package_Viewer
         Me.lblDurationValue.AutoSize = True
         Me.lblDurationValue.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblDurationValue.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblDurationValue.Location = New System.Drawing.Point(173, 124)
+        Me.lblDurationValue.Location = New System.Drawing.Point(177, 124)
         Me.lblDurationValue.Name = "lblDurationValue"
         Me.lblDurationValue.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.lblDurationValue.Size = New System.Drawing.Size(48, 31)
@@ -259,7 +260,7 @@ Partial Class Package_Viewer
         Me.lblTourOperator.Location = New System.Drawing.Point(3, 155)
         Me.lblTourOperator.Name = "lblTourOperator"
         Me.lblTourOperator.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
-        Me.lblTourOperator.Size = New System.Drawing.Size(164, 32)
+        Me.lblTourOperator.Size = New System.Drawing.Size(168, 104)
         Me.lblTourOperator.TabIndex = 10
         Me.lblTourOperator.Text = "Tour Operator"
         '
@@ -268,7 +269,7 @@ Partial Class Package_Viewer
         Me.lblTourOperatorValue.AutoSize = True
         Me.lblTourOperatorValue.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.lblTourOperatorValue.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.lblTourOperatorValue.Location = New System.Drawing.Point(173, 155)
+        Me.lblTourOperatorValue.Location = New System.Drawing.Point(177, 155)
         Me.lblTourOperatorValue.Name = "lblTourOperatorValue"
         Me.lblTourOperatorValue.Padding = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.lblTourOperatorValue.Size = New System.Drawing.Size(48, 31)

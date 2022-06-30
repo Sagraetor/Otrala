@@ -49,7 +49,13 @@
                 .Name = "LblDurationCatalogue" & CatalogueIndex
                 .Size = New System.Drawing.Size(107, 59)
                 .TabIndex = 13
-                .Text = packageDuration(CatalogueIndex - 1) & " DAYS " & System.Environment.NewLine & CInt(packageDuration(CatalogueIndex - 1)) - 1 & " NIGHT"
+                If packageDuration(CatalogueIndex - 1) > 2 Then
+                    .Text = packageDuration(CatalogueIndex - 1) & " DAYS " & System.Environment.NewLine & CInt(packageDuration(CatalogueIndex - 1)) - 1 & " NIGHTS"
+                ElseIf packageDuration(CatalogueIndex - 1) > 1 Then
+                    .Text = packageDuration(CatalogueIndex - 1) & " DAYS " & System.Environment.NewLine & CInt(packageDuration(CatalogueIndex - 1)) - 1 & " NIGHT"
+                Else
+                    .Text = packageDuration(CatalogueIndex - 1) & " DAY "
+                End If
             End With
 
             Dim NewLblPrice As New Label
@@ -81,6 +87,11 @@
                 .TabStop = False
             End With
 
+            Dim NewCatIndex As New Label
+            With NewCatIndex
+                .Text = CatalogueIndex - 1
+                .Visible = False
+            End With
 
             Dim NewGrpBox As New GroupBox
             With NewGrpBox
@@ -96,6 +107,7 @@
                 .Controls.Add(NewLblSeller)
                 .Controls.Add(NewLblTitle)
                 .Controls.Add(NewPicBox)
+                .Controls.Add(NewCatIndex)
             End With
 
             PnlCatalogue.Controls.Add(NewGrpBox)
@@ -149,6 +161,7 @@
         Dim sellername As Object = retrieved.Controls.Item(4)   ' seller
         Dim packagename As Object = retrieved.Controls.Item(5)  ' package title
         Dim picbox As Object = retrieved.Controls.Item(6)       ' picture box
+        Dim catindex As Object = retrieved.Controls.Item(7)     ' index
 
         With package
             ' Fill up package class with info values.
@@ -162,6 +175,7 @@
             .Duration = duration.Text
             .SellerName = sellername.Text
             .Image = picbox.Image
+            .Index = Val(catindex.Text)
         End With
 
         Dim f As New Package_Viewer
@@ -173,16 +187,16 @@
         Return package
     End Function
 
-    Dim packageID As String() = {}
-    Dim sellerID As String() = {}
-    Dim packageName As String() = {}
-    Dim packageState As String() = {}
-    Dim packageDestination As String() = {}
-    Dim packagePrice As String() = {}
-    Dim packagePax As String() = {}
-    Dim packageDescription As String() = {}
-    Dim packagePicture As Image() = {}
-    Dim packageDuration As String() = {}
+    Public packageID As String() = {}
+    Public sellerID As String() = {}
+    Public packageName As String() = {}
+    Public packageState As String() = {}
+    Public packageDestination As String() = {}
+    Public packagePrice As String() = {}
+    Public packagePax As String() = {}
+    Public packageDescription As String() = {}
+    Public packagePicture As Image() = {}
+    Public packageDuration As String() = {}
 
     Private Sub get_data_from_package_db()
 

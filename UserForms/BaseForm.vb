@@ -35,4 +35,8 @@
             Me.Close()
         End If
     End Sub
+
+    Private Sub btnAddPackage_Click(sender As Object, e As EventArgs) Handles btnAddPackage.Click
+        Form1.Show()
+    End Sub
 End Class
