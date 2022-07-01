@@ -37,12 +37,16 @@
 
         OtralaDBDataSet.Feedback.AddFeedbackRow(NewFeedback)
 
-        FeedbackTableAdapter1.Update(OtralaDBDataSet)
+        FeedbackTableAdapter1.Update(Me.OtralaDBDataSet)
     End Sub
 
     Private Sub Feedback_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'OtralaDBDataSet.LoginInfo' table. You can move, or remove it, as needed.
         Me.FeedbackTableAdapter1.Fill(Me.OtralaDBDataSet.Feedback)
-
     End Sub
+
+    Private Sub CloseAll(sender As Object, e As EventArgs) Handles Me.Closed
+        Application.Exit()
+    End Sub
+
 End Class
