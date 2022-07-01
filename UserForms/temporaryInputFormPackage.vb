@@ -1,4 +1,4 @@
-﻿Public Class temporaryInputForm
+﻿Public Class temporaryInputFormPackage
     Private Sub PackageBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles PackageBindingNavigatorSaveItem.Click
         Me.Validate()
         Me.PackageBindingSource.EndEdit()
