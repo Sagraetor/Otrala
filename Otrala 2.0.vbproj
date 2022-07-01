@@ -122,6 +122,12 @@
     <Compile Include="UserForms\LoginSignUp.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UserForms\temporaryInputForm.Designer.vb">
+      <DependentUpon>temporaryInputForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\temporaryInputForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UserForms\UserSettings.Designer.vb">
       <DependentUpon>UserSettings.vb</DependentUpon>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\LoginSignUp.resx">
       <DependentUpon>LoginSignUp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\temporaryInputForm.resx">
+      <DependentUpon>temporaryInputForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\UserSettings.resx">
       <DependentUpon>UserSettings.vb</DependentUpon>

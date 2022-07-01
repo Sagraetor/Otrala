@@ -33,7 +33,7 @@
         NewFeedback("Title") = TbTitle.Text
         NewFeedback("Description") = TbDescription.Text
         NewFeedback("UserID") = User.UserID
-        NewFeedback("Type") = CBType
+        NewFeedback("Type") = CBType.Text
 
         OtralaDBDataSet.Feedback.AddFeedbackRow(NewFeedback)
 
