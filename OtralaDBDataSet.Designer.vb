@@ -37,10 +37,6 @@ Partial Public Class OtralaDBDataSet
     
     Private relationLoginInfo_UserInfo As Global.System.Data.DataRelation
     
-    Private relationUserInfoRequest As Global.System.Data.DataRelation
-    
-    Private relationUserInfoFeedback As Global.System.Data.DataRelation
-    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -297,8 +293,6 @@ Partial Public Class OtralaDBDataSet
             End If
         End If
         Me.relationLoginInfo_UserInfo = Me.Relations("LoginInfo_UserInfo")
-        Me.relationUserInfoRequest = Me.Relations("UserInfoRequest")
-        Me.relationUserInfoFeedback = Me.Relations("UserInfoFeedback")
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -319,18 +313,8 @@ Partial Public Class OtralaDBDataSet
         MyBase.Tables.Add(Me.tableFeedback)
         Me.tableRequest = New RequestDataTable()
         MyBase.Tables.Add(Me.tableRequest)
-        Dim fkc As Global.System.Data.ForeignKeyConstraint
-        fkc = New Global.System.Data.ForeignKeyConstraint("FK_UserInfo_Package", New Global.System.Data.DataColumn() {Me.tableUserInfo.UserIDColumn}, New Global.System.Data.DataColumn() {Me.tablePackage.SellerIDColumn})
-        Me.tablePackage.Constraints.Add(fkc)
-        fkc.AcceptRejectRule = Global.System.Data.AcceptRejectRule.None
-        fkc.DeleteRule = Global.System.Data.Rule.Cascade
-        fkc.UpdateRule = Global.System.Data.Rule.Cascade
         Me.relationLoginInfo_UserInfo = New Global.System.Data.DataRelation("LoginInfo_UserInfo", New Global.System.Data.DataColumn() {Me.tableLoginInfo.UserIDColumn}, New Global.System.Data.DataColumn() {Me.tableUserInfo.UserIDColumn}, false)
         Me.Relations.Add(Me.relationLoginInfo_UserInfo)
-        Me.relationUserInfoRequest = New Global.System.Data.DataRelation("UserInfoRequest", New Global.System.Data.DataColumn() {Me.tableUserInfo.UserIDColumn}, New Global.System.Data.DataColumn() {Me.tableRequest.UserIDColumn}, false)
-        Me.Relations.Add(Me.relationUserInfoRequest)
-        Me.relationUserInfoFeedback = New Global.System.Data.DataRelation("UserInfoFeedback", New Global.System.Data.DataColumn() {Me.tableUserInfo.UserIDColumn}, New Global.System.Data.DataColumn() {Me.tableFeedback.UserIDColumn}, false)
-        Me.Relations.Add(Me.relationUserInfoFeedback)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1151,8 +1135,6 @@ Partial Public Class OtralaDBDataSet
         
         Private columnUserID As Global.System.Data.DataColumn
         
-        Private columnUsername As Global.System.Data.DataColumn
-        
         Private columnRealName As Global.System.Data.DataColumn
         
         Private columnAge As Global.System.Data.DataColumn
@@ -1205,14 +1187,6 @@ Partial Public Class OtralaDBDataSet
         Public ReadOnly Property UserIDColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnUserID
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property UsernameColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnUsername
             End Get
         End Property
         
@@ -1301,9 +1275,9 @@ Partial Public Class OtralaDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddUserInfoRow(ByVal Username As String, ByVal RealName As String, ByVal Age As String, ByVal Phone As String, ByVal Email As String, ByVal Address As String, ByVal Seller As Boolean) As UserInfoRow
+        Public Overloads Function AddUserInfoRow(ByVal RealName As String, ByVal Age As String, ByVal Phone As String, ByVal Email As String, ByVal Address As String, ByVal Seller As Boolean) As UserInfoRow
             Dim rowUserInfoRow As UserInfoRow = CType(Me.NewRow,UserInfoRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Username, RealName, Age, Phone, Email, Address, Seller}
+            Dim columnValuesArray() As Object = New Object() {Nothing, RealName, Age, Phone, Email, Address, Seller}
             rowUserInfoRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowUserInfoRow)
             Return rowUserInfoRow
@@ -1333,7 +1307,6 @@ Partial Public Class OtralaDBDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Friend Sub InitVars()
             Me.columnUserID = MyBase.Columns("UserID")
-            Me.columnUsername = MyBase.Columns("Username")
             Me.columnRealName = MyBase.Columns("RealName")
             Me.columnAge = MyBase.Columns("Age")
             Me.columnPhone = MyBase.Columns("Phone")
@@ -1347,8 +1320,6 @@ Partial Public Class OtralaDBDataSet
         Private Sub InitClass()
             Me.columnUserID = New Global.System.Data.DataColumn("UserID", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnUserID)
-            Me.columnUsername = New Global.System.Data.DataColumn("Username", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnUsername)
             Me.columnRealName = New Global.System.Data.DataColumn("RealName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnRealName)
             Me.columnAge = New Global.System.Data.DataColumn("Age", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -1367,7 +1338,6 @@ Partial Public Class OtralaDBDataSet
             Me.columnUserID.AutoIncrementStep = -1
             Me.columnUserID.AllowDBNull = false
             Me.columnUserID.Unique = true
-            Me.columnUsername.MaxLength = 255
             Me.columnRealName.MaxLength = 255
             Me.columnAge.MaxLength = 255
             Me.columnPhone.MaxLength = 255
@@ -1642,12 +1612,9 @@ Partial Public Class OtralaDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddFeedbackRow(ByVal Title As String, ByVal Type As String, ByVal parentUserInfoRowByUserInfoFeedback As UserInfoRow, ByVal Description As String, ByVal Field1 As String) As FeedbackRow
+        Public Overloads Function AddFeedbackRow(ByVal Title As String, ByVal Type As String, ByVal UserID As Integer, ByVal Description As String, ByVal Field1 As String) As FeedbackRow
             Dim rowFeedbackRow As FeedbackRow = CType(Me.NewRow,FeedbackRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Title, Type, Nothing, Description, Field1}
-            If (Not (parentUserInfoRowByUserInfoFeedback) Is Nothing) Then
-                columnValuesArray(3) = parentUserInfoRowByUserInfoFeedback(0)
-            End If
+            Dim columnValuesArray() As Object = New Object() {Nothing, Title, Type, UserID, Description, Field1}
             rowFeedbackRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowFeedbackRow)
             Return rowFeedbackRow
@@ -1998,12 +1965,9 @@ Partial Public Class OtralaDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddRequestRow(ByVal parentUserInfoRowByUserInfoRequest As UserInfoRow, ByVal Location As String, ByVal Price As String, ByVal Duration As String, ByVal Pax As String, ByVal PlannedDate As String, ByVal Notes As String) As RequestRow
+        Public Overloads Function AddRequestRow(ByVal UserID As Integer, ByVal Location As String, ByVal Price As String, ByVal Duration As String, ByVal Pax As String, ByVal PlannedDate As String, ByVal Notes As String) As RequestRow
             Dim rowRequestRow As RequestRow = CType(Me.NewRow,RequestRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, Location, Price, Duration, Pax, PlannedDate, Notes}
-            If (Not (parentUserInfoRowByUserInfoRequest) Is Nothing) Then
-                columnValuesArray(1) = parentUserInfoRowByUserInfoRequest(0)
-            End If
+            Dim columnValuesArray() As Object = New Object() {Nothing, UserID, Location, Price, Duration, Pax, PlannedDate, Notes}
             rowRequestRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowRequestRow)
             Return rowRequestRow
@@ -2645,21 +2609,6 @@ Partial Public Class OtralaDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property Username() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableUserInfo.UsernameColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Username' in table 'UserInfo' is DBNull.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableUserInfo.UsernameColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property RealName() As String
             Get
                 Try 
@@ -2761,18 +2710,6 @@ Partial Public Class OtralaDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function IsUsernameNull() As Boolean
-            Return Me.IsNull(Me.tableUserInfo.UsernameColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub SetUsernameNull()
-            Me(Me.tableUserInfo.UsernameColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsRealNameNull() As Boolean
             Return Me.IsNull(Me.tableUserInfo.RealNameColumn)
         End Function
@@ -2842,26 +2779,6 @@ Partial Public Class OtralaDBDataSet
         Public Sub SetSellerNull()
             Me(Me.tableUserInfo.SellerColumn) = Global.System.Convert.DBNull
         End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function GetRequestRows() As RequestRow()
-            If (Me.Table.ChildRelations("UserInfoRequest") Is Nothing) Then
-                Return New RequestRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("UserInfoRequest")),RequestRow())
-            End If
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function GetFeedbackRows() As FeedbackRow()
-            If (Me.Table.ChildRelations("UserInfoFeedback") Is Nothing) Then
-                Return New FeedbackRow(-1) {}
-            Else
-                Return CType(MyBase.GetChildRows(Me.Table.ChildRelations("UserInfoFeedback")),FeedbackRow())
-            End If
-        End Function
     End Class
     
     '''<summary>
@@ -2962,17 +2879,6 @@ Partial Public Class OtralaDBDataSet
             End Get
             Set
                 Me(Me.tableFeedback.Field1Column) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property UserInfoRow() As UserInfoRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("UserInfoFeedback")),UserInfoRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("UserInfoFeedback"))
             End Set
         End Property
         
@@ -3165,17 +3071,6 @@ Partial Public Class OtralaDBDataSet
             End Get
             Set
                 Me(Me.tableRequest.NotesColumn) = value
-            End Set
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Property UserInfoRow() As UserInfoRow
-            Get
-                Return CType(Me.GetParentRow(Me.Table.ParentRelations("UserInfoRequest")),UserInfoRow)
-            End Get
-            Set
-                Me.SetParentRow(value, Me.Table.ParentRelations("UserInfoRequest"))
             End Set
         End Property
         
@@ -4536,7 +4431,6 @@ Namespace OtralaDBDataSetTableAdapters
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "UserInfo"
             tableMapping.ColumnMappings.Add("UserID", "UserID")
-            tableMapping.ColumnMappings.Add("Username", "Username")
             tableMapping.ColumnMappings.Add("RealName", "RealName")
             tableMapping.ColumnMappings.Add("Age", "Age")
             tableMapping.ColumnMappings.Add("Phone", "Phone")
@@ -4546,16 +4440,13 @@ Namespace OtralaDBDataSetTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `UserInfo` WHERE ((`UserID` = ?) AND ((? = 1 AND `Username` IS NULL) "& _ 
-                "OR (`Username` = ?)) AND ((? = 1 AND `RealName` IS NULL) OR (`RealName` = ?)) AN"& _ 
-                "D ((? = 1 AND `Age` IS NULL) OR (`Age` = ?)) AND ((? = 1 AND `Phone` IS NULL) OR"& _ 
-                " (`Phone` = ?)) AND ((? = 1 AND `Email` IS NULL) OR (`Email` = ?)) AND ((? = 1 A"& _ 
-                "ND `Address` IS NULL) OR (`Address` = ?)) AND ((? = 1 AND `Seller` IS NULL) OR ("& _ 
-                "`Seller` = ?)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `UserInfo` WHERE ((`UserID` = ?) AND ((? = 1 AND `RealName` IS NULL) "& _ 
+                "OR (`RealName` = ?)) AND ((? = 1 AND `Age` IS NULL) OR (`Age` = ?)) AND ((? = 1 "& _ 
+                "AND `Phone` IS NULL) OR (`Phone` = ?)) AND ((? = 1 AND `Email` IS NULL) OR (`Ema"& _ 
+                "il` = ?)) AND ((? = 1 AND `Address` IS NULL) OR (`Address` = ?)) AND ((? = 1 AND"& _ 
+                " `Seller` IS NULL) OR (`Seller` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_UserID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "UserID", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Username", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Username", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Username", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Username", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_RealName", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RealName", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_RealName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RealName", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Age", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Age", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -4570,10 +4461,9 @@ Namespace OtralaDBDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Seller", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Seller", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `UserInfo` (`Username`, `RealName`, `Age`, `Phone`, `Email`, `Address"& _ 
-                "`, `Seller`) VALUES (?, ?, ?, ?, ?, ?, ?)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `UserInfo` (`RealName`, `Age`, `Phone`, `Email`, `Address`, `Seller`)"& _ 
+                " VALUES (?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Username", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Username", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RealName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RealName", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Age", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Age", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Phone", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Phone", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -4582,15 +4472,13 @@ Namespace OtralaDBDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Seller", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Seller", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `UserInfo` SET `Username` = ?, `RealName` = ?, `Age` = ?, `Phone` = ?, `Em"& _ 
-                "ail` = ?, `Address` = ?, `Seller` = ? WHERE ((`UserID` = ?) AND ((? = 1 AND `Use"& _ 
-                "rname` IS NULL) OR (`Username` = ?)) AND ((? = 1 AND `RealName` IS NULL) OR (`Re"& _ 
-                "alName` = ?)) AND ((? = 1 AND `Age` IS NULL) OR (`Age` = ?)) AND ((? = 1 AND `Ph"& _ 
-                "one` IS NULL) OR (`Phone` = ?)) AND ((? = 1 AND `Email` IS NULL) OR (`Email` = ?"& _ 
-                ")) AND ((? = 1 AND `Address` IS NULL) OR (`Address` = ?)) AND ((? = 1 AND `Selle"& _ 
-                "r` IS NULL) OR (`Seller` = ?)))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `UserInfo` SET `RealName` = ?, `Age` = ?, `Phone` = ?, `Email` = ?, `Addre"& _ 
+                "ss` = ?, `Seller` = ? WHERE ((`UserID` = ?) AND ((? = 1 AND `RealName` IS NULL) "& _ 
+                "OR (`RealName` = ?)) AND ((? = 1 AND `Age` IS NULL) OR (`Age` = ?)) AND ((? = 1 "& _ 
+                "AND `Phone` IS NULL) OR (`Phone` = ?)) AND ((? = 1 AND `Email` IS NULL) OR (`Ema"& _ 
+                "il` = ?)) AND ((? = 1 AND `Address` IS NULL) OR (`Address` = ?)) AND ((? = 1 AND"& _ 
+                " `Seller` IS NULL) OR (`Seller` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Username", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Username", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RealName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RealName", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Age", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Age", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Phone", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Phone", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -4598,8 +4486,6 @@ Namespace OtralaDBDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Address", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Address", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Seller", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Seller", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_UserID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "UserID", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Username", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Username", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Username", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Username", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_RealName", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RealName", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_RealName", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RealName", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Age", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Age", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -4627,8 +4513,7 @@ Namespace OtralaDBDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT UserID, Username, RealName, Age, Phone, Email, Address, Seller FROM UserIn"& _ 
-                "fo"
+            Me._commandCollection(0).CommandText = "SELECT UserID, RealName, Age, Phone, Email, Address, Seller FROM UserInfo"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -4688,52 +4573,45 @@ Namespace OtralaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_UserID As Integer, ByVal Original_Username As String, ByVal Original_RealName As String, ByVal Original_Age As String, ByVal Original_Phone As String, ByVal Original_Email As String, ByVal Original_Address As String, ByVal Original_Seller As Boolean) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_UserID As Integer, ByVal Original_RealName As String, ByVal Original_Age As String, ByVal Original_Phone As String, ByVal Original_Email As String, ByVal Original_Address As String, ByVal Original_Seller As Boolean) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_UserID,Integer)
-            If (Original_Username Is Nothing) Then
+            If (Original_RealName Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_Username,String)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_RealName,String)
             End If
-            If (Original_RealName Is Nothing) Then
+            If (Original_Age Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_RealName,String)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_Age,String)
             End If
-            If (Original_Age Is Nothing) Then
+            If (Original_Phone Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Age,String)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_Phone,String)
             End If
-            If (Original_Phone Is Nothing) Then
+            If (Original_Email Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Phone,String)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_Email,String)
             End If
-            If (Original_Email Is Nothing) Then
+            If (Original_Address Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_Email,String)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_Address,String)
             End If
-            If (Original_Address Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_Address,String)
-            End If
-            Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
-            Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_Seller,Boolean)
+            Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
+            Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_Seller,Boolean)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -4753,38 +4631,33 @@ Namespace OtralaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal Username As String, ByVal RealName As String, ByVal Age As String, ByVal Phone As String, ByVal Email As String, ByVal Address As String, ByVal Seller As Boolean) As Integer
-            If (Username Is Nothing) Then
+        Public Overloads Overridable Function Insert(ByVal RealName As String, ByVal Age As String, ByVal Phone As String, ByVal Email As String, ByVal Address As String, ByVal Seller As Boolean) As Integer
+            If (RealName Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(0).Value = CType(Username,String)
-            End If
-            If (RealName Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(RealName,String)
+                Me.Adapter.InsertCommand.Parameters(0).Value = CType(RealName,String)
             End If
             If (Age Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Age,String)
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(Age,String)
             End If
             If (Phone Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(Phone,String)
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(Phone,String)
             End If
             If (Email Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(Email,String)
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(Email,String)
             End If
             If (Address Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(Address,String)
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(Address,String)
             End If
-            Me.Adapter.InsertCommand.Parameters(6).Value = CType(Seller,Boolean)
+            Me.Adapter.InsertCommand.Parameters(5).Value = CType(Seller,Boolean)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -4804,83 +4677,71 @@ Namespace OtralaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal Username As String, ByVal RealName As String, ByVal Age As String, ByVal Phone As String, ByVal Email As String, ByVal Address As String, ByVal Seller As Boolean, ByVal Original_UserID As Integer, ByVal Original_Username As String, ByVal Original_RealName As String, ByVal Original_Age As String, ByVal Original_Phone As String, ByVal Original_Email As String, ByVal Original_Address As String, ByVal Original_Seller As Boolean) As Integer
-            If (Username Is Nothing) Then
+        Public Overloads Overridable Function Update(ByVal RealName As String, ByVal Age As String, ByVal Phone As String, ByVal Email As String, ByVal Address As String, ByVal Seller As Boolean, ByVal Original_UserID As Integer, ByVal Original_RealName As String, ByVal Original_Age As String, ByVal Original_Phone As String, ByVal Original_Email As String, ByVal Original_Address As String, ByVal Original_Seller As Boolean) As Integer
+            If (RealName Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(Username,String)
-            End If
-            If (RealName Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(RealName,String)
+                Me.Adapter.UpdateCommand.Parameters(0).Value = CType(RealName,String)
             End If
             If (Age Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Age,String)
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(Age,String)
             End If
             If (Phone Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Phone,String)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Phone,String)
             End If
             If (Email Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Email,String)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Email,String)
             End If
             If (Address Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Address,String)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Address,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Seller,Boolean)
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_UserID,Integer)
-            If (Original_Username Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_Username,String)
-            End If
+            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Seller,Boolean)
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_UserID,Integer)
             If (Original_RealName Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_RealName,String)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_RealName,String)
             End If
             If (Original_Age Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_Age,String)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_Age,String)
             End If
             If (Original_Phone Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Phone,String)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_Phone,String)
             End If
             If (Original_Email Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_Email,String)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_Email,String)
             End If
             If (Original_Address Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_Address,String)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_Address,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
-            Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_Seller,Boolean)
+            Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+            Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_Seller,Boolean)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -5981,21 +5842,21 @@ Namespace OtralaDBDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
-            If (Not (Me._userInfoTableAdapter) Is Nothing) Then
-                Dim updatedRows() As Global.System.Data.DataRow = dataSet.UserInfo.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
-                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
-                If ((Not (updatedRows) Is Nothing)  _
-                            AndAlso (0 < updatedRows.Length)) Then
-                    result = (result + Me._userInfoTableAdapter.Update(updatedRows))
-                    allChangedRows.AddRange(updatedRows)
-                End If
-            End If
             If (Not (Me._packageTableAdapter) Is Nothing) Then
                 Dim updatedRows() As Global.System.Data.DataRow = dataSet.Package.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
                 updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
                 If ((Not (updatedRows) Is Nothing)  _
                             AndAlso (0 < updatedRows.Length)) Then
                     result = (result + Me._packageTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
+            If (Not (Me._userInfoTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.UserInfo.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._userInfoTableAdapter.Update(updatedRows))
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
@@ -6035,19 +5896,19 @@ Namespace OtralaDBDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
-            If (Not (Me._userInfoTableAdapter) Is Nothing) Then
-                Dim addedRows() As Global.System.Data.DataRow = dataSet.UserInfo.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
-                If ((Not (addedRows) Is Nothing)  _
-                            AndAlso (0 < addedRows.Length)) Then
-                    result = (result + Me._userInfoTableAdapter.Update(addedRows))
-                    allAddedRows.AddRange(addedRows)
-                End If
-            End If
             If (Not (Me._packageTableAdapter) Is Nothing) Then
                 Dim addedRows() As Global.System.Data.DataRow = dataSet.Package.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
                 If ((Not (addedRows) Is Nothing)  _
                             AndAlso (0 < addedRows.Length)) Then
                     result = (result + Me._packageTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
+            If (Not (Me._userInfoTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.UserInfo.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._userInfoTableAdapter.Update(addedRows))
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
@@ -6093,19 +5954,19 @@ Namespace OtralaDBDataSetTableAdapters
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
-            If (Not (Me._packageTableAdapter) Is Nothing) Then
-                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Package.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
-                If ((Not (deletedRows) Is Nothing)  _
-                            AndAlso (0 < deletedRows.Length)) Then
-                    result = (result + Me._packageTableAdapter.Update(deletedRows))
-                    allChangedRows.AddRange(deletedRows)
-                End If
-            End If
             If (Not (Me._userInfoTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.UserInfo.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
                             AndAlso (0 < deletedRows.Length)) Then
                     result = (result + Me._userInfoTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
+            If (Not (Me._packageTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.Package.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._packageTableAdapter.Update(deletedRows))
                     allChangedRows.AddRange(deletedRows)
                 End If
             End If
