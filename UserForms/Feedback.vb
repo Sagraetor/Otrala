@@ -1,44 +1,48 @@
 ﻿Public Class Feedback
 
-    Dim level As String
-
-    Private Sub Levels(sender As Object, e As EventArgs) Handles RadioButton5.Click, RadioButton4.Click, RadioButton3.Click, RadioButton2.Click, RadioButton1.Click
-        'Satisfaction level 
-        If RadioButton1.Checked = True Then
-            level = RadioButton1.Text
-        ElseIf RadioButton2.Checked = True Then
-            level = RadioButton2.Text
-        ElseIf RadioButton3.Checked = True Then
-            level = RadioButton3.Text
-        ElseIf RadioButton4.Checked = True Then
-            level = RadioButton4.Text
-        ElseIf RadioButton5.Checked = True Then
-            level = RadioButton5.Text
+    Private Sub RemoveDefaultText(Sender As TextBox, e As EventArgs) Handles TbDescription.GotFocus, TbTitle.GotFocus
+        If Sender.Name = "TbDescription" And TbDescription.Text = "Description" Then
+            TbDescription.Clear()
+            TbDescription.ForeColor = System.Drawing.SystemColors.WindowText
+        ElseIf Sender.Name = "TbTitle" And TbTitle.Text = "Title" Then
+            TbTitle.Clear()
+            TbTitle.ForeColor = System.Drawing.SystemColors.WindowText
         End If
     End Sub
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        'Sumbit
-        MsgBox("Your feedback have submitted! Thank You.")
-    End Sub
+    Private Sub ToDefaultText(Sender As TextBox, e As EventArgs) Handles TbDescription.LostFocus, TbTitle.LostFocus
+        TbDescription.Text = TbDescription.Text.TrimEnd(CChar(" "))
+        TbTitle.Text = TbTitle.Text.TrimEnd(CChar(" "))
 
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles btnClear.Click
-        'Clear
-        txtfeedback.Clear()
-        txtfeedback.Text = "Enter your feedback..."
-    End Sub
-
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles btnDelete.Click
-        'Delete
-        If txtfeedback.Text.Length > 0 Then
-            txtfeedback.Text = txtfeedback.Text.Remove(txtfeedback.Text.Length - 1, 1)
-        ElseIf txtfeedback.Text.Length = 0 Then
-            txtfeedback.Text = "Enter your feedback..."
+        If Sender.Name = "TbDescription" And TbDescription.Text = "" Then
+            TbDescription.Text = "Description"
+            TbDescription.ForeColor = System.Drawing.SystemColors.GrayText
+        ElseIf Sender.Name = "TbTitle" And TbTitle.Text = "" Then
+            TbTitle.Text = "Title"
+            TbTitle.ForeColor = System.Drawing.SystemColors.GrayText
         End If
     End Sub
+    Private Sub Submit() Handles BtnSubmit.Click
+        If CBType.Text = "" OrElse TbTitle.Text = "" Then
+            MsgBox("Error")
+            Exit Sub
+        End If
 
-    Private Sub CloseAll(sender As Object, e As EventArgs) Handles Me.Closed
-        Application.Exit()
+        Dim NewFeedback As DataRow = OtralaDBDataSet.Feedback.NewFeedbackRow
+
+        NewFeedback("Title") = TbTitle.Text
+        NewFeedback("Description") = TbDescription.Text
+        NewFeedback("UserID") = User.UserID
+        NewFeedback("Type") = CBType
+
+        OtralaDBDataSet.Feedback.AddFeedbackRow(NewFeedback)
+
+        FeedbackTableAdapter1.Update(OtralaDBDataSet)
     End Sub
 
+    Private Sub Feedback_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'OtralaDBDataSet.LoginInfo' table. You can move, or remove it, as needed.
+        Me.FeedbackTableAdapter1.Fill(Me.OtralaDBDataSet.Feedback)
+
+    End Sub
 End Class

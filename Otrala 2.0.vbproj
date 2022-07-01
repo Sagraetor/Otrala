@@ -83,15 +83,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="OtralaDBDataSet.Designer.vb">
-      <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
-      <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="OtralaDBDataSet.vb">
       <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
-      <SubType>code</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="UserForms\Catalogue.Designer.vb">
       <DependentUpon>Catalogue.vb</DependentUpon>
@@ -121,12 +120,6 @@
       <DependentUpon>LoginSignUp.vb</DependentUpon>
     </Compile>
     <Compile Include="UserForms\LoginSignUp.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserForms\temporaryInputForm.Designer.vb">
-      <DependentUpon>temporaryInputForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UserForms\temporaryInputForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserForms\UserSettings.Designer.vb">
@@ -170,7 +163,6 @@
   <ItemGroup>
     <EmbeddedResource Include="UserForms\Catalogue.resx">
       <DependentUpon>Catalogue.vb</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\AboutUs.resx">
       <DependentUpon>AboutUs.vb</DependentUpon>
@@ -183,10 +175,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\LoginSignUp.resx">
       <DependentUpon>LoginSignUp.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserForms\temporaryInputForm.resx">
-      <DependentUpon>temporaryInputForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\UserSettings.resx">
       <DependentUpon>UserSettings.vb</DependentUpon>
@@ -218,24 +206,24 @@
     <None Include="App.config" />
     <None Include="OtralaDBDataSet.xsc">
       <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="OtralaDBDataSet.xsd">
-      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>OtralaDBDataSet.Designer.vb</LastGenOutput>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="OtralaDBDataSet.xss">
       <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <Content Include="Assets\Otrala Icon.png" />
     <Content Include="OtralaDB.accdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="OtralaWinIcon.ico" />
   </ItemGroup>
