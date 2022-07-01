@@ -32,6 +32,8 @@
         Me.Close()
     End Sub
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'OtralaDBDataSet.UserInfo' table. You can move, or remove it, as needed.
+        Me.UserInfoTableAdapter.Fill(Me.OtralaDBDataSet.UserInfo)
         'TODO: This line of code loads data into the 'OtralaDBDataSet.LoginInfo' table. You can move, or remove it, as needed.
         Me.LoginInfoTableAdapter.Fill(Me.OtralaDBDataSet.LoginInfo)
 
@@ -76,6 +78,19 @@
         ElseIf Pword <> DecryptedPass Then
             MsgBox("Incorrect Password")
         End If
+
+        Dim UserID As Integer = FindInfo("UserID")
+        Dim UserInfoRow As DataRow = OtralaDBDataSet.UserInfo.Select(String.Format("UserID = '{0}'", UserID))(0)
+
+        With User
+            .UserID = UserID
+            .Name = UserInfoRow("RealName")
+            .Age = UserInfoRow("Age")
+            .Seller = UserInfoRow("Seller")
+            .Address = UserInfoRow("Address")
+            .Email = UserInfoRow("Email")
+            .PhoneNumber = UserInfoRow("Phone")
+        End With
     End Sub
 
     Private Sub LoginShowHidePass() Handles PbLoginHidePass.Click

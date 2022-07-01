@@ -21,7 +21,7 @@
         'End If
     End Sub
 
-    Private Sub PersonalizeGUI() Handles Me.Load
+    Private Sub PersonalizeGUI() Handles Me.Load, Button1.Click
         'User is a structure found in Otralapi and initialized in sub main
         LblName.Text = User.Name
     End Sub

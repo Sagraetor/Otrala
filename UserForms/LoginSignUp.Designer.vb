@@ -57,6 +57,8 @@ Partial Class LoginSignUp
         Me.TbSUPhoneNum = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.UserInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.UserInfoTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.UserInfoTableAdapter()
         Me.PanelLogIn.SuspendLayout()
         CType(Me.PbLoginHidePass, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,6 +68,7 @@ Partial Class LoginSignUp
         Me.PanelSignUp.SuspendLayout()
         CType(Me.PbSUHidePass, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UserInfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -415,6 +418,15 @@ Partial Class LoginSignUp
         Me.Label10.TabIndex = 3
         Me.Label10.Text = "Please fill in all fields"
         '
+        'UserInfoBindingSource
+        '
+        Me.UserInfoBindingSource.DataMember = "UserInfo"
+        Me.UserInfoBindingSource.DataSource = Me.OtralaDBDataSet
+        '
+        'UserInfoTableAdapter
+        '
+        Me.UserInfoTableAdapter.ClearBeforeFill = True
+        '
         'LoginSignUp
         '
         Me.AcceptButton = Me.BtnLoginLogin
@@ -439,6 +451,7 @@ Partial Class LoginSignUp
         Me.PanelSignUp.PerformLayout()
         CType(Me.PbSUHidePass, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UserInfoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -476,4 +489,6 @@ Partial Class LoginSignUp
     Friend WithEvents BtnSUCancel As Button
     Friend WithEvents PbSUHidePass As PictureBox
     Friend WithEvents PbLoginHidePass As PictureBox
+    Friend WithEvents UserInfoBindingSource As BindingSource
+    Friend WithEvents UserInfoTableAdapter As OtralaDBDataSetTableAdapters.UserInfoTableAdapter
 End Class
