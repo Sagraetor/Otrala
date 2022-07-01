@@ -1,5 +1,5 @@
 ﻿Public Class Feedback
-
+    Dim IsViewingHistory As Boolean = False
     Private Sub RemoveDefaultText(Sender As TextBox, e As EventArgs) Handles TbDescription.GotFocus, TbTitle.GotFocus
         If Sender.Name = "TbDescription" And TbDescription.Text = "Description" Then
             TbDescription.Clear()
@@ -34,6 +34,7 @@
         NewFeedback("Description") = TbDescription.Text
         NewFeedback("UserID") = User.UserID
         NewFeedback("Type") = CBType.Text
+        NewFeedback("DateSent") = DateTime.Today.ToString("d")
 
         OtralaDBDataSet.Feedback.AddFeedbackRow(NewFeedback)
 
@@ -44,5 +45,79 @@
         'TODO: This line of code loads data into the 'OtralaDBDataSet.LoginInfo' table. You can move, or remove it, as needed.
         Me.FeedbackTableAdapter1.Fill(Me.OtralaDBDataSet.Feedback)
 
+    End Sub
+
+    Private Sub ViewHistory() Handles BtnHistory.Click
+        IsViewingHistory = True
+
+        PnlHistory.Enabled = True
+        PnlHistory.Visible = True
+        PnlHistory.Focus()
+
+        BtnHistory.Enabled = False
+
+        Dim Index As Integer = 0
+        Dim dy As Integer = 112
+        Dim HistoryFeedback() As DataRow = OtralaDBDataSet.Feedback.Select("UserID = " & User.UserID)
+
+        If HistoryFeedback.Count > 4 Then
+            PnlHistory.Size = New System.Drawing.Size(486, 467)
+        Else
+            PnlHistory.Size = New System.Drawing.Size(470, 467)
+        End If
+
+        For Each FeedbackRow In HistoryFeedback
+            Dim NewLblDate As New Label
+            With NewLblDate
+                .Location = New System.Drawing.Point(325, 41)
+                .Name = "FHLblDate" & Index
+                .Size = New System.Drawing.Size(100, 54)
+                .TabIndex = 0
+                .Text = "Submitted " & FeedbackRow("DateSent")
+            End With
+
+            Dim NewLblDesc As New Label
+            With NewLblDesc
+                .BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+                .Location = New System.Drawing.Point(6, 27)
+                .Name = "FHLblDesc" & Index
+                .Size = New System.Drawing.Size(313, 69)
+                .TabIndex = 0
+                .Text = FeedbackRow("Description")
+            End With
+
+            Dim NewGrpBox As New GroupBox
+            With NewGrpBox
+                .BackColor = System.Drawing.Color.White
+                .Controls.Add(NewLblDate)
+                .Controls.Add(NewLblDesc)
+                .Location = New System.Drawing.Point(12, 9)
+                .Name = "FHGrpBox" & Index
+                .Size = New System.Drawing.Size(441, 106)
+                .TabIndex = 0
+                .TabStop = False
+                .Text = FeedbackRow("Title")
+            End With
+
+            PnlHistory.Controls.Add(NewGrpBox)
+
+            NewGrpBox.Top += (dy * Index)
+
+            Index += 1
+        Next
+
+    End Sub
+    Private Sub CloseHistory(sender As Object, e As EventArgs) Handles PnlHistory.LostFocus, Me.Click
+        If sender.Name = "Feedback" And IsViewingHistory Then
+            PnlHistory.Enabled = False
+            PnlHistory.Visible = False
+            BtnHistory.Enabled = True
+            BtnHistory.Focus()
+        ElseIf sender.Name = "PnlHistory" Then
+            PnlHistory.Enabled = False
+            PnlHistory.Visible = False
+            BtnHistory.Enabled = True
+            BtnHistory.Focus()
+        End If
     End Sub
 End Class

@@ -29,6 +29,8 @@ Partial Class Feedback
         Me.CBType = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TbTitle = New System.Windows.Forms.TextBox()
+        Me.PnlHistory = New System.Windows.Forms.Panel()
+        Me.BtnHistory = New System.Windows.Forms.Button()
         Me.FeedbackTableAdapter1 = New Otrala_2._0.OtralaDBDataSetTableAdapters.FeedbackTableAdapter()
         Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,7 +57,7 @@ Partial Class Feedback
         '
         'BtnSubmit
         '
-        Me.BtnSubmit.Location = New System.Drawing.Point(1076, 609)
+        Me.BtnSubmit.Location = New System.Drawing.Point(924, 612)
         Me.BtnSubmit.Name = "BtnSubmit"
         Me.BtnSubmit.Size = New System.Drawing.Size(112, 34)
         Me.BtnSubmit.TabIndex = 15
@@ -89,6 +91,28 @@ Partial Class Feedback
         Me.TbTitle.TabIndex = 21
         Me.TbTitle.Text = "Title"
         '
+        'PnlHistory
+        '
+        Me.PnlHistory.AutoScroll = True
+        Me.PnlHistory.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
+        Me.PnlHistory.Enabled = False
+        Me.PnlHistory.Location = New System.Drawing.Point(454, 157)
+        Me.PnlHistory.Name = "PnlHistory"
+        Me.PnlHistory.Size = New System.Drawing.Size(470, 467)
+        Me.PnlHistory.TabIndex = 22
+        Me.PnlHistory.Visible = False
+        '
+        'BtnHistory
+        '
+        Me.BtnHistory.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.BtnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnHistory.Location = New System.Drawing.Point(0, 334)
+        Me.BtnHistory.Name = "BtnHistory"
+        Me.BtnHistory.Size = New System.Drawing.Size(186, 50)
+        Me.BtnHistory.TabIndex = 23
+        Me.BtnHistory.Text = "Feedback History"
+        Me.BtnHistory.UseVisualStyleBackColor = False
+        '
         'FeedbackTableAdapter1
         '
         Me.FeedbackTableAdapter1.ClearBeforeFill = True
@@ -103,6 +127,8 @@ Partial Class Feedback
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 23.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1262, 673)
+        Me.Controls.Add(Me.BtnHistory)
+        Me.Controls.Add(Me.PnlHistory)
         Me.Controls.Add(Me.TbTitle)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.CBType)
@@ -117,6 +143,8 @@ Partial Class Feedback
         Me.Controls.SetChildIndex(Me.CBType, 0)
         Me.Controls.SetChildIndex(Me.Label4, 0)
         Me.Controls.SetChildIndex(Me.TbTitle, 0)
+        Me.Controls.SetChildIndex(Me.PnlHistory, 0)
+        Me.Controls.SetChildIndex(Me.BtnHistory, 0)
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -130,4 +158,6 @@ Partial Class Feedback
     Friend WithEvents TbTitle As TextBox
     Friend WithEvents FeedbackTableAdapter1 As OtralaDBDataSetTableAdapters.FeedbackTableAdapter
     Friend WithEvents OtralaDBDataSet As OtralaDBDataSet
+    Friend WithEvents PnlHistory As Panel
+    Friend WithEvents BtnHistory As Button
 End Class
