@@ -119,7 +119,7 @@ Partial Class LoginSignUp
         Me.BtnLoginCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnLoginCancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnLoginCancel.ForeColor = System.Drawing.Color.Black
-        Me.BtnLoginCancel.Location = New System.Drawing.Point(147, 344)
+        Me.BtnLoginCancel.Location = New System.Drawing.Point(147, 350)
         Me.BtnLoginCancel.Name = "BtnLoginCancel"
         Me.BtnLoginCancel.Size = New System.Drawing.Size(86, 33)
         Me.BtnLoginCancel.TabIndex = 9
@@ -132,7 +132,7 @@ Partial Class LoginSignUp
         Me.BtnLoginSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnLoginSignUp.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnLoginSignUp.ForeColor = System.Drawing.Color.Black
-        Me.BtnLoginSignUp.Location = New System.Drawing.Point(14, 344)
+        Me.BtnLoginSignUp.Location = New System.Drawing.Point(14, 350)
         Me.BtnLoginSignUp.Name = "BtnLoginSignUp"
         Me.BtnLoginSignUp.Size = New System.Drawing.Size(86, 33)
         Me.BtnLoginSignUp.TabIndex = 9
@@ -155,7 +155,7 @@ Partial Class LoginSignUp
         Me.BtnLoginLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnLoginLogin.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnLoginLogin.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.BtnLoginLogin.Location = New System.Drawing.Point(278, 344)
+        Me.BtnLoginLogin.Location = New System.Drawing.Point(278, 350)
         Me.BtnLoginLogin.Name = "BtnLoginLogin"
         Me.BtnLoginLogin.Size = New System.Drawing.Size(86, 33)
         Me.BtnLoginLogin.TabIndex = 3
@@ -165,7 +165,7 @@ Partial Class LoginSignUp
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(34, 320)
+        Me.LinkLabel1.Location = New System.Drawing.Point(31, 325)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(116, 16)
         Me.LinkLabel1.TabIndex = 8
@@ -175,10 +175,11 @@ Partial Class LoginSignUp
         'TbLoginPass
         '
         Me.TbLoginPass.BackColor = System.Drawing.Color.White
+        Me.TbLoginPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TbLoginPass.Location = New System.Drawing.Point(34, 292)
         Me.TbLoginPass.Name = "TbLoginPass"
         Me.TbLoginPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TbLoginPass.Size = New System.Drawing.Size(311, 22)
+        Me.TbLoginPass.Size = New System.Drawing.Size(311, 27)
         Me.TbLoginPass.TabIndex = 7
         '
         'Label4
@@ -194,16 +195,17 @@ Partial Class LoginSignUp
         'TbLoginInfo
         '
         Me.TbLoginInfo.BackColor = System.Drawing.Color.White
-        Me.TbLoginInfo.Location = New System.Drawing.Point(34, 235)
+        Me.TbLoginInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TbLoginInfo.Location = New System.Drawing.Point(34, 233)
         Me.TbLoginInfo.Name = "TbLoginInfo"
-        Me.TbLoginInfo.Size = New System.Drawing.Size(311, 22)
+        Me.TbLoginInfo.Size = New System.Drawing.Size(311, 27)
         Me.TbLoginInfo.TabIndex = 5
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(34, 216)
+        Me.Label3.Location = New System.Drawing.Point(34, 214)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(164, 18)
         Me.Label3.TabIndex = 4
@@ -315,7 +317,7 @@ Partial Class LoginSignUp
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Label5.Font = New System.Drawing.Font("Showcard Gothic", 14.25!)
-        Me.Label5.Location = New System.Drawing.Point(131, 23)
+        Me.Label5.Location = New System.Drawing.Point(125, 23)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(248, 30)
         Me.Label5.TabIndex = 1
@@ -337,10 +339,11 @@ Partial Class LoginSignUp
         'TbSUConfirmPass
         '
         Me.TbSUConfirmPass.BackColor = System.Drawing.Color.White
+        Me.TbSUConfirmPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TbSUConfirmPass.Location = New System.Drawing.Point(37, 296)
         Me.TbSUConfirmPass.Name = "TbSUConfirmPass"
         Me.TbSUConfirmPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TbSUConfirmPass.Size = New System.Drawing.Size(311, 22)
+        Me.TbSUConfirmPass.Size = New System.Drawing.Size(311, 27)
         Me.TbSUConfirmPass.TabIndex = 7
         '
         'Label6
@@ -356,10 +359,11 @@ Partial Class LoginSignUp
         'TbSUPass
         '
         Me.TbSUPass.BackColor = System.Drawing.Color.White
+        Me.TbSUPass.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TbSUPass.Location = New System.Drawing.Point(37, 242)
         Me.TbSUPass.Name = "TbSUPass"
         Me.TbSUPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TbSUPass.Size = New System.Drawing.Size(311, 22)
+        Me.TbSUPass.Size = New System.Drawing.Size(311, 27)
         Me.TbSUPass.TabIndex = 7
         '
         'Label7
@@ -375,9 +379,10 @@ Partial Class LoginSignUp
         'TbSUEmail
         '
         Me.TbSUEmail.BackColor = System.Drawing.Color.White
+        Me.TbSUEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TbSUEmail.Location = New System.Drawing.Point(37, 127)
         Me.TbSUEmail.Name = "TbSUEmail"
-        Me.TbSUEmail.Size = New System.Drawing.Size(311, 22)
+        Me.TbSUEmail.Size = New System.Drawing.Size(311, 27)
         Me.TbSUEmail.TabIndex = 5
         '
         'Label8
@@ -393,9 +398,10 @@ Partial Class LoginSignUp
         'TbSUPhoneNum
         '
         Me.TbSUPhoneNum.BackColor = System.Drawing.Color.White
+        Me.TbSUPhoneNum.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TbSUPhoneNum.Location = New System.Drawing.Point(37, 185)
         Me.TbSUPhoneNum.Name = "TbSUPhoneNum"
-        Me.TbSUPhoneNum.Size = New System.Drawing.Size(311, 22)
+        Me.TbSUPhoneNum.Size = New System.Drawing.Size(311, 27)
         Me.TbSUPhoneNum.TabIndex = 5
         '
         'Label9
@@ -412,7 +418,7 @@ Partial Class LoginSignUp
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Arial", 10.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(132, 62)
+        Me.Label10.Location = New System.Drawing.Point(126, 62)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(191, 21)
         Me.Label10.TabIndex = 3
@@ -434,8 +440,8 @@ Partial Class LoginSignUp
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLight
         Me.ClientSize = New System.Drawing.Size(405, 416)
-        Me.Controls.Add(Me.PanelLogIn)
         Me.Controls.Add(Me.PanelSignUp)
+        Me.Controls.Add(Me.PanelLogIn)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "LoginSignUp"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

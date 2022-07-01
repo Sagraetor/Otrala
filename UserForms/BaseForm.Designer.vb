@@ -146,8 +146,9 @@ Partial Class BaseForm
         Me.LblName.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
         Me.LblName.Location = New System.Drawing.Point(836, 40)
         Me.LblName.Name = "LblName"
-        Me.LblName.Size = New System.Drawing.Size(387, 23)
+        Me.LblName.Size = New System.Drawing.Size(358, 23)
         Me.LblName.TabIndex = 11
+        Me.LblName.Text = "Log In / Sign Up"
         Me.LblName.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'PbOtralaIcon
