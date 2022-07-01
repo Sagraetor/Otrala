@@ -75,6 +75,7 @@
 
         If Pword = DecryptedPass Then
             MsgBox("Correct!")
+            Me.Close()
         ElseIf Pword <> DecryptedPass Then
             MsgBox("Incorrect Password")
         End If

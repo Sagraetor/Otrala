@@ -12,6 +12,9 @@
     Private Sub ToUserSettings() Handles LblName.Click
         Dim LoginSignUnForm As New LoginSignUp
         LoginSignUnForm.ShowDialog()
+        If User.Name <> "" Then
+            PersonalizeGUI()
+        End If
 
 
 
@@ -21,8 +24,7 @@
         'End If
     End Sub
 
-    Private Sub PersonalizeGUI() Handles Me.Load, Button1.Click
-        'User is a structure found in Otralapi and initialized in sub main
+    Private Sub PersonalizeGUI()
         LblName.Text = User.Name
     End Sub
 
