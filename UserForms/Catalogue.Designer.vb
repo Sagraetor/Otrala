@@ -383,6 +383,7 @@ Partial Class Catalogue
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PnlCatalogue As Panel
     Friend WithEvents PackageGrid As DataGridView
+    Friend WithEvents PackageBindingSource As BindingSource
     Friend WithEvents OtralaDBDataSet As OtralaDBDataSet
     Friend WithEvents PackageTableAdapter As OtralaDBDataSetTableAdapters.PackageTableAdapter
     Friend WithEvents PackageIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
