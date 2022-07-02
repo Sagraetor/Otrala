@@ -3,13 +3,23 @@
         Dim UserID As Integer
         Dim Name As String
         Dim Age As Short
-        Dim Seller As Boolean
+        Dim IsSeller As Boolean
         Dim Address As String
         Dim Email As String
         Dim PhoneNumber As String
+        Dim Picture As Image
+        Dim Wishlist As List(Of Integer)
+        Dim ICNum As String
+        Dim Gender As String
+        Dim Birthday As String
+        Dim nationality As String
+        Dim IsAdmin As Boolean
+        Dim LoggedIn As Boolean
     End Structure
 
-    Public User As New UserInfo
+    Public User As New UserInfo With {
+        .LoggedIn = False
+    }
 
     Structure Package
         Dim SellerID As Integer
@@ -29,6 +39,11 @@
             Return Image.FromStream(mStream)
         End Using
     End Function
+
+    Public Function DataFromImage(ByVal Pic As Image) As Byte()
+        Dim ImgConv As New ImageConverter
+        Return ImgConv.ConvertTo(Pic, GetType(Byte()))
+    End Function
     Public Function Encrypt(Info As String)
         Dim Encrypted As New List(Of Integer)
         Dim Key As New List(Of Integer)
@@ -43,7 +58,12 @@
         Return (Encrypted, Key)
     End Function
     Public Function IsEmailOrPhone(ToCheck As String)
-        If ToCheck.Contains("@") Then
+        If ToCheck = "" Then
+            Return "No"
+        End If
+        If ToCheck.Contains("_admin") Then
+            Return "Admin"
+        ElseIf ToCheck.Contains("@") Then
             Return "Email"
         ElseIf IsNumeric(ToCheck) Then
             Return "Phone"

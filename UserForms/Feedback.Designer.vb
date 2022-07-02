@@ -106,7 +106,7 @@ Partial Class Feedback
         '
         Me.BtnHistory.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.BtnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnHistory.Location = New System.Drawing.Point(0, 334)
+        Me.BtnHistory.Location = New System.Drawing.Point(0, 110)
         Me.BtnHistory.Name = "BtnHistory"
         Me.BtnHistory.Size = New System.Drawing.Size(186, 50)
         Me.BtnHistory.TabIndex = 23

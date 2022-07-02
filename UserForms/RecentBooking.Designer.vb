@@ -89,6 +89,7 @@ Partial Class RecentBooking
         'DTPickerStart
         '
         Me.DTPickerStart.CalendarFont = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DTPickerStart.CalendarTitleBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
         Me.DTPickerStart.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DTPickerStart.Location = New System.Drawing.Point(555, 45)
         Me.DTPickerStart.Name = "DTPickerStart"

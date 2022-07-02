@@ -26,9 +26,6 @@ Partial Class BaseForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.btnLogOut = New System.Windows.Forms.Button()
         Me.BtnFeedback = New System.Windows.Forms.Button()
         Me.LblName = New System.Windows.Forms.Label()
@@ -38,6 +35,7 @@ Partial Class BaseForm
         Me.AddLoginInfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RequestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddRequestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.PbOtralaIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -68,39 +66,6 @@ Partial Class BaseForm
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(186, 563)
         Me.Label2.TabIndex = 3
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(0, 110)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(186, 50)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Recommendation"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
-        'Button2
-        '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(0, 166)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(186, 50)
-        Me.Button2.TabIndex = 5
-        Me.Button2.Text = "Today's Deal"
-        Me.Button2.UseVisualStyleBackColor = False
-        '
-        'Button3
-        '
-        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Location = New System.Drawing.Point(0, 222)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(186, 50)
-        Me.Button3.TabIndex = 6
-        Me.Button3.Text = "Order"
-        Me.Button3.UseVisualStyleBackColor = False
         '
         'btnLogOut
         '
@@ -176,6 +141,17 @@ Partial Class BaseForm
         Me.AddRequestToolStripMenuItem.Size = New System.Drawing.Size(177, 24)
         Me.AddRequestToolStripMenuItem.Text = "Add Request"
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Location = New System.Drawing.Point(0, 110)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(186, 50)
+        Me.Button1.TabIndex = 4
+        Me.Button1.Text = "Recommendation"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'BaseForm
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -183,8 +159,6 @@ Partial Class BaseForm
         Me.Controls.Add(Me.LblName)
         Me.Controls.Add(Me.BtnFeedback)
         Me.Controls.Add(Me.btnLogOut)
-        Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TextBox1)
@@ -208,9 +182,6 @@ Partial Class BaseForm
     Friend WithEvents PbOtralaIcon As PictureBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
     Friend WithEvents btnLogOut As Button
     Friend WithEvents BtnFeedback As Button
     Friend WithEvents LblName As Label
@@ -222,4 +193,5 @@ Partial Class BaseForm
     Friend WithEvents AddLoginInfoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RequestToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AddRequestToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Button1 As Button
 End Class

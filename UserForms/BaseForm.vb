@@ -1,42 +1,54 @@
 ﻿Public Class BaseForm
+    Overridable Sub AddFormLoad()
 
+    End Sub
     Private Sub FormLoad() Handles Me.Load
-        If User.Name <> "" Then
-            PersonalizeGUI()
+        AddFormLoad()
+        If User.LoggedIn Then
+            LblName.Text = User.Name
         End If
     End Sub
     Private Sub ToCatalogue() Handles PbOtralaIcon.Click
         If Me.Name = "Catalogue" Then
             AboutUs.Show()
+            AboutUs.FormLoad()
             Me.Hide()
         Else
             Catalogue.Show()
+            Catalogue.FormLoad()
             Me.Hide()
         End If
     End Sub
 
     Private Sub ToUserSettings() Handles LblName.Click
-        Dim LoginSignUnForm As New LoginSignUp
-        LoginSignUnForm.ShowDialog()
-        If User.Name <> "" Then
-            PersonalizeGUI()
+        If Me.Name = "UserSettings" Then
+            Exit Sub
         End If
 
+        If User.LoggedIn Then
+            UserSettings.Show()
+            UserSettings.FormLoad()
+            Me.Hide()
 
+        Else
+            Dim LoginSignUpForm As New LoginSignUp
+            LoginSignUpForm.ShowDialog()
 
-        'If Me.Name <> "UserSettings" Then
-        'UserSettings.Show()
-        'Me.Hide()
-        'End If
-    End Sub
+            If User.LoggedIn AndAlso User.Age = 0 Then
+                UserSettings.Show()
+                UserSettings.FormLoad()
+                UserSettings.ForceEdit()
+                Me.Hide()
+            End If
 
-    Private Sub PersonalizeGUI()
-        LblName.Text = User.Name
+            FormLoad()
+        End If
     End Sub
 
     Private Sub ToFeedback() Handles BtnFeedback.Click
         If Me.Name <> "Feedback" Then
             Feedback.Show()
+            Feedback.FormLoad()
             Me.Hide()
         End If
     End Sub
@@ -45,7 +57,7 @@
         Dim reply As MsgBoxResult = MsgBox("Thank you for using Otrala" + Environment.NewLine +
                                            "See you when we 'Travel Lagi'", MsgBoxStyle.OkCancel, "Exit")
         If reply = MsgBoxResult.Ok Then
-            Me.Close()
+            Application.Exit()
         End If
     End Sub
 

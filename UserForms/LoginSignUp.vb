@@ -32,11 +32,14 @@
         Me.Close()
     End Sub
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'OtralaDBDataSet.UserInfo' table. You can move, or remove it, as needed.
+        'TODO: This line of code loads data into the 'OtralaDBDataSet.UserInfo' table and 'OtralaDBDataSet.LoginInfo' table. You can move, or remove it, as needed.
         Me.UserInfoTableAdapter.Fill(Me.OtralaDBDataSet.UserInfo)
-        'TODO: This line of code loads data into the 'OtralaDBDataSet.LoginInfo' table. You can move, or remove it, as needed.
         Me.LoginInfoTableAdapter.Fill(Me.OtralaDBDataSet.LoginInfo)
 
+    End Sub
+
+    Private Sub ForceLowerCase(sender As TextBox, e As EventArgs) Handles TbSUEmail.LostFocus
+        TbSUEmail.Text = LCase(TbSUEmail.Text)
     End Sub
 
     '-------------------------------------------------------------------------------------- All below this is Login Functions
@@ -48,7 +51,7 @@
 
         Select Case OtralAPI.IsEmailOrPhone(UserInfo)
             Case "Email"
-                Dim Temp() As DataRow = OtralaDBDataSet.LoginInfo.Select(String.Format("Email = '{0}'", UserInfo))
+                Dim Temp() As DataRow = OtralaDBDataSet.LoginInfo.Select(String.Format("Email = '{0}'", LCase(UserInfo)))
                 If Temp.Length > 0 Then
                     FindInfo = Temp(0)
                 Else
@@ -69,8 +72,8 @@
                 Exit Sub
         End Select
 
-        Dim Key As List(Of Integer) = OtralAPI.StrToLstInt(FindInfo(2))
-        Dim CorrectPass As List(Of Integer) = OtralAPI.StrToLstInt(FindInfo(1))
+        Dim Key As List(Of Integer) = OtralAPI.StrToLstInt(FindInfo("Key"))
+        Dim CorrectPass As List(Of Integer) = OtralAPI.StrToLstInt(FindInfo("Password"))
         Dim DecryptedPass As String = OtralAPI.Decrypt(CorrectPass, Key)
 
         If Pword = DecryptedPass Then
@@ -78,20 +81,44 @@
             Me.Close()
         ElseIf Pword <> DecryptedPass Then
             MsgBox("Incorrect Password")
+            Exit Sub
         End If
 
         Dim UserID As Integer = FindInfo("UserID")
-        Dim UserInfoRow As DataRow = OtralaDBDataSet.UserInfo.Select(String.Format("UserID = '{0}'", UserID))(0)
+        Dim UserInfoRows As DataRow() = OtralaDBDataSet.UserInfo.Select(String.Format("UserID = '{0}'", UserID))
+        Dim UserInfoRow As DataRow
 
-        With User
-            .UserID = UserID
-            .Name = UserInfoRow("RealName")
-            .Age = UserInfoRow("Age")
-            .Seller = UserInfoRow("Seller")
-            .Address = UserInfoRow("Address")
-            .Email = UserInfoRow("Email")
-            .PhoneNumber = UserInfoRow("Phone")
-        End With
+        If UserInfoRows.Count = 0 Then
+            With User
+                .UserID = UserID
+                .Email = FindInfo("Email")
+                .PhoneNumber = FindInfo("PhoneNumber")
+                .LoggedIn = True
+            End With
+        Else
+            UserInfoRow = UserInfoRows(0)
+
+            With User
+                .UserID = UserID
+                .Name = UserInfoRow("RealName")
+                .Age = UserInfoRow("Age")
+                .IsSeller = UserInfoRow("Seller")
+                .Address = UserInfoRow("Address")
+                .Email = UserInfoRow("Email")
+                .PhoneNumber = UserInfoRow("Phone")
+                .Picture = OtralAPI.ImageFromData(UserInfoRow("Picture"))
+                .ICNum = UserInfoRow("ICnum")
+                .Gender = UserInfoRow("Gender")
+                .Birthday = UserInfoRow("Birthday")
+                .nationality = UserInfoRow("Nationality")
+                .IsAdmin = UserInfoRow("Admin")
+                .LoggedIn = True
+
+                If Not IsDBNull(UserInfoRow("Wishlist")) Then
+                    .Wishlist = StrToLstInt(UserInfoRow("Wishlist"))
+                End If
+            End With
+        End If
     End Sub
 
     Private Sub LoginShowHidePass() Handles PbLoginHidePass.Click
@@ -144,8 +171,14 @@
 
         LoginInfoTableAdapter.Update(OtralaDBDataSet)
 
-        MsgBox("Sign UP SUCCESS")
+        With User
+            .UserID = OtralaDBDataSet.LoginInfo.Select(String.Format("Email = '{0}'", TbSUEmail.Text))(0)("UserID")
+            .Email = TbSUEmail.Text
+            .PhoneNumber = TbSUPhoneNum.Text
+            .LoggedIn = True
+        End With
 
+        Me.Close()
     End Sub
 
     Private Sub SUShowHidePass() Handles PbSUHidePass.Click

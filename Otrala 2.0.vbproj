@@ -14,6 +14,21 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -52,7 +67,8 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>OtralaWinIcon.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
@@ -83,14 +99,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="OtralaDBDataSet.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OtralaDBDataSet.vb">
+      <SubType>code</SubType>
+      <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OtralaDBDataSet3.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="OtralaDBDataSet.vb">
-      <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="UserForms\Catalogue.Designer.vb">
       <DependentUpon>Catalogue.vb</DependentUpon>
@@ -116,28 +136,34 @@
     <Compile Include="UserForms\BaseForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForms\temporaryInputFormUserInfo.Designer.vb">
+    <Compile Include="AdminForms\temporaryInputFormUserInfo.Designer.vb">
       <DependentUpon>temporaryInputFormUserInfo.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserForms\temporaryInputFormUserInfo.vb">
+    <Compile Include="AdminForms\temporaryInputFormUserInfo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForms\temporaryInputFormRequest.Designer.vb">
+    <Compile Include="AdminForms\temporaryInputFormRequest.Designer.vb">
       <DependentUpon>temporaryInputFormRequest.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserForms\temporaryInputFormRequest.vb">
+    <Compile Include="AdminForms\temporaryInputFormRequest.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForms\temporaryInputFormLoginInfo.Designer.vb">
+    <Compile Include="AdminForms\temporaryInputFormLoginInfo.Designer.vb">
       <DependentUpon>temporaryInputFormLoginInfo.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserForms\temporaryInputFormLoginInfo.vb">
+    <Compile Include="AdminForms\temporaryInputFormLoginInfo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForms\temporaryInputFormFeedback.Designer.vb">
+    <Compile Include="AdminForms\temporaryInputFormFeedback.Designer.vb">
       <DependentUpon>temporaryInputFormFeedback.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserForms\temporaryInputFormFeedback.vb">
+    <Compile Include="AdminForms\temporaryInputFormFeedback.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForms\EditProfile.Designer.vb">
+      <DependentUpon>EditProfile.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\EditProfile.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserForms\LoginSignUp.Designer.vb">
@@ -146,10 +172,10 @@
     <Compile Include="UserForms\LoginSignUp.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForms\temporaryInputFormPackage.Designer.vb">
+    <Compile Include="AdminForms\temporaryInputFormPackage.Designer.vb">
       <DependentUpon>temporaryInputFormPackage.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserForms\temporaryInputFormPackage.vb">
+    <Compile Include="AdminForms\temporaryInputFormPackage.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserForms\UserSettings.Designer.vb">
@@ -202,22 +228,25 @@
     <EmbeddedResource Include="UserForms\BaseForm.resx">
       <DependentUpon>BaseForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForms\temporaryInputFormRequest.resx">
+    <EmbeddedResource Include="AdminForms\temporaryInputFormRequest.resx">
       <DependentUpon>temporaryInputFormRequest.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForms\temporaryInputFormFeedback.resx">
+    <EmbeddedResource Include="AdminForms\temporaryInputFormFeedback.resx">
       <DependentUpon>temporaryInputFormFeedback.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\EditProfile.resx">
+      <DependentUpon>EditProfile.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\LoginSignUp.resx">
       <DependentUpon>LoginSignUp.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForms\temporaryInputFormLoginInfo.resx">
+    <EmbeddedResource Include="AdminForms\temporaryInputFormLoginInfo.resx">
       <DependentUpon>temporaryInputFormLoginInfo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForms\temporaryInputFormPackage.resx">
+    <EmbeddedResource Include="AdminForms\temporaryInputFormPackage.resx">
       <DependentUpon>temporaryInputFormPackage.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForms\temporaryInputFormUserInfo.resx">
+    <EmbeddedResource Include="AdminForms\temporaryInputFormUserInfo.resx">
       <DependentUpon>temporaryInputFormUserInfo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\UserSettings.resx">
@@ -250,20 +279,28 @@
     <None Include="App.config" />
     <None Include="OtralaDBDataSet.xsc">
       <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="OtralaDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>OtralaDBDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="OtralaDBDataSet.xss">
       <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Otrala Icon.png" />
     <Content Include="OtralaDB.accdb">
