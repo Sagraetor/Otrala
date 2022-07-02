@@ -1,4 +1,10 @@
 ﻿Public Class BaseForm
+
+    Private Sub FormLoad() Handles Me.Load
+        If User.Name <> "" Then
+            PersonalizeGUI()
+        End If
+    End Sub
     Private Sub ToCatalogue() Handles PbOtralaIcon.Click
         If Me.Name = "Catalogue" Then
             AboutUs.Show()

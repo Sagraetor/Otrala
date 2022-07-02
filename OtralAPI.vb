@@ -1,4 +1,4 @@
-﻿Module OtralAPI
+﻿Public Module OtralAPI
     Structure UserInfo
         Dim UserID As Integer
         Dim Name As String
@@ -10,6 +10,25 @@
     End Structure
 
     Public User As New UserInfo
+
+    Structure Package
+        Dim SellerID As Integer
+        Dim PackageID As Integer
+        Dim SellerName As String
+        Dim PackageName As String
+        Dim Price As Integer
+        Dim Description As String
+        Dim State As String
+        Dim Location As String
+        Dim Pax As String
+        Dim Duration As String
+        Dim Picture As Image
+    End Structure
+    Public Function ImageFromData(ByVal byteArrayIn As Byte()) As Image
+        Using mStream As New IO.MemoryStream(byteArrayIn)
+            Return Image.FromStream(mStream)
+        End Using
+    End Function
     Public Function Encrypt(Info As String)
         Dim Encrypted As New List(Of Integer)
         Dim Key As New List(Of Integer)

@@ -41,17 +41,6 @@ Partial Class Catalogue
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PnlCatalogue = New System.Windows.Forms.Panel()
-        Me.PackageGrid = New System.Windows.Forms.DataGridView()
-        Me.PackageIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SellerIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PackageNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.StateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DestinationDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PaxDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PictureDataGridViewImageColumn = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.DurationDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PackageBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
         Me.PackageTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.PackageTableAdapter()
@@ -60,7 +49,6 @@ Partial Class Catalogue
         Me.GroupBoxObsolete1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PnlCatalogue.SuspendLayout()
-        CType(Me.PackageGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PackageBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -226,107 +214,12 @@ Partial Class Catalogue
         'PnlCatalogue
         '
         Me.PnlCatalogue.AutoScroll = True
-        Me.PnlCatalogue.Controls.Add(Me.PackageGrid)
         Me.PnlCatalogue.Controls.Add(Me.GroupBoxObsolete1)
         Me.PnlCatalogue.Controls.Add(Me.GroupBoxObsolete2)
         Me.PnlCatalogue.Location = New System.Drawing.Point(186, 110)
         Me.PnlCatalogue.Name = "PnlCatalogue"
         Me.PnlCatalogue.Size = New System.Drawing.Size(1076, 563)
         Me.PnlCatalogue.TabIndex = 13
-        '
-        'PackageGrid
-        '
-        Me.PackageGrid.AutoGenerateColumns = False
-        Me.PackageGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.PackageGrid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.PackageIDDataGridViewTextBoxColumn, Me.SellerIDDataGridViewTextBoxColumn, Me.PackageNameDataGridViewTextBoxColumn, Me.StateDataGridViewTextBoxColumn, Me.DestinationDataGridViewTextBoxColumn, Me.PriceDataGridViewTextBoxColumn, Me.PaxDataGridViewTextBoxColumn, Me.DescriptionDataGridViewTextBoxColumn, Me.PictureDataGridViewImageColumn, Me.DurationDataGridViewTextBoxColumn})
-        Me.PackageGrid.DataSource = Me.PackageBindingSource
-        Me.PackageGrid.Location = New System.Drawing.Point(7, 3)
-        Me.PackageGrid.Name = "PackageGrid"
-        Me.PackageGrid.RowHeadersWidth = 51
-        Me.PackageGrid.RowTemplate.Height = 24
-        Me.PackageGrid.Size = New System.Drawing.Size(42, 34)
-        Me.PackageGrid.TabIndex = 13
-        Me.PackageGrid.Visible = False
-        '
-        'PackageIDDataGridViewTextBoxColumn
-        '
-        Me.PackageIDDataGridViewTextBoxColumn.DataPropertyName = "PackageID"
-        Me.PackageIDDataGridViewTextBoxColumn.HeaderText = "PackageID"
-        Me.PackageIDDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PackageIDDataGridViewTextBoxColumn.Name = "PackageIDDataGridViewTextBoxColumn"
-        Me.PackageIDDataGridViewTextBoxColumn.Width = 125
-        '
-        'SellerIDDataGridViewTextBoxColumn
-        '
-        Me.SellerIDDataGridViewTextBoxColumn.DataPropertyName = "SellerID"
-        Me.SellerIDDataGridViewTextBoxColumn.HeaderText = "SellerID"
-        Me.SellerIDDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.SellerIDDataGridViewTextBoxColumn.Name = "SellerIDDataGridViewTextBoxColumn"
-        Me.SellerIDDataGridViewTextBoxColumn.Width = 125
-        '
-        'PackageNameDataGridViewTextBoxColumn
-        '
-        Me.PackageNameDataGridViewTextBoxColumn.DataPropertyName = "PackageName"
-        Me.PackageNameDataGridViewTextBoxColumn.HeaderText = "PackageName"
-        Me.PackageNameDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PackageNameDataGridViewTextBoxColumn.Name = "PackageNameDataGridViewTextBoxColumn"
-        Me.PackageNameDataGridViewTextBoxColumn.Width = 125
-        '
-        'StateDataGridViewTextBoxColumn
-        '
-        Me.StateDataGridViewTextBoxColumn.DataPropertyName = "State"
-        Me.StateDataGridViewTextBoxColumn.HeaderText = "State"
-        Me.StateDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.StateDataGridViewTextBoxColumn.Name = "StateDataGridViewTextBoxColumn"
-        Me.StateDataGridViewTextBoxColumn.Width = 125
-        '
-        'DestinationDataGridViewTextBoxColumn
-        '
-        Me.DestinationDataGridViewTextBoxColumn.DataPropertyName = "Destination"
-        Me.DestinationDataGridViewTextBoxColumn.HeaderText = "Destination"
-        Me.DestinationDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.DestinationDataGridViewTextBoxColumn.Name = "DestinationDataGridViewTextBoxColumn"
-        Me.DestinationDataGridViewTextBoxColumn.Width = 125
-        '
-        'PriceDataGridViewTextBoxColumn
-        '
-        Me.PriceDataGridViewTextBoxColumn.DataPropertyName = "Price"
-        Me.PriceDataGridViewTextBoxColumn.HeaderText = "Price"
-        Me.PriceDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PriceDataGridViewTextBoxColumn.Name = "PriceDataGridViewTextBoxColumn"
-        Me.PriceDataGridViewTextBoxColumn.Width = 125
-        '
-        'PaxDataGridViewTextBoxColumn
-        '
-        Me.PaxDataGridViewTextBoxColumn.DataPropertyName = "Pax"
-        Me.PaxDataGridViewTextBoxColumn.HeaderText = "Pax"
-        Me.PaxDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.PaxDataGridViewTextBoxColumn.Name = "PaxDataGridViewTextBoxColumn"
-        Me.PaxDataGridViewTextBoxColumn.Width = 125
-        '
-        'DescriptionDataGridViewTextBoxColumn
-        '
-        Me.DescriptionDataGridViewTextBoxColumn.DataPropertyName = "Description"
-        Me.DescriptionDataGridViewTextBoxColumn.HeaderText = "Description"
-        Me.DescriptionDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.DescriptionDataGridViewTextBoxColumn.Name = "DescriptionDataGridViewTextBoxColumn"
-        Me.DescriptionDataGridViewTextBoxColumn.Width = 125
-        '
-        'PictureDataGridViewImageColumn
-        '
-        Me.PictureDataGridViewImageColumn.DataPropertyName = "Picture"
-        Me.PictureDataGridViewImageColumn.HeaderText = "Picture"
-        Me.PictureDataGridViewImageColumn.MinimumWidth = 6
-        Me.PictureDataGridViewImageColumn.Name = "PictureDataGridViewImageColumn"
-        Me.PictureDataGridViewImageColumn.Width = 125
-        '
-        'DurationDataGridViewTextBoxColumn
-        '
-        Me.DurationDataGridViewTextBoxColumn.DataPropertyName = "Duration"
-        Me.DurationDataGridViewTextBoxColumn.HeaderText = "Duration"
-        Me.DurationDataGridViewTextBoxColumn.MinimumWidth = 6
-        Me.DurationDataGridViewTextBoxColumn.Name = "DurationDataGridViewTextBoxColumn"
-        Me.DurationDataGridViewTextBoxColumn.Width = 125
         '
         'PackageBindingSource
         '
@@ -357,7 +250,6 @@ Partial Class Catalogue
         Me.GroupBoxObsolete1.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PnlCatalogue.ResumeLayout(False)
-        CType(Me.PackageGrid, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PackageBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -382,18 +274,7 @@ Partial Class Catalogue
     Friend WithEvents Label3 As Label
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents PnlCatalogue As Panel
-    Friend WithEvents PackageGrid As DataGridView
     Friend WithEvents PackageBindingSource As BindingSource
     Friend WithEvents OtralaDBDataSet As OtralaDBDataSet
     Friend WithEvents PackageTableAdapter As OtralaDBDataSetTableAdapters.PackageTableAdapter
-    Friend WithEvents PackageIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents SellerIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PackageNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents StateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DestinationDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PaxDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DescriptionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PictureDataGridViewImageColumn As DataGridViewImageColumn
-    Friend WithEvents DurationDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class
