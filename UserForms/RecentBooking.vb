@@ -1,15 +1,20 @@
 ﻿Public Class RecentBooking
-    Dim package As Package = Catalogue.send_package()
+    Public package As Package
 
     Private Sub LoadPackage() Handles Me.Load
-        GbxBooking.Text = package.Name
-        LblPrice.Text = package.Price
+        GbxBooking.Text = package.PackageName
+        LblPrice.Text = package.Price.ToString("c")
         LblDescription.Text = package.Description
-        PicPackage.Image = package.Image
+        PicPackage.Image = package.Picture
         LblPax.Text = package.Pax
+        LblUserName.Text = User.Name
+        LblUserPhone.Text = User.PhoneNumber
+
+        StartDateChanged()
+
     End Sub
 
-    Private Sub StartDateChanged(sender As DateTimePicker, e As EventArgs) Handles DTPickerStart.ValueChanged
+    Private Sub StartDateChanged() Handles DTPickerStart.ValueChanged
         Dim StartDate As DateTime = DTPickerStart.Value
         Dim EndDate As DateTime = StartDate.AddDays(Val(package.Duration))
         LblEndDate.Text = EndDate.ToString("D")

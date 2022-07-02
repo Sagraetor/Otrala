@@ -22,7 +22,6 @@ Partial Class BaseForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BaseForm))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PbOtralaIcon = New System.Windows.Forms.PictureBox()
@@ -34,12 +33,8 @@ Partial Class BaseForm
         Me.btnLogOut = New System.Windows.Forms.Button()
         Me.BtnFeedback = New System.Windows.Forms.Button()
         Me.LblName = New System.Windows.Forms.Label()
-        Me.PackageBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PackageBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.btnAddPackage = New System.Windows.Forms.Button()
         CType(Me.PbOtralaIcon, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PackageBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PackageBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -182,8 +177,6 @@ Partial Class BaseForm
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Otrala"
         CType(Me.PbOtralaIcon, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PackageBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PackageBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -199,7 +192,5 @@ Partial Class BaseForm
     Friend WithEvents btnLogOut As Button
     Friend WithEvents BtnFeedback As Button
     Friend WithEvents LblName As Label
-    Friend WithEvents PackageBindingSource As BindingSource
-    Friend WithEvents PackageBindingSource1 As BindingSource
     Friend WithEvents btnAddPackage As Button
 End Class

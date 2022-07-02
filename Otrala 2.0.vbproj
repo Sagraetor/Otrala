@@ -151,7 +151,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="OtralAPI.vb" />
-    <Compile Include="Package.vb" />
     <Compile Include="UserForms\Package_Viewer.Designer.vb">
       <DependentUpon>Package_Viewer.vb</DependentUpon>
     </Compile>

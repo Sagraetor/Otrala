@@ -1,17 +1,6 @@
 ﻿Public Class Package_Viewer
 
-    Dim package = Catalogue.send_package()
-    Dim seller_id = Catalogue.sellerID(package.Index)
-    Dim package_id = Catalogue.packageID(package.Index)
-    Dim packageName = Catalogue.packageName(package.Index)
-    Dim packageState = Catalogue.packageState(package.Index)
-    Dim packageDestination = Catalogue.packageDestination(package.Index)
-    Dim packagePrice = Catalogue.packagePrice(package.Index)
-    Dim packagePax = Catalogue.packagePax(package.Index)
-    Dim packageDescription = Catalogue.packageDescription(package.Index)
-    Dim packagePicture = Catalogue.packagePicture(package.Index)
-    Dim packageDuration = Catalogue.packageDuration(package.Index)
-    ' Dim customer_id = customer.CustomerID (add later).
+    Public Package As New Package
 
     Private Sub isExistingValue(label As Object, labelValue As Object)
         ' This function clears all detail labels without values.
@@ -24,28 +13,22 @@
     Private Sub Package_Viewer_Load() Handles Me.Load
 
         ' Change Form Name to Package Name.
-        Me.Text = packageName
+        Me.Text = Package.PackageName
 
         ' Change Image to Package Image.
-        pctTravelPic.Image = packagePicture
+        pctTravelPic.Image = Package.Picture
 
         ' Change Seller Button Text.
-        btnSeller.Text = "More From" + Environment.NewLine + package.SellerName
+        btnSeller.Text = "More From" + Environment.NewLine + Package.SellerName
 
         ' Set Values to Labels in Details Table.
-        lblTitle.Text = packageName
-        lblPrice.Text = packagePrice
-        lblDescriptionValue.Text = packageDescription
-        lblStateValue.Text = packageState
-        lblLocationValue.Text = packageDestination
-        lblPaxValue.Text = packagePax
-        lblDurationValue.Text = packageDuration
-        lblTourOperatorValue.Text = package.SellerName
-
-        ' Clear Labels without Values.
-        For i = 0 To tableDetails.RowCount - 1
-            isExistingValue(tableDetails.GetControlFromPosition(0, i), tableDetails.GetControlFromPosition(1, i))
-        Next
+        lblTitle.Text = Package.PackageName
+        lblPrice.Text = Package.Price
+        lblDescriptionValue.Text = Package.Description
+        lblStateValue.Text = Package.State
+        lblLocationValue.Text = Package.Location
+        lblPaxValue.Text = Package.Pax
+        lblDurationValue.Text = Package.Duration
     End Sub
 
     Private Sub After_Load_Tick(sender As Object, e As EventArgs) Handles after_load.Tick
@@ -68,8 +51,8 @@
     End Sub
 
     Private Sub btnBook_Click(sender As Object, e As EventArgs) Handles btnBook.Click
-        ' Go to booking page (send over package_id and seller_id and customer_id).
         Dim BookingForm As New RecentBooking
+        BookingForm.package = Package
         BookingForm.ShowDialog()
         Me.Close()
     End Sub

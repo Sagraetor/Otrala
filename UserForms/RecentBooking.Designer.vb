@@ -38,11 +38,11 @@ Partial Class RecentBooking
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.LblDateDuration = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
+        Me.LblUserPhone = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
+        Me.LblUserName = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.gbxPayment = New System.Windows.Forms.GroupBox()
         Me.mskCVV = New System.Windows.Forms.MaskedTextBox()
@@ -189,11 +189,11 @@ Partial Class RecentBooking
         '
         Me.GroupBox1.Controls.Add(Me.LblDateDuration)
         Me.GroupBox1.Controls.Add(Me.Label15)
-        Me.GroupBox1.Controls.Add(Me.Label19)
+        Me.GroupBox1.Controls.Add(Me.LblUserPhone)
         Me.GroupBox1.Controls.Add(Me.Label12)
         Me.GroupBox1.Controls.Add(Me.Label18)
         Me.GroupBox1.Controls.Add(Me.Label11)
-        Me.GroupBox1.Controls.Add(Me.Label16)
+        Me.GroupBox1.Controls.Add(Me.LblUserName)
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Location = New System.Drawing.Point(768, 374)
         Me.GroupBox1.Name = "GroupBox1"
@@ -221,15 +221,15 @@ Partial Class RecentBooking
         Me.Label15.Text = "Date"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label19
+        'LblUserPhone
         '
-        Me.Label19.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label19.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label19.Location = New System.Drawing.Point(195, 123)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(158, 30)
-        Me.Label19.TabIndex = 11
-        Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LblUserPhone.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.LblUserPhone.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.LblUserPhone.Location = New System.Drawing.Point(195, 123)
+        Me.LblUserPhone.Name = "LblUserPhone"
+        Me.LblUserPhone.Size = New System.Drawing.Size(158, 30)
+        Me.LblUserPhone.TabIndex = 11
+        Me.LblUserPhone.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label12
         '
@@ -261,15 +261,15 @@ Partial Class RecentBooking
         Me.Label11.Text = "IC Number/Passport"
         Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label16
+        'LblUserName
         '
-        Me.Label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label16.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label16.Location = New System.Drawing.Point(195, 26)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(158, 30)
-        Me.Label16.TabIndex = 8
-        Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LblUserName.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.LblUserName.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.LblUserName.Location = New System.Drawing.Point(195, 26)
+        Me.LblUserName.Name = "LblUserName"
+        Me.LblUserName.Size = New System.Drawing.Size(158, 30)
+        Me.LblUserName.TabIndex = 8
+        Me.LblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label9
         '
@@ -418,9 +418,9 @@ Partial Class RecentBooking
     Friend WithEvents Label12 As Label
     Friend WithEvents Label11 As Label
     Friend WithEvents LblDateDuration As Label
-    Friend WithEvents Label19 As Label
+    Friend WithEvents LblUserPhone As Label
     Friend WithEvents Label18 As Label
-    Friend WithEvents Label16 As Label
+    Friend WithEvents LblUserName As Label
     Friend WithEvents LblPax As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents DTPickerStart As DateTimePicker
