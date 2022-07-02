@@ -43,8 +43,23 @@
         End If
     End Sub
 
-    Private Sub btnAddPackage_Click(sender As Object, e As EventArgs) Handles btnAddPackage.Click
-        temporaryInputForm.ShowDialog()
+    Private Sub AddToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem.Click
+        temporaryInputFormPackage.ShowDialog()
     End Sub
 
+    Private Sub AddFeedbackToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AddFeedbackToolStripMenuItem1.Click
+        temporaryInputFormFeedback.ShowDialog()
+    End Sub
+
+    Private Sub AddLoginInfoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AddLoginInfoToolStripMenuItem1.Click
+        temporaryInputFormLoginInfo.ShowDialog()
+    End Sub
+
+    Private Sub AddUserInfoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddUserInfoToolStripMenuItem.Click
+        temporaryInputFormUserInfo.ShowDialog()
+    End Sub
+
+    Private Sub AddRequestToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AddRequestToolStripMenuItem1.Click
+        temporaryInputFormRequest.ShowDialog()
+    End Sub
 End Class

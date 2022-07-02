@@ -116,16 +116,40 @@
     <Compile Include="UserForms\BaseForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UserForms\temporaryInputFormUserInfo.Designer.vb">
+      <DependentUpon>temporaryInputFormUserInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\temporaryInputFormUserInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForms\temporaryInputFormRequest.Designer.vb">
+      <DependentUpon>temporaryInputFormRequest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\temporaryInputFormRequest.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForms\temporaryInputFormLoginInfo.Designer.vb">
+      <DependentUpon>temporaryInputFormLoginInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\temporaryInputFormLoginInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForms\temporaryInputFormFeedback.Designer.vb">
+      <DependentUpon>temporaryInputFormFeedback.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\temporaryInputFormFeedback.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UserForms\LoginSignUp.Designer.vb">
       <DependentUpon>LoginSignUp.vb</DependentUpon>
     </Compile>
     <Compile Include="UserForms\LoginSignUp.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForms\temporaryInputForm.Designer.vb">
-      <DependentUpon>temporaryInputForm.vb</DependentUpon>
+    <Compile Include="UserForms\temporaryInputFormPackage.Designer.vb">
+      <DependentUpon>temporaryInputFormPackage.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserForms\temporaryInputForm.vb">
+    <Compile Include="UserForms\temporaryInputFormPackage.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserForms\UserSettings.Designer.vb">
@@ -179,11 +203,23 @@
     <EmbeddedResource Include="UserForms\BaseForm.resx">
       <DependentUpon>BaseForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\temporaryInputFormRequest.resx">
+      <DependentUpon>temporaryInputFormRequest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\temporaryInputFormFeedback.resx">
+      <DependentUpon>temporaryInputFormFeedback.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserForms\LoginSignUp.resx">
       <DependentUpon>LoginSignUp.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForms\temporaryInputForm.resx">
-      <DependentUpon>temporaryInputForm.vb</DependentUpon>
+    <EmbeddedResource Include="UserForms\temporaryInputFormLoginInfo.resx">
+      <DependentUpon>temporaryInputFormLoginInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\temporaryInputFormPackage.resx">
+      <DependentUpon>temporaryInputFormPackage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\temporaryInputFormUserInfo.resx">
+      <DependentUpon>temporaryInputFormUserInfo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\UserSettings.resx">
       <DependentUpon>UserSettings.vb</DependentUpon>
