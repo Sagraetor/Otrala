@@ -102,15 +102,18 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="OtralaDBDataSet.vb">
       <SubType>code</SubType>
       <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="OtralaDBDataSet3.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="UserForms\Catalogue.Designer.vb">
       <DependentUpon>Catalogue.vb</DependentUpon>
@@ -160,10 +163,10 @@
     <Compile Include="AdminForms\temporaryInputFormFeedback.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForms\EditProfile.Designer.vb">
-      <DependentUpon>EditProfile.vb</DependentUpon>
+    <Compile Include="UserForms\Prompt.Designer.vb">
+      <DependentUpon>Prompt.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserForms\EditProfile.vb">
+    <Compile Include="UserForms\Prompt.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserForms\LoginSignUp.Designer.vb">
@@ -234,8 +237,8 @@
     <EmbeddedResource Include="AdminForms\temporaryInputFormFeedback.resx">
       <DependentUpon>temporaryInputFormFeedback.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForms\EditProfile.resx">
-      <DependentUpon>EditProfile.vb</DependentUpon>
+    <EmbeddedResource Include="UserForms\Prompt.resx">
+      <DependentUpon>Prompt.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\LoginSignUp.resx">
       <DependentUpon>LoginSignUp.vb</DependentUpon>
@@ -279,14 +282,17 @@
     <None Include="App.config" />
     <None Include="OtralaDBDataSet.xsc">
       <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="OtralaDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>OtralaDBDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="OtralaDBDataSet.xss">
       <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>

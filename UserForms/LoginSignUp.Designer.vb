@@ -195,6 +195,7 @@ Partial Class LoginSignUp
         'TbLoginInfo
         '
         Me.TbLoginInfo.BackColor = System.Drawing.Color.White
+        Me.TbLoginInfo.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
         Me.TbLoginInfo.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TbLoginInfo.Location = New System.Drawing.Point(34, 233)
         Me.TbLoginInfo.Name = "TbLoginInfo"
@@ -332,7 +333,7 @@ Partial Class LoginSignUp
         Me.BtnSUSignUp.Location = New System.Drawing.Point(278, 344)
         Me.BtnSUSignUp.Name = "BtnSUSignUp"
         Me.BtnSUSignUp.Size = New System.Drawing.Size(86, 33)
-        Me.BtnSUSignUp.TabIndex = 3
+        Me.BtnSUSignUp.TabIndex = 10
         Me.BtnSUSignUp.Text = "Sign Up"
         Me.BtnSUSignUp.UseVisualStyleBackColor = False
         '
@@ -344,7 +345,7 @@ Partial Class LoginSignUp
         Me.TbSUConfirmPass.Name = "TbSUConfirmPass"
         Me.TbSUConfirmPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.TbSUConfirmPass.Size = New System.Drawing.Size(311, 27)
-        Me.TbSUConfirmPass.TabIndex = 7
+        Me.TbSUConfirmPass.TabIndex = 8
         '
         'Label6
         '
@@ -379,6 +380,7 @@ Partial Class LoginSignUp
         'TbSUEmail
         '
         Me.TbSUEmail.BackColor = System.Drawing.Color.White
+        Me.TbSUEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower
         Me.TbSUEmail.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TbSUEmail.Location = New System.Drawing.Point(37, 127)
         Me.TbSUEmail.Name = "TbSUEmail"
@@ -402,7 +404,7 @@ Partial Class LoginSignUp
         Me.TbSUPhoneNum.Location = New System.Drawing.Point(37, 185)
         Me.TbSUPhoneNum.Name = "TbSUPhoneNum"
         Me.TbSUPhoneNum.Size = New System.Drawing.Size(311, 27)
-        Me.TbSUPhoneNum.TabIndex = 5
+        Me.TbSUPhoneNum.TabIndex = 6
         '
         'Label9
         '
@@ -440,8 +442,8 @@ Partial Class LoginSignUp
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLight
         Me.ClientSize = New System.Drawing.Size(405, 416)
-        Me.Controls.Add(Me.PanelSignUp)
         Me.Controls.Add(Me.PanelLogIn)
+        Me.Controls.Add(Me.PanelSignUp)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "LoginSignUp"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

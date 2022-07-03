@@ -38,10 +38,6 @@
 
     End Sub
 
-    Private Sub ForceLowerCase(sender As TextBox, e As EventArgs) Handles TbSUEmail.LostFocus
-        TbSUEmail.Text = LCase(TbSUEmail.Text)
-    End Sub
-
     '-------------------------------------------------------------------------------------- All below this is Login Functions
     Dim LoginPassHiden As Boolean = True
     Private Sub LoginToAcc() Handles BtnLoginLogin.Click
@@ -51,7 +47,7 @@
 
         Select Case OtralAPI.IsEmailOrPhone(UserInfo)
             Case "Email"
-                Dim Temp() As DataRow = OtralaDBDataSet.LoginInfo.Select(String.Format("Email = '{0}'", LCase(UserInfo)))
+                Dim Temp() As DataRow = OtralaDBDataSet.LoginInfo.Select(String.Format("Email = '{0}'", UserInfo))
                 If Temp.Length > 0 Then
                     FindInfo = Temp(0)
                 Else
@@ -106,13 +102,17 @@
                 .Address = UserInfoRow("Address")
                 .Email = UserInfoRow("Email")
                 .PhoneNumber = UserInfoRow("Phone")
-                .Picture = OtralAPI.ImageFromData(UserInfoRow("Picture"))
+
                 .ICNum = UserInfoRow("ICnum")
                 .Gender = UserInfoRow("Gender")
                 .Birthday = UserInfoRow("Birthday")
                 .nationality = UserInfoRow("Nationality")
                 .IsAdmin = UserInfoRow("Admin")
                 .LoggedIn = True
+
+                If Not IsDBNull(UserInfoRow("Picture")) Then
+                    .Picture = OtralAPI.ImageFromData(UserInfoRow("Picture"))
+                End If
 
                 If Not IsDBNull(UserInfoRow("Wishlist")) Then
                     .Wishlist = StrToLstInt(UserInfoRow("Wishlist"))
@@ -166,15 +166,17 @@
         NewLoginInfo("PhoneNumber") = TbSUPhoneNum.Text
         NewLoginInfo("Key") = NewKey
         NewLoginInfo("Password") = EncryptedPass
+        NewLoginInfo("UserID") = (OtralaDBDataSet.LoginInfo.Rows(OtralaDBDataSet.LoginInfo.Rows.Count - 1)("UserID") + 1)
 
         OtralaDBDataSet.LoginInfo.AddLoginInfoRow(NewLoginInfo)
 
-        LoginInfoTableAdapter.Update(OtralaDBDataSet)
+        LoginInfoTableAdapter.Update(OtralaDBDataSet.LoginInfo)
 
         With User
-            .UserID = OtralaDBDataSet.LoginInfo.Select(String.Format("Email = '{0}'", TbSUEmail.Text))(0)("UserID")
-            .Email = TbSUEmail.Text
-            .PhoneNumber = TbSUPhoneNum.Text
+            Dim MyLoginInfo As DataRow = OtralaDBDataSet.LoginInfo.Select(String.Format("Email = '{0}'", TbSUEmail.Text))(0)
+            .UserID = MyLoginInfo("UserID")
+            .Email = MyLoginInfo("Email")
+            .PhoneNumber = MyLoginInfo("PhoneNumber")
             .LoggedIn = True
         End With
 

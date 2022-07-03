@@ -29,7 +29,7 @@ Partial Class UserSettings
         Me.PbProfile = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.BtnDelete = New System.Windows.Forms.Button()
         Me.BtnEdit = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.SecurityInformation = New System.Windows.Forms.GroupBox()
@@ -119,7 +119,7 @@ Partial Class UserSettings
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.Color.White
-        Me.GroupBox2.Controls.Add(Me.Button4)
+        Me.GroupBox2.Controls.Add(Me.BtnDelete)
         Me.GroupBox2.Controls.Add(Me.BtnEdit)
         Me.GroupBox2.Controls.Add(Me.Button3)
         Me.GroupBox2.Location = New System.Drawing.Point(529, 377)
@@ -128,16 +128,16 @@ Partial Class UserSettings
         Me.GroupBox2.TabIndex = 28
         Me.GroupBox2.TabStop = False
         '
-        'Button4
+        'BtnDelete
         '
-        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
-        Me.Button4.ForeColor = System.Drawing.Color.White
-        Me.Button4.Location = New System.Drawing.Point(79, 144)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(332, 43)
-        Me.Button4.TabIndex = 0
-        Me.Button4.Text = "Delete Account"
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.BtnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
+        Me.BtnDelete.ForeColor = System.Drawing.Color.White
+        Me.BtnDelete.Location = New System.Drawing.Point(79, 144)
+        Me.BtnDelete.Name = "BtnDelete"
+        Me.BtnDelete.Size = New System.Drawing.Size(332, 43)
+        Me.BtnDelete.TabIndex = 0
+        Me.BtnDelete.Text = "Delete Account"
+        Me.BtnDelete.UseVisualStyleBackColor = False
         '
         'BtnEdit
         '
@@ -470,7 +470,7 @@ Partial Class UserSettings
     Friend WithEvents Label12 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Button3 As Button
-    Friend WithEvents Button4 As Button
+    Friend WithEvents BtnDelete As Button
     Friend WithEvents OtralaDBDataSet As OtralaDBDataSet
     Friend WithEvents UserInfoBindingSource As BindingSource
     Friend WithEvents UserInfoTableAdapter As OtralaDBDataSetTableAdapters.UserInfoTableAdapter

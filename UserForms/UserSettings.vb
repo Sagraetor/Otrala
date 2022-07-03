@@ -13,6 +13,25 @@
         End If
     End Sub
 
+    Private Sub DeleteAcc() Handles BtnDelete.Click
+        If ConfirmPass(OtralaDBDataSet.LoginInfo, "You are about to delete your account. Please re-enter password." & vbNewLine & "This process cannot be reverted") Then
+            Dim ToRemoveUser As DataRow
+            Dim ToRemoveRows() As DataRow = OtralaDBDataSet.UserInfo.Select("UserID = " & User.UserID)
+
+            If ToRemoveRows.Count <> 0 Then
+                ToRemoveUser = ToRemoveRows(0)
+                OtralaDBDataSet.UserInfo.RemoveUserInfoRow(ToRemoveUser)
+            End If
+
+            Dim ToRemoveLogin As DataRow = OtralaDBDataSet.LoginInfo.Select("UserID = " & User.UserID)(0)
+            OtralaDBDataSet.LoginInfo.RemoveLoginInfoRow(ToRemoveLogin)
+
+
+            LoadUserInfo()
+        Else
+                MsgBox("Aborted")
+        End If
+    End Sub
     Private Sub ForceLowerCase() Handles LblProfileEmail.TextChanged
         LblProfileEmail.Text = LCase(LblProfileEmail.Text)
     End Sub
@@ -43,7 +62,7 @@
                     MyProfile("UserID") = User.UserID
                     MyProfile("Birthday") = Convert.ToDateTime(LblProfileBirthday.Text).ToString("d")
 
-                    OtralaDBDataSet.UserInfo.Rows.InsertAt(MyProfile, User.UserID - 1)
+                    OtralaDBDataSet.UserInfo.Rows.InsertAt(MyProfile, (User.UserID))
 
                     With User
                         .Name = LblProfileName.Text
@@ -149,25 +168,15 @@
         End If
 
         If sender.Name = "LblProfileEmail" OrElse sender.Name = "LblProfilePhoneNumber" OrElse sender.name = "LblProfilePassword" OrElse sender.Name = "LblProfileIcNum" Then
-            Dim ConfirmPass As New EditProfile
-            ConfirmPass.CheckPass()
-            ConfirmPass.ShowDialog()
+            Dim CheckPass As Boolean = ConfirmPass(OtralaDBDataSet.LoginInfo)
 
-            Dim EnteredPass As String = ConfirmPass.Result
-
-            Dim MyLoginInfoRow As DataRow = OtralaDBDataSet.LoginInfo.Select("UserID = " & User.UserID)(0)
-
-            Dim Key As List(Of Integer) = OtralAPI.StrToLstInt(MyLoginInfoRow("Key"))
-            Dim CorrectPass As List(Of Integer) = OtralAPI.StrToLstInt(MyLoginInfoRow("Password"))
-            Dim DecryptedPass As String = OtralAPI.Decrypt(CorrectPass, Key)
-
-            If EnteredPass <> DecryptedPass Then
+            If Not CheckPass Then
                 MsgBox("Incorrect Password")
                 Exit Sub
             End If
         End If
 
-        Dim EditProfileForm As New EditProfile
+        Dim EditProfileForm As New Prompt
         EditProfileForm.Initialize(sender)
         EditProfileForm.ShowDialog()
 
@@ -189,8 +198,9 @@
         Else
             sender.Text = Result
         End If
-        MsgBox(LblProfileAddress.Text)
     End Sub
+
+
 
     ' log out 
     Private Sub btnLogOut_Click(sender As Object, e As EventArgs)
@@ -213,4 +223,7 @@
 
     End Sub
 
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        MsgBox(User.UserID)
+    End Sub
 End Class

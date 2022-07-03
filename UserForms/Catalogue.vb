@@ -149,7 +149,7 @@
         For Each Row In CatalogueData.Rows
             Dim NewPackage As New Package
             With NewPackage
-                .SellerID = Row("SellerID")
+                .SellerID = Row("UserID")
                 .PackageID = Row("PackageID")
                 .SellerName = "Temp"
                 .PackageName = Row("PackageName")

@@ -35,18 +35,32 @@
         Dim Picture As Image
     End Structure
 
-    Public Function AddressLineConverter(Address As String) As String
-        If Address.Contains("/./") Then
-            Address = Address.Replace("/./", vbNewLine)
+    Public Function ConfirmPass(LogInfo As DataTable, Optional CustomPrompt As String = "You are editing a secured field, please enter password to continue") As Boolean
+        Dim ConfirmPassPrompt As New Prompt
+        ConfirmPassPrompt.CheckPass(CustomPrompt)
+        ConfirmPassPrompt.ShowDialog()
+
+        Dim EnteredPass As String = ConfirmPassPrompt.Result
+
+        Dim MyLoginInfoRow As DataRow = LogInfo.Select("UserID = " & User.UserID)(0)
+
+        Dim Key As List(Of Integer) = OtralAPI.StrToLstInt(MyLoginInfoRow("Key"))
+        Dim CorrectPass As List(Of Integer) = OtralAPI.StrToLstInt(MyLoginInfoRow("Password"))
+        Dim DecryptedPass As String = OtralAPI.Decrypt(CorrectPass, Key)
+
+        If EnteredPass = DecryptedPass Then
+            Return True
         Else
-            Address = Address.Replace(vbNewLine, "/./")
+            Return False
         End If
-        Return Address
     End Function
+
     Public Function ImageFromData(ByVal byteArrayIn As Byte()) As Image
-        Using mStream As New IO.MemoryStream(byteArrayIn)
-            Return Image.FromStream(mStream)
-        End Using
+        If byteArrayIn.Count = 0 Then
+            Return Nothing
+        End If
+        Dim ImgCov As New ImageConverter
+        Return ImgCov.ConvertFrom(byteArrayIn)
     End Function
 
     Public Function DataFromImage(ByVal Pic As Image) As Byte()
