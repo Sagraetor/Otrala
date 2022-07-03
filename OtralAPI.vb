@@ -34,6 +34,15 @@
         Dim Duration As String
         Dim Picture As Image
     End Structure
+
+    Public Function AddressLineConverter(Address As String) As String
+        If Address.Contains("/./") Then
+            Address = Address.Replace("/./", vbNewLine)
+        Else
+            Address = Address.Replace(vbNewLine, "/./")
+        End If
+        Return Address
+    End Function
     Public Function ImageFromData(ByVal byteArrayIn As Byte()) As Image
         Using mStream As New IO.MemoryStream(byteArrayIn)
             Return Image.FromStream(mStream)

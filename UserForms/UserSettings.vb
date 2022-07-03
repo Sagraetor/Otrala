@@ -33,7 +33,7 @@
 
                     MyProfile("Picture") = DataFromImage(PbProfile.Image)
                     MyProfile("RealName") = LblProfileName.Text
-                    MyProfile("Address") = TbAddress.Text
+                    MyProfile("Address") = LblProfileAddress.Text
                     MyProfile("Age") = LblProfileAge.Text
                     MyProfile("Gender") = LblProfileGender.Text
                     MyProfile("Nationality") = LblProfileCountry.Text
@@ -49,7 +49,7 @@
                         .Name = LblProfileName.Text
                         .Age = LblProfileAge.Text
                         .IsSeller = False
-                        .Address = TbAddress.Text
+                        .Address = LblProfileAddress.Text
                         .Picture = PbProfile.Image
                         .ICNum = LblProfileIcNum.Text
                         .Gender = LblProfileGender.Text
@@ -64,7 +64,7 @@
 
                     OtralaDBDataSet.UserInfo.Rows(ProfileIndex)("Picture") = DataFromImage(PbProfile.Image)
                     OtralaDBDataSet.UserInfo.Rows(ProfileIndex)("RealName") = LblProfileName.Text
-                    OtralaDBDataSet.UserInfo.Rows(ProfileIndex)("Address") = TbAddress.Text
+                    OtralaDBDataSet.UserInfo.Rows(ProfileIndex)("Address") = LblProfileAddress.Text
                     OtralaDBDataSet.UserInfo.Rows(ProfileIndex)("Age") = LblProfileAge.Text
                     OtralaDBDataSet.UserInfo.Rows(ProfileIndex)("Gender") = LblProfileGender.Text
                     OtralaDBDataSet.UserInfo.Rows(ProfileIndex)("Nationality") = LblProfileCountry.Text
@@ -73,6 +73,16 @@
                     OtralaDBDataSet.UserInfo.Rows(ProfileIndex)("ICnum") = LblProfileIcNum.Text
                     OtralaDBDataSet.UserInfo.Rows(ProfileIndex)("Birthday") = Convert.ToDateTime(LblProfileBirthday.Text).ToString("d")
 
+                    With User
+                        .Name = LblProfileName.Text
+                        .Age = LblProfileAge.Text
+                        .Address = LblProfileAddress.Text
+                        .Picture = PbProfile.Image
+                        .ICNum = LblProfileIcNum.Text
+                        .Gender = LblProfileGender.Text
+                        .Birthday = Convert.ToDateTime(LblProfileBirthday.Text).ToString("d")
+                        .nationality = LblProfileCountry.Text
+                    End With
 
                 End If
 
@@ -104,7 +114,7 @@
     Private Sub LoadUserInfo()
         PbProfile.Image = User.Picture
         LblProfileName.Text = User.Name
-        TbAddress.Text = User.Address
+        LblProfileAddress.Text = User.Address
         LblProfileAge.Text = User.Age
         LblProfileGender.Text = User.Gender
         LblProfileCountry.Text = User.nationality
@@ -133,7 +143,7 @@
             PbProfile.Image = Image.FromFile(OpenPhoto.FileName)
         End If
     End Sub
-    Private Sub EditValue(sender, e) Handles LblProfileName.DoubleClick, LblProfileAge.DoubleClick, LblProfileGender.DoubleClick, LblProfileEmail.DoubleClick, LblProfilePhoneNumber.DoubleClick, LblProfileBirthday.DoubleClick, LblProfileCountry.DoubleClick, LblProfilePassword.DoubleClick, LblProfileIcNum.DoubleClick
+    Private Sub EditValue(sender, e) Handles LblProfileName.DoubleClick, LblProfileAge.DoubleClick, LblProfileGender.DoubleClick, LblProfileEmail.DoubleClick, LblProfilePhoneNumber.DoubleClick, LblProfileBirthday.DoubleClick, LblProfileCountry.DoubleClick, LblProfilePassword.DoubleClick, LblProfileIcNum.DoubleClick, LblProfileAddress.DoubleClick
         If Not Editing Then
             Exit Sub
         End If
@@ -179,6 +189,7 @@
         Else
             sender.Text = Result
         End If
+        MsgBox(LblProfileAddress.Text)
     End Sub
 
     ' log out 

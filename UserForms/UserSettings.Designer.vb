@@ -47,13 +47,13 @@ Partial Class UserSettings
         Me.LblProfileCountry = New System.Windows.Forms.Label()
         Me.LblProfileBirthday = New System.Windows.Forms.Label()
         Me.LblProfileAge = New System.Windows.Forms.Label()
+        Me.LblProfileAddress = New System.Windows.Forms.Label()
         Me.LblProfileName = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.TbAddress = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
         Me.UserInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -267,13 +267,13 @@ Partial Class UserSettings
         Me.GroupBox1.Controls.Add(Me.LblProfileCountry)
         Me.GroupBox1.Controls.Add(Me.LblProfileBirthday)
         Me.GroupBox1.Controls.Add(Me.LblProfileAge)
+        Me.GroupBox1.Controls.Add(Me.LblProfileAddress)
         Me.GroupBox1.Controls.Add(Me.LblProfileName)
         Me.GroupBox1.Controls.Add(Me.Label13)
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.TbAddress)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.PbProfile)
         Me.GroupBox1.ForeColor = System.Drawing.SystemColors.ControlText
@@ -319,6 +319,14 @@ Partial Class UserSettings
         Me.LblProfileAge.Size = New System.Drawing.Size(79, 30)
         Me.LblProfileAge.TabIndex = 27
         Me.LblProfileAge.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'LblProfileAddress
+        '
+        Me.LblProfileAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.LblProfileAddress.Location = New System.Drawing.Point(27, 261)
+        Me.LblProfileAddress.Name = "LblProfileAddress"
+        Me.LblProfileAddress.Size = New System.Drawing.Size(398, 123)
+        Me.LblProfileAddress.TabIndex = 27
         '
         'LblProfileName
         '
@@ -373,15 +381,6 @@ Partial Class UserSettings
         Me.Label5.Size = New System.Drawing.Size(57, 23)
         Me.Label5.TabIndex = 26
         Me.Label5.Text = "Age: "
-        '
-        'TbAddress
-        '
-        Me.TbAddress.Enabled = False
-        Me.TbAddress.Location = New System.Drawing.Point(27, 264)
-        Me.TbAddress.Multiline = True
-        Me.TbAddress.Name = "TbAddress"
-        Me.TbAddress.Size = New System.Drawing.Size(398, 114)
-        Me.TbAddress.TabIndex = 27
         '
         'Label4
         '
@@ -460,7 +459,6 @@ Partial Class UserSettings
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents TbAddress As TextBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents SecurityInformation As GroupBox
@@ -490,4 +488,5 @@ Partial Class UserSettings
     Friend WithEvents LblProfileBirthday As Label
     Friend WithEvents LoginInfoBindingSource As BindingSource
     Friend WithEvents LoginInfoTableAdapter As OtralaDBDataSetTableAdapters.LoginInfoTableAdapter
+    Friend WithEvents LblProfileAddress As Label
 End Class

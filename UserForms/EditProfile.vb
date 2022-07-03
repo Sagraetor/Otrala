@@ -47,6 +47,18 @@
             Panel1.Controls.Add(NewValueReceiver)
             AddHandler NewValueReceiver.DropDownClosed, AddressOf EnterInfo
 
+        ElseIf sender.Name = "LblProfileAddress" Then
+            Dim NewValueReceiver As New TextBox With {
+            .Location = New System.Drawing.Point(15, 46),
+            .Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte)),
+            .Multiline = True,
+            .Size = New System.Drawing.Size(398, 123),
+            .Text = sender.Text
+            }
+
+            Panel1.Controls.Add(NewValueReceiver)
+            AddHandler NewValueReceiver.KeyDown, AddressOf EnterInfo
+
         ElseIf sender.Name = "LblProfileBirthday" Then
             Dim NewValueReceiver As New DateTimePicker With {
             .Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte)),
@@ -70,8 +82,17 @@
     End Sub
 
     Public Sub EnterInfo(Sender As Object, e As EventArgs) Handles Me.LostFocus
-        If TypeOf Sender Is TextBox Then
+        If TypeOf Sender Is TextBox AndAlso Sender.Multiline Then
+            Dim KeyDownE As KeyEventArgs = CType(e, KeyEventArgs)
+
+            If KeyDownE.KeyCode = Keys.Enter AndAlso KeyDownE.Modifiers = Nothing Then
+                Result = Sender.Text
+                Me.Close()
+            End If
+
+        ElseIf TypeOf Sender Is TextBox Then
             Dim KeyPressE As KeyPressEventArgs = CType(e, KeyPressEventArgs)
+
             If AscW(KeyPressE.KeyChar) = Keys.Enter Then
                 Result = Sender.Text
                 Me.Close()
@@ -81,8 +102,6 @@
             Result = Sender.Text
             Me.Close()
         End If
-
-
     End Sub
 
 End Class
