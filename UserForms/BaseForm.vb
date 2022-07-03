@@ -6,6 +6,8 @@
         AddFormLoad()
         If User.LoggedIn Then
             LblName.Text = User.Name
+        Else
+            LblName.Text = "Log In / Sign Up"
         End If
     End Sub
     Private Sub ToCatalogue() Handles PbOtralaIcon.Click

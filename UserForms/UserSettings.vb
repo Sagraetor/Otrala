@@ -17,15 +17,27 @@
         If ConfirmPass(OtralaDBDataSet.LoginInfo, "You are about to delete your account. Please re-enter password." & vbNewLine & "This process cannot be reverted") Then
             Dim ToRemoveUser As DataRow
             Dim ToRemoveRows() As DataRow = OtralaDBDataSet.UserInfo.Select("UserID = " & User.UserID)
+            Dim IndexUser, IndexLogin As Integer
+
 
             If ToRemoveRows.Count <> 0 Then
                 ToRemoveUser = ToRemoveRows(0)
-                OtralaDBDataSet.UserInfo.RemoveUserInfoRow(ToRemoveUser)
+                IndexUser = OtralaDBDataSet.UserInfo.Rows.IndexOf(ToRemoveUser)
             End If
 
             Dim ToRemoveLogin As DataRow = OtralaDBDataSet.LoginInfo.Select("UserID = " & User.UserID)(0)
-            OtralaDBDataSet.LoginInfo.RemoveLoginInfoRow(ToRemoveLogin)
+            IndexLogin = OtralaDBDataSet.LoginInfo.Rows.IndexOf(ToRemoveLogin)
 
+
+            OtralaDBDataSet.UserInfo.Rows(IndexUser).Delete()
+            OtralaDBDataSet.LoginInfo.Rows(IndexLogin).Delete()
+
+            LoginInfoTableAdapter.Update(OtralaDBDataSet)
+            UserInfoTableAdapter.Update(OtralaDBDataSet)
+
+            User = New UserInfo With {
+                .LoggedIn = False
+            }
 
             LoadUserInfo()
         Else
@@ -127,8 +139,10 @@
                 UserInfoTableAdapter.Update(OtralaDBDataSet)
                 LoginInfoTableAdapter.Update(OtralaDBDataSet)
             End If
+            OneTimeLoad()
+            LoadUserInfo()
         End If
-        LoadUserInfo()
+
     End Sub
     Private Sub LoadUserInfo()
         PbProfile.Image = User.Picture
@@ -217,7 +231,6 @@
     Public Sub OneTimeLoad() Handles MyBase.Load
         'TODO: This line of code loads data into the 'OtralaDBDataSet.LoginInfo' table. You can move, or remove it, as needed.
         Me.LoginInfoTableAdapter.Fill(Me.OtralaDBDataSet.LoginInfo)
-        'TODO: This line of code loads data into the 'OtralaDBDataSet.Package' table and 'OtralaDBDataSet.UserInfo' table. You can move, or remove it, as needed.
         Me.PackageTableAdapter.Fill(Me.OtralaDBDataSet.Package)
         Me.UserInfoTableAdapter.Fill(Me.OtralaDBDataSet.UserInfo)
 
