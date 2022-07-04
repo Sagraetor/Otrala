@@ -140,6 +140,7 @@ Partial Class Search
         '
         'PnlCatalogue
         '
+        Me.PnlCatalogue.AutoScroll = True
         Me.PnlCatalogue.Location = New System.Drawing.Point(185, 242)
         Me.PnlCatalogue.Name = "PnlCatalogue"
         Me.PnlCatalogue.Size = New System.Drawing.Size(1077, 430)

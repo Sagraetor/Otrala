@@ -24,7 +24,6 @@ Partial Class Package_Viewer
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Package_Viewer))
-        Me.pctTravelPic = New System.Windows.Forms.PictureBox()
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.lblDescription = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -43,25 +42,14 @@ Partial Class Package_Viewer
         Me.btnWishlist = New System.Windows.Forms.Button()
         Me.after_load = New System.Windows.Forms.Timer(Me.components)
         Me.btnSeller = New System.Windows.Forms.Button()
-        Me.pctSeller = New System.Windows.Forms.PictureBox()
         Me.blocking_panel = New System.Windows.Forms.Panel()
-        CType(Me.pctTravelPic, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pctSeller = New System.Windows.Forms.PictureBox()
+        Me.pctTravelPic = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.tableDetails.SuspendLayout()
         CType(Me.pctSeller, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pctTravelPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'pctTravelPic
-        '
-        Me.pctTravelPic.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.pctTravelPic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pctTravelPic.Location = New System.Drawing.Point(12, 10)
-        Me.pctTravelPic.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.pctTravelPic.Name = "pctTravelPic"
-        Me.pctTravelPic.Size = New System.Drawing.Size(600, 480)
-        Me.pctTravelPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pctTravelPic.TabIndex = 0
-        Me.pctTravelPic.TabStop = False
         '
         'lblTitle
         '
@@ -90,7 +78,6 @@ Partial Class Package_Viewer
         '
         'Panel1
         '
-        Me.Panel1.AutoScroll = True
         Me.Panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Panel1.Controls.Add(Me.tableDetails)
         Me.Panel1.Location = New System.Drawing.Point(647, 182)
@@ -102,6 +89,7 @@ Partial Class Package_Viewer
         '
         'tableDetails
         '
+        Me.tableDetails.AutoScroll = True
         Me.tableDetails.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.tableDetails.ColumnCount = 2
         Me.tableDetails.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
@@ -303,6 +291,16 @@ Partial Class Package_Viewer
         Me.btnSeller.Text = "More From seller_name"
         Me.btnSeller.UseVisualStyleBackColor = False
         '
+        'blocking_panel
+        '
+        Me.blocking_panel.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(3, Byte), Integer))
+        Me.blocking_panel.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.blocking_panel.Location = New System.Drawing.Point(0, 628)
+        Me.blocking_panel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.blocking_panel.Name = "blocking_panel"
+        Me.blocking_panel.Size = New System.Drawing.Size(1262, 22)
+        Me.blocking_panel.TabIndex = 10
+        '
         'pctSeller
         '
         Me.pctSeller.BackColor = System.Drawing.SystemColors.ButtonHighlight
@@ -315,15 +313,17 @@ Partial Class Package_Viewer
         Me.pctSeller.TabIndex = 9
         Me.pctSeller.TabStop = False
         '
-        'blocking_panel
+        'pctTravelPic
         '
-        Me.blocking_panel.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(3, Byte), Integer))
-        Me.blocking_panel.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.blocking_panel.Location = New System.Drawing.Point(0, 628)
-        Me.blocking_panel.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.blocking_panel.Name = "blocking_panel"
-        Me.blocking_panel.Size = New System.Drawing.Size(1262, 22)
-        Me.blocking_panel.TabIndex = 10
+        Me.pctTravelPic.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.pctTravelPic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.pctTravelPic.Location = New System.Drawing.Point(12, 10)
+        Me.pctTravelPic.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.pctTravelPic.Name = "pctTravelPic"
+        Me.pctTravelPic.Size = New System.Drawing.Size(600, 480)
+        Me.pctTravelPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pctTravelPic.TabIndex = 0
+        Me.pctTravelPic.TabStop = False
         '
         'Package_Viewer
         '
@@ -348,11 +348,11 @@ Partial Class Package_Viewer
         Me.Name = "Package_Viewer"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Package Name"
-        CType(Me.pctTravelPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.tableDetails.ResumeLayout(False)
         Me.tableDetails.PerformLayout()
         CType(Me.pctSeller, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pctTravelPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

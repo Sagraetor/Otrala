@@ -115,6 +115,12 @@
       <DependentUpon>OtralaDBDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="UserForms\AddPackage.Designer.vb">
+      <DependentUpon>AddPackage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\AddPackage.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UserForms\Catalogue.Designer.vb">
       <DependentUpon>Catalogue.vb</DependentUpon>
     </Compile>
@@ -161,12 +167,6 @@
       <DependentUpon>temporaryInputFormFeedback.vb</DependentUpon>
     </Compile>
     <Compile Include="AdminForms\temporaryInputFormFeedback.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserForms\AddPackage.Designer.vb">
-      <DependentUpon>AddPackage.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UserForms\AddPackage.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserForms\Search.Designer.vb">

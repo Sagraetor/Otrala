@@ -58,7 +58,6 @@
     Private Sub SearchBox_Click(sender As Object, e As EventArgs) Handles SearchBox.Click
         If Me.Name <> "Search" Then
             Dim s As New Search
-            s.Name = "Search"
             s.SearchBox.Text = SearchBox.Text
             s.Show()
             s.FormLoad()

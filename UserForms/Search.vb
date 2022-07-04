@@ -74,7 +74,7 @@
             ElseIf Not bool_SearchUsingState Then
                 bool_correct_state = True
             End If
-            If bool_SearchUsingPrice And package.Price > con_price_lower And package.Price < con_price_higher Then
+            If bool_SearchUsingPrice And package.Price >= con_price_lower And package.Price <= con_price_higher Then
                 bool_correct_price = True
             ElseIf Not bool_SearchUsingPrice Then
                 bool_correct_price = True
@@ -106,18 +106,18 @@
     ' Determine the price range based on selectedindex of combobox
     Private Function determine_price(i As Integer)
         Select Case i
-            Case 0
-                Return {0, 500}
             Case 1
-                Return {500, 1000}
+                Return {0, 500}
             Case 2
-                Return {1000, 1500}
+                Return {500, 1000}
             Case 3
-                Return {1500, 2000}
+                Return {1000, 1500}
             Case 4
-                Return {2000, 2500}
+                Return {1500, 2000}
             Case 5
-                Return {2500, Math.Pow(99, 99)}
+                Return {2000, 2500}
+            Case 6
+                Return {2500, 9999999}
         End Select
     End Function
 

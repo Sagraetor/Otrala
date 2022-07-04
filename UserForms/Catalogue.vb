@@ -138,11 +138,12 @@
         Next
     End Sub
 
-    Private Sub LoadForm() Handles Me.Load
+    Private Sub LoadForm() Handles Me.Activated
         'TODO: This line of code loads data into the 'OtralaDBDataSet.Package' table. You can move, or remove it, as needed.
         Me.PackageTableAdapter.Fill(Me.OtralaDBDataSet.Package)
 
         PnlCatalogue.Controls.Clear()
+        CatalogueList.Clear()
 
         Dim CatalogueData As DataTable = OtralaDBDataSet.Package.Copy()
 
