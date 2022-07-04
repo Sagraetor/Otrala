@@ -138,11 +138,16 @@
         Next
     End Sub
 
-    Private Sub LoadForm() Handles Me.Load
+    Overrides Sub AddFormLoad()
         'TODO: This line of code loads data into the 'OtralaDBDataSet.Package' table. You can move, or remove it, as needed.
         Me.PackageTableAdapter.Fill(Me.OtralaDBDataSet.Package)
 
+        OpenRecommendations()
+    End Sub
+
+    Private Sub OpenRecommendations() Handles BtnRecommendation.Click
         PnlCatalogue.Controls.Clear()
+        CatalogueList.Clear()
 
         Dim CatalogueData As DataTable = OtralaDBDataSet.Package.Copy()
 
@@ -166,9 +171,38 @@
         Next
 
         GenerateCatalogue(CatalogueList)
-
     End Sub
 
+    Private Sub OpenWishlist() Handles BtnWishlist.Click
+        PnlCatalogue.Controls.Clear()
+        CatalogueList.Clear()
+
+        Dim CatalogueData As DataTable = OtralaDBDataSet.Package.Copy()
+
+        For Each Row In CatalogueData.Rows
+            If User.Wishlist.Contains(Row("PackageID")) Then
+                Dim NewPackage As New Package
+                With NewPackage
+                    .SellerID = Row("UserID")
+                    .PackageID = Row("PackageID")
+                    .PackageName = Row("PackageName")
+                    .Price = Row("Price")
+                    .Description = Row("Description")
+                    .State = Row("State")
+                    .Location = Row("Destination")
+                    .Pax = Row("Pax")
+                    .Duration = Row("Duration")
+                    .SellerName = Row("SellerName")
+                    .Picture = ImageFromData(Row("Picture"))
+                End With
+
+                CatalogueList.Add(NewPackage)
+            End If
+        Next
+
+        GenerateCatalogue(CatalogueList)
+
+    End Sub
     Private Function GetIndex(Name As String)
         Dim House As Short = 0
         Dim Index As Short = 0

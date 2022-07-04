@@ -45,10 +45,15 @@ Partial Class Package_Viewer
         Me.btnSeller = New System.Windows.Forms.Button()
         Me.pctSeller = New System.Windows.Forms.PictureBox()
         Me.blocking_panel = New System.Windows.Forms.Panel()
+        Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
+        Me.UserInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.UserInfoTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.UserInfoTableAdapter()
         CType(Me.pctTravelPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.tableDetails.SuspendLayout()
         CType(Me.pctSeller, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UserInfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pctTravelPic
@@ -325,6 +330,20 @@ Partial Class Package_Viewer
         Me.blocking_panel.Size = New System.Drawing.Size(1262, 22)
         Me.blocking_panel.TabIndex = 10
         '
+        'OtralaDBDataSet
+        '
+        Me.OtralaDBDataSet.DataSetName = "OtralaDBDataSet"
+        Me.OtralaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'UserInfoBindingSource
+        '
+        Me.UserInfoBindingSource.DataMember = "UserInfo"
+        Me.UserInfoBindingSource.DataSource = Me.OtralaDBDataSet
+        '
+        'UserInfoTableAdapter
+        '
+        Me.UserInfoTableAdapter.ClearBeforeFill = True
+        '
         'Package_Viewer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -353,6 +372,8 @@ Partial Class Package_Viewer
         Me.tableDetails.ResumeLayout(False)
         Me.tableDetails.PerformLayout()
         CType(Me.pctSeller, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UserInfoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -378,4 +399,7 @@ Partial Class Package_Viewer
     Friend WithEvents btnSeller As Button
     Friend WithEvents pctSeller As PictureBox
     Friend WithEvents blocking_panel As Panel
+    Friend WithEvents OtralaDBDataSet As OtralaDBDataSet
+    Friend WithEvents UserInfoBindingSource As BindingSource
+    Friend WithEvents UserInfoTableAdapter As OtralaDBDataSetTableAdapters.UserInfoTableAdapter
 End Class

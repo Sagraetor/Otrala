@@ -116,6 +116,9 @@
 
     Public Function StrToLstInt(Info As String)
         Dim OutputList As New List(Of Integer)
+        If Info = "" Then
+            Return OutputList
+        End If
         Dim Temp() As String = Info.Split(",")
         For Each Num In Temp
             OutputList.Add(CInt(Num))
