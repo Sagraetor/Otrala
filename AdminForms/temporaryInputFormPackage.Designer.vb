@@ -38,12 +38,6 @@ Partial Class temporaryInputFormPackage
         Me.PackageBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PackageTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.PackageTableAdapter()
         Me.TableAdapterManager = New Otrala_2._0.OtralaDBDataSetTableAdapters.TableAdapterManager()
-        Me.PackageBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
@@ -53,29 +47,6 @@ Partial Class temporaryInputFormPackage
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.PackageBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
-        Me.PackageDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.btnAddPic = New System.Windows.Forms.Button()
-        Me.Back = New System.Windows.Forms.Button()
-        Me.picPackage = New System.Windows.Forms.PictureBox()
         Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.PackageBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
@@ -147,63 +118,6 @@ Partial Class temporaryInputFormPackage
         '
         'BindingNavigatorMoveFirstItem
         '
-        Me.PackageBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
-        Me.PackageBindingNavigator.BindingSource = Me.PackageBindingSource
-        Me.PackageBindingNavigator.CountItem = Me.BindingNavigatorCountItem
-        Me.PackageBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
-        Me.PackageBindingNavigator.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.PackageBindingNavigator.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.BindingNavigatorMoveFirstItem, Me.BindingNavigatorMovePreviousItem, Me.BindingNavigatorSeparator, Me.BindingNavigatorPositionItem, Me.BindingNavigatorCountItem, Me.BindingNavigatorSeparator1, Me.BindingNavigatorMoveNextItem, Me.BindingNavigatorMoveLastItem, Me.BindingNavigatorSeparator2, Me.BindingNavigatorAddNewItem, Me.BindingNavigatorDeleteItem, Me.PackageBindingNavigatorSaveItem})
-        Me.PackageBindingNavigator.Location = New System.Drawing.Point(0, 0)
-        Me.PackageBindingNavigator.MoveFirstItem = Me.BindingNavigatorMoveFirstItem
-        Me.PackageBindingNavigator.MoveLastItem = Me.BindingNavigatorMoveLastItem
-        Me.PackageBindingNavigator.MoveNextItem = Me.BindingNavigatorMoveNextItem
-        Me.PackageBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
-        Me.PackageBindingNavigator.Name = "PackageBindingNavigator"
-        Me.PackageBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.PackageBindingNavigator.Size = New System.Drawing.Size(1182, 27)
-        Me.PackageBindingNavigator.TabIndex = 0
-        Me.PackageBindingNavigator.Text = "BindingNavigator1"
-        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
-        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 24)
-        Me.BindingNavigatorMoveFirstItem.Text = "Move first"
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 24)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
-        '
-        'BindingNavigatorCountItem
-        'BindingNavigatorMovePreviousItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 24)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
-        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 24)
-        Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 24)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
-        '
-        'BindingNavigatorMoveFirstItem
-        '
         Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
@@ -229,6 +143,7 @@ Partial Class temporaryInputFormPackage
         '
         Me.BindingNavigatorPositionItem.AccessibleName = "Position"
         Me.BindingNavigatorPositionItem.AutoSize = False
+        Me.BindingNavigatorPositionItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
         Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 27)
         Me.BindingNavigatorPositionItem.Text = "0"
@@ -269,27 +184,8 @@ Partial Class temporaryInputFormPackage
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
         Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 27)
         '
-        'PackageBindingNavigatorSaveItem
-        '
-        Me.PackageBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.PackageBindingNavigatorSaveItem.Image = CType(resources.GetObject("PackageBindingNavigatorSaveItem.Image"), System.Drawing.Image)
-        Me.PackageBindingNavigatorSaveItem.Name = "PackageBindingNavigatorSaveItem"
-        Me.PackageBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 24)
-        Me.PackageBindingNavigatorSaveItem.Text = "Save Data"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 27)
-        '
         'BindingNavigatorAddNewItem
         '
-        Me.PackageDataGridView.AutoGenerateColumns = False
-        Me.PackageDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.PackageDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewImageColumn1, Me.DataGridViewTextBoxColumn9})
-        Me.PackageDataGridView.DataSource = Me.PackageBindingSource
-        Me.PackageDataGridView.Location = New System.Drawing.Point(430, 77)
-        Me.PackageDataGridView.Name = "PackageDataGridView"
-        Me.PackageDataGridView.RowHeadersWidth = 51
-        Me.PackageDataGridView.RowTemplate.Height = 24
-        Me.PackageDataGridView.Size = New System.Drawing.Size(709, 332)
-        Me.PackageDataGridView.TabIndex = 1
         Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
@@ -306,7 +202,6 @@ Partial Class temporaryInputFormPackage
         Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
-        'DataGridViewTextBoxColumn3
         'PackageBindingNavigatorSaveItem
         '
         Me.PackageBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
@@ -467,11 +362,6 @@ Partial Class temporaryInputFormPackage
         '
         'PackageNameLabel
         '
-        Me.TextBox2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PackageBindingSource, "UserID", True))
-        Me.TextBox2.Location = New System.Drawing.Point(36, 122)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(174, 22)
-        Me.TextBox2.TabIndex = 3
         PackageNameLabel.AutoSize = True
         PackageNameLabel.Location = New System.Drawing.Point(56, 145)
         PackageNameLabel.Name = "PackageNameLabel"
@@ -622,9 +512,6 @@ Partial Class temporaryInputFormPackage
         Me.UserIDTextBox.Name = "UserIDTextBox"
         Me.UserIDTextBox.Size = New System.Drawing.Size(100, 22)
         Me.UserIDTextBox.TabIndex = 32
-        '
-        Me.PackageBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 28)
-        Me.PackageBindingNavigatorSaveItem.Text = "Save Data"
         '
         'temporaryInputFormPackage
         '
