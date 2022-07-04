@@ -22,7 +22,6 @@ Partial Class AddPackage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddPackage))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BtnCancel = New System.Windows.Forms.Button()
@@ -43,13 +42,8 @@ Partial Class AddPackage
         Me.TbPackageName = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PicBox = New System.Windows.Forms.PictureBox()
-        Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
-        Me.PackageBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PackageTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.PackageTableAdapter()
         Me.Panel1.SuspendLayout()
         CType(Me.PicBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PackageBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -245,20 +239,6 @@ Partial Class AddPackage
         Me.PicBox.TabIndex = 0
         Me.PicBox.TabStop = False
         '
-        'OtralaDBDataSet
-        '
-        Me.OtralaDBDataSet.DataSetName = "OtralaDBDataSet"
-        Me.OtralaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'PackageBindingSource
-        '
-        Me.PackageBindingSource.DataMember = "Package"
-        Me.PackageBindingSource.DataSource = Me.OtralaDBDataSet
-        '
-        'PackageTableAdapter
-        '
-        Me.PackageTableAdapter.ClearBeforeFill = True
-        '
         'AddPackage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 23.0!)
@@ -276,8 +256,6 @@ Partial Class AddPackage
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PicBox, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PackageBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -299,9 +277,6 @@ Partial Class AddPackage
     Friend WithEvents PicBox As PictureBox
     Friend WithEvents TbLocations As TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents OtralaDBDataSet As OtralaDBDataSet
-    Friend WithEvents PackageBindingSource As BindingSource
-    Friend WithEvents PackageTableAdapter As OtralaDBDataSetTableAdapters.PackageTableAdapter
     Friend WithEvents BtnCancel As Button
     Friend WithEvents BtnAdd As Button
 End Class

@@ -265,7 +265,7 @@
                 .LoggedIn = False
             }
 
-            LoadUserInfo()
+            Me.ToCatalogue()
         Else
             MsgBox("Aborted")
         End If
