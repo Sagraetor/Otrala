@@ -102,6 +102,8 @@ Partial Class BaseForm
         'LblName
         '
         Me.LblName.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
+        Me.LblName.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblName.ForeColor = System.Drawing.Color.White
         Me.LblName.Location = New System.Drawing.Point(836, 40)
         Me.LblName.Name = "LblName"
         Me.LblName.Size = New System.Drawing.Size(358, 23)
