@@ -163,6 +163,12 @@
     <Compile Include="AdminForms\temporaryInputFormFeedback.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UserForms\AddPackage.Designer.vb">
+      <DependentUpon>AddPackage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\AddPackage.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UserForms\Prompt.Designer.vb">
       <DependentUpon>Prompt.vb</DependentUpon>
     </Compile>
@@ -219,6 +225,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="UserForms\AddPackage.resx">
+      <DependentUpon>AddPackage.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserForms\Catalogue.resx">
       <DependentUpon>Catalogue.vb</DependentUpon>
     </EmbeddedResource>

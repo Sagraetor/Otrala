@@ -151,7 +151,6 @@
             With NewPackage
                 .SellerID = Row("UserID")
                 .PackageID = Row("PackageID")
-                .SellerName = "Temp"
                 .PackageName = Row("PackageName")
                 .Price = Row("Price")
                 .Description = Row("Description")

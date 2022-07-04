@@ -24,10 +24,10 @@ Partial Class UserSettings
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UserSettings))
-        Me.BtnHistory = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.BtnUser = New System.Windows.Forms.Button()
+        Me.BtnSeller = New System.Windows.Forms.Button()
         Me.PbProfile = New System.Windows.Forms.PictureBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.PnlUser = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnDelete = New System.Windows.Forms.Button()
         Me.BtnEdit = New System.Windows.Forms.Button()
@@ -62,8 +62,10 @@ Partial Class UserSettings
         Me.PackageTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.PackageTableAdapter()
         Me.LoginInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LoginInfoTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.LoginInfoTableAdapter()
+        Me.PnlSeller = New System.Windows.Forms.Panel()
+        Me.BtnAddPackage = New System.Windows.Forms.Button()
         CType(Me.PbProfile, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
+        Me.PnlUser.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SecurityInformation.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -73,27 +75,30 @@ Partial Class UserSettings
         CType(Me.LoginInfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'BtnHistory
+        'BtnUser
         '
-        Me.BtnHistory.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BtnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnHistory.Location = New System.Drawing.Point(0, 110)
-        Me.BtnHistory.Name = "BtnHistory"
-        Me.BtnHistory.Size = New System.Drawing.Size(186, 50)
-        Me.BtnHistory.TabIndex = 24
-        Me.BtnHistory.Text = "Profile"
-        Me.BtnHistory.UseVisualStyleBackColor = False
+        Me.BtnUser.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.BtnUser.Enabled = False
+        Me.BtnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnUser.Location = New System.Drawing.Point(0, 110)
+        Me.BtnUser.Name = "BtnUser"
+        Me.BtnUser.Size = New System.Drawing.Size(186, 50)
+        Me.BtnUser.TabIndex = 24
+        Me.BtnUser.Text = "Profile"
+        Me.BtnUser.UseVisualStyleBackColor = False
         '
-        'Button2
+        'BtnSeller
         '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Location = New System.Drawing.Point(0, 166)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(186, 50)
-        Me.Button2.TabIndex = 24
-        Me.Button2.Text = "Edit Travel Agency"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.BtnSeller.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.BtnSeller.Enabled = False
+        Me.BtnSeller.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSeller.Location = New System.Drawing.Point(0, 166)
+        Me.BtnSeller.Name = "BtnSeller"
+        Me.BtnSeller.Size = New System.Drawing.Size(186, 50)
+        Me.BtnSeller.TabIndex = 24
+        Me.BtnSeller.Text = "Edit Travel Agency"
+        Me.BtnSeller.UseVisualStyleBackColor = False
+        Me.BtnSeller.Visible = False
         '
         'PbProfile
         '
@@ -104,17 +109,17 @@ Partial Class UserSettings
         Me.PbProfile.TabIndex = 25
         Me.PbProfile.TabStop = False
         '
-        'Panel1
+        'PnlUser
         '
-        Me.Panel1.AutoScroll = True
-        Me.Panel1.AutoScrollMargin = New System.Drawing.Size(0, 20)
-        Me.Panel1.Controls.Add(Me.GroupBox2)
-        Me.Panel1.Controls.Add(Me.SecurityInformation)
-        Me.Panel1.Controls.Add(Me.GroupBox1)
-        Me.Panel1.Location = New System.Drawing.Point(186, 110)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1076, 563)
-        Me.Panel1.TabIndex = 26
+        Me.PnlUser.AutoScroll = True
+        Me.PnlUser.AutoScrollMargin = New System.Drawing.Size(0, 20)
+        Me.PnlUser.Controls.Add(Me.GroupBox2)
+        Me.PnlUser.Controls.Add(Me.SecurityInformation)
+        Me.PnlUser.Controls.Add(Me.GroupBox1)
+        Me.PnlUser.Location = New System.Drawing.Point(186, 110)
+        Me.PnlUser.Name = "PnlUser"
+        Me.PnlUser.Size = New System.Drawing.Size(1076, 563)
+        Me.PnlUser.TabIndex = 26
         '
         'GroupBox2
         '
@@ -423,21 +428,49 @@ Partial Class UserSettings
         '
         Me.LoginInfoTableAdapter.ClearBeforeFill = True
         '
+        'PnlSeller
+        '
+        Me.PnlSeller.AutoScroll = True
+        Me.PnlSeller.AutoScrollMargin = New System.Drawing.Size(0, 20)
+        Me.PnlSeller.Enabled = False
+        Me.PnlSeller.Location = New System.Drawing.Point(186, 110)
+        Me.PnlSeller.Name = "PnlSeller"
+        Me.PnlSeller.Size = New System.Drawing.Size(1076, 563)
+        Me.PnlSeller.TabIndex = 29
+        Me.PnlSeller.Visible = False
+        '
+        'BtnAddPackage
+        '
+        Me.BtnAddPackage.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.BtnAddPackage.Enabled = False
+        Me.BtnAddPackage.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAddPackage.Location = New System.Drawing.Point(0, 222)
+        Me.BtnAddPackage.Name = "BtnAddPackage"
+        Me.BtnAddPackage.Size = New System.Drawing.Size(186, 50)
+        Me.BtnAddPackage.TabIndex = 24
+        Me.BtnAddPackage.Text = "Add Package"
+        Me.BtnAddPackage.UseVisualStyleBackColor = False
+        Me.BtnAddPackage.Visible = False
+        '
         'UserSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 23.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1262, 673)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.BtnHistory)
+        Me.Controls.Add(Me.PnlUser)
+        Me.Controls.Add(Me.BtnAddPackage)
+        Me.Controls.Add(Me.BtnSeller)
+        Me.Controls.Add(Me.BtnUser)
+        Me.Controls.Add(Me.PnlSeller)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "UserSettings"
-        Me.Controls.SetChildIndex(Me.BtnHistory, 0)
-        Me.Controls.SetChildIndex(Me.Button2, 0)
-        Me.Controls.SetChildIndex(Me.Panel1, 0)
+        Me.Controls.SetChildIndex(Me.PnlSeller, 0)
+        Me.Controls.SetChildIndex(Me.BtnUser, 0)
+        Me.Controls.SetChildIndex(Me.BtnSeller, 0)
+        Me.Controls.SetChildIndex(Me.BtnAddPackage, 0)
+        Me.Controls.SetChildIndex(Me.PnlUser, 0)
         CType(Me.PbProfile, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
+        Me.PnlUser.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.SecurityInformation.ResumeLayout(False)
         Me.SecurityInformation.PerformLayout()
@@ -451,10 +484,10 @@ Partial Class UserSettings
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents BtnHistory As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents BtnUser As Button
+    Friend WithEvents BtnSeller As Button
     Friend WithEvents PbProfile As PictureBox
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents PnlUser As Panel
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
@@ -489,4 +522,6 @@ Partial Class UserSettings
     Friend WithEvents LoginInfoBindingSource As BindingSource
     Friend WithEvents LoginInfoTableAdapter As OtralaDBDataSetTableAdapters.LoginInfoTableAdapter
     Friend WithEvents LblProfileAddress As Label
+    Friend WithEvents PnlSeller As Panel
+    Friend WithEvents BtnAddPackage As Button
 End Class
