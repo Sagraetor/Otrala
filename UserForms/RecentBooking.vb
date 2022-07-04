@@ -23,7 +23,6 @@
 
     Private Sub Cancel() Handles btnCancel.Click
         If MsgBox("You are about to cancel the transaction, are you sure?", MsgBoxStyle.YesNo, "Otrala") = MsgBoxResult.Yes Then
-            Catalogue.Show()
             Me.Close()
         End If
     End Sub
