@@ -54,6 +54,18 @@
             Me.Hide()
         End If
     End Sub
+
+    Private Sub SearchBox_Click(sender As Object, e As EventArgs) Handles SearchBox.Click
+        If Me.Name <> "Search" Then
+            Dim s As New Search
+            s.Name = "Search"
+            s.SearchBox.Text = SearchBox.Text
+            s.Show()
+            s.FormLoad()
+            Me.Hide()
+        End If
+    End Sub
+
     ' log out 
     Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
         Dim reply As MsgBoxResult = MsgBox("Thank you for using Otrala" + Environment.NewLine +
@@ -81,6 +93,10 @@
 
     Private Sub AddRequestToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AddRequestToolStripMenuItem1.Click
         temporaryInputFormRequest.ShowDialog()
+    End Sub
+
+    Private Sub ToCatalogue(sender As Object, e As EventArgs) Handles PbOtralaIcon.Click
+
     End Sub
 
 End Class

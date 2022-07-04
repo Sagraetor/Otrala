@@ -24,12 +24,11 @@ Partial Class BaseForm
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(BaseForm))
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.SearchBox = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnLogOut = New System.Windows.Forms.Button()
         Me.BtnFeedback = New System.Windows.Forms.Button()
         Me.LblName = New System.Windows.Forms.Label()
-        Me.PbOtralaIcon = New System.Windows.Forms.PictureBox()
         Me.AddPackageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddFeedbackToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddLoginInfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -44,9 +43,10 @@ Partial Class BaseForm
         Me.AddUserInfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddRequestToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button1 = New System.Windows.Forms.Button()
-        CType(Me.PbOtralaIcon, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PbOtralaIcon = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.PbOtralaIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -59,13 +59,13 @@ Partial Class BaseForm
         Me.Label1.Size = New System.Drawing.Size(1262, 110)
         Me.Label1.TabIndex = 0
         '
-        'TextBox1
+        'SearchBox
         '
-        Me.TextBox1.Location = New System.Drawing.Point(227, 37)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(484, 30)
-        Me.TextBox1.TabIndex = 2
+        Me.SearchBox.Location = New System.Drawing.Point(227, 37)
+        Me.SearchBox.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.SearchBox.Name = "SearchBox"
+        Me.SearchBox.Size = New System.Drawing.Size(484, 30)
+        Me.SearchBox.TabIndex = 2
         '
         'Label2
         '
@@ -108,18 +108,6 @@ Partial Class BaseForm
         Me.LblName.TabIndex = 11
         Me.LblName.Text = "Log In / Sign Up"
         Me.LblName.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'PbOtralaIcon
-        '
-        Me.PbOtralaIcon.BackColor = System.Drawing.Color.Transparent
-        Me.PbOtralaIcon.Image = Global.Otrala_2._0.My.Resources.Resources.Otrala_Icon
-        Me.PbOtralaIcon.Location = New System.Drawing.Point(22, 12)
-        Me.PbOtralaIcon.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
-        Me.PbOtralaIcon.Name = "PbOtralaIcon"
-        Me.PbOtralaIcon.Size = New System.Drawing.Size(140, 91)
-        Me.PbOtralaIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PbOtralaIcon.TabIndex = 1
-        Me.PbOtralaIcon.TabStop = False
         '
         'AddPackageToolStripMenuItem
         '
@@ -217,6 +205,18 @@ Partial Class BaseForm
         Me.Button1.Text = "Recommendation"
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'PbOtralaIcon
+        '
+        Me.PbOtralaIcon.BackColor = System.Drawing.Color.Transparent
+        Me.PbOtralaIcon.Image = Global.Otrala_2._0.My.Resources.Resources.Otrala_Icon
+        Me.PbOtralaIcon.Location = New System.Drawing.Point(22, 12)
+        Me.PbOtralaIcon.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
+        Me.PbOtralaIcon.Name = "PbOtralaIcon"
+        Me.PbOtralaIcon.Size = New System.Drawing.Size(140, 91)
+        Me.PbOtralaIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PbOtralaIcon.TabIndex = 1
+        Me.PbOtralaIcon.TabStop = False
+        '
         'BaseForm
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -227,7 +227,7 @@ Partial Class BaseForm
         Me.Controls.Add(Me.btnLogOut)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.SearchBox)
         Me.Controls.Add(Me.PbOtralaIcon)
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Arial", 12.0!)
@@ -239,11 +239,11 @@ Partial Class BaseForm
         Me.Name = "BaseForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Otrala"
-        CType(Me.PbOtralaIcon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.PbOtralaIcon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -251,7 +251,7 @@ Partial Class BaseForm
 
     Friend WithEvents Label1 As Label
     Friend WithEvents PbOtralaIcon As PictureBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents SearchBox As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents btnLogOut As Button
     Friend WithEvents BtnFeedback As Button

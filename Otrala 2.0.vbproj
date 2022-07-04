@@ -72,7 +72,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -127,6 +127,7 @@
     <Compile Include="UserForms\AboutUs.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UserForms\Class1.vb" />
     <Compile Include="UserForms\Feedback.Designer.vb">
       <DependentUpon>Feedback.vb</DependentUpon>
     </Compile>
@@ -161,6 +162,12 @@
       <DependentUpon>temporaryInputFormFeedback.vb</DependentUpon>
     </Compile>
     <Compile Include="AdminForms\temporaryInputFormFeedback.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForms\Search.Designer.vb">
+      <DependentUpon>Search.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\Search.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserForms\Prompt.Designer.vb">
@@ -251,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForms\temporaryInputFormUserInfo.resx">
       <DependentUpon>temporaryInputFormUserInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\Search.resx">
+      <DependentUpon>Search.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\UserSettings.resx">
       <DependentUpon>UserSettings.vb</DependentUpon>
