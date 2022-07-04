@@ -47,8 +47,7 @@
             TbTitle.Text = ""
             TbDescription.Text = ""
         Else
-            Catalogue.Show()
-            Me.Hide()
+            Me.ToCatalogue()
         End If
     End Sub
 
