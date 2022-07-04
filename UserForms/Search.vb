@@ -103,6 +103,7 @@
 
     End Sub
 
+    ' Determine the price range based on selectedindex of combobox
     Private Function determine_price(i As Integer)
         Select Case i
             Case 0
@@ -120,6 +121,7 @@
         End Select
     End Function
 
+    ' Get a copy of the database package record
     Sub get_all_package_records()
         Me.PackageTableAdapter.Fill(Me.OtralaDBDataSet.Package)
 
@@ -146,6 +148,7 @@
         Next
     End Sub
 
+    ' Same code as Catalogue.vb here
     Private Sub GenerateCatalogue(CatalogueItems As List(Of Package))
         CatalogueIndex = 1
         CatalogueYIndex = 0
@@ -279,19 +282,23 @@
         Next
     End Sub
 
+    ' Clicking on a catalogue (this part is different because using index doesnt work)
     Private Sub Catalogue_Click(sender As Object, e As EventArgs)
         Dim selected_package As Package = Nothing
 
-        If Not TypeOf sender Is GroupBox Then
+        ' Get the groupbox
+        If TypeOf sender IsNot GroupBox Then
             sender = sender.Parent
         End If
 
+        ' Find the package with the same name as groupbox
         For Each package In CatalogueList
             If package.PackageName = sender.Controls.Item(5).Text Then
                 selected_package = package
             End If
         Next
 
+        ' Display the package using package viewer
         Dim PackageViewForm As New Package_Viewer With {
             .Package = selected_package
         }

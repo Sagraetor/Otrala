@@ -168,7 +168,6 @@
 
         GenerateCatalogue(CatalogueList)
 
-
     End Sub
 
     Private Function GetIndex(Name As String)
