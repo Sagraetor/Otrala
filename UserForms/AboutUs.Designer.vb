@@ -46,7 +46,7 @@ Partial Class AboutUs
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 26.0!, System.Drawing.FontStyle.Bold)
-        Me.Label3.Location = New System.Drawing.Point(602, 469)
+        Me.Label3.Location = New System.Drawing.Point(622, 469)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(203, 52)
         Me.Label3.TabIndex = 13
@@ -56,7 +56,7 @@ Partial Class AboutUs
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Label5.Location = New System.Drawing.Point(452, 533)
+        Me.Label5.Location = New System.Drawing.Point(518, 533)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(440, 60)
         Me.Label5.TabIndex = 14
@@ -67,7 +67,7 @@ Partial Class AboutUs
         'Button4
         '
         Me.Button4.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Button4.Location = New System.Drawing.Point(529, 623)
+        Me.Button4.Location = New System.Drawing.Point(549, 623)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(171, 34)
         Me.Button4.TabIndex = 15
@@ -77,7 +77,7 @@ Partial Class AboutUs
         'Button7
         '
         Me.Button7.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Button7.Location = New System.Drawing.Point(720, 623)
+        Me.Button7.Location = New System.Drawing.Point(740, 623)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(171, 34)
         Me.Button7.TabIndex = 16
