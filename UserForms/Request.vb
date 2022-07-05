@@ -80,6 +80,8 @@
         Me.RequestTableAdapter.Fill(Me.OtralaDBDataSet.Request)
 
         DtpPlanned.MinDate = DateTime.Now
+
+
     End Sub
 
     Private Sub ViewHistory() Handles BtnHistory.Click
@@ -156,15 +158,4 @@
         End If
     End Sub
 
-    Private Sub CloseAll(sender As Object, e As EventArgs) Handles Me.Closed
-
-    End Sub
-
-    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
-
-    End Sub
-
-    Private Sub CbState_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CbState.SelectedIndexChanged
-
-    End Sub
 End Class

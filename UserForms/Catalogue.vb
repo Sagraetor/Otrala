@@ -177,27 +177,27 @@
         PnlCatalogue.Controls.Clear()
         CatalogueList.Clear()
 
-        Dim CatalogueData As DataTable = OtralaDBDataSet.Package.Copy()
+        Dim StrMyWishlist As String = LstIntToStr(User.Wishlist)
 
-        For Each Row In CatalogueData.Rows
-            If User.Wishlist.Contains(Row("PackageID")) Then
-                Dim NewPackage As New Package
-                With NewPackage
-                    .SellerID = Row("UserID")
-                    .PackageID = Row("PackageID")
-                    .PackageName = Row("PackageName")
-                    .Price = Row("Price")
-                    .Description = Row("Description")
-                    .State = Row("State")
-                    .Location = Row("Destination")
-                    .Pax = Row("Pax")
-                    .Duration = Row("Duration")
-                    .SellerName = Row("SellerName")
-                    .Picture = ImageFromData(Row("Picture"))
-                End With
+        Dim CatalogueData As DataRow() = OtralaDBDataSet.Package.Select("PackageID IN (" & StrMyWishlist.Replace(",", ", ") & ")")
 
-                CatalogueList.Add(NewPackage)
-            End If
+        For Each Row In CatalogueData
+            Dim NewPackage As New Package
+            With NewPackage
+                .SellerID = Row("UserID")
+                .PackageID = Row("PackageID")
+                .PackageName = Row("PackageName")
+                .Price = Row("Price")
+                .Description = Row("Description")
+                .State = Row("State")
+                .Location = Row("Destination")
+                .Pax = Row("Pax")
+                .Duration = Row("Duration")
+                .SellerName = Row("SellerName")
+                .Picture = ImageFromData(Row("Picture"))
+            End With
+
+            CatalogueList.Add(NewPackage)
         Next
 
         GenerateCatalogue(CatalogueList)

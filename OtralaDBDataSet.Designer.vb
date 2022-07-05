@@ -2021,6 +2021,8 @@ Partial Public Class OtralaDBDataSet
         
         Private columnNotes As Global.System.Data.DataColumn
         
+        Private columnFulfilled As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
@@ -2121,6 +2123,14 @@ Partial Public Class OtralaDBDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property FulfilledColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFulfilled
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -2157,9 +2167,9 @@ Partial Public Class OtralaDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddRequestRow(ByVal parentUserInfoRowByUserInfoRequest As UserInfoRow, ByVal Location As String, ByVal Price As String, ByVal Duration As String, ByVal Pax As String, ByVal PlannedDate As String, ByVal Notes As String) As RequestRow
+        Public Overloads Function AddRequestRow(ByVal parentUserInfoRowByUserInfoRequest As UserInfoRow, ByVal Location As String, ByVal Price As String, ByVal Duration As String, ByVal Pax As String, ByVal PlannedDate As String, ByVal Notes As String, ByVal Fulfilled As Boolean) As RequestRow
             Dim rowRequestRow As RequestRow = CType(Me.NewRow,RequestRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, Location, Price, Duration, Pax, PlannedDate, Notes}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, Location, Price, Duration, Pax, PlannedDate, Notes, Fulfilled}
             If (Not (parentUserInfoRowByUserInfoRequest) Is Nothing) Then
                 columnValuesArray(1) = parentUserInfoRowByUserInfoRequest(13)
             End If
@@ -2199,6 +2209,7 @@ Partial Public Class OtralaDBDataSet
             Me.columnPax = MyBase.Columns("Pax")
             Me.columnPlannedDate = MyBase.Columns("PlannedDate")
             Me.columnNotes = MyBase.Columns("Notes")
+            Me.columnFulfilled = MyBase.Columns("Fulfilled")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2220,6 +2231,8 @@ Partial Public Class OtralaDBDataSet
             MyBase.Columns.Add(Me.columnPlannedDate)
             Me.columnNotes = New Global.System.Data.DataColumn("Notes", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnNotes)
+            Me.columnFulfilled = New Global.System.Data.DataColumn("Fulfilled", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFulfilled)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnRequestID}, true))
             Me.columnRequestID.AutoIncrement = true
             Me.columnRequestID.AutoIncrementSeed = -1
@@ -3969,6 +3982,21 @@ Partial Public Class OtralaDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property Fulfilled() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tableRequest.FulfilledColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Fulfilled' in table 'Request' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRequest.FulfilledColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property UserInfoRow() As UserInfoRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("UserInfoRequest")),UserInfoRow)
@@ -4060,6 +4088,18 @@ Partial Public Class OtralaDBDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetNotesNull()
             Me(Me.tableRequest.NotesColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsFulfilledNull() As Boolean
+            Return Me.IsNull(Me.tableRequest.FulfilledColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetFulfilledNull()
+            Me(Me.tableRequest.FulfilledColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -6797,6 +6837,7 @@ Namespace OtralaDBDataSetTableAdapters
             tableMapping.ColumnMappings.Add("Pax", "Pax")
             tableMapping.ColumnMappings.Add("PlannedDate", "PlannedDate")
             tableMapping.ColumnMappings.Add("Notes", "Notes")
+            tableMapping.ColumnMappings.Add("Fulfilled", "Fulfilled")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -6804,7 +6845,8 @@ Namespace OtralaDBDataSetTableAdapters
                 "OR (`UserID` = ?)) AND ((? = 1 AND `Location` IS NULL) OR (`Location` = ?)) AND "& _ 
                 "((? = 1 AND `Price` IS NULL) OR (`Price` = ?)) AND ((? = 1 AND `Duration` IS NUL"& _ 
                 "L) OR (`Duration` = ?)) AND ((? = 1 AND `Pax` IS NULL) OR (`Pax` = ?)) AND ((? ="& _ 
-                " 1 AND `PlannedDate` IS NULL) OR (`PlannedDate` = ?)))"
+                " 1 AND `PlannedDate` IS NULL) OR (`PlannedDate` = ?)) AND ((? = 1 AND `Fulfilled"& _ 
+                "` IS NULL) OR (`Fulfilled` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_RequestID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RequestID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_UserID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "UserID", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -6819,10 +6861,12 @@ Namespace OtralaDBDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Pax", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Pax", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_PlannedDate", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PlannedDate", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_PlannedDate", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PlannedDate", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Fulfilled", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Fulfilled", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Fulfilled", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Fulfilled", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `Request` (`UserID`, `Location`, `Price`, `Duration`, `Pax`, `Planned"& _ 
-                "Date`, `Notes`) VALUES (?, ?, ?, ?, ?, ?, ?)"
+                "Date`, `Notes`, `Fulfilled`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("UserID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "UserID", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Location", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Location", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -6831,14 +6875,16 @@ Namespace OtralaDBDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Pax", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Pax", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("PlannedDate", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PlannedDate", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Notes", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Notes", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Fulfilled", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Fulfilled", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE `Request` SET `UserID` = ?, `Location` = ?, `Price` = ?, `Duration` = ?, `"& _ 
-                "Pax` = ?, `PlannedDate` = ?, `Notes` = ? WHERE ((`RequestID` = ?) AND ((? = 1 AN"& _ 
-                "D `UserID` IS NULL) OR (`UserID` = ?)) AND ((? = 1 AND `Location` IS NULL) OR (`"& _ 
-                "Location` = ?)) AND ((? = 1 AND `Price` IS NULL) OR (`Price` = ?)) AND ((? = 1 A"& _ 
-                "ND `Duration` IS NULL) OR (`Duration` = ?)) AND ((? = 1 AND `Pax` IS NULL) OR (`"& _ 
-                "Pax` = ?)) AND ((? = 1 AND `PlannedDate` IS NULL) OR (`PlannedDate` = ?)))"
+                "Pax` = ?, `PlannedDate` = ?, `Notes` = ?, `Fulfilled` = ? WHERE ((`RequestID` = "& _ 
+                "?) AND ((? = 1 AND `UserID` IS NULL) OR (`UserID` = ?)) AND ((? = 1 AND `Locatio"& _ 
+                "n` IS NULL) OR (`Location` = ?)) AND ((? = 1 AND `Price` IS NULL) OR (`Price` = "& _ 
+                "?)) AND ((? = 1 AND `Duration` IS NULL) OR (`Duration` = ?)) AND ((? = 1 AND `Pa"& _ 
+                "x` IS NULL) OR (`Pax` = ?)) AND ((? = 1 AND `PlannedDate` IS NULL) OR (`PlannedD"& _ 
+                "ate` = ?)) AND ((? = 1 AND `Fulfilled` IS NULL) OR (`Fulfilled` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("UserID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "UserID", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Location", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Location", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -6847,6 +6893,7 @@ Namespace OtralaDBDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Pax", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Pax", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("PlannedDate", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PlannedDate", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Notes", Global.System.Data.OleDb.OleDbType.LongVarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Notes", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Fulfilled", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Fulfilled", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_RequestID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RequestID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_UserID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "UserID", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_UserID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "UserID", Global.System.Data.DataRowVersion.Original, false, Nothing))
@@ -6860,6 +6907,8 @@ Namespace OtralaDBDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Pax", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Pax", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_PlannedDate", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PlannedDate", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_PlannedDate", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "PlannedDate", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Fulfilled", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Fulfilled", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Fulfilled", Global.System.Data.OleDb.OleDbType.[Boolean], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Fulfilled", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -6875,8 +6924,8 @@ Namespace OtralaDBDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT RequestID, UserID, Location, Price, Duration, Pax, PlannedDate, Notes FROM"& _ 
-                " Request"
+            Me._commandCollection(0).CommandText = "SELECT RequestID, UserID, Location, Price, Duration, Pax, PlannedDate, Notes, Ful"& _ 
+                "filled FROM Request"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -6936,7 +6985,7 @@ Namespace OtralaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_RequestID As Integer, ByVal Original_UserID As Global.System.Nullable(Of Integer), ByVal Original_Location As String, ByVal Original_Price As String, ByVal Original_Duration As String, ByVal Original_Pax As String, ByVal Original_PlannedDate As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_RequestID As Integer, ByVal Original_UserID As Global.System.Nullable(Of Integer), ByVal Original_Location As String, ByVal Original_Price As String, ByVal Original_Duration As String, ByVal Original_Pax As String, ByVal Original_PlannedDate As String, ByVal Original_Fulfilled As Boolean) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_RequestID,Integer)
             If (Original_UserID.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
@@ -6980,6 +7029,8 @@ Namespace OtralaDBDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_PlannedDate,String)
             End If
+            Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
+            Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_Fulfilled,Boolean)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -6999,7 +7050,7 @@ Namespace OtralaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal UserID As Global.System.Nullable(Of Integer), ByVal Location As String, ByVal Price As String, ByVal Duration As String, ByVal Pax As String, ByVal PlannedDate As String, ByVal Notes As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal UserID As Global.System.Nullable(Of Integer), ByVal Location As String, ByVal Price As String, ByVal Duration As String, ByVal Pax As String, ByVal PlannedDate As String, ByVal Notes As String, ByVal Fulfilled As Boolean) As Integer
             If (UserID.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(UserID.Value,Integer)
             Else
@@ -7035,6 +7086,7 @@ Namespace OtralaDBDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(6).Value = CType(Notes,String)
             End If
+            Me.Adapter.InsertCommand.Parameters(7).Value = CType(Fulfilled,Boolean)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -7054,7 +7106,23 @@ Namespace OtralaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal UserID As Global.System.Nullable(Of Integer), ByVal Location As String, ByVal Price As String, ByVal Duration As String, ByVal Pax As String, ByVal PlannedDate As String, ByVal Notes As String, ByVal Original_RequestID As Integer, ByVal Original_UserID As Global.System.Nullable(Of Integer), ByVal Original_Location As String, ByVal Original_Price As String, ByVal Original_Duration As String, ByVal Original_Pax As String, ByVal Original_PlannedDate As String) As Integer
+        Public Overloads Overridable Function Update( _
+                    ByVal UserID As Global.System.Nullable(Of Integer),  _
+                    ByVal Location As String,  _
+                    ByVal Price As String,  _
+                    ByVal Duration As String,  _
+                    ByVal Pax As String,  _
+                    ByVal PlannedDate As String,  _
+                    ByVal Notes As String,  _
+                    ByVal Fulfilled As Boolean,  _
+                    ByVal Original_RequestID As Integer,  _
+                    ByVal Original_UserID As Global.System.Nullable(Of Integer),  _
+                    ByVal Original_Location As String,  _
+                    ByVal Original_Price As String,  _
+                    ByVal Original_Duration As String,  _
+                    ByVal Original_Pax As String,  _
+                    ByVal Original_PlannedDate As String,  _
+                    ByVal Original_Fulfilled As Boolean) As Integer
             If (UserID.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(UserID.Value,Integer)
             Else
@@ -7090,49 +7158,52 @@ Namespace OtralaDBDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Notes,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_RequestID,Integer)
+            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Fulfilled,Boolean)
+            Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Original_RequestID,Integer)
             If (Original_UserID.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_UserID.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(Original_UserID.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
             If (Original_Location Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_Location,String)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(Original_Location,String)
             End If
             If (Original_Price Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_Price,String)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(Original_Price,String)
             End If
             If (Original_Duration Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Duration,String)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(Original_Duration,String)
             End If
             If (Original_Pax Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_Pax,String)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Original_Pax,String)
             End If
             If (Original_PlannedDate Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_PlannedDate,String)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(Original_PlannedDate,String)
             End If
+            Me.Adapter.UpdateCommand.Parameters(21).Value = CType(0,Object)
+            Me.Adapter.UpdateCommand.Parameters(22).Value = CType(Original_Fulfilled,Boolean)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
