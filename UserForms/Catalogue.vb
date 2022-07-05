@@ -174,12 +174,30 @@
     End Sub
 
     Private Sub OpenWishlist() Handles BtnWishlist.Click
+
+        If Not User.LoggedIn Then
+            MsgBox("You need to be signed in to submit a request")
+            Exit Sub
+        End If
+
         PnlCatalogue.Controls.Clear()
         CatalogueList.Clear()
 
         Dim StrMyWishlist As String = LstIntToStr(User.Wishlist)
 
         If User.Wishlist.Count = 0 Then
+            Dim no_result As New Label
+            With no_result
+                .Name = "lblNoResult"
+                .Location = New System.Drawing.Point(PnlCatalogue.Width / 2 - 400, PnlCatalogue.Height / 2 - 100)
+                .Text = "Oops, it looks like you don't have any items in your wishlist yet."
+                .Font = New System.Drawing.Font("Arial", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+                .Size = New System.Drawing.Size(800, 300)
+                .TextAlign = ContentAlignment.TopLeft
+            End With
+
+            PnlCatalogue.Controls.Add(no_result)
+
             Exit Sub
         End If
 
@@ -229,8 +247,15 @@
     End Sub
 
     Private Sub OpenRequest() Handles BtnRequest.Click
+        If Not User.LoggedIn Then
+            MsgBox("You need to be signed in to submit a request")
+            Exit Sub
+        End If
+
         Request.Show()
         Request.FormLoad()
         Me.Hide()
+
     End Sub
+
 End Class

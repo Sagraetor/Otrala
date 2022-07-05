@@ -96,11 +96,18 @@
                 .Text = FeedbackRow("Description")
             End With
 
+            Dim NewDataIndex As New Label
+            With NewDataIndex
+                .Visible = False
+                .Text = FeedbackRow("FeedbackID")
+            End With
+
             Dim NewGrpBox As New GroupBox
             With NewGrpBox
                 .ForeColor = System.Drawing.Color.White
                 .Controls.Add(NewLblDate)
                 .Controls.Add(NewLblDesc)
+                .Controls.Add(NewDataIndex)
                 .Location = New System.Drawing.Point(12, 9)
                 .Name = "FHGrpBox" & Index
                 .Size = New System.Drawing.Size(441, 106)
@@ -108,6 +115,10 @@
                 .TabStop = False
                 .Text = FeedbackRow("Title")
             End With
+
+            AddHandler NewGrpBox.Click, AddressOf show_feedback_details
+            AddHandler NewLblDate.Click, AddressOf show_feedback_details
+            AddHandler NewLblDesc.Click, AddressOf show_feedback_details
 
             PnlHistory.Controls.Add(NewGrpBox)
 
@@ -129,6 +140,20 @@
             BtnHistory.Enabled = True
             BtnHistory.Focus()
         End If
+    End Sub
+
+    Sub show_feedback_details(sender As Object, e As EventArgs)
+
+        If TypeOf sender IsNot GroupBox Then
+            sender = sender.Parent
+        End If
+
+        Dim feedback_id As String = sender.Controls(2).Text
+
+        Dim view As New Feedback_Viewer
+        view.FeedbackID = feedback_id
+        view.ShowDialog()
+
     End Sub
 
     Private Sub CloseAll(sender As Object, e As EventArgs) Handles Me.Closed

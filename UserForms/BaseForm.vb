@@ -49,10 +49,12 @@
     End Sub
 
     Protected Sub ToFeedback() Handles BtnFeedback.Click
-        If Me.Name <> "Feedback" Then
+        If Me.Name <> "Feedback" And User.LoggedIn Then
             Feedback.Show()
             Feedback.FormLoad()
             Me.Hide()
+        ElseIf Me.Name <> "Feedback" Then
+            MsgBox("You need to be signed in to submit a feedback")
         End If
     End Sub
 
