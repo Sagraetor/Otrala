@@ -5,6 +5,12 @@
     Dim CatalogueList As New List(Of Package)
     Dim DisplayList As New List(Of Package)
 
+    Private Sub SearchBox_Search(sender As Object, e As KeyPressEventArgs) Handles SearchBox.KeyPress
+        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Enter) Then
+            SearchButton.PerformClick()
+        End If
+    End Sub
+
     Private Sub Search_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cboState.SelectedIndex = 0
         cboPrice.SelectedIndex = 0
@@ -17,6 +23,7 @@
         Dim bool_SearchUsingPrice As Boolean
         Dim bool_SearchUsingPax As Boolean
         Dim bool_SearchUsingDuration As Boolean
+        Dim bool_SearchUsingText As Boolean
         Dim con_state As String = ""
         Dim con_price_lower As Integer
         Dim con_price_higher As Integer
@@ -24,6 +31,7 @@
         Dim bool_pax_more_than_10 As Boolean
         Dim con_duration As Integer
         Dim bool_duration_more_than_10 As Boolean
+        Dim con_text() As String = SearchBox.Text.Split()
         CatalogueList.Clear()
         DisplayList.Clear()
         PnlCatalogue.Controls.Clear()
@@ -60,6 +68,10 @@
             bool_SearchUsingDuration = True
         End If
 
+        If con_text.Length > 0 Then
+            bool_SearchUsingText = True
+        End If
+
         ' Get the collection of packages from database
         get_all_package_records()
 
@@ -69,16 +81,20 @@
             Dim bool_correct_price As Boolean = False
             Dim bool_correct_pax As Boolean = False
             Dim bool_correct_duration As Boolean = False
+            Dim bool_correct_text As Boolean = False
+
             If bool_SearchUsingState And package.State = con_state Then
                 bool_correct_state = True
             ElseIf Not bool_SearchUsingState Then
                 bool_correct_state = True
             End If
+
             If bool_SearchUsingPrice And package.Price >= con_price_lower And package.Price <= con_price_higher Then
                 bool_correct_price = True
             ElseIf Not bool_SearchUsingPrice Then
                 bool_correct_price = True
             End If
+
             If bool_SearchUsingPax And package.Pax = con_pax Then
                 bool_correct_pax = True
             ElseIf bool_SearchUsingPax And bool_pax_more_than_10 And package.Pax >= 10 Then
@@ -86,20 +102,49 @@
             ElseIf Not bool_SearchUsingPax Then
                 bool_correct_pax = True
             End If
+
             If bool_SearchUsingDuration And package.Duration = con_duration Then
                 bool_correct_duration = True
-            ElseIf bool_SearchUsingDuration And package.Duration >= 10 Then
+            ElseIf bool_SearchUsingDuration And bool_duration_more_than_10 And package.Duration >= 10 Then
                 bool_correct_duration = True
             ElseIf Not bool_SearchUsingDuration Then
                 bool_correct_duration = True
             End If
 
-            If bool_correct_state And bool_correct_price And bool_correct_pax And bool_correct_duration Then
+            For Each search_term In con_text
+                For Each package_name In package.PackageName.Split()
+                    If UCase(package_name) Like "*" & UCase(search_term) & "*" Then
+                        bool_correct_text = True
+                    End If
+                Next
+                For Each description_content In package.Description.Split
+                    If UCase(description_content) Like "*" & UCase(search_term) & "*" Then
+                        bool_correct_text = True
+                    End If
+                Next
+            Next
+
+            If bool_correct_state And bool_correct_price And bool_correct_pax And bool_correct_duration And bool_correct_text Then
                 DisplayList.Add(package)
             End If
+
         Next
 
-        GenerateCatalogue(DisplayList)
+        If DisplayList.Count <> 0 Then
+            GenerateCatalogue(DisplayList)
+        Else
+            Dim no_result As New Label
+            With no_result
+                .Name = "lblNoResult"
+                .Location = New System.Drawing.Point(PnlCatalogue.Width / 2 - 400, PnlCatalogue.Height / 2 - 100)
+                .Text = "Oops, it looks like we don't have that sort of package currently."
+                .Font = New System.Drawing.Font("Arial", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+                .Size = New System.Drawing.Size(800, 300)
+                .TextAlign = ContentAlignment.TopLeft
+            End With
+
+            PnlCatalogue.Controls.Add(no_result)
+        End If
 
     End Sub
 
