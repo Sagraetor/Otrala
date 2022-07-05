@@ -59,6 +59,8 @@ Partial Class Bookings
         Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
         Me.BookingBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BookingTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.BookingTableAdapter()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.LblTotPrice = New System.Windows.Forms.Label()
         Me.GbxBooking.SuspendLayout()
         CType(Me.PicPackage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -318,6 +320,8 @@ Partial Class Bookings
         Me.gbxPayment.Controls.Add(Me.Label7)
         Me.gbxPayment.Controls.Add(Me.Label6)
         Me.gbxPayment.Controls.Add(Me.Label5)
+        Me.gbxPayment.Controls.Add(Me.LblTotPrice)
+        Me.gbxPayment.Controls.Add(Me.Label13)
         Me.gbxPayment.Controls.Add(Me.Label3)
         Me.gbxPayment.Location = New System.Drawing.Point(252, 396)
         Me.gbxPayment.Name = "gbxPayment"
@@ -328,7 +332,7 @@ Partial Class Bookings
         '
         'mskCVV
         '
-        Me.mskCVV.Location = New System.Drawing.Point(267, 191)
+        Me.mskCVV.Location = New System.Drawing.Point(222, 191)
         Me.mskCVV.Mask = "###"
         Me.mskCVV.Name = "mskCVV"
         Me.mskCVV.Size = New System.Drawing.Size(86, 30)
@@ -337,7 +341,7 @@ Partial Class Bookings
         '
         'mskExpiration
         '
-        Me.mskExpiration.Location = New System.Drawing.Point(67, 191)
+        Me.mskExpiration.Location = New System.Drawing.Point(26, 191)
         Me.mskExpiration.Mask = "00\/0000"
         Me.mskExpiration.Name = "mskExpiration"
         Me.mskExpiration.Size = New System.Drawing.Size(146, 30)
@@ -362,7 +366,7 @@ Partial Class Bookings
         'Label7
         '
         Me.Label7.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(267, 158)
+        Me.Label7.Location = New System.Drawing.Point(222, 158)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(86, 30)
         Me.Label7.TabIndex = 3
@@ -372,7 +376,7 @@ Partial Class Bookings
         'Label6
         '
         Me.Label6.Font = New System.Drawing.Font("Arial", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(67, 158)
+        Me.Label6.Location = New System.Drawing.Point(26, 158)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(146, 30)
         Me.Label6.TabIndex = 2
@@ -412,6 +416,26 @@ Partial Class Bookings
         'BookingTableAdapter
         '
         Me.BookingTableAdapter.ClearBeforeFill = True
+        '
+        'Label13
+        '
+        Me.Label13.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(331, 158)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(116, 30)
+        Me.Label13.TabIndex = 0
+        Me.Label13.Text = "Total Price :"
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'LblTotPrice
+        '
+        Me.LblTotPrice.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblTotPrice.Location = New System.Drawing.Point(314, 191)
+        Me.LblTotPrice.Name = "LblTotPrice"
+        Me.LblTotPrice.Size = New System.Drawing.Size(152, 30)
+        Me.LblTotPrice.TabIndex = 0
+        Me.LblTotPrice.Text = "Total Price :"
+        Me.LblTotPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Bookings
         '
@@ -477,4 +501,6 @@ Partial Class Bookings
     Friend WithEvents OtralaDBDataSet As OtralaDBDataSet
     Friend WithEvents BookingBindingSource As BindingSource
     Friend WithEvents BookingTableAdapter As OtralaDBDataSetTableAdapters.BookingTableAdapter
+    Friend WithEvents LblTotPrice As Label
+    Friend WithEvents Label13 As Label
 End Class

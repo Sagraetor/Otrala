@@ -22,6 +22,7 @@ Partial Class UserSettings
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UserSettings))
         Me.BtnUser = New System.Windows.Forms.Button()
         Me.BtnSeller = New System.Windows.Forms.Button()
@@ -59,17 +60,33 @@ Partial Class UserSettings
         Me.PackageTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.PackageTableAdapter()
         Me.LoginInfoTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.LoginInfoTableAdapter()
         Me.PnlSeller = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BtnAddPackage = New System.Windows.Forms.Button()
         Me.BtnSeeReqs = New System.Windows.Forms.Button()
         Me.RequestTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.RequestTableAdapter()
         Me.RequestAnswerTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.RequestAnswerTableAdapter()
         Me.BtnClient = New System.Windows.Forms.Button()
+        Me.BookingTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.BookingTableAdapter()
+        Me.BookingBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BtnSeeBookings = New System.Windows.Forms.Button()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.PbProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PnlUser.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SecurityInformation.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PnlSeller.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BtnUser
@@ -414,12 +431,29 @@ Partial Class UserSettings
         '
         Me.PnlSeller.AutoScroll = True
         Me.PnlSeller.AutoScrollMargin = New System.Drawing.Size(0, 20)
+        Me.PnlSeller.Controls.Add(Me.Panel2)
         Me.PnlSeller.Enabled = False
         Me.PnlSeller.Location = New System.Drawing.Point(186, 110)
         Me.PnlSeller.Name = "PnlSeller"
         Me.PnlSeller.Size = New System.Drawing.Size(1076, 563)
         Me.PnlSeller.TabIndex = 29
         Me.PnlSeller.Visible = False
+        '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.Controls.Add(Me.Button2)
+        Me.Panel2.Controls.Add(Me.Button1)
+        Me.Panel2.Controls.Add(Me.Label20)
+        Me.Panel2.Controls.Add(Me.Label19)
+        Me.Panel2.Controls.Add(Me.Label18)
+        Me.Panel2.Controls.Add(Me.Label14)
+        Me.Panel2.Controls.Add(Me.PictureBox1)
+        Me.Panel2.Controls.Add(Me.GroupBox3)
+        Me.Panel2.Location = New System.Drawing.Point(47, 41)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(961, 359)
+        Me.Panel2.TabIndex = 29
         '
         'BtnAddPackage
         '
@@ -468,27 +502,120 @@ Partial Class UserSettings
         Me.BtnClient.UseVisualStyleBackColor = False
         Me.BtnClient.Visible = False
         '
+        'BookingTableAdapter
+        '
+        Me.BookingTableAdapter.ClearBeforeFill = True
+        '
+        'BookingBindingSource
+        '
+        Me.BookingBindingSource.DataMember = "Booking"
+        Me.BookingBindingSource.DataSource = Me.OtralaDBDataSet
+        '
+        'BtnSeeBookings
+        '
+        Me.BtnSeeBookings.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.BtnSeeBookings.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSeeBookings.Location = New System.Drawing.Point(0, 222)
+        Me.BtnSeeBookings.Name = "BtnSeeBookings"
+        Me.BtnSeeBookings.Size = New System.Drawing.Size(186, 50)
+        Me.BtnSeeBookings.TabIndex = 24
+        Me.BtnSeeBookings.Text = "See Bookings"
+        Me.BtnSeeBookings.UseVisualStyleBackColor = False
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Location = New System.Drawing.Point(499, 29)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(435, 306)
+        Me.GroupBox3.TabIndex = 0
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "GroupBox3"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(21, 21)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(156, 156)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 30
+        Me.PictureBox1.TabStop = False
+        '
+        'Label14
+        '
+        Me.Label14.Location = New System.Drawing.Point(181, 21)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(295, 100)
+        Me.Label14.TabIndex = 31
+        Me.Label14.Text = "Contact Info :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Luqman Nur Hakim" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Luqman@Tard.com" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "01238098"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(181, 137)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(234, 23)
+        Me.Label18.TabIndex = 31
+        Me.Label18.Text = "Planned Date : 11/7/2003"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(17, 201)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(95, 23)
+        Me.Label19.TabIndex = 32
+        Me.Label19.Text = "Quantity: "
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(17, 238)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(160, 23)
+        Me.Label20.TabIndex = 32
+        Me.Label20.Text = "Total Price Paid: "
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(283, 299)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(195, 31)
+        Me.Button1.TabIndex = 33
+        Me.Button1.Text = "Mark As Completed"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(21, 299)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(195, 31)
+        Me.Button2.TabIndex = 33
+        Me.Button2.Text = "Cancel"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'UserSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 23.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1262, 673)
-        Me.Controls.Add(Me.PnlUser)
         Me.Controls.Add(Me.BtnClient)
         Me.Controls.Add(Me.BtnSeeReqs)
-        Me.Controls.Add(Me.BtnAddPackage)
         Me.Controls.Add(Me.BtnSeller)
         Me.Controls.Add(Me.BtnUser)
+        Me.Controls.Add(Me.BtnSeeBookings)
+        Me.Controls.Add(Me.BtnAddPackage)
         Me.Controls.Add(Me.PnlSeller)
+        Me.Controls.Add(Me.PnlUser)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "UserSettings"
+        Me.Controls.SetChildIndex(Me.PnlUser, 0)
         Me.Controls.SetChildIndex(Me.PnlSeller, 0)
+        Me.Controls.SetChildIndex(Me.BtnAddPackage, 0)
+        Me.Controls.SetChildIndex(Me.BtnSeeBookings, 0)
         Me.Controls.SetChildIndex(Me.BtnUser, 0)
         Me.Controls.SetChildIndex(Me.BtnSeller, 0)
-        Me.Controls.SetChildIndex(Me.BtnAddPackage, 0)
         Me.Controls.SetChildIndex(Me.BtnSeeReqs, 0)
         Me.Controls.SetChildIndex(Me.BtnClient, 0)
-        Me.Controls.SetChildIndex(Me.PnlUser, 0)
         CType(Me.PbProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PnlUser.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
@@ -497,6 +624,11 @@ Partial Class UserSettings
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.PnlSeller.ResumeLayout(False)
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -542,4 +674,16 @@ Partial Class UserSettings
     Friend WithEvents RequestTableAdapter As OtralaDBDataSetTableAdapters.RequestTableAdapter
     Friend WithEvents RequestAnswerTableAdapter As OtralaDBDataSetTableAdapters.RequestAnswerTableAdapter
     Friend WithEvents BtnClient As Button
+    Friend WithEvents BookingTableAdapter As OtralaDBDataSetTableAdapters.BookingTableAdapter
+    Friend WithEvents BookingBindingSource As BindingSource
+    Friend WithEvents BtnSeeBookings As Button
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label20 As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents Label14 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents GroupBox3 As GroupBox
 End Class

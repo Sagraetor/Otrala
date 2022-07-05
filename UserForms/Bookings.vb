@@ -26,6 +26,8 @@
             sender.text = ""
             Exit Sub
         End If
+
+        LblTotPrice.Text = Val(TbQuantity.Text) * package.Price
     End Sub
 
     Private Sub StartDateChanged() Handles DTPickerStart.ValueChanged
@@ -54,6 +56,10 @@
         NewBookingRow("Quantity") = TbQuantity.Text
         NewBookingRow("CardName") = txtCardName.Text
         NewBookingRow("CardNumber") = mskCardNum.Text
+        NewBookingRow("PlannedDate") = DTPickerStart.Value.ToString("d")
+        NewBookingRow("ClientFulfilled") = ""
+        NewBookingRow("SellerFulfilled") = ""
+        NewBookingRow("TotalPrice") = LblTotPrice.Text
 
         OtralaDBDataSet.Booking.AddBookingRow(NewBookingRow)
         BookingTableAdapter.Update(OtralaDBDataSet)

@@ -64,6 +64,7 @@
 
         RequestTableAdapter.Update(Me.OtralaDBDataSet)
 
+        Me.FormLoad()
         'Dim another_feedback As MsgBoxResult = MsgBox("Feedback submitted successfully! Thank you!" & System.Environment.NewLine & "Submit Another Ticket?", MsgBoxStyle.YesNo, "Thank you")
 
         'If another_feedback = MsgBoxResult.Yes Then
@@ -100,6 +101,8 @@
             TbNotes.Text = MyRequest("Notes")
             TbPax.Text = MyRequest("Pax")
             CbState.Text = MyRequest("Location")
+
+            DtpPlanned.MinDate = Convert.ToDateTime(MyRequest("PlannedDate")).AddDays(-10)
             DtpPlanned.Value = Convert.ToDateTime(MyRequest("PlannedDate"))
 
             Dim StrPrice As String = MyRequest("Price")
