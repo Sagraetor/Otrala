@@ -5,11 +5,11 @@
     Dim CatalogueList As New List(Of Package)
     Dim DisplayList As New List(Of Package)
 
-    Private Sub SearchBox_Search(sender As Object, e As KeyPressEventArgs) Handles SearchBox.KeyPress
-        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Enter) Then
-            SearchButton.PerformClick()
-        End If
-    End Sub
+    'Private Sub SearchBox_Search(sender As Object, e As KeyPressEventArgs) Handles SearchBox.KeyPress
+    '    If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Enter) Then
+    '        SearchButton.PerformClick()
+    '    End If
+    'End Sub
 
     Private Sub Search_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cboState.SelectedIndex = 0
