@@ -1,6 +1,18 @@
 ﻿Public Class Package_Viewer
 
-    Public Package As New Package
+    Public Package As New Package With {
+    .SellerID = Nothing,
+    .PackageID = Nothing,
+    .PackageName = Nothing,
+    .Price = Nothing,
+    .Description = Nothing,
+    .State = Nothing,
+    .Location = Nothing,
+    .Pax = Nothing,
+    .Duration = Nothing,
+    .SellerName = Nothing,
+    .Picture = Nothing
+    }
 
     Private Sub isExistingValue(label As Object, labelValue As Object)
         ' This function clears all detail labels without values.
