@@ -63,7 +63,7 @@
     End Sub
 
     Private Sub btnBook_Click(sender As Object, e As EventArgs) Handles btnBook.Click
-        Dim BookingForm As New RecentBooking
+        Dim BookingForm As New Bookings
         BookingForm.package = Package
         BookingForm.ShowDialog()
         Me.Close()

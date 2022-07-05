@@ -177,7 +177,7 @@
                 .Name = "OfferLblDate" & Index
                 .Size = New System.Drawing.Size(209, 53)
                 .TabIndex = 0
-                .Text = "Starting On " + Convert.ToDateTime(OfferRow("TripDate")).ToString("'dddd', 'd'")
+                .Text = "Starting On " + Convert.ToDateTime(OfferRow("TripDate")).ToString("dddd, dd/MM/yyyy")
             End With
 
             Dim NewGrpBox As New GroupBox

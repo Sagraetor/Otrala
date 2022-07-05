@@ -229,10 +229,10 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.vb" />
-    <Compile Include="UserForms\RecentBooking.Designer.vb">
-      <DependentUpon>RecentBooking.vb</DependentUpon>
+    <Compile Include="UserForms\Bookings.Designer.vb">
+      <DependentUpon>Bookings.vb</DependentUpon>
     </Compile>
-    <Compile Include="UserForms\RecentBooking.vb">
+    <Compile Include="UserForms\Bookings.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -291,8 +291,8 @@
     <EmbeddedResource Include="UserForms\Package_Viewer.resx">
       <DependentUpon>Package_Viewer.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserForms\RecentBooking.resx">
-      <DependentUpon>RecentBooking.vb</DependentUpon>
+    <EmbeddedResource Include="UserForms\Bookings.resx">
+      <DependentUpon>Bookings.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
