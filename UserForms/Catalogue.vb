@@ -224,6 +224,9 @@
         PackageViewForm.ShowDialog()
     End Sub
 
-
-
+    Private Sub OpenRequest() Handles BtnRequest.Click
+        Request.Show()
+        Request.FormLoad()
+        Me.Hide()
+    End Sub
 End Class

@@ -30,6 +30,7 @@ Partial Class Catalogue
         Me.PackageTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.PackageTableAdapter()
         Me.BtnWishlist = New System.Windows.Forms.Button()
         Me.BtnRecommendation = New System.Windows.Forms.Button()
+        Me.BtnRequest = New System.Windows.Forms.Button()
         CType(Me.PackageBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -78,11 +79,23 @@ Partial Class Catalogue
         Me.BtnRecommendation.Text = "Recommendation"
         Me.BtnRecommendation.UseVisualStyleBackColor = False
         '
+        'BtnRequest
+        '
+        Me.BtnRequest.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.BtnRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnRequest.Location = New System.Drawing.Point(0, 222)
+        Me.BtnRequest.Name = "BtnRequest"
+        Me.BtnRequest.Size = New System.Drawing.Size(186, 50)
+        Me.BtnRequest.TabIndex = 5
+        Me.BtnRequest.Text = "My Requests"
+        Me.BtnRequest.UseVisualStyleBackColor = False
+        '
         'Catalogue
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(1262, 673)
         Me.Controls.Add(Me.BtnRecommendation)
+        Me.Controls.Add(Me.BtnRequest)
         Me.Controls.Add(Me.BtnWishlist)
         Me.Controls.Add(Me.PnlCatalogue)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -91,6 +104,7 @@ Partial Class Catalogue
         Me.Name = "Catalogue"
         Me.Controls.SetChildIndex(Me.PnlCatalogue, 0)
         Me.Controls.SetChildIndex(Me.BtnWishlist, 0)
+        Me.Controls.SetChildIndex(Me.BtnRequest, 0)
         Me.Controls.SetChildIndex(Me.BtnRecommendation, 0)
         CType(Me.PackageBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
@@ -104,4 +118,5 @@ Partial Class Catalogue
     Friend WithEvents PackageTableAdapter As OtralaDBDataSetTableAdapters.PackageTableAdapter
     Friend WithEvents BtnWishlist As Button
     Friend WithEvents BtnRecommendation As Button
+    Friend WithEvents BtnRequest As Button
 End Class

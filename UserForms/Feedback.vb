@@ -62,6 +62,7 @@
         PnlHistory.Enabled = True
         PnlHistory.Visible = True
         PnlHistory.Focus()
+        PnlHistory.Controls.Clear()
 
         BtnHistory.Enabled = False
 
@@ -78,16 +79,16 @@
         For Each FeedbackRow In HistoryFeedback
             Dim NewLblDate As New Label
             With NewLblDate
-                .Location = New System.Drawing.Point(325, 41)
+                .Location = New System.Drawing.Point(325, 58)
                 .Name = "FHLblDate" & Index
-                .Size = New System.Drawing.Size(100, 54)
+                .Size = New System.Drawing.Size(100, 45)
                 .TabIndex = 0
                 .Text = "Submitted " & FeedbackRow("DateSent")
             End With
 
             Dim NewLblDesc As New Label
             With NewLblDesc
-                .BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+                .ForeColor = System.Drawing.Color.White
                 .Location = New System.Drawing.Point(6, 27)
                 .Name = "FHLblDesc" & Index
                 .Size = New System.Drawing.Size(313, 69)
@@ -97,7 +98,7 @@
 
             Dim NewGrpBox As New GroupBox
             With NewGrpBox
-                .BackColor = System.Drawing.Color.White
+                .ForeColor = System.Drawing.Color.White
                 .Controls.Add(NewLblDate)
                 .Controls.Add(NewLblDesc)
                 .Location = New System.Drawing.Point(12, 9)

@@ -1,6 +1,6 @@
 ﻿Public Class Request
-    Dim IsViewingHistory As Boolean = False
     Dim Price(1) As Decimal
+    Dim MyRequestID As Integer
 
     Private Sub RemoveDefaultText(Sender As TextBox, e As EventArgs) Handles TbNotes.GotFocus
         If Sender.Name = "TbNotes" And TbNotes.Text = "Additional Notes" Then
@@ -36,10 +36,10 @@
 
         If sender.Name = "TbPrice1" Then
             Price(0) = CDec(TbPrice1.Text)
-            TbPrice1.Text = Price.ToString("c")
+            TbPrice1.Text = Price(0).ToString("c")
         ElseIf sender.Name = "TbPrice2" Then
             Price(1) = CDec(TbPrice2.Text)
-            TbPrice1.Text = Price.ToString("c")
+            TbPrice2.Text = Price(1).ToString("c")
         End If
     End Sub
 
@@ -58,6 +58,7 @@
         NewRequest("Pax") = TbPax.Text
         NewRequest("Notes") = TbNotes.Text
         NewRequest("PlannedDate") = DtpPlanned.Value.ToString("d")
+        NewRequest("Fulfilled") = False
 
         OtralaDBDataSet.Request.AddRequestRow(NewRequest)
 
@@ -77,85 +78,129 @@
 
     Overrides Sub AddFormLoad()
         'TODO: This line of code loads data into the 'OtralaDBDataSet.LoginInfo' table. You can move, or remove it, as needed.
+        Me.RequestAnswerTableAdapter.Fill(Me.OtralaDBDataSet.RequestAnswer)
         Me.RequestTableAdapter.Fill(Me.OtralaDBDataSet.Request)
 
         DtpPlanned.MinDate = DateTime.Now
 
+        Dim MyRequests As DataRow() = OtralaDBDataSet.Request.Select(String.Format("UserID = '{0}' AND Fulfilled = False", User.UserID))
 
+        If MyRequests.Count <> 0 Then
+            TbDuration.ReadOnly = True
+            TbNotes.ReadOnly = True
+            TbPax.ReadOnly = True
+            TbPrice1.ReadOnly = True
+            TbPrice2.ReadOnly = True
+            CbState.Enabled = False
+            DtpPlanned.Enabled = False
+
+            Dim MyRequest = MyRequests(0)
+
+            TbDuration.Text = MyRequest("Duration")
+            TbNotes.Text = MyRequest("Notes")
+            TbPax.Text = MyRequest("Pax")
+            CbState.Text = MyRequest("Location")
+            DtpPlanned.Value = Convert.ToDateTime(MyRequest("PlannedDate"))
+
+            Dim StrPrice As String = MyRequest("Price")
+            Dim ArrayStrPrice() As String = StrPrice.Split("-")
+
+
+            For i = 0 To 1
+
+                If ArrayStrPrice(i) = "0" Then
+                    Continue For
+                End If
+                Price(i) = CDec(ArrayStrPrice(i))
+            Next
+
+            TbPrice1.Text = Price(0).ToString("c")
+            TbPrice2.Text = Price(1).ToString("c")
+
+            MyRequestID = MyRequest("RequestID")
+
+            ViewOffers()
+        End If
     End Sub
 
-    Private Sub ViewHistory() Handles BtnHistory.Click
-        IsViewingHistory = True
-
-        PnlHistory.Enabled = True
-        PnlHistory.Visible = True
-        PnlHistory.Focus()
-
-        BtnHistory.Enabled = False
-
+    Private Sub ViewOffers()
         Dim Index As Integer = 0
-        Dim dy As Integer = 112
-        Dim HistoryFeedback() As DataRow = OtralaDBDataSet.Feedback.Select("UserID = " & User.UserID)
+        Dim dy As Integer = 232
 
-        If HistoryFeedback.Count > 4 Then
-            PnlHistory.Size = New System.Drawing.Size(486, 467)
+        PnlOffers.Controls.Clear()
+
+        Dim RequestAnswer() As DataRow = OtralaDBDataSet.RequestAnswer.Select("RequestID = " & MyRequestID)
+
+        If RequestAnswer.Count > 2 Then
+            PnlOffers.Location = New System.Drawing.Point(953, 139)
         Else
-            PnlHistory.Size = New System.Drawing.Size(470, 467)
+            PnlOffers.Location = New System.Drawing.Point(979, 139)
         End If
 
-        For Each FeedbackRow In HistoryFeedback
-            Dim NewLblDate As New Label
-            With NewLblDate
-                .Location = New System.Drawing.Point(325, 41)
-                .Name = "FHLblDate" & Index
-                .Size = New System.Drawing.Size(100, 54)
+        For Each OfferRow In RequestAnswer
+            Dim NewLblPrice As New Label
+            With NewLblPrice
+                .Location = New System.Drawing.Point(6, 40)
+                .Name = "OffersLblPrice" & Index
+                .AutoSize = True
                 .TabIndex = 0
-                .Text = "Submitted " & FeedbackRow("DateSent")
+                .Text = OfferRow("Price").ToString("C")
             End With
 
-            Dim NewLblDesc As New Label
-            With NewLblDesc
-                .BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-                .Location = New System.Drawing.Point(6, 27)
-                .Name = "FHLblDesc" & Index
-                .Size = New System.Drawing.Size(313, 69)
+            Dim NewLblPax As New Label
+            With NewLblPax
+                .Location = New System.Drawing.Point(6, 80)
+                .Name = "OfferLblPax" & Index
+                .AutoSize = True
                 .TabIndex = 0
-                .Text = FeedbackRow("Description")
+                .Text = OfferRow("Pax") & "People"
+            End With
+
+            Dim NewLblDuration As New Label
+            With NewLblDuration
+                .Location = New System.Drawing.Point(6, 121)
+                .Name = "OfferLblDuration" & Index
+                .AutoSize = True
+                .TabIndex = 0
+                If OfferRow("Duration") > 2 Then
+                    .Text = OfferRow("Duration") & " DAYS " & System.Environment.NewLine & CInt(OfferRow("Duration")) - 1 & " NIGHTS"
+                ElseIf OfferRow("Duration") > 1 Then
+                    .Text = OfferRow("Duration") & " DAYS " & System.Environment.NewLine & CInt(OfferRow("Duration")) - 1 & " NIGHT"
+                Else
+                    .Text = OfferRow("Duration") & " DAY "
+                End If
+            End With
+
+            Dim NewLblDate As New Label
+            With NewLblDate
+                .Location = New System.Drawing.Point(6, 164)
+                .Name = "OfferLblDate" & Index
+                .Size = New System.Drawing.Size(209, 53)
+                .TabIndex = 0
+                .Text = "Starting On " + Convert.ToDateTime(OfferRow("TripDate")).ToString("'dddd', 'd'")
             End With
 
             Dim NewGrpBox As New GroupBox
             With NewGrpBox
-                .BackColor = System.Drawing.Color.White
+                .ForeColor = System.Drawing.Color.White
                 .Controls.Add(NewLblDate)
-                .Controls.Add(NewLblDesc)
-                .Location = New System.Drawing.Point(12, 9)
-                .Name = "FHGrpBox" & Index
-                .Size = New System.Drawing.Size(441, 106)
+                .Controls.Add(NewLblDuration)
+                .Controls.Add(NewLblPax)
+                .Controls.Add(NewLblPrice)
+                .Location = New System.Drawing.Point(7, 7)
+                .Name = "OfferGrpBox" & Index
+                .Size = New System.Drawing.Size(266, 226)
                 .TabIndex = 0
                 .TabStop = False
-                .Text = FeedbackRow("Title")
+                .Text = "From " & OfferRow("SellerName")
             End With
 
-            PnlHistory.Controls.Add(NewGrpBox)
+            PnlOffers.Controls.Add(NewGrpBox)
 
             NewGrpBox.Top += (dy * Index)
 
             Index += 1
         Next
-
-    End Sub
-    Private Sub CloseHistory(sender As Object, e As EventArgs) Handles PnlHistory.LostFocus, Me.Click
-        If sender.Name = "Feedback" And IsViewingHistory Then
-            PnlHistory.Enabled = False
-            PnlHistory.Visible = False
-            BtnHistory.Enabled = True
-            BtnHistory.Focus()
-        ElseIf sender.Name = "PnlHistory" Then
-            PnlHistory.Enabled = False
-            PnlHistory.Visible = False
-            BtnHistory.Enabled = True
-            BtnHistory.Focus()
-        End If
     End Sub
 
 End Class

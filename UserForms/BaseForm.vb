@@ -3,7 +3,7 @@
 
     End Sub
 
-    Protected Sub FormLoad() Handles Me.Load
+    Public Sub FormLoad() Handles Me.Load
         AddFormLoad()
         If User.LoggedIn Then
             LblName.Text = User.Name
