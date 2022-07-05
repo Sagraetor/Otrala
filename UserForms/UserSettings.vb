@@ -17,6 +17,10 @@
         End If
     End Sub
 
+    Private Sub seeReqs() Handles BtnSeeReqs.Click
+
+    End Sub
+
     Private Sub AddPackage() Handles BtnAddPackage.Click
         Dim PackageToAdd As Package
         Dim AddPackageForm As New AddPackage
@@ -193,6 +197,9 @@
 
         BtnAddPackage.Enabled = False
         BtnAddPackage.Visible = False
+
+        BtnSeeReqs.Enabled = False
+        BtnSeeReqs.Visible = False
     End Sub
     Private Sub SwapToSeller() Handles BtnSeller.Click
         PnlSeller.Visible = True
@@ -206,6 +213,9 @@
 
         BtnAddPackage.Enabled = True
         BtnAddPackage.Visible = True
+
+        BtnSeeReqs.Enabled = True
+        BtnSeeReqs.Visible = True
 
         Dim MyPackages As DataRow() = OtralaDBDataSet.Package.Select("UserID = " & User.UserID)
 
@@ -265,7 +275,7 @@
                 .LoggedIn = False
             }
 
-            LoadUserInfo()
+            Me.ToCatalogue()
         Else
             MsgBox("Aborted")
         End If
@@ -455,6 +465,10 @@
     End Sub
 
     Public Sub OneTimeLoad() Handles MyBase.Load
+        'TODO: This line of code loads data into the 'OtralaDBDataSet.RequestAnswer' table. You can move, or remove it, as needed.
+        Me.RequestAnswerTableAdapter.Fill(Me.OtralaDBDataSet.RequestAnswer)
+        'TODO: This line of code loads data into the 'OtralaDBDataSet.Request' table. You can move, or remove it, as needed.
+        Me.RequestTableAdapter.Fill(Me.OtralaDBDataSet.Request)
         'TODO: This line of code loads data into the 'OtralaDBDataSet.LoginInfo' table. You can move, or remove it, as needed.
         Me.LoginInfoTableAdapter.Fill(Me.OtralaDBDataSet.LoginInfo)
         Me.PackageTableAdapter.Fill(Me.OtralaDBDataSet.Package)
@@ -462,4 +476,11 @@
 
     End Sub
 
+    Private Sub AddPackage(sender As Object, e As EventArgs) Handles BtnAddPackage.Click, BtnSeeReqs.Click
+
+    End Sub
+
+    Private Sub seeReqs(sender As Object, e As EventArgs) Handles BtnSeeReqs.Click, BtnClient.Click
+
+    End Sub
 End Class

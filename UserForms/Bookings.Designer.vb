@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class RecentBooking
+Partial Class Bookings
     Inherits BaseForm
 
     'Form overrides dispose to clean up the component list.
@@ -22,15 +22,18 @@ Partial Class RecentBooking
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RecentBooking))
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Bookings))
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.GbxBooking = New System.Windows.Forms.GroupBox()
+        Me.TbQuantity = New System.Windows.Forms.TextBox()
         Me.DTPickerStart = New System.Windows.Forms.DateTimePicker()
         Me.LblDescription = New System.Windows.Forms.Label()
         Me.LblEndDate = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.LblPax = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.LblPrice = New System.Windows.Forms.Label()
         Me.PicPackage = New System.Windows.Forms.PictureBox()
@@ -53,10 +56,15 @@ Partial Class RecentBooking
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
+        Me.BookingBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BookingTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.BookingTableAdapter()
         Me.GbxBooking.SuspendLayout()
         CType(Me.PicPackage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.gbxPayment.SuspendLayout()
+        CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnCancel
@@ -70,12 +78,14 @@ Partial Class RecentBooking
         '
         'GbxBooking
         '
+        Me.GbxBooking.Controls.Add(Me.TbQuantity)
         Me.GbxBooking.Controls.Add(Me.DTPickerStart)
         Me.GbxBooking.Controls.Add(Me.LblDescription)
         Me.GbxBooking.Controls.Add(Me.LblEndDate)
         Me.GbxBooking.Controls.Add(Me.Label14)
         Me.GbxBooking.Controls.Add(Me.Label10)
         Me.GbxBooking.Controls.Add(Me.LblPax)
+        Me.GbxBooking.Controls.Add(Me.Label8)
         Me.GbxBooking.Controls.Add(Me.Label4)
         Me.GbxBooking.Controls.Add(Me.LblPrice)
         Me.GbxBooking.Controls.Add(Me.PicPackage)
@@ -85,6 +95,13 @@ Partial Class RecentBooking
         Me.GbxBooking.TabIndex = 13
         Me.GbxBooking.TabStop = False
         Me.GbxBooking.Text = "Booking Details"
+        '
+        'TbQuantity
+        '
+        Me.TbQuantity.Location = New System.Drawing.Point(769, 163)
+        Me.TbQuantity.Name = "TbQuantity"
+        Me.TbQuantity.Size = New System.Drawing.Size(133, 30)
+        Me.TbQuantity.TabIndex = 8
         '
         'DTPickerStart
         '
@@ -143,9 +160,19 @@ Partial Class RecentBooking
         Me.LblPax.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
         Me.LblPax.Location = New System.Drawing.Point(555, 165)
         Me.LblPax.Name = "LblPax"
-        Me.LblPax.Size = New System.Drawing.Size(175, 30)
+        Me.LblPax.Size = New System.Drawing.Size(123, 30)
         Me.LblPax.TabIndex = 17
         Me.LblPax.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label8
+        '
+        Me.Label8.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label8.Location = New System.Drawing.Point(684, 165)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(79, 30)
+        Me.Label8.TabIndex = 13
+        Me.Label8.Text = "Quantity :"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label4
         '
@@ -206,9 +233,9 @@ Partial Class RecentBooking
         '
         Me.LblDateDuration.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.LblDateDuration.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.LblDateDuration.Location = New System.Drawing.Point(195, 177)
+        Me.LblDateDuration.Location = New System.Drawing.Point(72, 177)
         Me.LblDateDuration.Name = "LblDateDuration"
-        Me.LblDateDuration.Size = New System.Drawing.Size(158, 30)
+        Me.LblDateDuration.Size = New System.Drawing.Size(281, 30)
         Me.LblDateDuration.TabIndex = 12
         Me.LblDateDuration.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -311,7 +338,7 @@ Partial Class RecentBooking
         'mskExpiration
         '
         Me.mskExpiration.Location = New System.Drawing.Point(67, 191)
-        Me.mskExpiration.Mask = "## ####"
+        Me.mskExpiration.Mask = "00\/0000"
         Me.mskExpiration.Name = "mskExpiration"
         Me.mskExpiration.Size = New System.Drawing.Size(146, 30)
         Me.mskExpiration.TabIndex = 6
@@ -327,7 +354,7 @@ Partial Class RecentBooking
         'mskCardNum
         '
         Me.mskCardNum.Location = New System.Drawing.Point(187, 103)
-        Me.mskCardNum.Mask = "#### #### #### ####"
+        Me.mskCardNum.Mask = "0000-0000-0000-0000"
         Me.mskCardNum.Name = "mskCardNum"
         Me.mskCardNum.Size = New System.Drawing.Size(260, 30)
         Me.mskCardNum.TabIndex = 4
@@ -372,7 +399,21 @@ Partial Class RecentBooking
         Me.Label3.Text = "Name"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'RecentBooking
+        'OtralaDBDataSet
+        '
+        Me.OtralaDBDataSet.DataSetName = "OtralaDBDataSet"
+        Me.OtralaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'BookingBindingSource
+        '
+        Me.BookingBindingSource.DataMember = "Booking"
+        Me.BookingBindingSource.DataSource = Me.OtralaDBDataSet
+        '
+        'BookingTableAdapter
+        '
+        Me.BookingTableAdapter.ClearBeforeFill = True
+        '
+        'Bookings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 23.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -383,17 +424,20 @@ Partial Class RecentBooking
         Me.Controls.Add(Me.GbxBooking)
         Me.Controls.Add(Me.btnCancel)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Name = "RecentBooking"
+        Me.Name = "Bookings"
         Me.Controls.SetChildIndex(Me.btnCancel, 0)
         Me.Controls.SetChildIndex(Me.GbxBooking, 0)
         Me.Controls.SetChildIndex(Me.btnConfirm, 0)
         Me.Controls.SetChildIndex(Me.GroupBox1, 0)
         Me.Controls.SetChildIndex(Me.gbxPayment, 0)
         Me.GbxBooking.ResumeLayout(False)
+        Me.GbxBooking.PerformLayout()
         CType(Me.PicPackage, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.gbxPayment.ResumeLayout(False)
         Me.gbxPayment.PerformLayout()
+        CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -428,4 +472,9 @@ Partial Class RecentBooking
     Friend WithEvents LblEndDate As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents Label10 As Label
+    Friend WithEvents TbQuantity As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents OtralaDBDataSet As OtralaDBDataSet
+    Friend WithEvents BookingBindingSource As BindingSource
+    Friend WithEvents BookingTableAdapter As OtralaDBDataSetTableAdapters.BookingTableAdapter
 End Class

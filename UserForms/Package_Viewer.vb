@@ -11,6 +11,8 @@
     End Sub
 
     Private Sub Package_Viewer_Load() Handles Me.Load
+        'TODO: This line of code loads data into the 'OtralaDBDataSet.UserInfo' table. You can move, or remove it, as needed.
+        Me.UserInfoTableAdapter.Fill(Me.OtralaDBDataSet.UserInfo)
 
         ' Change Form Name to Package Name.
         Me.Text = Package.PackageName
@@ -29,6 +31,11 @@
         lblLocationValue.Text = Package.Location
         lblPaxValue.Text = Package.Pax
         lblDurationValue.Text = Package.Duration
+
+
+        If User.Wishlist.Contains(Package.PackageID) Then
+            btnWishlist.Text = "In Wishlist"
+        End If
     End Sub
 
     Private Sub After_Load_Tick(sender As Object, e As EventArgs) Handles after_load.Tick
@@ -38,20 +45,25 @@
 
     Private Sub btnWishlist_Click(sender As Object, e As EventArgs) Handles btnWishlist.Click
 
-        ' Add Code here to check if item is already wishlisted from database.
-        ' If (already wishlisted) Then disable this button
 
-        If btnWishlist.Text <> "In Wishlist" Then
+        If User.Wishlist.Contains(Package.PackageID) Then
+            btnWishlist.Text = "Add to Wishlist"
+            User.Wishlist.Remove(Package.PackageID)
+        Else
             btnWishlist.Text = "In Wishlist"
-            btnWishlist.Enabled = False
+            User.Wishlist.Add(Package.PackageID)
         End If
 
-        ' Add code to move item to wishlist in database.
+        Dim StrWishlist As String = LstIntToStr(User.Wishlist)
+        Dim MyUserInfo As DataRow = OtralaDBDataSet.UserInfo.Select("UserID = " & User.UserID)(0)
+        Dim MyIndex As Integer = OtralaDBDataSet.UserInfo.Rows.IndexOf(MyUserInfo)
+        OtralaDBDataSet.UserInfo.Rows(MyIndex)("Wishlist") = StrWishlist
 
+        UserInfoTableAdapter.Update(OtralaDBDataSet)
     End Sub
 
     Private Sub btnBook_Click(sender As Object, e As EventArgs) Handles btnBook.Click
-        Dim BookingForm As New RecentBooking
+        Dim BookingForm As New Bookings
         BookingForm.package = Package
         BookingForm.ShowDialog()
         Me.Close()

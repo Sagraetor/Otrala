@@ -116,6 +116,8 @@
 
                 If Not IsDBNull(UserInfoRow("Wishlist")) Then
                     .Wishlist = StrToLstInt(UserInfoRow("Wishlist"))
+                Else
+                    .Wishlist = New List(Of Integer)
                 End If
             End With
         End If

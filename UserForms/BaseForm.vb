@@ -2,7 +2,8 @@
     Overridable Sub AddFormLoad()
 
     End Sub
-    Private Sub FormLoad() Handles Me.Load
+
+    Public Sub FormLoad() Handles Me.Load
         AddFormLoad()
         If User.LoggedIn Then
             LblName.Text = User.Name
@@ -10,7 +11,7 @@
             LblName.Text = "Log In / Sign Up"
         End If
     End Sub
-    Private Sub ToCatalogue() Handles PbOtralaIcon.Click
+    Protected Sub ToCatalogue() Handles PbOtralaIcon.Click
         If Me.Name = "Catalogue" Then
             AboutUs.Show()
             AboutUs.FormLoad()
@@ -22,7 +23,7 @@
         End If
     End Sub
 
-    Private Sub ToUserSettings() Handles LblName.Click
+    Protected Sub ToUserSettings() Handles LblName.Click
         If Me.Name = "UserSettings" Then
             Exit Sub
         End If
@@ -47,7 +48,7 @@
         End If
     End Sub
 
-    Private Sub ToFeedback() Handles BtnFeedback.Click
+    Protected Sub ToFeedback() Handles BtnFeedback.Click
         If Me.Name <> "Feedback" Then
             Feedback.Show()
             Feedback.FormLoad()
@@ -55,7 +56,7 @@
         End If
     End Sub
 
-    Private Sub SearchBox_Click(sender As Object, e As EventArgs) Handles SearchBox.Click
+    Protected Sub SearchBox_Click(sender As Object, e As EventArgs) Handles SearchBox.Click
         If Me.Name <> "Search" Then
             Dim s As New Search
             s.SearchBox.Text = SearchBox.Text

@@ -138,10 +138,14 @@
         Next
     End Sub
 
-    Private Sub LoadForm() Handles Me.Activated
+    Overrides Sub AddFormLoad()
         'TODO: This line of code loads data into the 'OtralaDBDataSet.Package' table. You can move, or remove it, as needed.
         Me.PackageTableAdapter.Fill(Me.OtralaDBDataSet.Package)
 
+        OpenRecommendations()
+    End Sub
+
+    Private Sub OpenRecommendations() Handles BtnRecommendation.Click
         PnlCatalogue.Controls.Clear()
         CatalogueList.Clear()
 
@@ -167,9 +171,42 @@
         Next
 
         GenerateCatalogue(CatalogueList)
-
     End Sub
 
+    Private Sub OpenWishlist() Handles BtnWishlist.Click
+        PnlCatalogue.Controls.Clear()
+        CatalogueList.Clear()
+
+        Dim StrMyWishlist As String = LstIntToStr(User.Wishlist)
+
+        If User.Wishlist.Count = 0 Then
+            Exit Sub
+        End If
+
+        Dim CatalogueData As DataRow() = OtralaDBDataSet.Package.Select("PackageID IN (" & StrMyWishlist.Replace(",", ", ") & ")")
+
+        For Each Row In CatalogueData
+            Dim NewPackage As New Package
+            With NewPackage
+                .SellerID = Row("UserID")
+                .PackageID = Row("PackageID")
+                .PackageName = Row("PackageName")
+                .Price = Row("Price")
+                .Description = Row("Description")
+                .State = Row("State")
+                .Location = Row("Destination")
+                .Pax = Row("Pax")
+                .Duration = Row("Duration")
+                .SellerName = Row("SellerName")
+                .Picture = ImageFromData(Row("Picture"))
+            End With
+
+            CatalogueList.Add(NewPackage)
+        Next
+
+        GenerateCatalogue(CatalogueList)
+
+    End Sub
     Private Function GetIndex(Name As String)
         Dim House As Short = 0
         Dim Index As Short = 0
@@ -191,6 +228,9 @@
         PackageViewForm.ShowDialog()
     End Sub
 
-
-
+    Private Sub OpenRequest() Handles BtnRequest.Click
+        Request.Show()
+        Request.FormLoad()
+        Me.Hide()
+    End Sub
 End Class

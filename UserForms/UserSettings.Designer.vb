@@ -22,7 +22,6 @@ Partial Class UserSettings
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UserSettings))
         Me.BtnUser = New System.Windows.Forms.Button()
         Me.BtnSeller = New System.Windows.Forms.Button()
@@ -56,23 +55,21 @@ Partial Class UserSettings
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
-        Me.UserInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UserInfoTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.UserInfoTableAdapter()
-        Me.PackageBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PackageTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.PackageTableAdapter()
-        Me.LoginInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LoginInfoTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.LoginInfoTableAdapter()
         Me.PnlSeller = New System.Windows.Forms.Panel()
         Me.BtnAddPackage = New System.Windows.Forms.Button()
+        Me.BtnSeeReqs = New System.Windows.Forms.Button()
+        Me.RequestTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.RequestTableAdapter()
+        Me.RequestAnswerTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.RequestAnswerTableAdapter()
+        Me.BtnClient = New System.Windows.Forms.Button()
         CType(Me.PbProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PnlUser.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SecurityInformation.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UserInfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PackageBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.LoginInfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BtnUser
@@ -401,28 +398,13 @@ Partial Class UserSettings
         Me.OtralaDBDataSet.DataSetName = "OtralaDBDataSet"
         Me.OtralaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'UserInfoBindingSource
-        '
-        Me.UserInfoBindingSource.DataMember = "UserInfo"
-        Me.UserInfoBindingSource.DataSource = Me.OtralaDBDataSet
-        '
         'UserInfoTableAdapter
         '
         Me.UserInfoTableAdapter.ClearBeforeFill = True
         '
-        'PackageBindingSource
-        '
-        Me.PackageBindingSource.DataMember = "Package"
-        Me.PackageBindingSource.DataSource = Me.OtralaDBDataSet
-        '
         'PackageTableAdapter
         '
         Me.PackageTableAdapter.ClearBeforeFill = True
-        '
-        'LoginInfoBindingSource
-        '
-        Me.LoginInfoBindingSource.DataMember = "LoginInfo"
-        Me.LoginInfoBindingSource.DataSource = Me.OtralaDBDataSet
         '
         'LoginInfoTableAdapter
         '
@@ -452,12 +434,48 @@ Partial Class UserSettings
         Me.BtnAddPackage.UseVisualStyleBackColor = False
         Me.BtnAddPackage.Visible = False
         '
+        'BtnSeeReqs
+        '
+        Me.BtnSeeReqs.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.BtnSeeReqs.Enabled = False
+        Me.BtnSeeReqs.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSeeReqs.Location = New System.Drawing.Point(0, 278)
+        Me.BtnSeeReqs.Name = "BtnSeeReqs"
+        Me.BtnSeeReqs.Size = New System.Drawing.Size(186, 50)
+        Me.BtnSeeReqs.TabIndex = 24
+        Me.BtnSeeReqs.Text = "See Requests"
+        Me.BtnSeeReqs.UseVisualStyleBackColor = False
+        Me.BtnSeeReqs.Visible = False
+        '
+        'RequestTableAdapter
+        '
+        Me.RequestTableAdapter.ClearBeforeFill = True
+        '
+        'RequestAnswerTableAdapter
+        '
+        Me.RequestAnswerTableAdapter.ClearBeforeFill = True
+        '
+        'BtnClient
+        '
+        Me.BtnClient.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.BtnClient.Enabled = False
+        Me.BtnClient.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnClient.Location = New System.Drawing.Point(0, 334)
+        Me.BtnClient.Name = "BtnClient"
+        Me.BtnClient.Size = New System.Drawing.Size(186, 50)
+        Me.BtnClient.TabIndex = 24
+        Me.BtnClient.Text = "Client Bookings"
+        Me.BtnClient.UseVisualStyleBackColor = False
+        Me.BtnClient.Visible = False
+        '
         'UserSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 23.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1262, 673)
         Me.Controls.Add(Me.PnlUser)
+        Me.Controls.Add(Me.BtnClient)
+        Me.Controls.Add(Me.BtnSeeReqs)
         Me.Controls.Add(Me.BtnAddPackage)
         Me.Controls.Add(Me.BtnSeller)
         Me.Controls.Add(Me.BtnUser)
@@ -468,6 +486,8 @@ Partial Class UserSettings
         Me.Controls.SetChildIndex(Me.BtnUser, 0)
         Me.Controls.SetChildIndex(Me.BtnSeller, 0)
         Me.Controls.SetChildIndex(Me.BtnAddPackage, 0)
+        Me.Controls.SetChildIndex(Me.BtnSeeReqs, 0)
+        Me.Controls.SetChildIndex(Me.BtnClient, 0)
         Me.Controls.SetChildIndex(Me.PnlUser, 0)
         CType(Me.PbProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PnlUser.ResumeLayout(False)
@@ -477,9 +497,6 @@ Partial Class UserSettings
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UserInfoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PackageBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.LoginInfoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -505,9 +522,7 @@ Partial Class UserSettings
     Friend WithEvents Button3 As Button
     Friend WithEvents BtnDelete As Button
     Friend WithEvents OtralaDBDataSet As OtralaDBDataSet
-    Friend WithEvents UserInfoBindingSource As BindingSource
     Friend WithEvents UserInfoTableAdapter As OtralaDBDataSetTableAdapters.UserInfoTableAdapter
-    Friend WithEvents PackageBindingSource As BindingSource
     Friend WithEvents PackageTableAdapter As OtralaDBDataSetTableAdapters.PackageTableAdapter
     Friend WithEvents BtnEdit As Button
     Friend WithEvents LblProfileIcNum As Label
@@ -519,9 +534,12 @@ Partial Class UserSettings
     Friend WithEvents LblProfileName As Label
     Friend WithEvents LblProfileCountry As Label
     Friend WithEvents LblProfileBirthday As Label
-    Friend WithEvents LoginInfoBindingSource As BindingSource
     Friend WithEvents LoginInfoTableAdapter As OtralaDBDataSetTableAdapters.LoginInfoTableAdapter
     Friend WithEvents LblProfileAddress As Label
     Friend WithEvents PnlSeller As Panel
     Friend WithEvents BtnAddPackage As Button
+    Friend WithEvents BtnSeeReqs As Button
+    Friend WithEvents RequestTableAdapter As OtralaDBDataSetTableAdapters.RequestTableAdapter
+    Friend WithEvents RequestAnswerTableAdapter As OtralaDBDataSetTableAdapters.RequestAnswerTableAdapter
+    Friend WithEvents BtnClient As Button
 End Class

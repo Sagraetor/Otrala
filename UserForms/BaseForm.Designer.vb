@@ -42,7 +42,6 @@ Partial Class BaseForm
         Me.AddLoginInfoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddUserInfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddRequestToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.PbOtralaIcon = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -196,17 +195,6 @@ Partial Class BaseForm
         Me.AddRequestToolStripMenuItem1.Size = New System.Drawing.Size(191, 26)
         Me.AddRequestToolStripMenuItem1.Text = "Add Request"
         '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(0, 110)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(186, 50)
-        Me.Button1.TabIndex = 4
-        Me.Button1.Text = "Recommendation"
-        Me.Button1.UseVisualStyleBackColor = False
-        '
         'PbOtralaIcon
         '
         Me.PbOtralaIcon.BackColor = System.Drawing.Color.Transparent
@@ -227,7 +215,6 @@ Partial Class BaseForm
         Me.Controls.Add(Me.LblName)
         Me.Controls.Add(Me.BtnFeedback)
         Me.Controls.Add(Me.btnLogOut)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.SearchBox)
         Me.Controls.Add(Me.PbOtralaIcon)
@@ -274,5 +261,4 @@ Partial Class BaseForm
     Friend WithEvents AddLoginInfoToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents AddUserInfoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AddRequestToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents Button1 As Button
 End Class
