@@ -60,7 +60,26 @@ Partial Class UserSettings
         Me.PackageTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.PackageTableAdapter()
         Me.LoginInfoTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.LoginInfoTableAdapter()
         Me.PnlSeller = New System.Windows.Forms.Panel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.Label21 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.BtnAddPackage = New System.Windows.Forms.Button()
         Me.BtnSeeReqs = New System.Windows.Forms.Button()
         Me.RequestTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.RequestTableAdapter()
@@ -69,14 +88,6 @@ Partial Class UserSettings
         Me.BookingTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.BookingTableAdapter()
         Me.BookingBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BtnSeeBookings = New System.Windows.Forms.Button()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.PbProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PnlUser.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -84,9 +95,11 @@ Partial Class UserSettings
         Me.GroupBox1.SuspendLayout()
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PnlSeller.SuspendLayout()
+        Me.Panel3.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BtnUser
@@ -431,6 +444,7 @@ Partial Class UserSettings
         '
         Me.PnlSeller.AutoScroll = True
         Me.PnlSeller.AutoScrollMargin = New System.Drawing.Size(0, 20)
+        Me.PnlSeller.Controls.Add(Me.Panel3)
         Me.PnlSeller.Controls.Add(Me.Panel2)
         Me.PnlSeller.Enabled = False
         Me.PnlSeller.Location = New System.Drawing.Point(186, 110)
@@ -438,6 +452,113 @@ Partial Class UserSettings
         Me.PnlSeller.Size = New System.Drawing.Size(1076, 563)
         Me.PnlSeller.TabIndex = 29
         Me.PnlSeller.Visible = False
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.White
+        Me.Panel3.Controls.Add(Me.Button5)
+        Me.Panel3.Controls.Add(Me.Label15)
+        Me.Panel3.Controls.Add(Me.Label22)
+        Me.Panel3.Controls.Add(Me.Label25)
+        Me.Panel3.Controls.Add(Me.Label24)
+        Me.Panel3.Controls.Add(Me.Label16)
+        Me.Panel3.Controls.Add(Me.Label17)
+        Me.Panel3.Controls.Add(Me.Label23)
+        Me.Panel3.Controls.Add(Me.Label21)
+        Me.Panel3.Controls.Add(Me.PictureBox2)
+        Me.Panel3.Location = New System.Drawing.Point(47, 406)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(961, 359)
+        Me.Panel3.TabIndex = 34
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(315, 299)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(163, 31)
+        Me.Button5.TabIndex = 33
+        Me.Button5.Text = "Make an Offer"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(17, 241)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(123, 23)
+        Me.Label15.TabIndex = 32
+        Me.Label15.Text = "Price range :"
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(495, 17)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(170, 23)
+        Me.Label22.TabIndex = 32
+        Me.Label22.Text = "Additional Notes : "
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(181, 201)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(101, 23)
+        Me.Label25.TabIndex = 32
+        Me.Label25.Text = "Duration : "
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(17, 280)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(102, 23)
+        Me.Label24.TabIndex = 32
+        Me.Label24.Text = "Location : "
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(17, 201)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(61, 23)
+        Me.Label16.TabIndex = 32
+        Me.Label16.Text = "Pax : "
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(181, 137)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(234, 23)
+        Me.Label17.TabIndex = 31
+        Me.Label17.Text = "Planned Date : 11/7/2003"
+        '
+        'Label23
+        '
+        Me.Label23.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label23.Location = New System.Drawing.Point(495, 40)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(439, 290)
+        Me.Label23.TabIndex = 31
+        Me.Label23.Text = "Contact Info :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Luqman Nur Hakim" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Luqman@Tard.com" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "01238098"
+        '
+        'Label21
+        '
+        Me.Label21.Location = New System.Drawing.Point(181, 21)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(295, 100)
+        Me.Label21.TabIndex = 31
+        Me.Label21.Text = "Contact Info :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Luqman Nur Hakim" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Luqman@Tard.com" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "01238098"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Location = New System.Drawing.Point(21, 21)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(156, 156)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 30
+        Me.PictureBox2.TabStop = False
         '
         'Panel2
         '
@@ -454,6 +575,77 @@ Partial Class UserSettings
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(961, 359)
         Me.Panel2.TabIndex = 29
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(21, 299)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(195, 31)
+        Me.Button2.TabIndex = 33
+        Me.Button2.Text = "Cancel"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(283, 299)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(195, 31)
+        Me.Button1.TabIndex = 33
+        Me.Button1.Text = "Mark As Completed"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(17, 238)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(160, 23)
+        Me.Label20.TabIndex = 32
+        Me.Label20.Text = "Total Price Paid: "
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(17, 201)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(95, 23)
+        Me.Label19.TabIndex = 32
+        Me.Label19.Text = "Quantity: "
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(181, 137)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(234, 23)
+        Me.Label18.TabIndex = 31
+        Me.Label18.Text = "Planned Date : 11/7/2003"
+        '
+        'Label14
+        '
+        Me.Label14.Location = New System.Drawing.Point(181, 21)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(295, 100)
+        Me.Label14.TabIndex = 31
+        Me.Label14.Text = "Contact Info :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Luqman Nur Hakim" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Luqman@Tard.com" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "01238098"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(21, 21)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(156, 156)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 30
+        Me.PictureBox1.TabStop = False
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Location = New System.Drawing.Point(499, 29)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(435, 306)
+        Me.GroupBox3.TabIndex = 0
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "GroupBox3"
         '
         'BtnAddPackage
         '
@@ -522,77 +714,6 @@ Partial Class UserSettings
         Me.BtnSeeBookings.Text = "See Bookings"
         Me.BtnSeeBookings.UseVisualStyleBackColor = False
         '
-        'GroupBox3
-        '
-        Me.GroupBox3.Location = New System.Drawing.Point(499, 29)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(435, 306)
-        Me.GroupBox3.TabIndex = 0
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "GroupBox3"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(21, 21)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(156, 156)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 30
-        Me.PictureBox1.TabStop = False
-        '
-        'Label14
-        '
-        Me.Label14.Location = New System.Drawing.Point(181, 21)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(295, 100)
-        Me.Label14.TabIndex = 31
-        Me.Label14.Text = "Contact Info :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Luqman Nur Hakim" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Luqman@Tard.com" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "01238098"
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(181, 137)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(234, 23)
-        Me.Label18.TabIndex = 31
-        Me.Label18.Text = "Planned Date : 11/7/2003"
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(17, 201)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(95, 23)
-        Me.Label19.TabIndex = 32
-        Me.Label19.Text = "Quantity: "
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(17, 238)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(160, 23)
-        Me.Label20.TabIndex = 32
-        Me.Label20.Text = "Total Price Paid: "
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(283, 299)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(195, 31)
-        Me.Button1.TabIndex = 33
-        Me.Button1.Text = "Mark As Completed"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(21, 299)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(195, 31)
-        Me.Button2.TabIndex = 33
-        Me.Button2.Text = "Cancel"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
         'UserSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 23.0!)
@@ -625,10 +746,13 @@ Partial Class UserSettings
         Me.GroupBox1.PerformLayout()
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PnlSeller.ResumeLayout(False)
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
-        CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -651,7 +775,6 @@ Partial Class UserSettings
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label13 As Label
-    Friend WithEvents Button3 As Button
     Friend WithEvents BtnDelete As Button
     Friend WithEvents OtralaDBDataSet As OtralaDBDataSet
     Friend WithEvents UserInfoTableAdapter As OtralaDBDataSetTableAdapters.UserInfoTableAdapter
@@ -686,4 +809,16 @@ Partial Class UserSettings
     Friend WithEvents Label14 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Label21 As Label
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Label22 As Label
+    Friend WithEvents Label25 As Label
+    Friend WithEvents Label24 As Label
+    Friend WithEvents Label23 As Label
+    Friend WithEvents Button3 As Button
 End Class

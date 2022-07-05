@@ -3,6 +3,40 @@
 
     Dim Price As Decimal
 
+    Public Sub EditMode(Package)
+        Dim NewBtnDelete As New Button
+        With NewBtnDelete
+            .BackColor = System.Drawing.Color.White
+            .FlatStyle = System.Windows.Forms.FlatStyle.Flat
+            .Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+            .ForeColor = System.Drawing.SystemColors.ControlText
+            .Location = New System.Drawing.Point(289, 424)
+            .Name = "BtnDelete"
+            .Size = New System.Drawing.Size(153, 33)
+            .TabIndex = 10
+            .Text = "Delete"
+            .UseVisualStyleBackColor = False
+        End With
+
+        Panel1.Controls.Add(NewBtnDelete)
+        AddHandler NewBtnDelete.Click, AddressOf DeletePackage
+
+        TbPackageName.Text = Package.PackageName
+        Price = Package.Price
+        TbPrice.Text = Package.Price
+        TbDesc.Text = Package.Description
+        CbState.Text = Package.State
+        TbLocations.Text = Package.Location
+        TbPax.Text = Package.Pax
+        TbDuration.Text = Package.Duration
+        PicBox.Image = Package.Picture
+
+        BtnAdd.Text = "Save Edits"
+    End Sub
+    Public Sub DeletePackage()
+        NewPackage.Pax = "DELETE"
+        Me.Close()
+    End Sub
     Private Sub SubmitPackage() Handles BtnAdd.Click
         If TbPackageName.Text = "" OrElse TbPrice.Text = "" OrElse TbDesc.Text = "" OrElse CbState.Text = "" OrElse TbLocations.Text = "" OrElse TbPax.Text = "" OrElse TbDuration.Text = "" OrElse PicBox.Image Is Nothing Then
             MsgBox("Please fill in all fields")
@@ -24,6 +58,7 @@
     End Sub
 
     Private Sub Cancel() Handles BtnCancel.Click
+        NewPackage.Pax = "CANCEL"
         Me.Close()
     End Sub
 
@@ -66,6 +101,4 @@
         End If
     End Sub
 
-    Private Sub AddPackage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-    End Sub
 End Class
