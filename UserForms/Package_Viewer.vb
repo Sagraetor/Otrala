@@ -32,6 +32,7 @@
         lblPaxValue.Text = Package.Pax
         lblDurationValue.Text = Package.Duration
 
+
         If User.Wishlist.Contains(Package.PackageID) Then
             btnWishlist.Text = "In Wishlist"
         End If

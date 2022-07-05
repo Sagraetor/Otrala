@@ -18,7 +18,8 @@
     End Structure
 
     Public User As New UserInfo With {
-        .LoggedIn = False
+        .LoggedIn = False,
+        .Wishlist = New List(Of Integer)
     }
 
     Structure Package

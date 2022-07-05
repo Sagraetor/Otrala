@@ -179,6 +179,10 @@
 
         Dim StrMyWishlist As String = LstIntToStr(User.Wishlist)
 
+        If User.Wishlist.Count = 0 Then
+            Exit Sub
+        End If
+
         Dim CatalogueData As DataRow() = OtralaDBDataSet.Package.Select("PackageID IN (" & StrMyWishlist.Replace(",", ", ") & ")")
 
         For Each Row In CatalogueData
