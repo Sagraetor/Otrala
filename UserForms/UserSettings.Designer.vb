@@ -127,6 +127,8 @@ Partial Class UserSettings
         '
         'PbProfile
         '
+        Me.PbProfile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.PbProfile.Image = Global.Otrala_2._0.My.Resources.Resources.NoAvatar
         Me.PbProfile.Location = New System.Drawing.Point(141, 29)
         Me.PbProfile.Name = "PbProfile"
         Me.PbProfile.Size = New System.Drawing.Size(154, 154)

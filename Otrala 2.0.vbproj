@@ -139,6 +139,12 @@
     <Compile Include="UserForms\Feedback_Viewer.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UserForms\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UserForms\Request.Designer.vb">
       <DependentUpon>Request.vb</DependentUpon>
     </Compile>
