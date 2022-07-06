@@ -1,5 +1,5 @@
 ﻿Public Class UserSettings
-    Dim Editing As Boolean = False
+    Public Editing As Boolean = False
     Dim PassPendingChange As Boolean = False
     Dim NewPass As String
     Dim StrMyPackages As String
@@ -519,6 +519,12 @@
     End Sub
 
     Private Sub ViewMyBookings() Handles BtnSeeBookings.Click
+
+        If Editing Then
+            MsgBox("Please update your profile first")
+            Exit Sub
+        End If
+
         PnlSeller.Controls.Clear()
 
         PnlSeller.Visible = True
@@ -783,6 +789,7 @@
 
     ' log out 
     Private Sub btnLogOut_Click(sender As Object, e As EventArgs)
+
         Dim reply As MsgBoxResult = MsgBox("Thank you For Using Otrala" + Environment.NewLine +
                                            "See you When we 'Travel Lagi'", MsgBoxStyle.OkCancel, "Exit")
         If reply = MsgBoxResult.Ok Then

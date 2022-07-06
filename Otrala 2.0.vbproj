@@ -133,6 +133,12 @@
     <Compile Include="UserForms\AboutUs.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UserForms\Feedback_Viewer.Designer.vb">
+      <DependentUpon>Feedback_Viewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\Feedback_Viewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UserForms\Request.Designer.vb">
       <DependentUpon>Request.vb</DependentUpon>
     </Compile>
@@ -245,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\AboutUs.resx">
       <DependentUpon>AboutUs.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\Feedback_Viewer.resx">
+      <DependentUpon>Feedback_Viewer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\Request.resx">
       <DependentUpon>Request.vb</DependentUpon>
