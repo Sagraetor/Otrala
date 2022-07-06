@@ -137,6 +137,17 @@
         Dim Requests As DataRow() = OtralaDBDataSet.Request.Select("Fulfilled = False")
 
         If Requests.Count = 0 Then
+            Dim no_result As New Label
+            With no_result
+                .Name = "lblNoResult"
+                .Location = New System.Drawing.Point(PnlSeller.Width / 2 - 400, PnlSeller.Height / 2 - 100)
+                .Text = "Oops, it looks like you don't have any requests currently."
+                .Font = New System.Drawing.Font("Arial", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+                .Size = New System.Drawing.Size(800, 300)
+                .TextAlign = ContentAlignment.TopLeft
+            End With
+
+            PnlSeller.Controls.Add(no_result)
             Exit Sub
         End If
 
@@ -301,13 +312,27 @@
 
         PnlSeller.Controls.Clear()
         LstBookingID.Clear()
+        Dim MyClientsBookings As DataRow()
 
-        Dim MyClientsBookings As DataRow() = OtralaDBDataSet.Booking.Select("PackageID IN (" & StrMyPackages & ")")
+        If StrMyPackages <> "" Then
 
-        If MyClientsBookings.Count = 0 Then
-            Exit Sub
+            MyClientsBookings = OtralaDBDataSet.Booking.Select("PackageID IN (" & StrMyPackages & ")")
+
+            If MyClientsBookings.Count = 0 Then
+                Dim no_result As New Label
+                With no_result
+                    .Name = "lblNoResult"
+                    .Location = New System.Drawing.Point(PnlSeller.Width / 2 - 400, PnlSeller.Height / 2 - 100)
+                    .Text = "Oops, it looks like you don't have any clients currently."
+                    .Font = New System.Drawing.Font("Arial", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+                    .Size = New System.Drawing.Size(800, 300)
+                    .TextAlign = ContentAlignment.TopLeft
+                End With
+
+                PnlSeller.Controls.Add(no_result)
+                Exit Sub
+            End If
         End If
-
         Dim BookingIndex As Long = 1
         Const Dy As Short = 387
 

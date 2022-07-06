@@ -5,8 +5,8 @@
     Dim CatalogueList As New List(Of Package)
     Dim DisplayList As New List(Of Package)
 
-    Private Sub SearchBox_Search(sender As Object, e As KeyPressEventArgs) Handles SearchBox.KeyPress
-        If e.KeyChar = ChrW(Keys.Enter) Then
+    Private Sub SearchBox_Search(sender As Object, e As KeyEventArgs) Handles SearchBox.KeyDown
+        If e.KeyCode = Keys.Enter Then
             SearchButton.PerformClick()
         End If
     End Sub
