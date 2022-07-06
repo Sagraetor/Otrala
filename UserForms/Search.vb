@@ -352,4 +352,24 @@
         PackageViewForm.ShowDialog()
     End Sub
 
+    Private Sub BtnRecommendation_Click(sender As Object, e As EventArgs) Handles BtnRecommendation.Click
+        Dim c As New Catalogue
+        c.Show()
+        c.BtnRecommendation.PerformClick()
+        Me.Hide()
+    End Sub
+
+    Private Sub BtnWishlist_Click(sender As Object, e As EventArgs) Handles BtnWishlist.Click
+        Dim c As New Catalogue
+        c.Show()
+        c.BtnWishlist.PerformClick()
+        Me.Hide()
+    End Sub
+
+    Private Sub BtnRequest_Click(sender As Object, e As EventArgs) Handles BtnRequest.Click
+        Dim c As New Catalogue
+        c.Show()
+        c.BtnRequest.PerformClick()
+        Me.Hide()
+    End Sub
 End Class

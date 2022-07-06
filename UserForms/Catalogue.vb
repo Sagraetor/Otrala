@@ -176,7 +176,7 @@
     Private Sub OpenWishlist() Handles BtnWishlist.Click
 
         If Not User.LoggedIn Then
-            MsgBox("You need to be signed in to submit a request")
+            MsgBox("You need to be signed in to have a wishlist")
             Exit Sub
         End If
 

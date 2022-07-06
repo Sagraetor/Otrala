@@ -368,5 +368,6 @@
     </Content>
     <Content Include="OtralaWinIcon.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

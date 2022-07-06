@@ -33,6 +33,9 @@ Partial Class Search
         Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
         Me.PackageBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PnlCatalogue = New System.Windows.Forms.Panel()
+        Me.BtnRecommendation = New System.Windows.Forms.Button()
+        Me.BtnWishlist = New System.Windows.Forms.Button()
+        Me.BtnRequest = New System.Windows.Forms.Button()
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PackageBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -146,9 +149,45 @@ Partial Class Search
         Me.PnlCatalogue.Size = New System.Drawing.Size(1077, 430)
         Me.PnlCatalogue.TabIndex = 22
         '
+        'BtnRecommendation
+        '
+        Me.BtnRecommendation.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.BtnRecommendation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnRecommendation.Location = New System.Drawing.Point(0, 110)
+        Me.BtnRecommendation.Name = "BtnRecommendation"
+        Me.BtnRecommendation.Size = New System.Drawing.Size(186, 50)
+        Me.BtnRecommendation.TabIndex = 23
+        Me.BtnRecommendation.Text = "Recommendation"
+        Me.BtnRecommendation.UseVisualStyleBackColor = False
+        '
+        'BtnWishlist
+        '
+        Me.BtnWishlist.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.BtnWishlist.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnWishlist.Location = New System.Drawing.Point(0, 166)
+        Me.BtnWishlist.Name = "BtnWishlist"
+        Me.BtnWishlist.Size = New System.Drawing.Size(186, 50)
+        Me.BtnWishlist.TabIndex = 24
+        Me.BtnWishlist.Text = "Wishlist"
+        Me.BtnWishlist.UseVisualStyleBackColor = False
+        '
+        'BtnRequest
+        '
+        Me.BtnRequest.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.BtnRequest.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnRequest.Location = New System.Drawing.Point(0, 222)
+        Me.BtnRequest.Name = "BtnRequest"
+        Me.BtnRequest.Size = New System.Drawing.Size(186, 50)
+        Me.BtnRequest.TabIndex = 6
+        Me.BtnRequest.Text = "My Requests"
+        Me.BtnRequest.UseVisualStyleBackColor = False
+        '
         'Search
         '
         Me.ClientSize = New System.Drawing.Size(1262, 673)
+        Me.Controls.Add(Me.BtnRequest)
+        Me.Controls.Add(Me.BtnWishlist)
+        Me.Controls.Add(Me.BtnRecommendation)
         Me.Controls.Add(Me.PnlCatalogue)
         Me.Controls.Add(Me.SearchButton)
         Me.Controls.Add(Me.cboDuration)
@@ -170,6 +209,9 @@ Partial Class Search
         Me.Controls.SetChildIndex(Me.cboDuration, 0)
         Me.Controls.SetChildIndex(Me.SearchButton, 0)
         Me.Controls.SetChildIndex(Me.PnlCatalogue, 0)
+        Me.Controls.SetChildIndex(Me.BtnRecommendation, 0)
+        Me.Controls.SetChildIndex(Me.BtnWishlist, 0)
+        Me.Controls.SetChildIndex(Me.BtnRequest, 0)
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PackageBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -190,4 +232,7 @@ Partial Class Search
     Friend WithEvents OtralaDBDataSet As OtralaDBDataSet
     Friend WithEvents PackageBindingSource As BindingSource
     Friend WithEvents PnlCatalogue As Panel
+    Friend WithEvents BtnRecommendation As Button
+    Friend WithEvents BtnWishlist As Button
+    Friend WithEvents BtnRequest As Button
 End Class
