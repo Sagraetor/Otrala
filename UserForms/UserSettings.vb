@@ -579,7 +579,7 @@
         SwapToSeller()
     End Sub
 
-    Private Sub GenerateCatalogue(CatalogueItems As List(Of Package))
+    Private Sub GenerateCatalogue(CatalogueItems As List(Of Package), Optional CanEdit As Boolean = True)
         Dim CatalogueIndex As Long = 1
         Dim CatalogueYIndex As Integer = 0
         ' Count will determine how many catalogues to generate.
@@ -684,14 +684,16 @@
             PnlSeller.Controls.Add(NewGrpBox)
             NewGrpBox.Top += Dy * CatalogueYIndex
 
-            AddHandler NewLblTitle.Click, AddressOf EditPackage
-            AddHandler NewLblSeller.Click, AddressOf EditPackage
-            AddHandler NewLblDesc.Click, AddressOf EditPackage
-            AddHandler NewLblDuration.Click, AddressOf EditPackage
-            AddHandler NewLblPrice.Click, AddressOf EditPackage
-            AddHandler NewLblPax.Click, AddressOf EditPackage
-            AddHandler NewPicBox.Click, AddressOf EditPackage
-            AddHandler NewGrpBox.Click, AddressOf EditPackage
+            If CanEdit Then
+                AddHandler NewLblTitle.Click, AddressOf EditPackage
+                AddHandler NewLblSeller.Click, AddressOf EditPackage
+                AddHandler NewLblDesc.Click, AddressOf EditPackage
+                AddHandler NewLblDuration.Click, AddressOf EditPackage
+                AddHandler NewLblPrice.Click, AddressOf EditPackage
+                AddHandler NewLblPax.Click, AddressOf EditPackage
+                AddHandler NewPicBox.Click, AddressOf EditPackage
+                AddHandler NewGrpBox.Click, AddressOf EditPackage
+            End If
 
             If CatalogueIndex Mod 2 = 0 Then
                 NewGrpBox.Left += Dx
@@ -844,7 +846,7 @@
             MyPackageList.Add(NewPackage)
         Next
 
-        GenerateCatalogue(MyPackageList)
+        GenerateCatalogue(MyPackageList, False)
     End Sub
 
     Private Sub DeleteAcc() Handles BtnDelete.Click
