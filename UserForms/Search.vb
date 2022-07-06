@@ -16,6 +16,7 @@
         cboPrice.SelectedIndex = 0
         cboPax.SelectedIndex = 0
         cboDuration.SelectedIndex = 0
+        SearchBox.Select()
     End Sub
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click

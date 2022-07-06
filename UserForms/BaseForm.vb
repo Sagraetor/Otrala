@@ -73,6 +73,8 @@
 
     Protected Sub SearchBox_Click(sender As Object, e As EventArgs) Handles SearchBox.Click
 
+        SearchBox.Text = ""
+
         If UserSettings.Editing Then
             MsgBox("Please update your profile first")
             Exit Sub

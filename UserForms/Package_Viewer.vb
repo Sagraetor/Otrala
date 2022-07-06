@@ -46,7 +46,8 @@
 
 
         If User.Wishlist.Contains(Package.PackageID) Then
-            btnWishlist.Text = "Remove from Wishlist"
+            btnWishlist.Font = New Font("Arial Black", 16.0!, System.Drawing.FontStyle.Bold)
+            btnWishlist.Text = "In Wishlist" & Environment.NewLine & "Click to Remove"
         End If
     End Sub
 
@@ -62,10 +63,12 @@
         End If
 
         If User.Wishlist.Contains(Package.PackageID) Then
+            btnWishlist.Font = New Font("Arial Black", 20.0!, System.Drawing.FontStyle.Bold)
             btnWishlist.Text = "Add To Wishlist"
             User.Wishlist.Remove(Package.PackageID)
         Else
-            btnWishlist.Text = "Remove from Wishlist"
+            btnWishlist.Font = New Font("Arial Black", 16.0!, System.Drawing.FontStyle.Bold)
+            btnWishlist.Text = "In Wishlist" & Environment.NewLine & "Click to Remove"
             User.Wishlist.Add(Package.PackageID)
         End If
 
