@@ -353,7 +353,16 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\AddPackagePicUnavailable.png" />
+    <Content Include="Assets\ClosedEye.png" />
+    <Content Include="Assets\NoAvatar.png" />
+    <Content Include="Assets\Openeye.png" />
     <Content Include="Assets\Otrala Icon.png" />
+    <Content Include="Assets\OtralaDB.accdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\OtralaWinIcon.ico" />
+    <Content Include="Assets\Search Icon.png" />
     <Content Include="OtralaDB.accdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

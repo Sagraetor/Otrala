@@ -110,7 +110,7 @@
             Dim IndexToDelete As Integer = OtralaDBDataSet.Package.Rows.IndexOf(RowToDelete)
 
             OtralaDBDataSet.Package.Rows(IndexToDelete).Delete()
-        Else
+        ElseIf ResultPackage.Pax <> "" Then
             Dim RowToEdit As DataRow = OtralaDBDataSet.Package.Select("PackageID = " & MyPackageList(PackageIndex - 1).PackageID)(0)
             Dim IndexToEdit As Integer = OtralaDBDataSet.Package.Rows.IndexOf(RowToEdit)
 
@@ -555,28 +555,30 @@
             Exit Sub
         End If
 
-        Dim NewPackageDataRow As DataRow = OtralaDBDataSet.Package.NewPackageRow()
+        If PackageToAdd.Pax <> "" Then
+            Dim NewPackageDataRow As DataRow = OtralaDBDataSet.Package.NewPackageRow()
 
-        NewPackageDataRow("UserID") = PackageToAdd.SellerID
-        NewPackageDataRow("PackageName") = PackageToAdd.PackageName
-        NewPackageDataRow("Price") = PackageToAdd.Price
-        NewPackageDataRow("Description") = PackageToAdd.Description
-        NewPackageDataRow("State") = PackageToAdd.State
-        NewPackageDataRow("Destination") = PackageToAdd.Location
-        NewPackageDataRow("Pax") = PackageToAdd.Pax
-        NewPackageDataRow("Duration") = PackageToAdd.Duration
-        NewPackageDataRow("SellerName") = PackageToAdd.SellerName
-        NewPackageDataRow("Picture") = OtralAPI.DataFromImage(PackageToAdd.Picture)
+            NewPackageDataRow("UserID") = PackageToAdd.SellerID
+            NewPackageDataRow("PackageName") = PackageToAdd.PackageName
+            NewPackageDataRow("Price") = PackageToAdd.Price
+            NewPackageDataRow("Description") = PackageToAdd.Description
+            NewPackageDataRow("State") = PackageToAdd.State
+            NewPackageDataRow("Destination") = PackageToAdd.Location
+            NewPackageDataRow("Pax") = PackageToAdd.Pax
+            NewPackageDataRow("Duration") = PackageToAdd.Duration
+            NewPackageDataRow("SellerName") = PackageToAdd.SellerName
+            NewPackageDataRow("Picture") = OtralAPI.DataFromImage(PackageToAdd.Picture)
 
-        OtralaDBDataSet.Package.AddPackageRow(NewPackageDataRow)
+            OtralaDBDataSet.Package.AddPackageRow(NewPackageDataRow)
 
-        PackageTableAdapter.Update(OtralaDBDataSet)
+            PackageTableAdapter.Update(OtralaDBDataSet)
 
-        Me.FormLoad()
+            Me.FormLoad()
 
-        PnlSeller.Controls.Clear()
+            PnlSeller.Controls.Clear()
 
-        SwapToSeller()
+            SwapToSeller()
+        End If
     End Sub
 
     Private Sub GenerateCatalogue(CatalogueItems As List(Of Package))
