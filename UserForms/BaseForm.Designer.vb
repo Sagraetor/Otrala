@@ -64,7 +64,8 @@ Partial Class BaseForm
         Me.SearchBox.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.SearchBox.Name = "SearchBox"
         Me.SearchBox.Size = New System.Drawing.Size(484, 30)
-        Me.SearchBox.TabIndex = 2
+        Me.SearchBox.TabIndex = 4
+        Me.SearchBox.Text = "Search for the travels of your dreams here!"
         '
         'Label2
         '
@@ -74,7 +75,7 @@ Partial Class BaseForm
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(186, 563)
-        Me.Label2.TabIndex = 3
+        Me.Label2.TabIndex = 1
         '
         'btnLogOut
         '
@@ -83,7 +84,7 @@ Partial Class BaseForm
         Me.btnLogOut.Location = New System.Drawing.Point(0, 623)
         Me.btnLogOut.Name = "btnLogOut"
         Me.btnLogOut.Size = New System.Drawing.Size(186, 50)
-        Me.btnLogOut.TabIndex = 7
+        Me.btnLogOut.TabIndex = 3
         Me.btnLogOut.Text = "Log Out"
         Me.btnLogOut.UseVisualStyleBackColor = False
         '
@@ -94,7 +95,7 @@ Partial Class BaseForm
         Me.BtnFeedback.Location = New System.Drawing.Point(0, 567)
         Me.BtnFeedback.Name = "BtnFeedback"
         Me.BtnFeedback.Size = New System.Drawing.Size(186, 50)
-        Me.BtnFeedback.TabIndex = 9
+        Me.BtnFeedback.TabIndex = 2
         Me.BtnFeedback.Text = "Feedbacks"
         Me.BtnFeedback.UseVisualStyleBackColor = False
         '
@@ -106,7 +107,7 @@ Partial Class BaseForm
         Me.LblName.Location = New System.Drawing.Point(836, 40)
         Me.LblName.Name = "LblName"
         Me.LblName.Size = New System.Drawing.Size(358, 23)
-        Me.LblName.TabIndex = 11
+        Me.LblName.TabIndex = 5
         Me.LblName.Text = "Log In / Sign Up"
         Me.LblName.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -154,7 +155,7 @@ Partial Class BaseForm
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddItemsToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(186, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(186, 30)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -162,7 +163,7 @@ Partial Class BaseForm
         '
         Me.AddItemsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddToolStripMenuItem, Me.AddToolStripMenuItem1, Me.AddLoginInfoToolStripMenuItem1, Me.AddUserInfoToolStripMenuItem, Me.AddRequestToolStripMenuItem1})
         Me.AddItemsToolStripMenuItem.Name = "AddItemsToolStripMenuItem"
-        Me.AddItemsToolStripMenuItem.Size = New System.Drawing.Size(126, 24)
+        Me.AddItemsToolStripMenuItem.Size = New System.Drawing.Size(126, 26)
         Me.AddItemsToolStripMenuItem.Text = "Database Items"
         '
         'AddToolStripMenuItem

@@ -12,6 +12,12 @@
         End If
     End Sub
     Protected Sub ToCatalogue() Handles PbOtralaIcon.Click
+
+        If UserSettings.Editing Then
+            MsgBox("Please update your profile first")
+            Exit Sub
+        End If
+
         If Me.Name = "Catalogue" Then
             AboutUs.Show()
             AboutUs.FormLoad()
@@ -40,6 +46,7 @@
             If User.LoggedIn AndAlso User.Age = 0 Then
                 UserSettings.Show()
                 UserSettings.FormLoad()
+                UserSettings.Editing = True
                 UserSettings.ForceEdit()
                 Me.Hide()
             End If
@@ -49,6 +56,12 @@
     End Sub
 
     Protected Sub ToFeedback() Handles BtnFeedback.Click
+
+        If UserSettings.Editing Then
+            MsgBox("Please update your profile first")
+            Exit Sub
+        End If
+
         If Me.Name <> "Feedback" And User.LoggedIn Then
             Feedback.Show()
             Feedback.FormLoad()
@@ -59,6 +72,14 @@
     End Sub
 
     Protected Sub SearchBox_Click(sender As Object, e As EventArgs) Handles SearchBox.Click
+
+        SearchBox.Text = ""
+
+        If UserSettings.Editing Then
+            MsgBox("Please update your profile first")
+            Exit Sub
+        End If
+
         If Me.Name <> "Search" Then
             Dim s As New Search
             s.SearchBox.Text = SearchBox.Text
@@ -70,6 +91,12 @@
 
     ' log out 
     Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
+
+        If UserSettings.Editing Then
+            MsgBox("Please update your profile first")
+            Exit Sub
+        End If
+
         Dim reply As MsgBoxResult = MsgBox("Thank you for using Otrala" + Environment.NewLine +
                                            "See you when we 'Travel Lagi'", MsgBoxStyle.OkCancel, "Exit")
         If reply = MsgBoxResult.Ok Then

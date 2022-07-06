@@ -46,7 +46,8 @@
 
 
         If User.Wishlist.Contains(Package.PackageID) Then
-            btnWishlist.Text = "In Wishlist"
+            btnWishlist.Font = New Font("Arial Black", 16.0!, System.Drawing.FontStyle.Bold)
+            btnWishlist.Text = "In Wishlist" & Environment.NewLine & "Click to Remove"
         End If
     End Sub
 
@@ -57,15 +58,17 @@
 
     Private Sub btnWishlist_Click(sender As Object, e As EventArgs) Handles btnWishlist.Click
         If User.LoggedIn = False Then
-            MsgBox("Please log in to wishlist")
+            MsgBox("Please log in to add this to your wishlist.")
             Exit Sub
         End If
 
         If User.Wishlist.Contains(Package.PackageID) Then
-            btnWishlist.Text = "Add to Wishlist"
+            btnWishlist.Font = New Font("Arial Black", 20.0!, System.Drawing.FontStyle.Bold)
+            btnWishlist.Text = "Add To Wishlist"
             User.Wishlist.Remove(Package.PackageID)
         Else
-            btnWishlist.Text = "In Wishlist"
+            btnWishlist.Font = New Font("Arial Black", 16.0!, System.Drawing.FontStyle.Bold)
+            btnWishlist.Text = "In Wishlist" & Environment.NewLine & "Click to Remove"
             User.Wishlist.Add(Package.PackageID)
         End If
 
@@ -78,6 +81,11 @@
     End Sub
 
     Private Sub btnBook_Click(sender As Object, e As EventArgs) Handles btnBook.Click
+        If User.LoggedIn = False Then
+            MsgBox("Please log in to book this trip.")
+            Exit Sub
+        End If
+
         Dim BookingForm As New Bookings
         BookingForm.package = Package
         BookingForm.ShowDialog()

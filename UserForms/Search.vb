@@ -5,8 +5,8 @@
     Dim CatalogueList As New List(Of Package)
     Dim DisplayList As New List(Of Package)
 
-    Private Sub SearchBox_Search(sender As Object, e As KeyPressEventArgs) Handles SearchBox.KeyPress
-        If e.KeyChar = Microsoft.VisualBasic.ChrW(Keys.Enter) Then
+    Private Sub SearchBox_Search(sender As Object, e As KeyEventArgs) Handles SearchBox.KeyDown
+        If e.KeyCode = Keys.Enter Then
             SearchButton.PerformClick()
         End If
     End Sub
@@ -16,6 +16,7 @@
         cboPrice.SelectedIndex = 0
         cboPax.SelectedIndex = 0
         cboDuration.SelectedIndex = 0
+        SearchBox.Select()
     End Sub
 
     Private Sub SearchButton_Click(sender As Object, e As EventArgs) Handles SearchButton.Click
@@ -351,4 +352,24 @@
         PackageViewForm.ShowDialog()
     End Sub
 
+    Private Sub BtnRecommendation_Click(sender As Object, e As EventArgs) Handles BtnRecommendation.Click
+        Dim c As New Catalogue
+        c.Show()
+        c.BtnRecommendation.PerformClick()
+        Me.Hide()
+    End Sub
+
+    Private Sub BtnWishlist_Click(sender As Object, e As EventArgs) Handles BtnWishlist.Click
+        Dim c As New Catalogue
+        c.Show()
+        c.BtnWishlist.PerformClick()
+        Me.Hide()
+    End Sub
+
+    Private Sub BtnRequest_Click(sender As Object, e As EventArgs) Handles BtnRequest.Click
+        Dim c As New Catalogue
+        c.Show()
+        c.BtnRequest.PerformClick()
+        Me.Hide()
+    End Sub
 End Class

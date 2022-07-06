@@ -1,5 +1,5 @@
 ﻿Public Class UserSettings
-    Dim Editing As Boolean = False
+    Public Editing As Boolean = False
     Dim PassPendingChange As Boolean = False
     Dim NewPass As String
     Dim StrMyPackages As String
@@ -110,7 +110,7 @@
             Dim IndexToDelete As Integer = OtralaDBDataSet.Package.Rows.IndexOf(RowToDelete)
 
             OtralaDBDataSet.Package.Rows(IndexToDelete).Delete()
-        Else
+        ElseIf ResultPackage.Pax <> "" Then
             Dim RowToEdit As DataRow = OtralaDBDataSet.Package.Select("PackageID = " & MyPackageList(PackageIndex - 1).PackageID)(0)
             Dim IndexToEdit As Integer = OtralaDBDataSet.Package.Rows.IndexOf(RowToEdit)
 
@@ -137,6 +137,17 @@
         Dim Requests As DataRow() = OtralaDBDataSet.Request.Select("Fulfilled = False")
 
         If Requests.Count = 0 Then
+            Dim no_result As New Label
+            With no_result
+                .Name = "lblNoResult"
+                .Location = New System.Drawing.Point(PnlSeller.Width / 2 - 400, PnlSeller.Height / 2 - 100)
+                .Text = "Oops, it looks like you don't have any requests currently."
+                .Font = New System.Drawing.Font("Arial", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+                .Size = New System.Drawing.Size(800, 300)
+                .TextAlign = ContentAlignment.TopLeft
+            End With
+
+            PnlSeller.Controls.Add(no_result)
             Exit Sub
         End If
 
@@ -301,13 +312,27 @@
 
         PnlSeller.Controls.Clear()
         LstBookingID.Clear()
+        Dim MyClientsBookings As DataRow()
 
-        Dim MyClientsBookings As DataRow() = OtralaDBDataSet.Booking.Select("PackageID IN (" & StrMyPackages & ")")
+        If StrMyPackages <> "" Then
 
-        If MyClientsBookings.Count = 0 Then
-            Exit Sub
+            MyClientsBookings = OtralaDBDataSet.Booking.Select("PackageID IN (" & StrMyPackages & ")")
+
+            If MyClientsBookings.Count = 0 Then
+                Dim no_result As New Label
+                With no_result
+                    .Name = "lblNoResult"
+                    .Location = New System.Drawing.Point(PnlSeller.Width / 2 - 400, PnlSeller.Height / 2 - 100)
+                    .Text = "Oops, it looks like you don't have any clients currently."
+                    .Font = New System.Drawing.Font("Arial", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+                    .Size = New System.Drawing.Size(800, 300)
+                    .TextAlign = ContentAlignment.TopLeft
+                End With
+
+                PnlSeller.Controls.Add(no_result)
+                Exit Sub
+            End If
         End If
-
         Dim BookingIndex As Long = 1
         Const Dy As Short = 387
 
@@ -555,28 +580,30 @@
             Exit Sub
         End If
 
-        Dim NewPackageDataRow As DataRow = OtralaDBDataSet.Package.NewPackageRow()
+        If PackageToAdd.Pax <> "" Then
+            Dim NewPackageDataRow As DataRow = OtralaDBDataSet.Package.NewPackageRow()
 
-        NewPackageDataRow("UserID") = PackageToAdd.SellerID
-        NewPackageDataRow("PackageName") = PackageToAdd.PackageName
-        NewPackageDataRow("Price") = PackageToAdd.Price
-        NewPackageDataRow("Description") = PackageToAdd.Description
-        NewPackageDataRow("State") = PackageToAdd.State
-        NewPackageDataRow("Destination") = PackageToAdd.Location
-        NewPackageDataRow("Pax") = PackageToAdd.Pax
-        NewPackageDataRow("Duration") = PackageToAdd.Duration
-        NewPackageDataRow("SellerName") = PackageToAdd.SellerName
-        NewPackageDataRow("Picture") = OtralAPI.DataFromImage(PackageToAdd.Picture)
+            NewPackageDataRow("UserID") = PackageToAdd.SellerID
+            NewPackageDataRow("PackageName") = PackageToAdd.PackageName
+            NewPackageDataRow("Price") = PackageToAdd.Price
+            NewPackageDataRow("Description") = PackageToAdd.Description
+            NewPackageDataRow("State") = PackageToAdd.State
+            NewPackageDataRow("Destination") = PackageToAdd.Location
+            NewPackageDataRow("Pax") = PackageToAdd.Pax
+            NewPackageDataRow("Duration") = PackageToAdd.Duration
+            NewPackageDataRow("SellerName") = PackageToAdd.SellerName
+            NewPackageDataRow("Picture") = OtralAPI.DataFromImage(PackageToAdd.Picture)
 
-        OtralaDBDataSet.Package.AddPackageRow(NewPackageDataRow)
+            OtralaDBDataSet.Package.AddPackageRow(NewPackageDataRow)
 
-        PackageTableAdapter.Update(OtralaDBDataSet)
+            PackageTableAdapter.Update(OtralaDBDataSet)
 
-        Me.FormLoad()
+            Me.FormLoad()
 
-        PnlSeller.Controls.Clear()
+            PnlSeller.Controls.Clear()
 
-        SwapToSeller()
+            SwapToSeller()
+        End If
     End Sub
 
     Private Sub GenerateCatalogue(CatalogueItems As List(Of Package), Optional CanEdit As Boolean = True)
@@ -796,6 +823,12 @@
     End Sub
 
     Private Sub ViewMyBookings() Handles BtnSeeBookings.Click
+
+        If Editing Then
+            MsgBox("Please update your profile first")
+            Exit Sub
+        End If
+
         PnlSeller.Controls.Clear()
 
         PnlSeller.Visible = True
@@ -1058,6 +1091,7 @@
 
     ' log out 
     Private Sub btnLogOut_Click(sender As Object, e As EventArgs)
+
         Dim reply As MsgBoxResult = MsgBox("Thank you For Using Otrala" + Environment.NewLine +
                                            "See you When we 'Travel Lagi'", MsgBoxStyle.OkCancel, "Exit")
         If reply = MsgBoxResult.Ok Then

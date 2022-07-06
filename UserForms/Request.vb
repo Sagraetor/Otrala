@@ -64,6 +64,8 @@
 
         RequestTableAdapter.Update(Me.OtralaDBDataSet)
 
+        MsgBox("Request Submitted! You will be notified" & Environment.NewLine & "when a seller makes you an offer!")
+
         Me.FormLoad()
         'Dim another_feedback As MsgBoxResult = MsgBox("Feedback submitted successfully! Thank you!" & System.Environment.NewLine & "Submit Another Ticket?", MsgBoxStyle.YesNo, "Thank you")
 
