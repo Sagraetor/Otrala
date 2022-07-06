@@ -27,7 +27,7 @@
             Exit Sub
         End If
 
-        LblTotPrice.Text = Val(TbQuantity.Text) * package.Price
+        LblTotPrice.Text = (Val(TbQuantity.Text) * package.Price).ToString("c")
     End Sub
 
     Private Sub StartDateChanged() Handles DTPickerStart.ValueChanged

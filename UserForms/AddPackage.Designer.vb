@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class AddPackage
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class AddPackage
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AddPackage))
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -38,7 +38,7 @@ Partial Class AddPackage
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TbLocations = New System.Windows.Forms.TextBox()
         Me.TbDesc = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.LblTitleOfDesc = New System.Windows.Forms.Label()
         Me.TbPackageName = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PicBox = New System.Windows.Forms.PictureBox()
@@ -63,7 +63,7 @@ Partial Class AddPackage
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.TbLocations)
         Me.Panel1.Controls.Add(Me.TbDesc)
-        Me.Panel1.Controls.Add(Me.Label6)
+        Me.Panel1.Controls.Add(Me.LblTitleOfDesc)
         Me.Panel1.Controls.Add(Me.TbPackageName)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.PicBox)
@@ -190,6 +190,7 @@ Partial Class AddPackage
         '
         'TbLocations
         '
+        Me.TbLocations.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TbLocations.Location = New System.Drawing.Point(202, 156)
         Me.TbLocations.Multiline = True
         Me.TbLocations.Name = "TbLocations"
@@ -204,14 +205,14 @@ Partial Class AddPackage
         Me.TbDesc.Size = New System.Drawing.Size(707, 186)
         Me.TbDesc.TabIndex = 2
         '
-        'Label6
+        'LblTitleOfDesc
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(9, 197)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(120, 23)
-        Me.Label6.TabIndex = 1
-        Me.Label6.Text = "Description :"
+        Me.LblTitleOfDesc.AutoSize = True
+        Me.LblTitleOfDesc.Location = New System.Drawing.Point(9, 197)
+        Me.LblTitleOfDesc.Name = "LblTitleOfDesc"
+        Me.LblTitleOfDesc.Size = New System.Drawing.Size(118, 23)
+        Me.LblTitleOfDesc.TabIndex = 1
+        Me.LblTitleOfDesc.Text = "Descriptions"
         '
         'TbPackageName
         '
@@ -231,7 +232,6 @@ Partial Class AddPackage
         '
         'PicBox
         '
-        Me.PicBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PicBox.Location = New System.Drawing.Point(13, 18)
         Me.PicBox.Name = "PicBox"
         Me.PicBox.Size = New System.Drawing.Size(170, 170)
@@ -271,7 +271,7 @@ Partial Class AddPackage
     Friend WithEvents TbPrice As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents TbDesc As TextBox
-    Friend WithEvents Label6 As Label
+    Friend WithEvents LblTitleOfDesc As Label
     Friend WithEvents TbPackageName As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents PicBox As PictureBox

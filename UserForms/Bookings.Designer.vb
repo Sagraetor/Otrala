@@ -55,12 +55,12 @@ Partial Class Bookings
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.LblTotPrice = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
         Me.BookingBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BookingTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.BookingTableAdapter()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.LblTotPrice = New System.Windows.Forms.Label()
         Me.GbxBooking.SuspendLayout()
         CType(Me.PicPackage, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -104,6 +104,7 @@ Partial Class Bookings
         Me.TbQuantity.Name = "TbQuantity"
         Me.TbQuantity.Size = New System.Drawing.Size(133, 30)
         Me.TbQuantity.TabIndex = 8
+        Me.TbQuantity.Text = "1"
         '
         'DTPickerStart
         '
@@ -393,6 +394,25 @@ Partial Class Bookings
         Me.Label5.Text = "Card Number "
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'LblTotPrice
+        '
+        Me.LblTotPrice.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblTotPrice.Location = New System.Drawing.Point(314, 191)
+        Me.LblTotPrice.Name = "LblTotPrice"
+        Me.LblTotPrice.Size = New System.Drawing.Size(152, 30)
+        Me.LblTotPrice.TabIndex = 0
+        Me.LblTotPrice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label13
+        '
+        Me.Label13.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(331, 158)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(116, 30)
+        Me.Label13.TabIndex = 0
+        Me.Label13.Text = "Total Price :"
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'Label3
         '
         Me.Label3.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -416,26 +436,6 @@ Partial Class Bookings
         'BookingTableAdapter
         '
         Me.BookingTableAdapter.ClearBeforeFill = True
-        '
-        'Label13
-        '
-        Me.Label13.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(331, 158)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(116, 30)
-        Me.Label13.TabIndex = 0
-        Me.Label13.Text = "Total Price :"
-        Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'LblTotPrice
-        '
-        Me.LblTotPrice.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblTotPrice.Location = New System.Drawing.Point(314, 191)
-        Me.LblTotPrice.Name = "LblTotPrice"
-        Me.LblTotPrice.Size = New System.Drawing.Size(152, 30)
-        Me.LblTotPrice.TabIndex = 0
-        Me.LblTotPrice.Text = "Total Price :"
-        Me.LblTotPrice.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Bookings
         '
