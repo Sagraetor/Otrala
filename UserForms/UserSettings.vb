@@ -38,6 +38,31 @@
         Return Index
     End Function
 
+
+    Private Sub RequestToBeSeller() Handles BtnSeller.Click
+        If User.IsSeller Then
+            Exit Sub
+        End If
+
+        Dim NewApplicationForm As New ApplySeller
+        NewApplicationForm.ShowDialog()
+
+        If NewApplicationForm.ImgIC IsNot Nothing AndAlso NewApplicationForm.ImgDocument IsNot Nothing Then
+            Dim NewIcPic As Image = NewApplicationForm.ImgIC
+            Dim NewDocPic As Image = NewApplicationForm.ImgDocument
+
+            Dim NewSellerApplication As DataRow = OtralaDBDataSet.SellerApplication.NewSellerApplicationRow
+
+            NewSellerApplication("UserID") = User.UserID
+            NewSellerApplication("ICPic") = DataFromImage(NewIcPic)
+            NewSellerApplication("ProofOfAgency") = DataFromImage(NewDocPic)
+
+            OtralaDBDataSet.SellerApplication.AddSellerApplicationRow(NewSellerApplication)
+
+            SellerApplicationTableAdapter.Update(OtralaDBDataSet)
+        End If
+
+    End Sub
     Private Sub OfferRequest(Sender As Object, e As EventArgs)
         Dim OfferIndex = GetIndex(Sender.Name)
 
@@ -1038,4 +1063,9 @@
         End If
     End Sub
 
+    Private Sub UserSettings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'OtralaDBDataSet.SellerApplication' table. You can move, or remove it, as needed.
+        Me.SellerApplicationTableAdapter.Fill(Me.OtralaDBDataSet.SellerApplication)
+
+    End Sub
 End Class

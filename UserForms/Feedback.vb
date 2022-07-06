@@ -49,6 +49,8 @@
         Else
             Me.ToCatalogue()
         End If
+
+        Me.FeedbackTableAdapter1.Fill(Me.OtralaDBDataSet.Feedback)
     End Sub
 
     Private Sub Feedback_Load(sender As Object, e As EventArgs) Handles MyBase.Load

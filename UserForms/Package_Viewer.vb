@@ -56,7 +56,10 @@
     End Sub
 
     Private Sub btnWishlist_Click(sender As Object, e As EventArgs) Handles btnWishlist.Click
-
+        If User.LoggedIn = False Then
+            MsgBox("Please log in to wishlist")
+            Exit Sub
+        End If
 
         If User.Wishlist.Contains(Package.PackageID) Then
             btnWishlist.Text = "Add to Wishlist"

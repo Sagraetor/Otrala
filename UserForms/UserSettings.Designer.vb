@@ -88,6 +88,8 @@ Partial Class UserSettings
         Me.BookingTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.BookingTableAdapter()
         Me.BookingBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BtnSeeBookings = New System.Windows.Forms.Button()
+        Me.SellerApplicationBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SellerApplicationTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.SellerApplicationTableAdapter()
         CType(Me.PbProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PnlUser.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -100,6 +102,7 @@ Partial Class UserSettings
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SellerApplicationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BtnUser
@@ -714,6 +717,15 @@ Partial Class UserSettings
         Me.BtnSeeBookings.Text = "See Bookings"
         Me.BtnSeeBookings.UseVisualStyleBackColor = False
         '
+        'SellerApplicationBindingSource
+        '
+        Me.SellerApplicationBindingSource.DataMember = "SellerApplication"
+        Me.SellerApplicationBindingSource.DataSource = Me.OtralaDBDataSet
+        '
+        'SellerApplicationTableAdapter
+        '
+        Me.SellerApplicationTableAdapter.ClearBeforeFill = True
+        '
         'UserSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 23.0!)
@@ -753,6 +765,7 @@ Partial Class UserSettings
         Me.Panel2.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SellerApplicationBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -821,4 +834,6 @@ Partial Class UserSettings
     Friend WithEvents Label24 As Label
     Friend WithEvents Label23 As Label
     Friend WithEvents Button3 As Button
+    Friend WithEvents SellerApplicationBindingSource As BindingSource
+    Friend WithEvents SellerApplicationTableAdapter As OtralaDBDataSetTableAdapters.SellerApplicationTableAdapter
 End Class
