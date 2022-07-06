@@ -13,9 +13,10 @@
         Me.LoginInfoTableAdapter.Fill(Me.OtralaDBDataSet.LoginInfo)
         Me.PackageTableAdapter.Fill(Me.OtralaDBDataSet.Package)
         Me.UserInfoTableAdapter.Fill(Me.OtralaDBDataSet.UserInfo)
-        If User.IsSeller Then
-            BtnSeller.Visible = True
-            BtnSeller.Enabled = True
+        If Not User.IsSeller Then
+            BtnSeller.Text = "Become a seller"
+        Else
+            BtnSeller.Text = "Edit Travel Agency"
         End If
         LoadUserInfo()
     End Sub
@@ -38,7 +39,36 @@
     End Function
 
     Private Sub OfferRequest(Sender As Object, e As EventArgs)
-        MsgBox("Tak siap lagi. kasi ah aq chance rehat")
+        Dim OfferIndex = GetIndex(Sender.Name)
+
+        Dim RequestRow As DataRow = OtralaDBDataSet.Request.Select("RequestID = " & OfferIndex)(0)
+
+        Dim NewOfferForm As New AddPackage
+        Dim RequestState As String = RequestRow("Location")
+
+        NewOfferForm.OfferPackage(RequestState)
+        NewOfferForm.ShowDialog()
+
+        Dim Offer As Package = NewOfferForm.NewPackage
+
+        If Offer.Pax = "CANCEL" Then
+            Exit Sub
+        End If
+
+        Dim NewOfferRow As DataRow = OtralaDBDataSet.RequestAnswer.NewRequestAnswerRow
+
+        NewOfferRow("RequestID") = RequestRow("RequestID")
+        NewOfferRow("UserID") = User.UserID
+        NewOfferRow("Pax") = Offer.Pax
+        NewOfferRow("Price") = Offer.Price
+        NewOfferRow("SellerName") = User.Name
+        NewOfferRow("Duration") = Offer.Duration
+        NewOfferRow("Description") = Offer.Description
+        NewOfferRow("TripDate") = Offer.Location
+
+        OtralaDBDataSet.RequestAnswer.AddRequestAnswerRow(NewOfferRow)
+
+        RequestAnswerTableAdapter.Update(OtralaDBDataSet)
     End Sub
     Private Sub EditPackage(Sender As Object, e As EventArgs)
         Dim PackageIndex As Integer = GetIndex(Sender.name)
@@ -90,11 +120,12 @@
 
         For Each RequestRow In Requests
             Dim ClientInfo As DataRow = OtralaDBDataSet.UserInfo.Select("UserID = " & RequestRow("UserID"))(0)
+            Dim RequestID As Integer = RequestRow("RequestID")
 
             Dim NewLblContactInfo As New Label
             With NewLblContactInfo
                 .Location = New System.Drawing.Point(181, 21)
-                .Name = "LblRequestContactInfo" & RequestIndex
+                .Name = "LblRequestContactInfo" & RequestID
                 .Size = New System.Drawing.Size(295, 100)
                 .TabIndex = 31
                 .Text = "Contact Info :" & vbNewLine & ClientInfo("RealName") & vbNewLine & ClientInfo("Email") & vbNewLine & ClientInfo("Phone")
@@ -104,7 +135,7 @@
             With NewLblDate
                 .AutoSize = True
                 .Location = New System.Drawing.Point(181, 137)
-                .Name = "LblRequestDate" & RequestIndex
+                .Name = "LblRequestDate" & RequestID
                 .Size = New System.Drawing.Size(234, 23)
                 .TabIndex = 31
                 .Text = "Planned Date : " & RequestRow("PlannedDate")
@@ -114,7 +145,7 @@
             With NewLblLocation
                 .AutoSize = True
                 .Location = New System.Drawing.Point(17, 280)
-                .Name = "LblRequestLocation" & RequestIndex
+                .Name = "LblRequestLocation" & RequestID
                 .Size = New System.Drawing.Size(102, 23)
                 .TabIndex = 32
                 .Text = "Location : " & RequestRow("Location")
@@ -124,7 +155,7 @@
             With NewLblPax
                 .AutoSize = True
                 .Location = New System.Drawing.Point(17, 201)
-                .Name = "LblRequestPax" & RequestIndex
+                .Name = "LblRequestPax" & RequestID
                 .Size = New System.Drawing.Size(61, 23)
                 .TabIndex = 32
                 .Text = "Pax : " & RequestRow("Pax")
@@ -134,7 +165,7 @@
             With NewLblPrice
                 .AutoSize = True
                 .Location = New System.Drawing.Point(17, 241)
-                .Name = "LblRequestPrice" & RequestIndex
+                .Name = "LblRequestPrice" & RequestID
                 .Size = New System.Drawing.Size(123, 23)
                 .TabIndex = 32
 
@@ -163,7 +194,7 @@
             With NewLblAdditional
                 .AutoSize = True
                 .Location = New System.Drawing.Point(495, 17)
-                .Name = "LblRequestAdditional" & RequestIndex
+                .Name = "LblRequestAdditional" & RequestID
                 .Size = New System.Drawing.Size(170, 23)
                 .TabIndex = 32
                 .Text = "Additional Notes : "
@@ -173,7 +204,7 @@
             With NewLblNotes
                 .BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
                 .Location = New System.Drawing.Point(495, 40)
-                .Name = "lblRequestNotes" & RequestIndex
+                .Name = "lblRequestNotes" & RequestID
                 .Size = New System.Drawing.Size(439, 290)
                 .TabIndex = 31
                 .Text = RequestRow("Notes")
@@ -183,7 +214,7 @@
             With NewLblDuration
                 .AutoSize = True
                 .Location = New System.Drawing.Point(181, 201)
-                .Name = "LblRequestDuration" & RequestIndex
+                .Name = "LblRequestDuration" & RequestID
                 .Size = New System.Drawing.Size(101, 23)
                 .TabIndex = 32
                 .Text = "Duration : " & RequestRow("Duration")
@@ -192,7 +223,7 @@
             Dim NewClientPicBox As New PictureBox
             With NewClientPicBox
                 .Location = New System.Drawing.Point(21, 21)
-                .Name = "PbRequestClient" & RequestIndex
+                .Name = "PbRequestClient" & RequestID
                 .Size = New System.Drawing.Size(156, 156)
                 .SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
                 .TabIndex = 30
@@ -206,7 +237,7 @@
             Dim NewBtnOffer As New Button
             With NewBtnOffer
                 .Location = New System.Drawing.Point(315, 299)
-                .Name = "Button5"
+                .Name = "BtnOffer" & RequestID
                 .Size = New System.Drawing.Size(163, 31)
                 .TabIndex = 33
                 .Text = "Make an Offer"
@@ -227,7 +258,7 @@
                 .Controls.Add(NewLblPax)
                 .Controls.Add(NewBtnOffer)
                 .Location = New System.Drawing.Point(47, 41)
-                .Name = "PnlBookings" & RequestIndex
+                .Name = "PnlBookings" & RequestID
                 .Size = New System.Drawing.Size(961, 359)
                 .TabIndex = 29
             End With
@@ -670,67 +701,71 @@
         BtnClient.Visible = False
     End Sub
     Private Sub SwapToSeller() Handles BtnSeller.Click
-        PnlSeller.Visible = True
-        PnlSeller.Enabled = True
+        If User.IsSeller Then
+            PnlSeller.Visible = True
+            PnlSeller.Enabled = True
 
-        PnlUser.Visible = False
-        PnlUser.Enabled = False
+            PnlUser.Visible = False
+            PnlUser.Enabled = False
 
-        BtnUser.Enabled = True
-        BtnSeller.Enabled = False
+            BtnUser.Enabled = True
+            BtnSeller.Enabled = False
 
-        BtnAddPackage.Enabled = True
-        BtnAddPackage.Visible = True
+            BtnAddPackage.Enabled = True
+            BtnAddPackage.Visible = True
 
-        BtnSeeReqs.Enabled = True
-        BtnSeeReqs.Visible = True
+            BtnSeeReqs.Enabled = True
+            BtnSeeReqs.Visible = True
 
-        BtnSeeBookings.Enabled = False
-        BtnSeeBookings.Visible = False
+            BtnSeeBookings.Enabled = False
+            BtnSeeBookings.Visible = False
 
-        BtnClient.Enabled = True
-        BtnClient.Visible = True
+            BtnClient.Enabled = True
+            BtnClient.Visible = True
 
-        PnlSeller.Controls.Clear()
-        StrMyPackages = ""
+            PnlSeller.Controls.Clear()
+            StrMyPackages = ""
 
-        Dim MyPackages As DataRow() = OtralaDBDataSet.Package.Select("UserID = " & User.UserID)
+            Dim MyPackages As DataRow() = OtralaDBDataSet.Package.Select("UserID = " & User.UserID)
 
-        If MyPackages.Count() = 0 Then
-            Exit Sub
+            If MyPackages.Count() = 0 Then
+                Exit Sub
+            End If
+
+            For Each PackageRow In MyPackages
+                StrMyPackages += Str(PackageRow("PackageID"))
+                StrMyPackages += ", "
+            Next
+
+            StrMyPackages = StrMyPackages.TrimEnd(CChar(" "))
+            StrMyPackages = StrMyPackages.TrimEnd(CChar(","))
+
+            MyPackageList = New List(Of Package)
+
+            For Each Row In MyPackages
+                Dim NewPackage As New Package
+                With NewPackage
+                    .SellerID = Row("UserID")
+                    .PackageID = Row("PackageID")
+                    .SellerName = "Temp"
+                    .PackageName = Row("PackageName")
+                    .Price = Row("Price")
+                    .Description = Row("Description")
+                    .State = Row("State")
+                    .Location = Row("Destination")
+                    .Pax = Row("Pax")
+                    .Duration = Row("Duration")
+                    .SellerName = Row("SellerName")
+                    .Picture = ImageFromData(Row("Picture"))
+                End With
+
+                MyPackageList.Add(NewPackage)
+            Next
+
+            GenerateCatalogue(MyPackageList)
+        Else
+
         End If
-
-        For Each PackageRow In MyPackages
-            StrMyPackages += Str(PackageRow("PackageID"))
-            StrMyPackages += ", "
-        Next
-
-        StrMyPackages = StrMyPackages.TrimEnd(CChar(" "))
-        StrMyPackages = StrMyPackages.TrimEnd(CChar(","))
-
-        MyPackageList = New List(Of Package)
-
-        For Each Row In MyPackages
-            Dim NewPackage As New Package
-            With NewPackage
-                .SellerID = Row("UserID")
-                .PackageID = Row("PackageID")
-                .SellerName = "Temp"
-                .PackageName = Row("PackageName")
-                .Price = Row("Price")
-                .Description = Row("Description")
-                .State = Row("State")
-                .Location = Row("Destination")
-                .Pax = Row("Pax")
-                .Duration = Row("Duration")
-                .SellerName = Row("SellerName")
-                .Picture = ImageFromData(Row("Picture"))
-            End With
-
-            MyPackageList.Add(NewPackage)
-        Next
-
-        GenerateCatalogue(MyPackageList)
     End Sub
 
     Private Sub ViewMyBookings() Handles BtnSeeBookings.Click

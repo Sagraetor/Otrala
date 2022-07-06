@@ -117,7 +117,6 @@ Partial Class UserSettings
         'BtnSeller
         '
         Me.BtnSeller.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BtnSeller.Enabled = False
         Me.BtnSeller.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnSeller.Location = New System.Drawing.Point(0, 166)
         Me.BtnSeller.Name = "BtnSeller"
@@ -125,7 +124,6 @@ Partial Class UserSettings
         Me.BtnSeller.TabIndex = 24
         Me.BtnSeller.Text = "Edit Travel Agency"
         Me.BtnSeller.UseVisualStyleBackColor = False
-        Me.BtnSeller.Visible = False
         '
         'PbProfile
         '
@@ -725,12 +723,12 @@ Partial Class UserSettings
         Me.Controls.Add(Me.BtnUser)
         Me.Controls.Add(Me.BtnSeeBookings)
         Me.Controls.Add(Me.BtnAddPackage)
-        Me.Controls.Add(Me.PnlSeller)
         Me.Controls.Add(Me.PnlUser)
+        Me.Controls.Add(Me.PnlSeller)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "UserSettings"
-        Me.Controls.SetChildIndex(Me.PnlUser, 0)
         Me.Controls.SetChildIndex(Me.PnlSeller, 0)
+        Me.Controls.SetChildIndex(Me.PnlUser, 0)
         Me.Controls.SetChildIndex(Me.BtnAddPackage, 0)
         Me.Controls.SetChildIndex(Me.BtnSeeBookings, 0)
         Me.Controls.SetChildIndex(Me.BtnUser, 0)

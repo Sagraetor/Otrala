@@ -147,7 +147,7 @@
                 .Name = "OffersLblPrice" & Index
                 .AutoSize = True
                 .TabIndex = 0
-                .Text = OfferRow("Price").ToString("C")
+                .Text = Val(OfferRow("Price")).ToString("C")
             End With
 
             Dim NewLblPax As New Label
