@@ -22,12 +22,13 @@ Partial Class Feedback_Viewer
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Feedback_Viewer))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.lblDescription = New System.Windows.Forms.Label()
         Me.lblDate = New System.Windows.Forms.Label()
         Me.lblType = New System.Windows.Forms.Label()
         Me.lblUser = New System.Windows.Forms.Label()
-        Me.lblDescription = New System.Windows.Forms.Label()
         Me.lblTitle = New System.Windows.Forms.Label()
         Me.FeedbackTableAdapter1 = New Otrala_2._0.OtralaDBDataSetTableAdapters.FeedbackTableAdapter()
         Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
@@ -62,6 +63,16 @@ Partial Class Feedback_Viewer
         Me.Panel2.Size = New System.Drawing.Size(520, 266)
         Me.Panel2.TabIndex = 5
         '
+        'lblDescription
+        '
+        Me.lblDescription.AllowDrop = True
+        Me.lblDescription.Font = New System.Drawing.Font("Arial Narrow", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDescription.Location = New System.Drawing.Point(3, 0)
+        Me.lblDescription.Name = "lblDescription"
+        Me.lblDescription.Size = New System.Drawing.Size(514, 266)
+        Me.lblDescription.TabIndex = 1
+        Me.lblDescription.Text = "<Description>"
+        '
         'lblDate
         '
         Me.lblDate.Font = New System.Drawing.Font("Arial Narrow", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -90,16 +101,6 @@ Partial Class Feedback_Viewer
         Me.lblUser.TabIndex = 2
         Me.lblUser.Text = "From : <User>"
         Me.lblUser.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'lblDescription
-        '
-        Me.lblDescription.AllowDrop = True
-        Me.lblDescription.Font = New System.Drawing.Font("Arial Narrow", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDescription.Location = New System.Drawing.Point(3, 0)
-        Me.lblDescription.Name = "lblDescription"
-        Me.lblDescription.Size = New System.Drawing.Size(514, 266)
-        Me.lblDescription.TabIndex = 1
-        Me.lblDescription.Text = "<Description>"
         '
         'lblTitle
         '
@@ -131,6 +132,7 @@ Partial Class Feedback_Viewer
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(569, 400)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Feedback_Viewer"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Feedback_Viewer"

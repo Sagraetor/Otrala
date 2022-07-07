@@ -24,6 +24,8 @@
     Public Sub ForceEdit()
         If Editing = False Then
             EditMode()
+            Editing = True
+            BtnEdit.Text = "Double click fields to edit, Click me to save changes"
         End If
     End Sub
 
@@ -40,6 +42,12 @@
 
 
     Private Sub RequestToBeSeller() Handles BtnSeller.Click
+
+        If Editing Then
+            MsgBox("Please update your profile first")
+            Exit Sub
+        End If
+
         If User.IsSeller Then
             Exit Sub
         End If
@@ -332,6 +340,19 @@
                 PnlSeller.Controls.Add(no_result)
                 Exit Sub
             End If
+        Else
+            Dim no_result As New Label
+            With no_result
+                .Name = "lblNoResult"
+                .Location = New System.Drawing.Point(PnlSeller.Width / 2 - 400, PnlSeller.Height / 2 - 100)
+                .Text = "Oops, it looks like you don't have any clients currently."
+                .Font = New System.Drawing.Font("Arial", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+                .Size = New System.Drawing.Size(800, 300)
+                .TextAlign = ContentAlignment.TopLeft
+            End With
+
+            PnlSeller.Controls.Add(no_result)
+            Exit Sub
         End If
         Dim BookingIndex As Long = 1
         Const Dy As Short = 387
@@ -925,10 +946,11 @@
             Editing = True
             BtnEdit.Text = "Double click fields to edit, Click me to save changes"
         Else
-            Editing = False
-            BtnEdit.Text = "Edit Profile"
-
             If MsgBox("Are you sure you want to save these changes?", MsgBoxStyle.YesNo, "Otrala") = MsgBoxResult.Yes Then
+
+                Editing = False
+                BtnEdit.Text = "Edit Profile"
+
                 Dim UserInfoDataRow As DataRow() = OtralaDBDataSet.UserInfo.Select("UserID = " & User.UserID)
                 Dim MyProfile As DataRow
 
@@ -1012,13 +1034,17 @@
                 UserInfoTableAdapter.Update(OtralaDBDataSet)
                 LoginInfoTableAdapter.Update(OtralaDBDataSet)
             End If
+
             Me.FormLoad()
             LoadUserInfo()
+
         End If
 
     End Sub
     Private Sub LoadUserInfo()
-        PbProfile.Image = User.Picture
+        If IsNothing(User.Picture) Then
+            PbProfile.Image = User.Picture
+        End If
         LblProfileName.Text = User.Name
         LblProfileAddress.Text = User.Address
         LblProfileAge.Text = User.Age

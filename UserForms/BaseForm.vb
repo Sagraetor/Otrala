@@ -46,7 +46,6 @@
             If User.LoggedIn AndAlso User.Age = 0 Then
                 UserSettings.Show()
                 UserSettings.FormLoad()
-                UserSettings.Editing = True
                 UserSettings.ForceEdit()
                 Me.Hide()
             End If
