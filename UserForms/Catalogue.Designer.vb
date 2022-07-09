@@ -65,7 +65,7 @@ Partial Class Catalogue
         Me.BtnWishlist.Name = "BtnWishlist"
         Me.BtnWishlist.Size = New System.Drawing.Size(186, 50)
         Me.BtnWishlist.TabIndex = 5
-        Me.BtnWishlist.Text = "Wishlist"
+        Me.BtnWishlist.Text = "My Wishlist"
         Me.BtnWishlist.UseVisualStyleBackColor = False
         '
         'BtnRecommendation
@@ -76,7 +76,7 @@ Partial Class Catalogue
         Me.BtnRecommendation.Name = "BtnRecommendation"
         Me.BtnRecommendation.Size = New System.Drawing.Size(186, 50)
         Me.BtnRecommendation.TabIndex = 5
-        Me.BtnRecommendation.Text = "Recommendation"
+        Me.BtnRecommendation.Text = "Recommendations"
         Me.BtnRecommendation.UseVisualStyleBackColor = False
         '
         'BtnRequest
