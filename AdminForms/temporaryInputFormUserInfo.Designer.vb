@@ -23,7 +23,6 @@ Partial Class temporaryInputFormUserInfo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(temporaryInputFormUserInfo))
         Dim UserIDLabel As System.Windows.Forms.Label
         Dim RealNameLabel As System.Windows.Forms.Label
         Dim AgeLabel As System.Windows.Forms.Label
@@ -31,22 +30,23 @@ Partial Class temporaryInputFormUserInfo
         Dim EmailLabel As System.Windows.Forms.Label
         Dim AddressLabel As System.Windows.Forms.Label
         Dim SellerLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(temporaryInputFormUserInfo))
         Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
         Me.UserInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UserInfoTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.UserInfoTableAdapter()
         Me.TableAdapterManager = New Otrala_2._0.OtralaDBDataSetTableAdapters.TableAdapterManager()
         Me.UserInfoBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
         Me.UserInfoBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.UserInfoDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -77,6 +77,69 @@ Partial Class temporaryInputFormUserInfo
         CType(Me.UserInfoDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
+        'UserIDLabel
+        '
+        UserIDLabel.AutoSize = True
+        UserIDLabel.Location = New System.Drawing.Point(54, 98)
+        UserIDLabel.Name = "UserIDLabel"
+        UserIDLabel.Size = New System.Drawing.Size(55, 16)
+        UserIDLabel.TabIndex = 2
+        UserIDLabel.Text = "User ID:"
+        '
+        'RealNameLabel
+        '
+        RealNameLabel.AutoSize = True
+        RealNameLabel.Location = New System.Drawing.Point(54, 126)
+        RealNameLabel.Name = "RealNameLabel"
+        RealNameLabel.Size = New System.Drawing.Size(79, 16)
+        RealNameLabel.TabIndex = 4
+        RealNameLabel.Text = "Real Name:"
+        '
+        'AgeLabel
+        '
+        AgeLabel.AutoSize = True
+        AgeLabel.Location = New System.Drawing.Point(54, 154)
+        AgeLabel.Name = "AgeLabel"
+        AgeLabel.Size = New System.Drawing.Size(35, 16)
+        AgeLabel.TabIndex = 6
+        AgeLabel.Text = "Age:"
+        '
+        'PhoneLabel
+        '
+        PhoneLabel.AutoSize = True
+        PhoneLabel.Location = New System.Drawing.Point(54, 182)
+        PhoneLabel.Name = "PhoneLabel"
+        PhoneLabel.Size = New System.Drawing.Size(49, 16)
+        PhoneLabel.TabIndex = 8
+        PhoneLabel.Text = "Phone:"
+        '
+        'EmailLabel
+        '
+        EmailLabel.AutoSize = True
+        EmailLabel.Location = New System.Drawing.Point(54, 210)
+        EmailLabel.Name = "EmailLabel"
+        EmailLabel.Size = New System.Drawing.Size(44, 16)
+        EmailLabel.TabIndex = 10
+        EmailLabel.Text = "Email:"
+        '
+        'AddressLabel
+        '
+        AddressLabel.AutoSize = True
+        AddressLabel.Location = New System.Drawing.Point(54, 238)
+        AddressLabel.Name = "AddressLabel"
+        AddressLabel.Size = New System.Drawing.Size(61, 16)
+        AddressLabel.TabIndex = 12
+        AddressLabel.Text = "Address:"
+        '
+        'SellerLabel
+        '
+        SellerLabel.AutoSize = True
+        SellerLabel.Location = New System.Drawing.Point(54, 268)
+        SellerLabel.Name = "SellerLabel"
+        SellerLabel.Size = New System.Drawing.Size(45, 16)
+        SellerLabel.TabIndex = 14
+        SellerLabel.Text = "Seller:"
+        '
         'OtralaDBDataSet
         '
         Me.OtralaDBDataSet.DataSetName = "OtralaDBDataSet"
@@ -94,10 +157,13 @@ Partial Class temporaryInputFormUserInfo
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BookingTableAdapter = Nothing
         Me.TableAdapterManager.FeedbackTableAdapter = Nothing
         Me.TableAdapterManager.LoginInfoTableAdapter = Nothing
         Me.TableAdapterManager.PackageTableAdapter = Nothing
+        Me.TableAdapterManager.RequestAnswerTableAdapter = Nothing
         Me.TableAdapterManager.RequestTableAdapter = Nothing
+        Me.TableAdapterManager.SellerApplicationTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Otrala_2._0.OtralaDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UserInfoTableAdapter = Me.UserInfoTableAdapter
         '
@@ -116,9 +182,34 @@ Partial Class temporaryInputFormUserInfo
         Me.UserInfoBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.UserInfoBindingNavigator.Name = "UserInfoBindingNavigator"
         Me.UserInfoBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.UserInfoBindingNavigator.Size = New System.Drawing.Size(1182, 27)
+        Me.UserInfoBindingNavigator.Size = New System.Drawing.Size(1262, 27)
         Me.UserInfoBindingNavigator.TabIndex = 0
         Me.UserInfoBindingNavigator.Text = "BindingNavigator1"
+        '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 24)
+        Me.BindingNavigatorCountItem.Text = "of {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
         'BindingNavigatorMoveFirstItem
         '
@@ -126,7 +217,7 @@ Partial Class temporaryInputFormUserInfo
         Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
         Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 22)
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorMoveFirstItem.Text = "Move first"
         '
         'BindingNavigatorMovePreviousItem
@@ -135,34 +226,28 @@ Partial Class temporaryInputFormUserInfo
         Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
         Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 22)
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 24)
         Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
         '
         'BindingNavigatorSeparator
         '
         Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 25)
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 27)
         '
         'BindingNavigatorPositionItem
         '
         Me.BindingNavigatorPositionItem.AccessibleName = "Position"
         Me.BindingNavigatorPositionItem.AutoSize = False
+        Me.BindingNavigatorPositionItem.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BindingNavigatorPositionItem.Name = "BindingNavigatorPositionItem"
         Me.BindingNavigatorPositionItem.Size = New System.Drawing.Size(50, 27)
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 20)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 6)
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 27)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -184,33 +269,15 @@ Partial Class temporaryInputFormUserInfo
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 6)
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 24)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 24)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 27)
         '
         'UserInfoBindingNavigatorSaveItem
         '
         Me.UserInfoBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.UserInfoBindingNavigatorSaveItem.Image = CType(resources.GetObject("UserInfoBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.UserInfoBindingNavigatorSaveItem.Name = "UserInfoBindingNavigatorSaveItem"
-        Me.UserInfoBindingNavigatorSaveItem.Size = New System.Drawing.Size(23, 23)
+        Me.UserInfoBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 24)
         Me.UserInfoBindingNavigatorSaveItem.Text = "Save Data"
         '
         'UserInfoDataGridView
@@ -282,15 +349,6 @@ Partial Class temporaryInputFormUserInfo
         Me.DataGridViewCheckBoxColumn1.Name = "DataGridViewCheckBoxColumn1"
         Me.DataGridViewCheckBoxColumn1.Width = 125
         '
-        'UserIDLabel
-        '
-        UserIDLabel.AutoSize = True
-        UserIDLabel.Location = New System.Drawing.Point(54, 98)
-        UserIDLabel.Name = "UserIDLabel"
-        UserIDLabel.Size = New System.Drawing.Size(55, 16)
-        UserIDLabel.TabIndex = 2
-        UserIDLabel.Text = "User ID:"
-        '
         'UserIDTextBox
         '
         Me.UserIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserInfoBindingSource, "UserID", True))
@@ -298,15 +356,6 @@ Partial Class temporaryInputFormUserInfo
         Me.UserIDTextBox.Name = "UserIDTextBox"
         Me.UserIDTextBox.Size = New System.Drawing.Size(237, 22)
         Me.UserIDTextBox.TabIndex = 3
-        '
-        'RealNameLabel
-        '
-        RealNameLabel.AutoSize = True
-        RealNameLabel.Location = New System.Drawing.Point(54, 126)
-        RealNameLabel.Name = "RealNameLabel"
-        RealNameLabel.Size = New System.Drawing.Size(79, 16)
-        RealNameLabel.TabIndex = 4
-        RealNameLabel.Text = "Real Name:"
         '
         'RealNameTextBox
         '
@@ -316,15 +365,6 @@ Partial Class temporaryInputFormUserInfo
         Me.RealNameTextBox.Size = New System.Drawing.Size(237, 22)
         Me.RealNameTextBox.TabIndex = 5
         '
-        'AgeLabel
-        '
-        AgeLabel.AutoSize = True
-        AgeLabel.Location = New System.Drawing.Point(54, 154)
-        AgeLabel.Name = "AgeLabel"
-        AgeLabel.Size = New System.Drawing.Size(35, 16)
-        AgeLabel.TabIndex = 6
-        AgeLabel.Text = "Age:"
-        '
         'AgeTextBox
         '
         Me.AgeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserInfoBindingSource, "Age", True))
@@ -332,15 +372,6 @@ Partial Class temporaryInputFormUserInfo
         Me.AgeTextBox.Name = "AgeTextBox"
         Me.AgeTextBox.Size = New System.Drawing.Size(237, 22)
         Me.AgeTextBox.TabIndex = 7
-        '
-        'PhoneLabel
-        '
-        PhoneLabel.AutoSize = True
-        PhoneLabel.Location = New System.Drawing.Point(54, 182)
-        PhoneLabel.Name = "PhoneLabel"
-        PhoneLabel.Size = New System.Drawing.Size(49, 16)
-        PhoneLabel.TabIndex = 8
-        PhoneLabel.Text = "Phone:"
         '
         'PhoneTextBox
         '
@@ -350,15 +381,6 @@ Partial Class temporaryInputFormUserInfo
         Me.PhoneTextBox.Size = New System.Drawing.Size(237, 22)
         Me.PhoneTextBox.TabIndex = 9
         '
-        'EmailLabel
-        '
-        EmailLabel.AutoSize = True
-        EmailLabel.Location = New System.Drawing.Point(54, 210)
-        EmailLabel.Name = "EmailLabel"
-        EmailLabel.Size = New System.Drawing.Size(44, 16)
-        EmailLabel.TabIndex = 10
-        EmailLabel.Text = "Email:"
-        '
         'EmailTextBox
         '
         Me.EmailTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserInfoBindingSource, "Email", True))
@@ -367,15 +389,6 @@ Partial Class temporaryInputFormUserInfo
         Me.EmailTextBox.Size = New System.Drawing.Size(237, 22)
         Me.EmailTextBox.TabIndex = 11
         '
-        'AddressLabel
-        '
-        AddressLabel.AutoSize = True
-        AddressLabel.Location = New System.Drawing.Point(54, 238)
-        AddressLabel.Name = "AddressLabel"
-        AddressLabel.Size = New System.Drawing.Size(61, 16)
-        AddressLabel.TabIndex = 12
-        AddressLabel.Text = "Address:"
-        '
         'AddressTextBox
         '
         Me.AddressTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserInfoBindingSource, "Address", True))
@@ -383,15 +396,6 @@ Partial Class temporaryInputFormUserInfo
         Me.AddressTextBox.Name = "AddressTextBox"
         Me.AddressTextBox.Size = New System.Drawing.Size(237, 22)
         Me.AddressTextBox.TabIndex = 13
-        '
-        'SellerLabel
-        '
-        SellerLabel.AutoSize = True
-        SellerLabel.Location = New System.Drawing.Point(54, 268)
-        SellerLabel.Name = "SellerLabel"
-        SellerLabel.Size = New System.Drawing.Size(45, 16)
-        SellerLabel.TabIndex = 14
-        SellerLabel.Text = "Seller:"
         '
         'SellerCheckBox
         '
@@ -407,7 +411,7 @@ Partial Class temporaryInputFormUserInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1182, 553)
+        Me.ClientSize = New System.Drawing.Size(1262, 673)
         Me.Controls.Add(UserIDLabel)
         Me.Controls.Add(Me.UserIDTextBox)
         Me.Controls.Add(RealNameLabel)

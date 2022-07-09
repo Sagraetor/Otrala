@@ -37,11 +37,18 @@ Partial Class temporaryInputFormRequest
         Me.RequestTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.RequestTableAdapter()
         Me.TableAdapterManager = New Otrala_2._0.OtralaDBDataSetTableAdapters.TableAdapterManager()
         Me.RequestBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.RequestBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.RequestDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -59,13 +66,6 @@ Partial Class temporaryInputFormRequest
         Me.PaxTextBox = New System.Windows.Forms.TextBox()
         Me.PlannedDateTextBox = New System.Windows.Forms.TextBox()
         Me.NotesTextBox = New System.Windows.Forms.TextBox()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
-        Me.RequestBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         RequestIDLabel = New System.Windows.Forms.Label()
         UserIDLabel = New System.Windows.Forms.Label()
         LocationLabel = New System.Windows.Forms.Label()
@@ -80,6 +80,78 @@ Partial Class temporaryInputFormRequest
         Me.RequestBindingNavigator.SuspendLayout()
         CType(Me.RequestDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'RequestIDLabel
+        '
+        RequestIDLabel.AutoSize = True
+        RequestIDLabel.Location = New System.Drawing.Point(81, 117)
+        RequestIDLabel.Name = "RequestIDLabel"
+        RequestIDLabel.Size = New System.Drawing.Size(77, 16)
+        RequestIDLabel.TabIndex = 2
+        RequestIDLabel.Text = "Request ID:"
+        '
+        'UserIDLabel
+        '
+        UserIDLabel.AutoSize = True
+        UserIDLabel.Location = New System.Drawing.Point(81, 145)
+        UserIDLabel.Name = "UserIDLabel"
+        UserIDLabel.Size = New System.Drawing.Size(55, 16)
+        UserIDLabel.TabIndex = 4
+        UserIDLabel.Text = "User ID:"
+        '
+        'LocationLabel
+        '
+        LocationLabel.AutoSize = True
+        LocationLabel.Location = New System.Drawing.Point(81, 173)
+        LocationLabel.Name = "LocationLabel"
+        LocationLabel.Size = New System.Drawing.Size(61, 16)
+        LocationLabel.TabIndex = 6
+        LocationLabel.Text = "Location:"
+        '
+        'PriceLabel
+        '
+        PriceLabel.AutoSize = True
+        PriceLabel.Location = New System.Drawing.Point(81, 201)
+        PriceLabel.Name = "PriceLabel"
+        PriceLabel.Size = New System.Drawing.Size(41, 16)
+        PriceLabel.TabIndex = 8
+        PriceLabel.Text = "Price:"
+        '
+        'DurationLabel
+        '
+        DurationLabel.AutoSize = True
+        DurationLabel.Location = New System.Drawing.Point(81, 229)
+        DurationLabel.Name = "DurationLabel"
+        DurationLabel.Size = New System.Drawing.Size(60, 16)
+        DurationLabel.TabIndex = 10
+        DurationLabel.Text = "Duration:"
+        '
+        'PaxLabel
+        '
+        PaxLabel.AutoSize = True
+        PaxLabel.Location = New System.Drawing.Point(81, 257)
+        PaxLabel.Name = "PaxLabel"
+        PaxLabel.Size = New System.Drawing.Size(33, 16)
+        PaxLabel.TabIndex = 12
+        PaxLabel.Text = "Pax:"
+        '
+        'PlannedDateLabel
+        '
+        PlannedDateLabel.AutoSize = True
+        PlannedDateLabel.Location = New System.Drawing.Point(81, 285)
+        PlannedDateLabel.Name = "PlannedDateLabel"
+        PlannedDateLabel.Size = New System.Drawing.Size(92, 16)
+        PlannedDateLabel.TabIndex = 14
+        PlannedDateLabel.Text = "Planned Date:"
+        '
+        'NotesLabel
+        '
+        NotesLabel.AutoSize = True
+        NotesLabel.Location = New System.Drawing.Point(81, 313)
+        NotesLabel.Name = "NotesLabel"
+        NotesLabel.Size = New System.Drawing.Size(46, 16)
+        NotesLabel.TabIndex = 16
+        NotesLabel.Text = "Notes:"
         '
         'OtralaDBDataSet
         '
@@ -98,10 +170,13 @@ Partial Class temporaryInputFormRequest
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BookingTableAdapter = Nothing
         Me.TableAdapterManager.FeedbackTableAdapter = Nothing
         Me.TableAdapterManager.LoginInfoTableAdapter = Nothing
         Me.TableAdapterManager.PackageTableAdapter = Nothing
+        Me.TableAdapterManager.RequestAnswerTableAdapter = Nothing
         Me.TableAdapterManager.RequestTableAdapter = Me.RequestTableAdapter
+        Me.TableAdapterManager.SellerApplicationTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Otrala_2._0.OtralaDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UserInfoTableAdapter = Nothing
         '
@@ -120,14 +195,57 @@ Partial Class temporaryInputFormRequest
         Me.RequestBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.RequestBindingNavigator.Name = "RequestBindingNavigator"
         Me.RequestBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.RequestBindingNavigator.Size = New System.Drawing.Size(1182, 31)
+        Me.RequestBindingNavigator.Size = New System.Drawing.Size(1262, 27)
         Me.RequestBindingNavigator.TabIndex = 0
         Me.RequestBindingNavigator.Text = "BindingNavigator1"
+        '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 24)
+        Me.BindingNavigatorCountItem.Text = "of {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorDeleteItem.Text = "Delete"
+        '
+        'BindingNavigatorMoveFirstItem
+        '
+        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
+        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveFirstItem.Text = "Move first"
+        '
+        'BindingNavigatorMovePreviousItem
+        '
+        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
+        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
         '
         'BindingNavigatorSeparator
         '
         Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 31)
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 27)
         '
         'BindingNavigatorPositionItem
         '
@@ -139,22 +257,41 @@ Partial Class temporaryInputFormRequest
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 28)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 31)
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 27)
+        '
+        'BindingNavigatorMoveNextItem
+        '
+        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
+        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveNextItem.Text = "Move next"
+        '
+        'BindingNavigatorMoveLastItem
+        '
+        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
+        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveLastItem.Text = "Move last"
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 31)
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 27)
+        '
+        'RequestBindingNavigatorSaveItem
+        '
+        Me.RequestBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.RequestBindingNavigatorSaveItem.Image = CType(resources.GetObject("RequestBindingNavigatorSaveItem.Image"), System.Drawing.Image)
+        Me.RequestBindingNavigatorSaveItem.Name = "RequestBindingNavigatorSaveItem"
+        Me.RequestBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 24)
+        Me.RequestBindingNavigatorSaveItem.Text = "Save Data"
         '
         'RequestDataGridView
         '
@@ -233,15 +370,6 @@ Partial Class temporaryInputFormRequest
         Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
         Me.DataGridViewTextBoxColumn8.Width = 125
         '
-        'RequestIDLabel
-        '
-        RequestIDLabel.AutoSize = True
-        RequestIDLabel.Location = New System.Drawing.Point(81, 117)
-        RequestIDLabel.Name = "RequestIDLabel"
-        RequestIDLabel.Size = New System.Drawing.Size(77, 16)
-        RequestIDLabel.TabIndex = 2
-        RequestIDLabel.Text = "Request ID:"
-        '
         'RequestIDTextBox
         '
         Me.RequestIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RequestBindingSource, "RequestID", True))
@@ -249,15 +377,6 @@ Partial Class temporaryInputFormRequest
         Me.RequestIDTextBox.Name = "RequestIDTextBox"
         Me.RequestIDTextBox.Size = New System.Drawing.Size(194, 22)
         Me.RequestIDTextBox.TabIndex = 3
-        '
-        'UserIDLabel
-        '
-        UserIDLabel.AutoSize = True
-        UserIDLabel.Location = New System.Drawing.Point(81, 145)
-        UserIDLabel.Name = "UserIDLabel"
-        UserIDLabel.Size = New System.Drawing.Size(55, 16)
-        UserIDLabel.TabIndex = 4
-        UserIDLabel.Text = "User ID:"
         '
         'UserIDTextBox
         '
@@ -267,15 +386,6 @@ Partial Class temporaryInputFormRequest
         Me.UserIDTextBox.Size = New System.Drawing.Size(194, 22)
         Me.UserIDTextBox.TabIndex = 5
         '
-        'LocationLabel
-        '
-        LocationLabel.AutoSize = True
-        LocationLabel.Location = New System.Drawing.Point(81, 173)
-        LocationLabel.Name = "LocationLabel"
-        LocationLabel.Size = New System.Drawing.Size(61, 16)
-        LocationLabel.TabIndex = 6
-        LocationLabel.Text = "Location:"
-        '
         'LocationTextBox
         '
         Me.LocationTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RequestBindingSource, "Location", True))
@@ -283,15 +393,6 @@ Partial Class temporaryInputFormRequest
         Me.LocationTextBox.Name = "LocationTextBox"
         Me.LocationTextBox.Size = New System.Drawing.Size(194, 22)
         Me.LocationTextBox.TabIndex = 7
-        '
-        'PriceLabel
-        '
-        PriceLabel.AutoSize = True
-        PriceLabel.Location = New System.Drawing.Point(81, 201)
-        PriceLabel.Name = "PriceLabel"
-        PriceLabel.Size = New System.Drawing.Size(41, 16)
-        PriceLabel.TabIndex = 8
-        PriceLabel.Text = "Price:"
         '
         'PriceTextBox
         '
@@ -301,15 +402,6 @@ Partial Class temporaryInputFormRequest
         Me.PriceTextBox.Size = New System.Drawing.Size(194, 22)
         Me.PriceTextBox.TabIndex = 9
         '
-        'DurationLabel
-        '
-        DurationLabel.AutoSize = True
-        DurationLabel.Location = New System.Drawing.Point(81, 229)
-        DurationLabel.Name = "DurationLabel"
-        DurationLabel.Size = New System.Drawing.Size(60, 16)
-        DurationLabel.TabIndex = 10
-        DurationLabel.Text = "Duration:"
-        '
         'DurationTextBox
         '
         Me.DurationTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RequestBindingSource, "Duration", True))
@@ -317,15 +409,6 @@ Partial Class temporaryInputFormRequest
         Me.DurationTextBox.Name = "DurationTextBox"
         Me.DurationTextBox.Size = New System.Drawing.Size(194, 22)
         Me.DurationTextBox.TabIndex = 11
-        '
-        'PaxLabel
-        '
-        PaxLabel.AutoSize = True
-        PaxLabel.Location = New System.Drawing.Point(81, 257)
-        PaxLabel.Name = "PaxLabel"
-        PaxLabel.Size = New System.Drawing.Size(33, 16)
-        PaxLabel.TabIndex = 12
-        PaxLabel.Text = "Pax:"
         '
         'PaxTextBox
         '
@@ -335,15 +418,6 @@ Partial Class temporaryInputFormRequest
         Me.PaxTextBox.Size = New System.Drawing.Size(194, 22)
         Me.PaxTextBox.TabIndex = 13
         '
-        'PlannedDateLabel
-        '
-        PlannedDateLabel.AutoSize = True
-        PlannedDateLabel.Location = New System.Drawing.Point(81, 285)
-        PlannedDateLabel.Name = "PlannedDateLabel"
-        PlannedDateLabel.Size = New System.Drawing.Size(92, 16)
-        PlannedDateLabel.TabIndex = 14
-        PlannedDateLabel.Text = "Planned Date:"
-        '
         'PlannedDateTextBox
         '
         Me.PlannedDateTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RequestBindingSource, "PlannedDate", True))
@@ -351,15 +425,6 @@ Partial Class temporaryInputFormRequest
         Me.PlannedDateTextBox.Name = "PlannedDateTextBox"
         Me.PlannedDateTextBox.Size = New System.Drawing.Size(194, 22)
         Me.PlannedDateTextBox.TabIndex = 15
-        '
-        'NotesLabel
-        '
-        NotesLabel.AutoSize = True
-        NotesLabel.Location = New System.Drawing.Point(81, 313)
-        NotesLabel.Name = "NotesLabel"
-        NotesLabel.Size = New System.Drawing.Size(46, 16)
-        NotesLabel.TabIndex = 16
-        NotesLabel.Text = "Notes:"
         '
         'NotesTextBox
         '
@@ -369,73 +434,11 @@ Partial Class temporaryInputFormRequest
         Me.NotesTextBox.Size = New System.Drawing.Size(194, 22)
         Me.NotesTextBox.TabIndex = 17
         '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 28)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 28)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
-        '
-        'BindingNavigatorMoveFirstItem
-        '
-        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
-        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 28)
-        Me.BindingNavigatorMoveFirstItem.Text = "Move first"
-        '
-        'BindingNavigatorMovePreviousItem
-        '
-        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
-        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 28)
-        Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
-        '
-        'BindingNavigatorMoveNextItem
-        '
-        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
-        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 28)
-        Me.BindingNavigatorMoveNextItem.Text = "Move next"
-        '
-        'BindingNavigatorMoveLastItem
-        '
-        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
-        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 28)
-        Me.BindingNavigatorMoveLastItem.Text = "Move last"
-        '
-        'RequestBindingNavigatorSaveItem
-        '
-        Me.RequestBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.RequestBindingNavigatorSaveItem.Image = CType(resources.GetObject("RequestBindingNavigatorSaveItem.Image"), System.Drawing.Image)
-        Me.RequestBindingNavigatorSaveItem.Name = "RequestBindingNavigatorSaveItem"
-        Me.RequestBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 28)
-        Me.RequestBindingNavigatorSaveItem.Text = "Save Data"
-        '
         'temporaryInputFormRequest
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1182, 553)
+        Me.ClientSize = New System.Drawing.Size(1262, 673)
         Me.Controls.Add(RequestIDLabel)
         Me.Controls.Add(Me.RequestIDTextBox)
         Me.Controls.Add(UserIDLabel)
