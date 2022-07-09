@@ -72,7 +72,7 @@ Partial Class AboutUs
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(171, 34)
         Me.Button4.TabIndex = 15
-        Me.Button4.Text = "Contacts Info"
+        Me.Button4.Text = "Contact Us"
         Me.Button4.UseVisualStyleBackColor = True
         '
         'Button7
