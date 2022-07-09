@@ -74,21 +74,26 @@
     Private Sub OfferRequest(Sender As Object, e As EventArgs)
         Dim OfferIndex = GetIndex(Sender.Name)
 
+        Dim NewOfferRow As DataRow = OtralaDBDataSet.RequestAnswer.NewRequestAnswerRow
+
         Dim RequestRow As DataRow = OtralaDBDataSet.Request.Select("RequestID = " & OfferIndex)(0)
 
         Dim NewOfferForm As New AddPackage
         Dim RequestState As String = RequestRow("Location")
 
-        NewOfferForm.OfferPackage(RequestState)
-        NewOfferForm.ShowDialog()
+        Do While NewOfferForm.date_selected = False
+            NewOfferForm.OfferPackage(RequestState)
+            NewOfferForm.ShowDialog()
+            If Not NewOfferForm.date_selected Then
+                MsgBox("Date Not Selected")
+            End If
+        Loop
 
         Dim Offer As Package = NewOfferForm.NewPackage
 
         If Offer.Pax = "CANCEL" Then
             Exit Sub
         End If
-
-        Dim NewOfferRow As DataRow = OtralaDBDataSet.RequestAnswer.NewRequestAnswerRow
 
         NewOfferRow("RequestID") = RequestRow("RequestID")
         NewOfferRow("UserID") = User.UserID
@@ -98,6 +103,7 @@
         NewOfferRow("Duration") = Offer.Duration
         NewOfferRow("Description") = Offer.Description
         NewOfferRow("TripDate") = Offer.Location
+
 
         OtralaDBDataSet.RequestAnswer.AddRequestAnswerRow(NewOfferRow)
 
@@ -595,7 +601,7 @@
 
         ViewClients()
     End Sub
-    Private Sub AddPackage() Handles BtnAddPackage.Click
+    Private Sub btnAddPackage_CLick() Handles BtnAddPackage.Click
         Dim PackageToAdd As Package
         Dim AddPackageForm As New AddPackage
 

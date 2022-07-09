@@ -34,7 +34,6 @@ Partial Class Request
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.BtnHistory = New System.Windows.Forms.Button()
         Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
         Me.CbState = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -157,17 +156,6 @@ Partial Class Request
         Me.Label11.Size = New System.Drawing.Size(282, 52)
         Me.Label11.TabIndex = 13
         Me.Label11.Text = "Your custom offers will appear here."
-        '
-        'BtnHistory
-        '
-        Me.BtnHistory.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.BtnHistory.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnHistory.Location = New System.Drawing.Point(0, 110)
-        Me.BtnHistory.Name = "BtnHistory"
-        Me.BtnHistory.Size = New System.Drawing.Size(186, 50)
-        Me.BtnHistory.TabIndex = 23
-        Me.BtnHistory.Text = "Feedback History"
-        Me.BtnHistory.UseVisualStyleBackColor = False
         '
         'OtralaDBDataSet
         '
@@ -322,7 +310,6 @@ Partial Class Request
         Me.Controls.Add(Me.CbState)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.BtnHistory)
         Me.Controls.Add(Me.PnlOffers)
         Me.Controls.Add(Me.BtnSubmit)
         Me.Controls.Add(Me.Label3)
@@ -333,7 +320,6 @@ Partial Class Request
         Me.Controls.SetChildIndex(Me.Label3, 0)
         Me.Controls.SetChildIndex(Me.BtnSubmit, 0)
         Me.Controls.SetChildIndex(Me.PnlOffers, 0)
-        Me.Controls.SetChildIndex(Me.BtnHistory, 0)
         Me.Controls.SetChildIndex(Me.Label5, 0)
         Me.Controls.SetChildIndex(Me.Label6, 0)
         Me.Controls.SetChildIndex(Me.CbState, 0)
@@ -362,7 +348,6 @@ Partial Class Request
     Friend WithEvents BtnSubmit As Button
     Friend WithEvents OtralaDBDataSet As OtralaDBDataSet
     Friend WithEvents PnlOffers As Panel
-    Friend WithEvents BtnHistory As Button
     Friend WithEvents CbState As ComboBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
