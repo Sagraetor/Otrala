@@ -1170,7 +1170,7 @@
         End If
         User.LogOut()
         Me.ToCatalogue()
-        Me.Hide()
-        LoginSignUp.ShowDialog()
+        Me.ToUserSettings()
+        FormLoad()
     End Sub
 End Class

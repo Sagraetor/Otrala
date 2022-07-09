@@ -30,7 +30,7 @@
     End Sub
 
     Protected Sub ToUserSettings() Handles LblName.Click
-        If Me.Name = "UserSettings" Then
+        If Me.Name = "UserSettings" And User.LoggedIn Then
             Exit Sub
         End If
 
