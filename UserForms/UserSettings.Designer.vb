@@ -31,7 +31,7 @@ Partial Class UserSettings
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.BtnDelete = New System.Windows.Forms.Button()
         Me.BtnEdit = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnSwitchAccount = New System.Windows.Forms.Button()
         Me.SecurityInformation = New System.Windows.Forms.GroupBox()
         Me.LblProfileIcNum = New System.Windows.Forms.Label()
         Me.LblProfilePassword = New System.Windows.Forms.Label()
@@ -156,7 +156,7 @@ Partial Class UserSettings
         Me.GroupBox2.BackColor = System.Drawing.Color.White
         Me.GroupBox2.Controls.Add(Me.BtnDelete)
         Me.GroupBox2.Controls.Add(Me.BtnEdit)
-        Me.GroupBox2.Controls.Add(Me.Button3)
+        Me.GroupBox2.Controls.Add(Me.btnSwitchAccount)
         Me.GroupBox2.Location = New System.Drawing.Point(529, 377)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(495, 200)
@@ -185,16 +185,16 @@ Partial Class UserSettings
         Me.BtnEdit.Text = "Edit Profile"
         Me.BtnEdit.UseVisualStyleBackColor = False
         '
-        'Button3
+        'btnSwitchAccount
         '
-        Me.Button3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
-        Me.Button3.ForeColor = System.Drawing.Color.White
-        Me.Button3.Location = New System.Drawing.Point(79, 88)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(332, 43)
-        Me.Button3.TabIndex = 0
-        Me.Button3.Text = "Become a Seller"
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.btnSwitchAccount.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
+        Me.btnSwitchAccount.ForeColor = System.Drawing.Color.White
+        Me.btnSwitchAccount.Location = New System.Drawing.Point(79, 88)
+        Me.btnSwitchAccount.Name = "btnSwitchAccount"
+        Me.btnSwitchAccount.Size = New System.Drawing.Size(332, 43)
+        Me.btnSwitchAccount.TabIndex = 0
+        Me.btnSwitchAccount.Text = "Switch Account"
+        Me.btnSwitchAccount.UseVisualStyleBackColor = False
         '
         'SecurityInformation
         '
@@ -833,7 +833,7 @@ Partial Class UserSettings
     Friend WithEvents Label25 As Label
     Friend WithEvents Label24 As Label
     Friend WithEvents Label23 As Label
-    Friend WithEvents Button3 As Button
+    Friend WithEvents btnSwitchAccount As Button
     Friend WithEvents SellerApplicationBindingSource As BindingSource
     Friend WithEvents SellerApplicationTableAdapter As OtralaDBDataSetTableAdapters.SellerApplicationTableAdapter
 End Class

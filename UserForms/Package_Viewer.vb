@@ -89,7 +89,6 @@
         Dim BookingForm As New Bookings
         BookingForm.package = Package
         BookingForm.ShowDialog()
-        Me.Close()
     End Sub
 
     Private Sub btnSeller_Click(sender As Object, e As EventArgs) Handles btnSeller.Click

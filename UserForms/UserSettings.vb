@@ -103,8 +103,13 @@
 
         RequestAnswerTableAdapter.Update(OtralaDBDataSet)
     End Sub
-    Private Sub EditPackage(Sender As Object, e As EventArgs)
-        Dim PackageIndex As Integer = GetIndex(Sender.name)
+
+    Private Sub ViewBooking(sender As Object, e As EventArgs)
+        Dim PackageIndex As Integer = GetIndex(sender.name)
+    End Sub
+
+    Private Sub EditPackage(sender As Object, e As EventArgs)
+        Dim PackageIndex As Integer = GetIndex(sender.name)
 
         Dim FormEditPackage As New AddPackage
         FormEditPackage.EditMode(MyPackageList(PackageIndex - 1))
@@ -480,10 +485,10 @@
                 .TabIndex = 13
                 If BookedPackage("Duration") > 2 Then
                     .Text = BookedPackage("Duration") & " DAYS " & System.Environment.NewLine & CInt(BookedPackage("Duration")) - 1 & " NIGHTS"
-                ElseIf BookedPackage("Duration").Duration > 1 Then
-                    .Text = BookedPackage("Duration").Duration & " DAYS " & System.Environment.NewLine & CInt(BookedPackage("Duration")) - 1 & " NIGHT"
+                ElseIf BookedPackage("Duration") > 1 Then
+                    .Text = BookedPackage("Duration") & " DAYS " & System.Environment.NewLine & CInt(BookedPackage("Duration")) - 1 & " NIGHT"
                 Else
-                    .Text = BookedPackage("Duration").Duration & " DAY "
+                    .Text = BookedPackage("Duration") & " DAY "
                 End If
             End With
 
@@ -627,7 +632,7 @@
         End If
     End Sub
 
-    Private Sub GenerateCatalogue(CatalogueItems As List(Of Package), Optional CanEdit As Boolean = True)
+    Private Sub GenerateCatalogue(CatalogueItems As List(Of Package), Optional IsSeller As Boolean = True)
         Dim CatalogueIndex As Long = 1
         Dim CatalogueYIndex As Integer = 0
         ' Count will determine how many catalogues to generate.
@@ -732,7 +737,7 @@
             PnlSeller.Controls.Add(NewGrpBox)
             NewGrpBox.Top += Dy * CatalogueYIndex
 
-            If CanEdit Then
+            If IsSeller Then
                 AddHandler NewLblTitle.Click, AddressOf EditPackage
                 AddHandler NewLblSeller.Click, AddressOf EditPackage
                 AddHandler NewLblDesc.Click, AddressOf EditPackage
@@ -741,6 +746,17 @@
                 AddHandler NewLblPax.Click, AddressOf EditPackage
                 AddHandler NewPicBox.Click, AddressOf EditPackage
                 AddHandler NewGrpBox.Click, AddressOf EditPackage
+            End If
+
+            If Not IsSeller Then
+                AddHandler NewLblTitle.Click, AddressOf ViewBooking
+                AddHandler NewLblSeller.Click, AddressOf ViewBooking
+                AddHandler NewLblDesc.Click, AddressOf ViewBooking
+                AddHandler NewLblDuration.Click, AddressOf ViewBooking
+                AddHandler NewLblPrice.Click, AddressOf ViewBooking
+                AddHandler NewLblPax.Click, AddressOf ViewBooking
+                AddHandler NewPicBox.Click, AddressOf ViewBooking
+                AddHandler NewGrpBox.Click, AddressOf ViewBooking
             End If
 
             If CatalogueIndex Mod 2 = 0 Then
@@ -1142,4 +1158,13 @@
         Application.Exit()
     End Sub
 
+    Private Sub btnSwitchAccount_Click(sender As Object, e As EventArgs) Handles btnSwitchAccount.Click
+        Dim curr_user As Integer = User.UserID
+        LoginSignUp.ShowDialog()
+        Dim new_user As Integer = User.UserID
+        If curr_user <> new_user Then
+            Me.ToCatalogue()
+            Me.Hide()
+        End If
+    End Sub
 End Class
