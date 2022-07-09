@@ -23,7 +23,6 @@ Partial Class temporaryInputFormPackage
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(temporaryInputFormPackage))
         Dim PackageIDLabel As System.Windows.Forms.Label
         Dim PackageNameLabel As System.Windows.Forms.Label
         Dim StateLabel As System.Windows.Forms.Label
@@ -34,6 +33,7 @@ Partial Class temporaryInputFormPackage
         Dim DurationLabel As System.Windows.Forms.Label
         Dim SellerNameLabel As System.Windows.Forms.Label
         Dim UserIDLabel As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(temporaryInputFormPackage))
         Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
         Me.PackageBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PackageTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.PackageTableAdapter()
@@ -92,6 +92,96 @@ Partial Class temporaryInputFormPackage
         CType(Me.PackageDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
+        'PackageIDLabel
+        '
+        PackageIDLabel.AutoSize = True
+        PackageIDLabel.Location = New System.Drawing.Point(56, 117)
+        PackageIDLabel.Name = "PackageIDLabel"
+        PackageIDLabel.Size = New System.Drawing.Size(81, 16)
+        PackageIDLabel.TabIndex = 13
+        PackageIDLabel.Text = "Package ID:"
+        '
+        'PackageNameLabel
+        '
+        PackageNameLabel.AutoSize = True
+        PackageNameLabel.Location = New System.Drawing.Point(56, 145)
+        PackageNameLabel.Name = "PackageNameLabel"
+        PackageNameLabel.Size = New System.Drawing.Size(105, 16)
+        PackageNameLabel.TabIndex = 15
+        PackageNameLabel.Text = "Package Name:"
+        '
+        'StateLabel
+        '
+        StateLabel.AutoSize = True
+        StateLabel.Location = New System.Drawing.Point(56, 173)
+        StateLabel.Name = "StateLabel"
+        StateLabel.Size = New System.Drawing.Size(41, 16)
+        StateLabel.TabIndex = 17
+        StateLabel.Text = "State:"
+        '
+        'DestinationLabel
+        '
+        DestinationLabel.AutoSize = True
+        DestinationLabel.Location = New System.Drawing.Point(56, 201)
+        DestinationLabel.Name = "DestinationLabel"
+        DestinationLabel.Size = New System.Drawing.Size(77, 16)
+        DestinationLabel.TabIndex = 19
+        DestinationLabel.Text = "Destination:"
+        '
+        'PriceLabel
+        '
+        PriceLabel.AutoSize = True
+        PriceLabel.Location = New System.Drawing.Point(56, 229)
+        PriceLabel.Name = "PriceLabel"
+        PriceLabel.Size = New System.Drawing.Size(41, 16)
+        PriceLabel.TabIndex = 21
+        PriceLabel.Text = "Price:"
+        '
+        'PaxLabel
+        '
+        PaxLabel.AutoSize = True
+        PaxLabel.Location = New System.Drawing.Point(56, 257)
+        PaxLabel.Name = "PaxLabel"
+        PaxLabel.Size = New System.Drawing.Size(33, 16)
+        PaxLabel.TabIndex = 23
+        PaxLabel.Text = "Pax:"
+        '
+        'DescriptionLabel
+        '
+        DescriptionLabel.AutoSize = True
+        DescriptionLabel.Location = New System.Drawing.Point(56, 285)
+        DescriptionLabel.Name = "DescriptionLabel"
+        DescriptionLabel.Size = New System.Drawing.Size(78, 16)
+        DescriptionLabel.TabIndex = 25
+        DescriptionLabel.Text = "Description:"
+        '
+        'DurationLabel
+        '
+        DurationLabel.AutoSize = True
+        DurationLabel.Location = New System.Drawing.Point(56, 313)
+        DurationLabel.Name = "DurationLabel"
+        DurationLabel.Size = New System.Drawing.Size(60, 16)
+        DurationLabel.TabIndex = 27
+        DurationLabel.Text = "Duration:"
+        '
+        'SellerNameLabel
+        '
+        SellerNameLabel.AutoSize = True
+        SellerNameLabel.Location = New System.Drawing.Point(56, 341)
+        SellerNameLabel.Name = "SellerNameLabel"
+        SellerNameLabel.Size = New System.Drawing.Size(85, 16)
+        SellerNameLabel.TabIndex = 29
+        SellerNameLabel.Text = "Seller Name:"
+        '
+        'UserIDLabel
+        '
+        UserIDLabel.AutoSize = True
+        UserIDLabel.Location = New System.Drawing.Point(56, 369)
+        UserIDLabel.Name = "UserIDLabel"
+        UserIDLabel.Size = New System.Drawing.Size(55, 16)
+        UserIDLabel.TabIndex = 31
+        UserIDLabel.Text = "User ID:"
+        '
         'OtralaDBDataSet
         '
         Me.OtralaDBDataSet.DataSetName = "OtralaDBDataSet"
@@ -109,10 +199,13 @@ Partial Class temporaryInputFormPackage
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BookingTableAdapter = Nothing
         Me.TableAdapterManager.FeedbackTableAdapter = Nothing
         Me.TableAdapterManager.LoginInfoTableAdapter = Nothing
         Me.TableAdapterManager.PackageTableAdapter = Me.PackageTableAdapter
+        Me.TableAdapterManager.RequestAnswerTableAdapter = Nothing
         Me.TableAdapterManager.RequestTableAdapter = Nothing
+        Me.TableAdapterManager.SellerApplicationTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Otrala_2._0.OtralaDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UserInfoTableAdapter = Nothing
         '
@@ -225,7 +318,7 @@ Partial Class temporaryInputFormPackage
         Me.PackageBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.PackageBindingNavigator.Name = "PackageBindingNavigator"
         Me.PackageBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.PackageBindingNavigator.Size = New System.Drawing.Size(1182, 27)
+        Me.PackageBindingNavigator.Size = New System.Drawing.Size(1262, 27)
         Me.PackageBindingNavigator.TabIndex = 0
         Me.PackageBindingNavigator.Text = "BindingNavigator1"
         '
@@ -343,15 +436,6 @@ Partial Class temporaryInputFormPackage
         Me.PackageDataGridView.Size = New System.Drawing.Size(672, 332)
         Me.PackageDataGridView.TabIndex = 1
         '
-        'PackageIDLabel
-        '
-        PackageIDLabel.AutoSize = True
-        PackageIDLabel.Location = New System.Drawing.Point(56, 117)
-        PackageIDLabel.Name = "PackageIDLabel"
-        PackageIDLabel.Size = New System.Drawing.Size(81, 16)
-        PackageIDLabel.TabIndex = 13
-        PackageIDLabel.Text = "Package ID:"
-        '
         'PackageIDTextBox
         '
         Me.PackageIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PackageBindingSource, "PackageID", True))
@@ -359,15 +443,6 @@ Partial Class temporaryInputFormPackage
         Me.PackageIDTextBox.Name = "PackageIDTextBox"
         Me.PackageIDTextBox.Size = New System.Drawing.Size(100, 22)
         Me.PackageIDTextBox.TabIndex = 14
-        '
-        'PackageNameLabel
-        '
-        PackageNameLabel.AutoSize = True
-        PackageNameLabel.Location = New System.Drawing.Point(56, 145)
-        PackageNameLabel.Name = "PackageNameLabel"
-        PackageNameLabel.Size = New System.Drawing.Size(105, 16)
-        PackageNameLabel.TabIndex = 15
-        PackageNameLabel.Text = "Package Name:"
         '
         'PackageNameTextBox
         '
@@ -377,15 +452,6 @@ Partial Class temporaryInputFormPackage
         Me.PackageNameTextBox.Size = New System.Drawing.Size(100, 22)
         Me.PackageNameTextBox.TabIndex = 16
         '
-        'StateLabel
-        '
-        StateLabel.AutoSize = True
-        StateLabel.Location = New System.Drawing.Point(56, 173)
-        StateLabel.Name = "StateLabel"
-        StateLabel.Size = New System.Drawing.Size(41, 16)
-        StateLabel.TabIndex = 17
-        StateLabel.Text = "State:"
-        '
         'StateTextBox
         '
         Me.StateTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PackageBindingSource, "State", True))
@@ -393,15 +459,6 @@ Partial Class temporaryInputFormPackage
         Me.StateTextBox.Name = "StateTextBox"
         Me.StateTextBox.Size = New System.Drawing.Size(100, 22)
         Me.StateTextBox.TabIndex = 18
-        '
-        'DestinationLabel
-        '
-        DestinationLabel.AutoSize = True
-        DestinationLabel.Location = New System.Drawing.Point(56, 201)
-        DestinationLabel.Name = "DestinationLabel"
-        DestinationLabel.Size = New System.Drawing.Size(77, 16)
-        DestinationLabel.TabIndex = 19
-        DestinationLabel.Text = "Destination:"
         '
         'DestinationTextBox
         '
@@ -411,15 +468,6 @@ Partial Class temporaryInputFormPackage
         Me.DestinationTextBox.Size = New System.Drawing.Size(100, 22)
         Me.DestinationTextBox.TabIndex = 20
         '
-        'PriceLabel
-        '
-        PriceLabel.AutoSize = True
-        PriceLabel.Location = New System.Drawing.Point(56, 229)
-        PriceLabel.Name = "PriceLabel"
-        PriceLabel.Size = New System.Drawing.Size(41, 16)
-        PriceLabel.TabIndex = 21
-        PriceLabel.Text = "Price:"
-        '
         'PriceTextBox
         '
         Me.PriceTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PackageBindingSource, "Price", True))
@@ -427,15 +475,6 @@ Partial Class temporaryInputFormPackage
         Me.PriceTextBox.Name = "PriceTextBox"
         Me.PriceTextBox.Size = New System.Drawing.Size(100, 22)
         Me.PriceTextBox.TabIndex = 22
-        '
-        'PaxLabel
-        '
-        PaxLabel.AutoSize = True
-        PaxLabel.Location = New System.Drawing.Point(56, 257)
-        PaxLabel.Name = "PaxLabel"
-        PaxLabel.Size = New System.Drawing.Size(33, 16)
-        PaxLabel.TabIndex = 23
-        PaxLabel.Text = "Pax:"
         '
         'PaxTextBox
         '
@@ -445,15 +484,6 @@ Partial Class temporaryInputFormPackage
         Me.PaxTextBox.Size = New System.Drawing.Size(100, 22)
         Me.PaxTextBox.TabIndex = 24
         '
-        'DescriptionLabel
-        '
-        DescriptionLabel.AutoSize = True
-        DescriptionLabel.Location = New System.Drawing.Point(56, 285)
-        DescriptionLabel.Name = "DescriptionLabel"
-        DescriptionLabel.Size = New System.Drawing.Size(78, 16)
-        DescriptionLabel.TabIndex = 25
-        DescriptionLabel.Text = "Description:"
-        '
         'DescriptionTextBox
         '
         Me.DescriptionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PackageBindingSource, "Description", True))
@@ -461,15 +491,6 @@ Partial Class temporaryInputFormPackage
         Me.DescriptionTextBox.Name = "DescriptionTextBox"
         Me.DescriptionTextBox.Size = New System.Drawing.Size(100, 22)
         Me.DescriptionTextBox.TabIndex = 26
-        '
-        'DurationLabel
-        '
-        DurationLabel.AutoSize = True
-        DurationLabel.Location = New System.Drawing.Point(56, 313)
-        DurationLabel.Name = "DurationLabel"
-        DurationLabel.Size = New System.Drawing.Size(60, 16)
-        DurationLabel.TabIndex = 27
-        DurationLabel.Text = "Duration:"
         '
         'DurationTextBox
         '
@@ -479,15 +500,6 @@ Partial Class temporaryInputFormPackage
         Me.DurationTextBox.Size = New System.Drawing.Size(100, 22)
         Me.DurationTextBox.TabIndex = 28
         '
-        'SellerNameLabel
-        '
-        SellerNameLabel.AutoSize = True
-        SellerNameLabel.Location = New System.Drawing.Point(56, 341)
-        SellerNameLabel.Name = "SellerNameLabel"
-        SellerNameLabel.Size = New System.Drawing.Size(85, 16)
-        SellerNameLabel.TabIndex = 29
-        SellerNameLabel.Text = "Seller Name:"
-        '
         'SellerNameTextBox
         '
         Me.SellerNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.PackageBindingSource, "SellerName", True))
@@ -495,15 +507,6 @@ Partial Class temporaryInputFormPackage
         Me.SellerNameTextBox.Name = "SellerNameTextBox"
         Me.SellerNameTextBox.Size = New System.Drawing.Size(100, 22)
         Me.SellerNameTextBox.TabIndex = 30
-        '
-        'UserIDLabel
-        '
-        UserIDLabel.AutoSize = True
-        UserIDLabel.Location = New System.Drawing.Point(56, 369)
-        UserIDLabel.Name = "UserIDLabel"
-        UserIDLabel.Size = New System.Drawing.Size(55, 16)
-        UserIDLabel.TabIndex = 31
-        UserIDLabel.Text = "User ID:"
         '
         'UserIDTextBox
         '
@@ -517,7 +520,7 @@ Partial Class temporaryInputFormPackage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1182, 553)
+        Me.ClientSize = New System.Drawing.Size(1262, 673)
         Me.Controls.Add(PackageIDLabel)
         Me.Controls.Add(Me.PackageIDTextBox)
         Me.Controls.Add(PackageNameLabel)

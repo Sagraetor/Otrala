@@ -34,11 +34,18 @@ Partial Class temporaryInputFormLoginInfo
         Me.LoginInfoTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.LoginInfoTableAdapter()
         Me.TableAdapterManager = New Otrala_2._0.OtralaDBDataSetTableAdapters.TableAdapterManager()
         Me.LoginInfoBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
-        Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.LoginInfoBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.LoginInfoDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -50,13 +57,6 @@ Partial Class temporaryInputFormLoginInfo
         Me.KeyTextBox = New System.Windows.Forms.TextBox()
         Me.PhoneNumberTextBox = New System.Windows.Forms.TextBox()
         Me.EmailTextBox = New System.Windows.Forms.TextBox()
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
-        Me.LoginInfoBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         UserIDLabel = New System.Windows.Forms.Label()
         PasswordLabel = New System.Windows.Forms.Label()
         KeyLabel = New System.Windows.Forms.Label()
@@ -68,6 +68,56 @@ Partial Class temporaryInputFormLoginInfo
         Me.LoginInfoBindingNavigator.SuspendLayout()
         CType(Me.LoginInfoDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'UserIDLabel
+        '
+        UserIDLabel.AutoSize = True
+        UserIDLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        UserIDLabel.Location = New System.Drawing.Point(57, 145)
+        UserIDLabel.Name = "UserIDLabel"
+        UserIDLabel.Size = New System.Drawing.Size(83, 25)
+        UserIDLabel.TabIndex = 2
+        UserIDLabel.Text = "User ID:"
+        '
+        'PasswordLabel
+        '
+        PasswordLabel.AutoSize = True
+        PasswordLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        PasswordLabel.Location = New System.Drawing.Point(57, 181)
+        PasswordLabel.Name = "PasswordLabel"
+        PasswordLabel.Size = New System.Drawing.Size(104, 25)
+        PasswordLabel.TabIndex = 4
+        PasswordLabel.Text = "Password:"
+        '
+        'KeyLabel
+        '
+        KeyLabel.AutoSize = True
+        KeyLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        KeyLabel.Location = New System.Drawing.Point(57, 217)
+        KeyLabel.Name = "KeyLabel"
+        KeyLabel.Size = New System.Drawing.Size(53, 25)
+        KeyLabel.TabIndex = 6
+        KeyLabel.Text = "Key:"
+        '
+        'PhoneNumberLabel
+        '
+        PhoneNumberLabel.AutoSize = True
+        PhoneNumberLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        PhoneNumberLabel.Location = New System.Drawing.Point(57, 250)
+        PhoneNumberLabel.Name = "PhoneNumberLabel"
+        PhoneNumberLabel.Size = New System.Drawing.Size(149, 25)
+        PhoneNumberLabel.TabIndex = 8
+        PhoneNumberLabel.Text = "Phone Number:"
+        '
+        'EmailLabel
+        '
+        EmailLabel.AutoSize = True
+        EmailLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        EmailLabel.Location = New System.Drawing.Point(57, 283)
+        EmailLabel.Name = "EmailLabel"
+        EmailLabel.Size = New System.Drawing.Size(66, 25)
+        EmailLabel.TabIndex = 10
+        EmailLabel.Text = "Email:"
         '
         'OtralaDBDataSet
         '
@@ -86,10 +136,13 @@ Partial Class temporaryInputFormLoginInfo
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BookingTableAdapter = Nothing
         Me.TableAdapterManager.FeedbackTableAdapter = Nothing
         Me.TableAdapterManager.LoginInfoTableAdapter = Me.LoginInfoTableAdapter
         Me.TableAdapterManager.PackageTableAdapter = Nothing
+        Me.TableAdapterManager.RequestAnswerTableAdapter = Nothing
         Me.TableAdapterManager.RequestTableAdapter = Nothing
+        Me.TableAdapterManager.SellerApplicationTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Otrala_2._0.OtralaDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UserInfoTableAdapter = Nothing
         '
@@ -108,14 +161,57 @@ Partial Class temporaryInputFormLoginInfo
         Me.LoginInfoBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.LoginInfoBindingNavigator.Name = "LoginInfoBindingNavigator"
         Me.LoginInfoBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.LoginInfoBindingNavigator.Size = New System.Drawing.Size(1190, 31)
+        Me.LoginInfoBindingNavigator.Size = New System.Drawing.Size(1262, 27)
         Me.LoginInfoBindingNavigator.TabIndex = 0
         Me.LoginInfoBindingNavigator.Text = "BindingNavigator1"
+        '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'BindingNavigatorCountItem
+        '
+        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 24)
+        Me.BindingNavigatorCountItem.Text = "of {0}"
+        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorDeleteItem.Text = "Delete"
+        '
+        'BindingNavigatorMoveFirstItem
+        '
+        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
+        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveFirstItem.Text = "Move first"
+        '
+        'BindingNavigatorMovePreviousItem
+        '
+        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
+        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
         '
         'BindingNavigatorSeparator
         '
         Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 31)
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 27)
         '
         'BindingNavigatorPositionItem
         '
@@ -127,22 +223,41 @@ Partial Class temporaryInputFormLoginInfo
         Me.BindingNavigatorPositionItem.Text = "0"
         Me.BindingNavigatorPositionItem.ToolTipText = "Current position"
         '
-        'BindingNavigatorCountItem
-        '
-        Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 28)
-        Me.BindingNavigatorCountItem.Text = "of {0}"
-        Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
         'BindingNavigatorSeparator1
         '
-        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 31)
+        Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 27)
+        '
+        'BindingNavigatorMoveNextItem
+        '
+        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
+        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveNextItem.Text = "Move next"
+        '
+        'BindingNavigatorMoveLastItem
+        '
+        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
+        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveLastItem.Text = "Move last"
         '
         'BindingNavigatorSeparator2
         '
-        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 31)
+        Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 27)
+        '
+        'LoginInfoBindingNavigatorSaveItem
+        '
+        Me.LoginInfoBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.LoginInfoBindingNavigatorSaveItem.Image = CType(resources.GetObject("LoginInfoBindingNavigatorSaveItem.Image"), System.Drawing.Image)
+        Me.LoginInfoBindingNavigatorSaveItem.Name = "LoginInfoBindingNavigatorSaveItem"
+        Me.LoginInfoBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 24)
+        Me.LoginInfoBindingNavigatorSaveItem.Text = "Save Data"
         '
         'LoginInfoDataGridView
         '
@@ -197,16 +312,6 @@ Partial Class temporaryInputFormLoginInfo
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
         Me.DataGridViewTextBoxColumn5.Width = 125
         '
-        'UserIDLabel
-        '
-        UserIDLabel.AutoSize = True
-        UserIDLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        UserIDLabel.Location = New System.Drawing.Point(57, 145)
-        UserIDLabel.Name = "UserIDLabel"
-        UserIDLabel.Size = New System.Drawing.Size(83, 25)
-        UserIDLabel.TabIndex = 2
-        UserIDLabel.Text = "User ID:"
-        '
         'UserIDTextBox
         '
         Me.UserIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.LoginInfoBindingSource, "UserID", True))
@@ -215,16 +320,6 @@ Partial Class temporaryInputFormLoginInfo
         Me.UserIDTextBox.Name = "UserIDTextBox"
         Me.UserIDTextBox.Size = New System.Drawing.Size(185, 30)
         Me.UserIDTextBox.TabIndex = 3
-        '
-        'PasswordLabel
-        '
-        PasswordLabel.AutoSize = True
-        PasswordLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        PasswordLabel.Location = New System.Drawing.Point(57, 181)
-        PasswordLabel.Name = "PasswordLabel"
-        PasswordLabel.Size = New System.Drawing.Size(104, 25)
-        PasswordLabel.TabIndex = 4
-        PasswordLabel.Text = "Password:"
         '
         'PasswordTextBox
         '
@@ -235,16 +330,6 @@ Partial Class temporaryInputFormLoginInfo
         Me.PasswordTextBox.Size = New System.Drawing.Size(185, 30)
         Me.PasswordTextBox.TabIndex = 5
         '
-        'KeyLabel
-        '
-        KeyLabel.AutoSize = True
-        KeyLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        KeyLabel.Location = New System.Drawing.Point(57, 217)
-        KeyLabel.Name = "KeyLabel"
-        KeyLabel.Size = New System.Drawing.Size(53, 25)
-        KeyLabel.TabIndex = 6
-        KeyLabel.Text = "Key:"
-        '
         'KeyTextBox
         '
         Me.KeyTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.LoginInfoBindingSource, "Key", True))
@@ -253,16 +338,6 @@ Partial Class temporaryInputFormLoginInfo
         Me.KeyTextBox.Name = "KeyTextBox"
         Me.KeyTextBox.Size = New System.Drawing.Size(185, 30)
         Me.KeyTextBox.TabIndex = 7
-        '
-        'PhoneNumberLabel
-        '
-        PhoneNumberLabel.AutoSize = True
-        PhoneNumberLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        PhoneNumberLabel.Location = New System.Drawing.Point(57, 250)
-        PhoneNumberLabel.Name = "PhoneNumberLabel"
-        PhoneNumberLabel.Size = New System.Drawing.Size(149, 25)
-        PhoneNumberLabel.TabIndex = 8
-        PhoneNumberLabel.Text = "Phone Number:"
         '
         'PhoneNumberTextBox
         '
@@ -273,16 +348,6 @@ Partial Class temporaryInputFormLoginInfo
         Me.PhoneNumberTextBox.Size = New System.Drawing.Size(185, 30)
         Me.PhoneNumberTextBox.TabIndex = 9
         '
-        'EmailLabel
-        '
-        EmailLabel.AutoSize = True
-        EmailLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        EmailLabel.Location = New System.Drawing.Point(57, 283)
-        EmailLabel.Name = "EmailLabel"
-        EmailLabel.Size = New System.Drawing.Size(66, 25)
-        EmailLabel.TabIndex = 10
-        EmailLabel.Text = "Email:"
-        '
         'EmailTextBox
         '
         Me.EmailTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.LoginInfoBindingSource, "Email", True))
@@ -292,73 +357,11 @@ Partial Class temporaryInputFormLoginInfo
         Me.EmailTextBox.Size = New System.Drawing.Size(185, 30)
         Me.EmailTextBox.TabIndex = 11
         '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 28)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 28)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
-        '
-        'BindingNavigatorMoveFirstItem
-        '
-        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
-        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 28)
-        Me.BindingNavigatorMoveFirstItem.Text = "Move first"
-        '
-        'BindingNavigatorMovePreviousItem
-        '
-        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
-        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 28)
-        Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
-        '
-        'BindingNavigatorMoveNextItem
-        '
-        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
-        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 28)
-        Me.BindingNavigatorMoveNextItem.Text = "Move next"
-        '
-        'BindingNavigatorMoveLastItem
-        '
-        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
-        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 28)
-        Me.BindingNavigatorMoveLastItem.Text = "Move last"
-        '
-        'LoginInfoBindingNavigatorSaveItem
-        '
-        Me.LoginInfoBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.LoginInfoBindingNavigatorSaveItem.Image = CType(resources.GetObject("LoginInfoBindingNavigatorSaveItem.Image"), System.Drawing.Image)
-        Me.LoginInfoBindingNavigatorSaveItem.Name = "LoginInfoBindingNavigatorSaveItem"
-        Me.LoginInfoBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 28)
-        Me.LoginInfoBindingNavigatorSaveItem.Text = "Save Data"
-        '
         'temporaryInputFormLoginInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1190, 553)
+        Me.ClientSize = New System.Drawing.Size(1262, 673)
         Me.Controls.Add(UserIDLabel)
         Me.Controls.Add(Me.UserIDTextBox)
         Me.Controls.Add(PasswordLabel)
