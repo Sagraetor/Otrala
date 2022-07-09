@@ -11,6 +11,7 @@
         LblPax.Text = package.Pax
         LblUserName.Text = User.Name
         LblUserPhone.Text = User.PhoneNumber
+        LblNumberIC.Text = User.ICNum
 
         StartDateChanged()
 
@@ -64,7 +65,7 @@
         OtralaDBDataSet.Booking.AddBookingRow(NewBookingRow)
         BookingTableAdapter.Update(OtralaDBDataSet)
 
-        MsgBox("Bookking sucessful!")
+        MsgBox("Booking sucessful!")
 
         Me.Close()
     End Sub
@@ -73,10 +74,6 @@
         If MsgBox("You are about to cancel the transaction, are you sure?", MsgBoxStyle.YesNo, "Otrala") = MsgBoxResult.Yes Then
             Me.Close()
         End If
-    End Sub
-
-    Private Sub CloseAll(sender As Object, e As EventArgs) Handles Me.Closed
-        Application.Exit()
     End Sub
 
 End Class

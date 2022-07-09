@@ -43,7 +43,7 @@ Partial Class Bookings
         Me.Label15 = New System.Windows.Forms.Label()
         Me.LblUserPhone = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
+        Me.LblNumberIC = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.LblUserName = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -222,7 +222,7 @@ Partial Class Bookings
         Me.GroupBox1.Controls.Add(Me.Label15)
         Me.GroupBox1.Controls.Add(Me.LblUserPhone)
         Me.GroupBox1.Controls.Add(Me.Label12)
-        Me.GroupBox1.Controls.Add(Me.Label18)
+        Me.GroupBox1.Controls.Add(Me.LblNumberIC)
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.LblUserName)
         Me.GroupBox1.Controls.Add(Me.Label9)
@@ -272,15 +272,15 @@ Partial Class Bookings
         Me.Label12.Text = "Phone Number"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label18
+        'LblNumberIC
         '
-        Me.Label18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label18.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label18.Location = New System.Drawing.Point(195, 75)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(158, 30)
-        Me.Label18.TabIndex = 10
-        Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LblNumberIC.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.LblNumberIC.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.LblNumberIC.Location = New System.Drawing.Point(195, 75)
+        Me.LblNumberIC.Name = "LblNumberIC"
+        Me.LblNumberIC.Size = New System.Drawing.Size(158, 30)
+        Me.LblNumberIC.TabIndex = 10
+        Me.LblNumberIC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label11
         '
@@ -488,7 +488,7 @@ Partial Class Bookings
     Friend WithEvents Label11 As Label
     Friend WithEvents LblDateDuration As Label
     Friend WithEvents LblUserPhone As Label
-    Friend WithEvents Label18 As Label
+    Friend WithEvents LblNumberIC As Label
     Friend WithEvents LblUserName As Label
     Friend WithEvents LblPax As Label
     Friend WithEvents Label4 As Label
