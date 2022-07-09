@@ -47,6 +47,7 @@
                 UserSettings.Show()
                 UserSettings.FormLoad()
                 UserSettings.ForceEdit()
+                UserSettings.PbProfile.Image = Otrala_2._0.My.Resources.Resources.NoAvatar
                 Me.Hide()
             End If
 

@@ -8,17 +8,13 @@
         End If
     End Sub
 
-    Private Sub AboutUs_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
         Catalogue.Show()
         Me.Hide()
     End Sub
 
     Private Sub CloseAll(sender As Object, e As EventArgs) Handles Me.Closed
-
+        Application.Exit()
     End Sub
 
 End Class

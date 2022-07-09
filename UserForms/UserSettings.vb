@@ -905,7 +905,7 @@
 
     Private Sub DeleteAcc() Handles BtnDelete.Click
         If Editing Then
-            MsgBox("Please Stop Editing first lah")
+            MsgBox("Please update your profile first")
             Exit Sub
         End If
         If ConfirmPass(OtralaDBDataSet.LoginInfo, "You are about to delete your account. Please re-enter password." & vbNewLine & "This process cannot be reverted") Then
@@ -1128,6 +1128,18 @@
     Private Sub UserSettings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'OtralaDBDataSet.SellerApplication' table. You can move, or remove it, as needed.
         Me.SellerApplicationTableAdapter.Fill(Me.OtralaDBDataSet.SellerApplication)
-
     End Sub
+
+
+    Private Sub DenyClosing(sender As Object, e As FormClosingEventArgs) Handles Me.Closing
+        If Editing Then
+            MsgBox("Please update your profile first")
+            e.Cancel = True
+        End If
+    End Sub
+
+    Private Sub CloseAll(sender As Object, e As EventArgs) Handles Me.Closed
+        Application.Exit()
+    End Sub
+
 End Class
