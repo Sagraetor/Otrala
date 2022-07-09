@@ -1159,12 +1159,12 @@
     End Sub
 
     Private Sub btnSwitchAccount_Click(sender As Object, e As EventArgs) Handles btnSwitchAccount.Click
-        Dim curr_user As Integer = User.UserID
-        LoginSignUp.ShowDialog()
-        Dim new_user As Integer = User.UserID
-        If curr_user <> new_user Then
-            Me.ToCatalogue()
-            Me.Hide()
+        If MsgBox("Confirm Switch Account?", MsgBoxStyle.OkCancel, "Switch Account") = MsgBoxResult.Cancel Then
+            Exit Sub
         End If
+        User.LogOut()
+        Me.ToCatalogue()
+        Me.Hide()
+        LoginSignUp.ShowDialog()
     End Sub
 End Class

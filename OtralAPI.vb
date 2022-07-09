@@ -15,6 +15,23 @@
         Dim nationality As String
         Dim IsAdmin As Boolean
         Dim LoggedIn As Boolean
+        Sub LogOut()
+            UserID = Nothing
+            Name = Nothing
+            Age = Nothing
+            IsSeller = Nothing
+            Address = Nothing
+            Email = Nothing
+            PhoneNumber = Nothing
+            Picture = Nothing
+            Wishlist = Nothing
+            ICNum = Nothing
+            Gender = Nothing
+            Birthday = Nothing
+            nationality = Nothing
+            IsAdmin = Nothing
+            LoggedIn = Nothing
+        End Sub
     End Structure
 
     Public User As New UserInfo With {
