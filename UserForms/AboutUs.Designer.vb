@@ -34,7 +34,7 @@ Partial Class AboutUs
         'PictureBox2
         '
         Me.PictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.PictureBox2.Image = Global.Otrala_2._0.My.Resources.Resources.Otrala_Icon
+        Me.PictureBox2.Image = Global.Otrala_2._0.My.Resources.Resources.Otrala_About_Us
         Me.PictureBox2.Location = New System.Drawing.Point(468, 133)
         Me.PictureBox2.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.PictureBox2.Name = "PictureBox2"

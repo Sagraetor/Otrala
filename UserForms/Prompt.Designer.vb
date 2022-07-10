@@ -46,7 +46,7 @@ Partial Class Prompt
         Me.LblNew.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblNew.Location = New System.Drawing.Point(18, 15)
         Me.LblNew.Name = "LblNew"
-        Me.LblNew.Size = New System.Drawing.Size(79, 33)
+        Me.LblNew.Size = New System.Drawing.Size(69, 23)
         Me.LblNew.TabIndex = 2
         Me.LblNew.Text = "Label1"
         '
@@ -58,6 +58,7 @@ Partial Class Prompt
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(360, 102)
+        Me.ControlBox = False
         Me.Controls.Add(Me.Panel1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Prompt"

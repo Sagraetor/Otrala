@@ -1,6 +1,17 @@
 ﻿Public Class Request
     Dim Price(1) As Decimal
     Dim MyRequestID As Integer
+    Dim LstOfferID As List(Of Integer)
+    Private Function GetIndex(Name As String)
+        Dim House As Short = 0
+        Dim Index As Short = 0
+        For Each Letter In Name.Reverse
+            If IsNumeric(Letter) Then
+                Index += Val(Letter) * (10 ^ House)
+            End If
+        Next
+        Return Index
+    End Function
 
     Private Sub RemoveDefaultText(Sender As TextBox, e As EventArgs) Handles TbNotes.GotFocus
         If Sender.Name = "TbNotes" And TbNotes.Text = "Additional Notes" Then
@@ -42,10 +53,51 @@
             TbPrice2.Text = Price(1).ToString("c")
         End If
     End Sub
+    Private Sub ClickOffer(Sender As Object, e As EventArgs)
+        Dim NewPrompt As New RequestPrompt
+
+        Dim Ans As Integer = NewPrompt.ShowDialog
+
+        If Ans = 3 Then
+            Exit Sub
+        End If
+
+        Dim OfferIndex As Integer = GetIndex(Sender.Name)
+        Dim OfferRow As DataRow = OtralaDBDataSet.RequestAnswer.Select("RequestAnswerID = " & LstOfferID(OfferIndex - 1))(0)
+        Dim OfferRowIndex As Integer = OtralaDBDataSet.RequestAnswer.Rows.IndexOf(OfferRow)
+
+        If Ans = 7 Then
+            OtralaDBDataSet.RequestAnswer.Rows(OfferRowIndex).Delete()
+        ElseIf Ans = 6 Then
+            OtralaDBDataSet.RequestAnswer.Rows(OfferRowIndex)("Accepted") = DateAndTime.Now.ToString("d")
+        End If
+
+        RequestAnswerTableAdapter.Update(OtralaDBDataSet)
+
+        Me.FormLoad()
+    End Sub
+    Private Sub Remove() Handles BtnSubmit.Click
+        If BtnSubmit.Text <> "Cancel Request" Then
+            Exit Sub
+        End If
+
+        Dim ToDelete As DataRow = OtralaDBDataSet.Request.Select(String.Format("UserID = '{0}' AND Fulfilled = False", User.UserID))(0)
+        Dim IndexToDelete As Integer = OtralaDBDataSet.Request.Rows.IndexOf(ToDelete)
+
+        OtralaDBDataSet.Request.Rows(IndexToDelete).Delete()
+
+        RequestTableAdapter.Update(OtralaDBDataSet)
+
+        Me.FormLoad()
+    End Sub
 
     Private Sub Submit() Handles BtnSubmit.Click
+        If BtnSubmit.Text <> "Submit Request" Then
+            Exit Sub
+        End If
+
         If CbState.Text = "" OrElse TbPax.Text = "" OrElse TbDuration.Text = "" OrElse (TbPrice1.Text = "" And TbPrice2.Text = "") Then
-            MsgBox("Error")
+            MsgBox("Please fill in all information", MsgBoxStyle.Critical, "Error")
             Exit Sub
         End If
 
@@ -67,16 +119,6 @@
         MsgBox("Request Submitted! You will be notified" & Environment.NewLine & "when a seller makes you an offer!")
 
         Me.FormLoad()
-        'Dim another_feedback As MsgBoxResult = MsgBox("Feedback submitted successfully! Thank you!" & System.Environment.NewLine & "Submit Another Ticket?", MsgBoxStyle.YesNo, "Thank you")
-
-        'If another_feedback = MsgBoxResult.Yes Then
-        '    CBType.Text = ""
-        '    TbTitle.Text = ""
-        '    TbNotes.Text = ""
-        'Else
-        '    Catalogue.Show()
-        '    Me.Hide()
-        'End If
     End Sub
 
     Overrides Sub AddFormLoad()
@@ -124,7 +166,29 @@
 
             MyRequestID = MyRequest("RequestID")
 
+            lblInfo.Text = "This is your current request. You can click any offers to accept them or cancel your current request to make a new one"
+
+            BtnSubmit.Text = "Cancel Request"
+
             ViewOffers()
+        Else
+            TbDuration.ReadOnly = False
+            TbNotes.ReadOnly = False
+            TbPax.ReadOnly = False
+            TbPrice1.ReadOnly = False
+            TbPrice2.ReadOnly = False
+            CbState.Enabled = True
+            DtpPlanned.Enabled = True
+
+            TbDuration.Clear()
+            TbNotes.Clear()
+            TbPax.Clear()
+            TbPrice1.Clear()
+            TbPrice2.Clear()
+            CbState.Text = ""
+
+            lblInfo.Text = "Not finding the right package? Request for one!"
+            BtnSubmit.Text = "Submit Request"
         End If
     End Sub
 
@@ -205,6 +269,8 @@
             NewGrpBox.Top += (dy * Index)
 
             Index += 1
+
+            LstOfferID.Add(OfferRow("RequestAnswerID"))
         Next
     End Sub
 
