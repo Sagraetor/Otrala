@@ -6,7 +6,7 @@
         Me.FeedbackTableAdapter.Fill(Me.OtralaDBDataSet.Feedback)
     End Sub
 
-    Private Sub changing_position(sender As Object, e As EventArgs) Handles FeedbackBindingSource.CurrentChanged
+    Private Sub changing_position(sender As Object, e As EventArgs) Handles FeedbackBindingSource.CurrentChanged, lblTitle.TextChanged, Me.Load
 
         If lblTitle.Text = "" Then
             lblSentBy.Text = "No Feedback Found"

@@ -96,7 +96,7 @@ Partial Class RequestAnswerAdmin
         '
         RequestAnswerIDLabel.AutoSize = True
         RequestAnswerIDLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        RequestAnswerIDLabel.Location = New System.Drawing.Point(43, 106)
+        RequestAnswerIDLabel.Location = New System.Drawing.Point(27, 109)
         RequestAnswerIDLabel.Name = "RequestAnswerIDLabel"
         RequestAnswerIDLabel.Size = New System.Drawing.Size(185, 25)
         RequestAnswerIDLabel.TabIndex = 2
@@ -106,7 +106,7 @@ Partial Class RequestAnswerAdmin
         '
         RequestIDLabel.AutoSize = True
         RequestIDLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        RequestIDLabel.Location = New System.Drawing.Point(43, 155)
+        RequestIDLabel.Location = New System.Drawing.Point(27, 158)
         RequestIDLabel.Name = "RequestIDLabel"
         RequestIDLabel.Size = New System.Drawing.Size(114, 25)
         RequestIDLabel.TabIndex = 4
@@ -116,7 +116,7 @@ Partial Class RequestAnswerAdmin
         '
         UserIDLabel.AutoSize = True
         UserIDLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        UserIDLabel.Location = New System.Drawing.Point(43, 204)
+        UserIDLabel.Location = New System.Drawing.Point(27, 207)
         UserIDLabel.Name = "UserIDLabel"
         UserIDLabel.Size = New System.Drawing.Size(83, 25)
         UserIDLabel.TabIndex = 6
@@ -126,7 +126,7 @@ Partial Class RequestAnswerAdmin
         '
         PaxLabel.AutoSize = True
         PaxLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        PaxLabel.Location = New System.Drawing.Point(43, 253)
+        PaxLabel.Location = New System.Drawing.Point(27, 253)
         PaxLabel.Name = "PaxLabel"
         PaxLabel.Size = New System.Drawing.Size(52, 25)
         PaxLabel.TabIndex = 8
@@ -136,7 +136,7 @@ Partial Class RequestAnswerAdmin
         '
         PriceLabel.AutoSize = True
         PriceLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        PriceLabel.Location = New System.Drawing.Point(43, 302)
+        PriceLabel.Location = New System.Drawing.Point(27, 305)
         PriceLabel.Name = "PriceLabel"
         PriceLabel.Size = New System.Drawing.Size(62, 25)
         PriceLabel.TabIndex = 10
@@ -146,7 +146,7 @@ Partial Class RequestAnswerAdmin
         '
         SellerNameLabel.AutoSize = True
         SellerNameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        SellerNameLabel.Location = New System.Drawing.Point(43, 351)
+        SellerNameLabel.Location = New System.Drawing.Point(27, 354)
         SellerNameLabel.Name = "SellerNameLabel"
         SellerNameLabel.Size = New System.Drawing.Size(125, 25)
         SellerNameLabel.TabIndex = 12
@@ -156,7 +156,7 @@ Partial Class RequestAnswerAdmin
         '
         DurationLabel.AutoSize = True
         DurationLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DurationLabel.Location = New System.Drawing.Point(43, 400)
+        DurationLabel.Location = New System.Drawing.Point(27, 403)
         DurationLabel.Name = "DurationLabel"
         DurationLabel.Size = New System.Drawing.Size(91, 25)
         DurationLabel.TabIndex = 14
@@ -166,7 +166,7 @@ Partial Class RequestAnswerAdmin
         '
         DescriptionLabel.AutoSize = True
         DescriptionLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DescriptionLabel.Location = New System.Drawing.Point(43, 452)
+        DescriptionLabel.Location = New System.Drawing.Point(27, 455)
         DescriptionLabel.Name = "DescriptionLabel"
         DescriptionLabel.Size = New System.Drawing.Size(115, 25)
         DescriptionLabel.TabIndex = 16
@@ -176,7 +176,7 @@ Partial Class RequestAnswerAdmin
         '
         TripDateLabel.AutoSize = True
         TripDateLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        TripDateLabel.Location = New System.Drawing.Point(43, 547)
+        TripDateLabel.Location = New System.Drawing.Point(27, 550)
         TripDateLabel.Name = "TripDateLabel"
         TripDateLabel.Size = New System.Drawing.Size(98, 25)
         TripDateLabel.TabIndex = 18
