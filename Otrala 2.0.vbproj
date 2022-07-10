@@ -110,6 +110,12 @@
     <Compile Include="AdminForms\BookingAdmin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AdminForms\FeedbackReview.Designer.vb">
+      <DependentUpon>FeedbackReview.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForms\FeedbackReview.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AdminForms\RequestAnswerAdmin.Designer.vb">
       <DependentUpon>RequestAnswerAdmin.vb</DependentUpon>
     </Compile>
@@ -278,6 +284,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForms\BookingAdmin.resx">
       <DependentUpon>BookingAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\FeedbackReview.resx">
+      <DependentUpon>FeedbackReview.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForms\RequestAnswerAdmin.resx">
       <DependentUpon>RequestAnswerAdmin.vb</DependentUpon>

@@ -44,7 +44,7 @@ Partial Class Admin
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DatabaseToolStripMenuItem, Me.SellerApprovalToolStripMenuItem, Me.FeedbackReviewToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1262, 30)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1262, 28)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -58,49 +58,49 @@ Partial Class Admin
         'BookingToolStripMenuItem
         '
         Me.BookingToolStripMenuItem.Name = "BookingToolStripMenuItem"
-        Me.BookingToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.BookingToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
         Me.BookingToolStripMenuItem.Text = "Booking"
         '
         'PackageToolStripMenuItem
         '
         Me.PackageToolStripMenuItem.Name = "PackageToolStripMenuItem"
-        Me.PackageToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.PackageToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
         Me.PackageToolStripMenuItem.Text = "Package"
         '
         'LoginInfoToolStripMenuItem
         '
         Me.LoginInfoToolStripMenuItem.Name = "LoginInfoToolStripMenuItem"
-        Me.LoginInfoToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.LoginInfoToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
         Me.LoginInfoToolStripMenuItem.Text = "Login Info"
         '
         'UserInfoToolStripMenuItem
         '
         Me.UserInfoToolStripMenuItem.Name = "UserInfoToolStripMenuItem"
-        Me.UserInfoToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.UserInfoToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
         Me.UserInfoToolStripMenuItem.Text = "User Info"
         '
         'RequestToolStripMenuItem
         '
         Me.RequestToolStripMenuItem.Name = "RequestToolStripMenuItem"
-        Me.RequestToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.RequestToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
         Me.RequestToolStripMenuItem.Text = "Request"
         '
         'RequestAnswerToolStripMenuItem
         '
         Me.RequestAnswerToolStripMenuItem.Name = "RequestAnswerToolStripMenuItem"
-        Me.RequestAnswerToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.RequestAnswerToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
         Me.RequestAnswerToolStripMenuItem.Text = "Request Answer"
         '
         'FeedbackToolStripMenuItem
         '
         Me.FeedbackToolStripMenuItem.Name = "FeedbackToolStripMenuItem"
-        Me.FeedbackToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.FeedbackToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
         Me.FeedbackToolStripMenuItem.Text = "Feedback"
         '
         'SellerApplicationToolStripMenuItem
         '
         Me.SellerApplicationToolStripMenuItem.Name = "SellerApplicationToolStripMenuItem"
-        Me.SellerApplicationToolStripMenuItem.Size = New System.Drawing.Size(224, 26)
+        Me.SellerApplicationToolStripMenuItem.Size = New System.Drawing.Size(210, 26)
         Me.SellerApplicationToolStripMenuItem.Text = "Seller Application"
         '
         'SellerApprovalToolStripMenuItem
