@@ -43,4 +43,12 @@
     Private Sub SellerApplicationToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SellerApplicationToolStripMenuItem.Click
         Open_As_Child(SellerApplicationAdmin)
     End Sub
+
+    Private Sub FeedbackReviewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FeedbackReviewToolStripMenuItem.Click
+        Open_As_Child(FeedbackReview)
+    End Sub
+
+    Private Sub SellerApprovalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SellerApprovalToolStripMenuItem.Click
+        Open_As_Child(Seller_Approval)
+    End Sub
 End Class
