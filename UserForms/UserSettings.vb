@@ -332,12 +332,18 @@
         PnlSeller.Controls.Clear()
         LstBookingID.Clear()
         Dim MyClientsBookings As DataRow()
+        Dim CombinedRow As DataRow() = {}
+
+        Dim MyOffers As DataRow() = OtralaDBDataSet.RequestAnswer.Select(String.Format("UserID = '{0}' AND Accepted <> '' ", User.UserID))
 
         If StrMyPackages <> "" Then
 
             MyClientsBookings = OtralaDBDataSet.Booking.Select("PackageID IN (" & StrMyPackages & ")")
 
-            If MyClientsBookings.Count = 0 Then
+            MyClientsBookings.CopyTo(CombinedRow, 0)
+            'CombinedRow.Concat(MyOffers)
+
+            If CombinedRow.Count = 0 Then
                 Dim no_result As New Label
                 With no_result
                     .Name = "lblNoResult"
@@ -365,12 +371,20 @@
             PnlSeller.Controls.Add(no_result)
             Exit Sub
         End If
+
         Dim BookingIndex As Long = 1
         Const Dy As Short = 387
 
-        For Each ClientBooking In MyClientsBookings
-            Dim ClientInfo As DataRow = OtralaDBDataSet.UserInfo.Select("UserID = " & ClientBooking("UserID"))(0)
+        For Each ClientBooking In CombinedRow
+            Dim ClientInfo As DataRow
+            Dim RequestInfo As DataRow
 
+            If MyClientsBookings.Contains(ClientBooking) Then
+                ClientInfo = OtralaDBDataSet.UserInfo.Select("UserID = " & ClientBooking("UserID"))(0)
+            ElseIf MyOffers.Contains(ClientBooking) Then
+                RequestInfo = OtralaDBDataSet.UserInfo.Select("RequestID = " & ClientBooking("RequestID"))(0)
+                ClientInfo = OtralaDBDataSet.UserInfo.Select("UserID = " & RequestInfo("UserID"))(0)
+            End If
             Dim NewLblContactInfo As New Label
             With NewLblContactInfo
                 .Location = New System.Drawing.Point(181, 21)
@@ -451,6 +465,8 @@
 
             'Creates package
             Dim BookedPackage As DataRow = OtralaDBDataSet.Package.Select("PackageID = " & ClientBooking("PackageID"))(0)
+
+
 
             Dim NewLblTitle As New Label
             With NewLblTitle
@@ -957,7 +973,7 @@
 
             Me.ToCatalogue()
         Else
-            MsgBox("Aborted")
+            MsgBox("Wrong password entered", MsgBoxStyle.OkOnly, "Aborted")
         End If
     End Sub
     Private Sub ForceLowerCase() Handles LblProfileEmail.TextChanged

@@ -25,7 +25,7 @@ Partial Class Request
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Request))
         Me.TbNotes = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblInfo = New System.Windows.Forms.Label()
         Me.BtnSubmit = New System.Windows.Forms.Button()
         Me.PnlOffers = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -69,23 +69,24 @@ Partial Class Request
         Me.TbNotes.TabIndex = 12
         Me.TbNotes.Text = "Additional Notes"
         '
-        'Label3
+        'lblInfo
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(208, 124)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(424, 23)
-        Me.Label3.TabIndex = 13
-        Me.Label3.Text = "Not finding the right package? Request for one!"
+        Me.lblInfo.Location = New System.Drawing.Point(208, 124)
+        Me.lblInfo.Name = "lblInfo"
+        Me.lblInfo.Size = New System.Drawing.Size(717, 55)
+        Me.lblInfo.TabIndex = 13
+        Me.lblInfo.Text = "Not finding the right package? Request for one!"
         '
         'BtnSubmit
         '
-        Me.BtnSubmit.Location = New System.Drawing.Point(762, 601)
+        Me.BtnSubmit.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
+        Me.BtnSubmit.ForeColor = System.Drawing.Color.White
+        Me.BtnSubmit.Location = New System.Drawing.Point(751, 594)
         Me.BtnSubmit.Name = "BtnSubmit"
-        Me.BtnSubmit.Size = New System.Drawing.Size(163, 34)
+        Me.BtnSubmit.Size = New System.Drawing.Size(174, 41)
         Me.BtnSubmit.TabIndex = 15
         Me.BtnSubmit.Text = "Submit Request"
-        Me.BtnSubmit.UseVisualStyleBackColor = True
+        Me.BtnSubmit.UseVisualStyleBackColor = False
         '
         'PnlOffers
         '
@@ -111,6 +112,7 @@ Partial Class Request
         Me.GroupBox1.TabIndex = 30
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "From Irfan Haziq n Co"
+        Me.GroupBox1.Visible = False
         '
         'Label15
         '
@@ -312,12 +314,12 @@ Partial Class Request
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.PnlOffers)
         Me.Controls.Add(Me.BtnSubmit)
-        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.lblInfo)
         Me.Controls.Add(Me.TbNotes)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Request"
         Me.Controls.SetChildIndex(Me.TbNotes, 0)
-        Me.Controls.SetChildIndex(Me.Label3, 0)
+        Me.Controls.SetChildIndex(Me.lblInfo, 0)
         Me.Controls.SetChildIndex(Me.BtnSubmit, 0)
         Me.Controls.SetChildIndex(Me.PnlOffers, 0)
         Me.Controls.SetChildIndex(Me.Label5, 0)
@@ -344,7 +346,7 @@ Partial Class Request
 
     End Sub
     Friend WithEvents TbNotes As TextBox
-    Friend WithEvents Label3 As Label
+    Friend WithEvents lblInfo As Label
     Friend WithEvents BtnSubmit As Button
     Friend WithEvents OtralaDBDataSet As OtralaDBDataSet
     Friend WithEvents PnlOffers As Panel

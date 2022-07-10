@@ -72,7 +72,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System">
-      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -167,6 +167,12 @@
       <DependentUpon>ApplySeller.vb</DependentUpon>
     </Compile>
     <Compile Include="UserForms\ApplySeller.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForms\RequestPrompt.Designer.vb">
+      <DependentUpon>RequestPrompt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\RequestPrompt.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserForms\Request.Designer.vb">
@@ -306,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\ApplySeller.resx">
       <DependentUpon>ApplySeller.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\RequestPrompt.resx">
+      <DependentUpon>RequestPrompt.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\Request.resx">
       <DependentUpon>Request.vb</DependentUpon>
