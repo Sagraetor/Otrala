@@ -104,6 +104,18 @@
     <Compile Include="AdminForms\Admin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AdminForms\BookingAdmin.Designer.vb">
+      <DependentUpon>BookingAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForms\BookingAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminForms\RequestAnswerAdmin.Designer.vb">
+      <DependentUpon>RequestAnswerAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminForms\RequestAnswerAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="OtralaDBDataSet.Designer.vb">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -169,28 +181,28 @@
     <Compile Include="UserForms\BaseForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminForms\temporaryInputFormUserInfo.Designer.vb">
-      <DependentUpon>temporaryInputFormUserInfo.vb</DependentUpon>
+    <Compile Include="AdminForms\UserInfoAdmin.Designer.vb">
+      <DependentUpon>UserInfoAdmin.vb</DependentUpon>
     </Compile>
-    <Compile Include="AdminForms\temporaryInputFormUserInfo.vb">
+    <Compile Include="AdminForms\UserInfoAdmin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminForms\temporaryInputFormRequest.Designer.vb">
-      <DependentUpon>temporaryInputFormRequest.vb</DependentUpon>
+    <Compile Include="AdminForms\RequestAdmin.Designer.vb">
+      <DependentUpon>RequestAdmin.vb</DependentUpon>
     </Compile>
-    <Compile Include="AdminForms\temporaryInputFormRequest.vb">
+    <Compile Include="AdminForms\RequestAdmin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminForms\temporaryInputFormLoginInfo.Designer.vb">
-      <DependentUpon>temporaryInputFormLoginInfo.vb</DependentUpon>
+    <Compile Include="AdminForms\LoginInfoAdmin.Designer.vb">
+      <DependentUpon>LoginInfoAdmin.vb</DependentUpon>
     </Compile>
-    <Compile Include="AdminForms\temporaryInputFormLoginInfo.vb">
+    <Compile Include="AdminForms\LoginInfoAdmin.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminForms\temporaryInputFormFeedback.Designer.vb">
-      <DependentUpon>temporaryInputFormFeedback.vb</DependentUpon>
+    <Compile Include="AdminForms\FeedbackAdmin.Designer.vb">
+      <DependentUpon>FeedbackAdmin.vb</DependentUpon>
     </Compile>
-    <Compile Include="AdminForms\temporaryInputFormFeedback.vb">
+    <Compile Include="AdminForms\FeedbackAdmin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserForms\Search.Designer.vb">
@@ -211,10 +223,10 @@
     <Compile Include="UserForms\LoginSignUp.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AdminForms\temporaryInputFormPackage.Designer.vb">
-      <DependentUpon>temporaryInputFormPackage.vb</DependentUpon>
+    <Compile Include="AdminForms\PackageAdmin.Designer.vb">
+      <DependentUpon>PackageAdmin.vb</DependentUpon>
     </Compile>
-    <Compile Include="AdminForms\temporaryInputFormPackage.vb">
+    <Compile Include="AdminForms\PackageAdmin.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserForms\UserSettings.Designer.vb">
@@ -258,6 +270,12 @@
     <EmbeddedResource Include="AdminForms\Admin.resx">
       <DependentUpon>Admin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\BookingAdmin.resx">
+      <DependentUpon>BookingAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminForms\RequestAnswerAdmin.resx">
+      <DependentUpon>RequestAnswerAdmin.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserForms\AddPackage.resx">
       <DependentUpon>AddPackage.vb</DependentUpon>
     </EmbeddedResource>
@@ -283,11 +301,11 @@
     <EmbeddedResource Include="UserForms\BaseForm.resx">
       <DependentUpon>BaseForm.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminForms\temporaryInputFormRequest.resx">
-      <DependentUpon>temporaryInputFormRequest.vb</DependentUpon>
+    <EmbeddedResource Include="AdminForms\RequestAdmin.resx">
+      <DependentUpon>RequestAdmin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminForms\temporaryInputFormFeedback.resx">
-      <DependentUpon>temporaryInputFormFeedback.vb</DependentUpon>
+    <EmbeddedResource Include="AdminForms\FeedbackAdmin.resx">
+      <DependentUpon>FeedbackAdmin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\Prompt.resx">
       <DependentUpon>Prompt.vb</DependentUpon>
@@ -295,14 +313,14 @@
     <EmbeddedResource Include="UserForms\LoginSignUp.resx">
       <DependentUpon>LoginSignUp.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminForms\temporaryInputFormLoginInfo.resx">
-      <DependentUpon>temporaryInputFormLoginInfo.vb</DependentUpon>
+    <EmbeddedResource Include="AdminForms\LoginInfoAdmin.resx">
+      <DependentUpon>LoginInfoAdmin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminForms\temporaryInputFormPackage.resx">
-      <DependentUpon>temporaryInputFormPackage.vb</DependentUpon>
+    <EmbeddedResource Include="AdminForms\PackageAdmin.resx">
+      <DependentUpon>PackageAdmin.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AdminForms\temporaryInputFormUserInfo.resx">
-      <DependentUpon>temporaryInputFormUserInfo.vb</DependentUpon>
+    <EmbeddedResource Include="AdminForms\UserInfoAdmin.resx">
+      <DependentUpon>UserInfoAdmin.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\Search.resx">
       <DependentUpon>Search.vb</DependentUpon>

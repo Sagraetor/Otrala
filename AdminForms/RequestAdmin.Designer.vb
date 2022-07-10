@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class temporaryInputFormRequest
+Partial Class RequestAdmin
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -31,7 +31,7 @@ Partial Class temporaryInputFormRequest
         Dim PaxLabel As System.Windows.Forms.Label
         Dim PlannedDateLabel As System.Windows.Forms.Label
         Dim NotesLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(temporaryInputFormRequest))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RequestAdmin))
         Dim Label1 As System.Windows.Forms.Label
         Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
         Me.RequestBindingSource = New System.Windows.Forms.BindingSource(Me.components)

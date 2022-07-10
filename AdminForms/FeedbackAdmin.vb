@@ -1,4 +1,4 @@
-﻿Public Class temporaryInputFormFeedback
+﻿Public Class FeedbackAdmin
 
     Private Sub temporaryInputFormFeedback_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'OtralaDBDataSet.Feedback' table. You can move, or remove it, as needed.

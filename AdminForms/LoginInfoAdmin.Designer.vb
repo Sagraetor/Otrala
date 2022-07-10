@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class temporaryInputFormLoginInfo
+Partial Class LoginInfoAdmin
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -28,7 +28,7 @@ Partial Class temporaryInputFormLoginInfo
         Dim KeyLabel As System.Windows.Forms.Label
         Dim PhoneNumberLabel As System.Windows.Forms.Label
         Dim EmailLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(temporaryInputFormLoginInfo))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginInfoAdmin))
         Dim Label1 As System.Windows.Forms.Label
         Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
         Me.LoginInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)

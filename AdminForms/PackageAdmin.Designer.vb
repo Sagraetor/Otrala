@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class temporaryInputFormPackage
+Partial Class PackageAdmin
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -33,8 +33,8 @@ Partial Class temporaryInputFormPackage
         Dim DurationLabel As System.Windows.Forms.Label
         Dim SellerNameLabel As System.Windows.Forms.Label
         Dim UserIDLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(temporaryInputFormPackage))
         Dim Label1 As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PackageAdmin))
         Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
         Me.PackageBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PackageTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.PackageTableAdapter()
@@ -198,6 +198,16 @@ Partial Class temporaryInputFormPackage
         UserIDLabel.TabIndex = 31
         UserIDLabel.Text = "User ID:"
         '
+        'Label1
+        '
+        Label1.AutoSize = True
+        Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label1.Location = New System.Drawing.Point(589, 57)
+        Label1.Name = "Label1"
+        Label1.Size = New System.Drawing.Size(131, 25)
+        Label1.TabIndex = 35
+        Label1.Text = "Search by ID:"
+        '
         'OtralaDBDataSet
         '
         Me.OtralaDBDataSet.DataSetName = "OtralaDBDataSet"
@@ -240,13 +250,13 @@ Partial Class temporaryInputFormPackage
         Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
         Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 37)
         Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
         '
         'BindingNavigatorSeparator
         '
         Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 31)
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 40)
         '
         'BindingNavigatorPositionItem
         '
@@ -261,14 +271,14 @@ Partial Class temporaryInputFormPackage
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 28)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 37)
         Me.BindingNavigatorCountItem.Text = "of {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
         '
         'BindingNavigatorSeparator1
         '
         Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 31)
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 40)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -276,7 +286,7 @@ Partial Class temporaryInputFormPackage
         Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
         Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 37)
         Me.BindingNavigatorMoveNextItem.Text = "Move next"
         '
         'BindingNavigatorMoveLastItem
@@ -285,13 +295,13 @@ Partial Class temporaryInputFormPackage
         Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
         Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 37)
         Me.BindingNavigatorMoveLastItem.Text = "Move last"
         '
         'BindingNavigatorSeparator2
         '
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 31)
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 40)
         '
         'BindingNavigatorAddNewItem
         '
@@ -299,7 +309,7 @@ Partial Class temporaryInputFormPackage
         Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 37)
         Me.BindingNavigatorAddNewItem.Text = "Add new"
         '
         'BindingNavigatorDeleteItem
@@ -308,7 +318,7 @@ Partial Class temporaryInputFormPackage
         Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
         Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 28)
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 37)
         Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
         'PackageBindingNavigatorSaveItem
@@ -316,7 +326,7 @@ Partial Class temporaryInputFormPackage
         Me.PackageBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.PackageBindingNavigatorSaveItem.Image = CType(resources.GetObject("PackageBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.PackageBindingNavigatorSaveItem.Name = "PackageBindingNavigatorSaveItem"
-        Me.PackageBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 28)
+        Me.PackageBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 37)
         Me.PackageBindingNavigatorSaveItem.Text = "Save Data"
         '
         'PackageBindingNavigator
@@ -539,16 +549,6 @@ Partial Class temporaryInputFormPackage
         Me.UserIDTextBox.Size = New System.Drawing.Size(193, 30)
         Me.UserIDTextBox.TabIndex = 32
         '
-        'Label1
-        '
-        Label1.AutoSize = True
-        Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label1.Location = New System.Drawing.Point(589, 57)
-        Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(131, 25)
-        Label1.TabIndex = 35
-        Label1.Text = "Search by ID:"
-        '
         'btnSearch
         '
         Me.btnSearch.BackgroundImage = Global.Otrala_2._0.My.Resources.Resources.Search_Icon
@@ -637,7 +637,7 @@ Partial Class temporaryInputFormPackage
         Me.Controls.Add(Me.PackageBindingNavigator)
         Me.Name = "temporaryInputFormPackage"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "1262, 40"
+        Me.Text = "Package Database"
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PackageBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PackageBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()

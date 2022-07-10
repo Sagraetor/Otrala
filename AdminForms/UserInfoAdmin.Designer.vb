@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class temporaryInputFormUserInfo
+Partial Class UserInfoAdmin
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -31,7 +31,7 @@ Partial Class temporaryInputFormUserInfo
         Dim AddressLabel As System.Windows.Forms.Label
         Dim SellerLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(temporaryInputFormUserInfo))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UserInfoAdmin))
         Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
         Me.UserInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UserInfoTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.UserInfoTableAdapter()
@@ -491,7 +491,7 @@ Partial Class temporaryInputFormUserInfo
         Me.BtnSave.Text = "Save"
         Me.BtnSave.UseVisualStyleBackColor = False
         '
-        'temporaryInputFormUserInfo
+        'UserInfoAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -518,7 +518,7 @@ Partial Class temporaryInputFormUserInfo
         Me.Controls.Add(Me.SellerCheckBox)
         Me.Controls.Add(Me.UserInfoDataGridView)
         Me.Controls.Add(Me.UserInfoBindingNavigator)
-        Me.Name = "temporaryInputFormUserInfo"
+        Me.Name = "UserInfoAdmin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Add User Info"
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()

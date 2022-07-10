@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class temporaryInputFormFeedback
+Partial Class FeedbackAdmin
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -29,7 +29,7 @@ Partial Class temporaryInputFormFeedback
         Dim UserIDLabel As System.Windows.Forms.Label
         Dim DescriptionLabel As System.Windows.Forms.Label
         Dim DateSentLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(temporaryInputFormFeedback))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FeedbackAdmin))
         Dim Label1 As System.Windows.Forms.Label
         Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
         Me.FeedbackBindingSource = New System.Windows.Forms.BindingSource(Me.components)
