@@ -32,6 +32,7 @@ Partial Class temporaryInputFormRequest
         Dim PlannedDateLabel As System.Windows.Forms.Label
         Dim NotesLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(temporaryInputFormRequest))
+        Dim Label1 As System.Windows.Forms.Label
         Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
         Me.RequestBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.RequestTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.RequestTableAdapter()
@@ -66,6 +67,11 @@ Partial Class temporaryInputFormRequest
         Me.PaxTextBox = New System.Windows.Forms.TextBox()
         Me.PlannedDateTextBox = New System.Windows.Forms.TextBox()
         Me.NotesTextBox = New System.Windows.Forms.TextBox()
+        Me.btnAddNew = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.BtnSave = New System.Windows.Forms.Button()
+        Me.btnSearch = New System.Windows.Forms.Button()
+        Me.txtFind = New System.Windows.Forms.TextBox()
         RequestIDLabel = New System.Windows.Forms.Label()
         UserIDLabel = New System.Windows.Forms.Label()
         LocationLabel = New System.Windows.Forms.Label()
@@ -74,6 +80,7 @@ Partial Class temporaryInputFormRequest
         PaxLabel = New System.Windows.Forms.Label()
         PlannedDateLabel = New System.Windows.Forms.Label()
         NotesLabel = New System.Windows.Forms.Label()
+        Label1 = New System.Windows.Forms.Label()
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RequestBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RequestBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,72 +91,80 @@ Partial Class temporaryInputFormRequest
         'RequestIDLabel
         '
         RequestIDLabel.AutoSize = True
-        RequestIDLabel.Location = New System.Drawing.Point(81, 117)
+        RequestIDLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        RequestIDLabel.Location = New System.Drawing.Point(19, 112)
         RequestIDLabel.Name = "RequestIDLabel"
-        RequestIDLabel.Size = New System.Drawing.Size(77, 16)
+        RequestIDLabel.Size = New System.Drawing.Size(114, 25)
         RequestIDLabel.TabIndex = 2
         RequestIDLabel.Text = "Request ID:"
         '
         'UserIDLabel
         '
         UserIDLabel.AutoSize = True
-        UserIDLabel.Location = New System.Drawing.Point(81, 145)
+        UserIDLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        UserIDLabel.Location = New System.Drawing.Point(19, 155)
         UserIDLabel.Name = "UserIDLabel"
-        UserIDLabel.Size = New System.Drawing.Size(55, 16)
+        UserIDLabel.Size = New System.Drawing.Size(83, 25)
         UserIDLabel.TabIndex = 4
         UserIDLabel.Text = "User ID:"
         '
         'LocationLabel
         '
         LocationLabel.AutoSize = True
-        LocationLabel.Location = New System.Drawing.Point(81, 173)
+        LocationLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        LocationLabel.Location = New System.Drawing.Point(19, 198)
         LocationLabel.Name = "LocationLabel"
-        LocationLabel.Size = New System.Drawing.Size(61, 16)
+        LocationLabel.Size = New System.Drawing.Size(92, 25)
         LocationLabel.TabIndex = 6
         LocationLabel.Text = "Location:"
         '
         'PriceLabel
         '
         PriceLabel.AutoSize = True
-        PriceLabel.Location = New System.Drawing.Point(81, 201)
+        PriceLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        PriceLabel.Location = New System.Drawing.Point(19, 241)
         PriceLabel.Name = "PriceLabel"
-        PriceLabel.Size = New System.Drawing.Size(41, 16)
+        PriceLabel.Size = New System.Drawing.Size(62, 25)
         PriceLabel.TabIndex = 8
         PriceLabel.Text = "Price:"
         '
         'DurationLabel
         '
         DurationLabel.AutoSize = True
-        DurationLabel.Location = New System.Drawing.Point(81, 229)
+        DurationLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DurationLabel.Location = New System.Drawing.Point(19, 284)
         DurationLabel.Name = "DurationLabel"
-        DurationLabel.Size = New System.Drawing.Size(60, 16)
+        DurationLabel.Size = New System.Drawing.Size(91, 25)
         DurationLabel.TabIndex = 10
         DurationLabel.Text = "Duration:"
         '
         'PaxLabel
         '
         PaxLabel.AutoSize = True
-        PaxLabel.Location = New System.Drawing.Point(81, 257)
+        PaxLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        PaxLabel.Location = New System.Drawing.Point(19, 327)
         PaxLabel.Name = "PaxLabel"
-        PaxLabel.Size = New System.Drawing.Size(33, 16)
+        PaxLabel.Size = New System.Drawing.Size(52, 25)
         PaxLabel.TabIndex = 12
         PaxLabel.Text = "Pax:"
         '
         'PlannedDateLabel
         '
         PlannedDateLabel.AutoSize = True
-        PlannedDateLabel.Location = New System.Drawing.Point(81, 285)
+        PlannedDateLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        PlannedDateLabel.Location = New System.Drawing.Point(19, 370)
         PlannedDateLabel.Name = "PlannedDateLabel"
-        PlannedDateLabel.Size = New System.Drawing.Size(92, 16)
+        PlannedDateLabel.Size = New System.Drawing.Size(136, 25)
         PlannedDateLabel.TabIndex = 14
         PlannedDateLabel.Text = "Planned Date:"
         '
         'NotesLabel
         '
         NotesLabel.AutoSize = True
-        NotesLabel.Location = New System.Drawing.Point(81, 313)
+        NotesLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        NotesLabel.Location = New System.Drawing.Point(19, 413)
         NotesLabel.Name = "NotesLabel"
-        NotesLabel.Size = New System.Drawing.Size(46, 16)
+        NotesLabel.Size = New System.Drawing.Size(69, 25)
         NotesLabel.TabIndex = 16
         NotesLabel.Text = "Notes:"
         '
@@ -299,11 +314,11 @@ Partial Class temporaryInputFormRequest
         Me.RequestDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.RequestDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8})
         Me.RequestDataGridView.DataSource = Me.RequestBindingSource
-        Me.RequestDataGridView.Location = New System.Drawing.Point(489, 95)
+        Me.RequestDataGridView.Location = New System.Drawing.Point(446, 106)
         Me.RequestDataGridView.Name = "RequestDataGridView"
         Me.RequestDataGridView.RowHeadersWidth = 51
         Me.RequestDataGridView.RowTemplate.Height = 24
-        Me.RequestDataGridView.Size = New System.Drawing.Size(660, 379)
+        Me.RequestDataGridView.Size = New System.Drawing.Size(804, 555)
         Me.RequestDataGridView.TabIndex = 1
         '
         'DataGridViewTextBoxColumn1
@@ -373,72 +388,150 @@ Partial Class temporaryInputFormRequest
         'RequestIDTextBox
         '
         Me.RequestIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RequestBindingSource, "RequestID", True))
-        Me.RequestIDTextBox.Location = New System.Drawing.Point(179, 114)
+        Me.RequestIDTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RequestIDTextBox.Location = New System.Drawing.Point(186, 109)
         Me.RequestIDTextBox.Name = "RequestIDTextBox"
-        Me.RequestIDTextBox.Size = New System.Drawing.Size(194, 22)
+        Me.RequestIDTextBox.Size = New System.Drawing.Size(194, 30)
         Me.RequestIDTextBox.TabIndex = 3
         '
         'UserIDTextBox
         '
         Me.UserIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RequestBindingSource, "UserID", True))
-        Me.UserIDTextBox.Location = New System.Drawing.Point(179, 142)
+        Me.UserIDTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UserIDTextBox.Location = New System.Drawing.Point(186, 152)
         Me.UserIDTextBox.Name = "UserIDTextBox"
-        Me.UserIDTextBox.Size = New System.Drawing.Size(194, 22)
+        Me.UserIDTextBox.Size = New System.Drawing.Size(194, 30)
         Me.UserIDTextBox.TabIndex = 5
         '
         'LocationTextBox
         '
         Me.LocationTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RequestBindingSource, "Location", True))
-        Me.LocationTextBox.Location = New System.Drawing.Point(179, 170)
+        Me.LocationTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LocationTextBox.Location = New System.Drawing.Point(186, 195)
         Me.LocationTextBox.Name = "LocationTextBox"
-        Me.LocationTextBox.Size = New System.Drawing.Size(194, 22)
+        Me.LocationTextBox.Size = New System.Drawing.Size(194, 30)
         Me.LocationTextBox.TabIndex = 7
         '
         'PriceTextBox
         '
         Me.PriceTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RequestBindingSource, "Price", True))
-        Me.PriceTextBox.Location = New System.Drawing.Point(179, 198)
+        Me.PriceTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PriceTextBox.Location = New System.Drawing.Point(186, 238)
         Me.PriceTextBox.Name = "PriceTextBox"
-        Me.PriceTextBox.Size = New System.Drawing.Size(194, 22)
+        Me.PriceTextBox.Size = New System.Drawing.Size(194, 30)
         Me.PriceTextBox.TabIndex = 9
         '
         'DurationTextBox
         '
         Me.DurationTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RequestBindingSource, "Duration", True))
-        Me.DurationTextBox.Location = New System.Drawing.Point(179, 226)
+        Me.DurationTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DurationTextBox.Location = New System.Drawing.Point(186, 281)
         Me.DurationTextBox.Name = "DurationTextBox"
-        Me.DurationTextBox.Size = New System.Drawing.Size(194, 22)
+        Me.DurationTextBox.Size = New System.Drawing.Size(194, 30)
         Me.DurationTextBox.TabIndex = 11
         '
         'PaxTextBox
         '
         Me.PaxTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RequestBindingSource, "Pax", True))
-        Me.PaxTextBox.Location = New System.Drawing.Point(179, 254)
+        Me.PaxTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PaxTextBox.Location = New System.Drawing.Point(186, 324)
         Me.PaxTextBox.Name = "PaxTextBox"
-        Me.PaxTextBox.Size = New System.Drawing.Size(194, 22)
+        Me.PaxTextBox.Size = New System.Drawing.Size(194, 30)
         Me.PaxTextBox.TabIndex = 13
         '
         'PlannedDateTextBox
         '
         Me.PlannedDateTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RequestBindingSource, "PlannedDate", True))
-        Me.PlannedDateTextBox.Location = New System.Drawing.Point(179, 282)
+        Me.PlannedDateTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PlannedDateTextBox.Location = New System.Drawing.Point(186, 367)
         Me.PlannedDateTextBox.Name = "PlannedDateTextBox"
-        Me.PlannedDateTextBox.Size = New System.Drawing.Size(194, 22)
+        Me.PlannedDateTextBox.Size = New System.Drawing.Size(194, 30)
         Me.PlannedDateTextBox.TabIndex = 15
         '
         'NotesTextBox
         '
         Me.NotesTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.RequestBindingSource, "Notes", True))
-        Me.NotesTextBox.Location = New System.Drawing.Point(179, 310)
+        Me.NotesTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NotesTextBox.Location = New System.Drawing.Point(186, 410)
+        Me.NotesTextBox.Multiline = True
         Me.NotesTextBox.Name = "NotesTextBox"
-        Me.NotesTextBox.Size = New System.Drawing.Size(194, 22)
+        Me.NotesTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.NotesTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.NotesTextBox.Size = New System.Drawing.Size(194, 158)
         Me.NotesTextBox.TabIndex = 17
+        '
+        'btnAddNew
+        '
+        Me.btnAddNew.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
+        Me.btnAddNew.ForeColor = System.Drawing.Color.White
+        Me.btnAddNew.Location = New System.Drawing.Point(320, 618)
+        Me.btnAddNew.Name = "btnAddNew"
+        Me.btnAddNew.Size = New System.Drawing.Size(111, 43)
+        Me.btnAddNew.TabIndex = 20
+        Me.btnAddNew.Text = "Add New"
+        Me.btnAddNew.UseVisualStyleBackColor = False
+        '
+        'btnDelete
+        '
+        Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
+        Me.btnDelete.ForeColor = System.Drawing.Color.White
+        Me.btnDelete.Location = New System.Drawing.Point(168, 618)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(111, 43)
+        Me.btnDelete.TabIndex = 19
+        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.UseVisualStyleBackColor = False
+        '
+        'BtnSave
+        '
+        Me.BtnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
+        Me.BtnSave.ForeColor = System.Drawing.Color.White
+        Me.BtnSave.Location = New System.Drawing.Point(16, 618)
+        Me.BtnSave.Name = "BtnSave"
+        Me.BtnSave.Size = New System.Drawing.Size(111, 43)
+        Me.BtnSave.TabIndex = 18
+        Me.BtnSave.Text = "Save"
+        Me.BtnSave.UseVisualStyleBackColor = False
+        '
+        'Label1
+        '
+        Label1.AutoSize = True
+        Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label1.Location = New System.Drawing.Point(513, 57)
+        Label1.Name = "Label1"
+        Label1.Size = New System.Drawing.Size(131, 25)
+        Label1.TabIndex = 23
+        Label1.Text = "Search by ID:"
+        '
+        'btnSearch
+        '
+        Me.btnSearch.BackgroundImage = Global.Otrala_2._0.My.Resources.Resources.Search_Icon
+        Me.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnSearch.Location = New System.Drawing.Point(1147, 54)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(30, 30)
+        Me.btnSearch.TabIndex = 22
+        Me.btnSearch.UseVisualStyleBackColor = True
+        '
+        'txtFind
+        '
+        Me.txtFind.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFind.Location = New System.Drawing.Point(667, 54)
+        Me.txtFind.Name = "txtFind"
+        Me.txtFind.Size = New System.Drawing.Size(455, 30)
+        Me.txtFind.TabIndex = 21
         '
         'temporaryInputFormRequest
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1262, 673)
+        Me.Controls.Add(Label1)
+        Me.Controls.Add(Me.btnSearch)
+        Me.Controls.Add(Me.txtFind)
+        Me.Controls.Add(Me.btnAddNew)
+        Me.Controls.Add(Me.btnDelete)
+        Me.Controls.Add(Me.BtnSave)
         Me.Controls.Add(RequestIDLabel)
         Me.Controls.Add(Me.RequestIDTextBox)
         Me.Controls.Add(UserIDLabel)
@@ -505,4 +598,9 @@ Partial Class temporaryInputFormRequest
     Friend WithEvents PaxTextBox As TextBox
     Friend WithEvents PlannedDateTextBox As TextBox
     Friend WithEvents NotesTextBox As TextBox
+    Friend WithEvents btnAddNew As Button
+    Friend WithEvents btnDelete As Button
+    Friend WithEvents BtnSave As Button
+    Friend WithEvents btnSearch As Button
+    Friend WithEvents txtFind As TextBox
 End Class

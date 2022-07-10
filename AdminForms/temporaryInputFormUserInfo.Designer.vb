@@ -30,6 +30,7 @@ Partial Class temporaryInputFormUserInfo
         Dim EmailLabel As System.Windows.Forms.Label
         Dim AddressLabel As System.Windows.Forms.Label
         Dim SellerLabel As System.Windows.Forms.Label
+        Dim Label1 As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(temporaryInputFormUserInfo))
         Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
         Me.UserInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -63,6 +64,11 @@ Partial Class temporaryInputFormUserInfo
         Me.EmailTextBox = New System.Windows.Forms.TextBox()
         Me.AddressTextBox = New System.Windows.Forms.TextBox()
         Me.SellerCheckBox = New System.Windows.Forms.CheckBox()
+        Me.btnSearch = New System.Windows.Forms.Button()
+        Me.txtFind = New System.Windows.Forms.TextBox()
+        Me.btnAddNew = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.BtnSave = New System.Windows.Forms.Button()
         UserIDLabel = New System.Windows.Forms.Label()
         RealNameLabel = New System.Windows.Forms.Label()
         AgeLabel = New System.Windows.Forms.Label()
@@ -70,6 +76,7 @@ Partial Class temporaryInputFormUserInfo
         EmailLabel = New System.Windows.Forms.Label()
         AddressLabel = New System.Windows.Forms.Label()
         SellerLabel = New System.Windows.Forms.Label()
+        Label1 = New System.Windows.Forms.Label()
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserInfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserInfoBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,65 +87,82 @@ Partial Class temporaryInputFormUserInfo
         'UserIDLabel
         '
         UserIDLabel.AutoSize = True
-        UserIDLabel.Location = New System.Drawing.Point(54, 98)
+        UserIDLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        UserIDLabel.Location = New System.Drawing.Point(32, 101)
         UserIDLabel.Name = "UserIDLabel"
-        UserIDLabel.Size = New System.Drawing.Size(55, 16)
+        UserIDLabel.Size = New System.Drawing.Size(83, 25)
         UserIDLabel.TabIndex = 2
         UserIDLabel.Text = "User ID:"
         '
         'RealNameLabel
         '
         RealNameLabel.AutoSize = True
-        RealNameLabel.Location = New System.Drawing.Point(54, 126)
+        RealNameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        RealNameLabel.Location = New System.Drawing.Point(32, 159)
         RealNameLabel.Name = "RealNameLabel"
-        RealNameLabel.Size = New System.Drawing.Size(79, 16)
+        RealNameLabel.Size = New System.Drawing.Size(114, 25)
         RealNameLabel.TabIndex = 4
         RealNameLabel.Text = "Real Name:"
         '
         'AgeLabel
         '
         AgeLabel.AutoSize = True
-        AgeLabel.Location = New System.Drawing.Point(54, 154)
+        AgeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        AgeLabel.Location = New System.Drawing.Point(32, 217)
         AgeLabel.Name = "AgeLabel"
-        AgeLabel.Size = New System.Drawing.Size(35, 16)
+        AgeLabel.Size = New System.Drawing.Size(54, 25)
         AgeLabel.TabIndex = 6
         AgeLabel.Text = "Age:"
         '
         'PhoneLabel
         '
         PhoneLabel.AutoSize = True
-        PhoneLabel.Location = New System.Drawing.Point(54, 182)
+        PhoneLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        PhoneLabel.Location = New System.Drawing.Point(32, 275)
         PhoneLabel.Name = "PhoneLabel"
-        PhoneLabel.Size = New System.Drawing.Size(49, 16)
+        PhoneLabel.Size = New System.Drawing.Size(75, 25)
         PhoneLabel.TabIndex = 8
         PhoneLabel.Text = "Phone:"
         '
         'EmailLabel
         '
         EmailLabel.AutoSize = True
-        EmailLabel.Location = New System.Drawing.Point(54, 210)
+        EmailLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        EmailLabel.Location = New System.Drawing.Point(32, 333)
         EmailLabel.Name = "EmailLabel"
-        EmailLabel.Size = New System.Drawing.Size(44, 16)
+        EmailLabel.Size = New System.Drawing.Size(66, 25)
         EmailLabel.TabIndex = 10
         EmailLabel.Text = "Email:"
         '
         'AddressLabel
         '
         AddressLabel.AutoSize = True
-        AddressLabel.Location = New System.Drawing.Point(54, 238)
+        AddressLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        AddressLabel.Location = New System.Drawing.Point(32, 391)
         AddressLabel.Name = "AddressLabel"
-        AddressLabel.Size = New System.Drawing.Size(61, 16)
+        AddressLabel.Size = New System.Drawing.Size(91, 25)
         AddressLabel.TabIndex = 12
         AddressLabel.Text = "Address:"
         '
         'SellerLabel
         '
         SellerLabel.AutoSize = True
-        SellerLabel.Location = New System.Drawing.Point(54, 268)
+        SellerLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        SellerLabel.Location = New System.Drawing.Point(32, 449)
         SellerLabel.Name = "SellerLabel"
-        SellerLabel.Size = New System.Drawing.Size(45, 16)
+        SellerLabel.Size = New System.Drawing.Size(68, 25)
         SellerLabel.TabIndex = 14
         SellerLabel.Text = "Seller:"
+        '
+        'Label1
+        '
+        Label1.AutoSize = True
+        Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label1.Location = New System.Drawing.Point(512, 56)
+        Label1.Name = "Label1"
+        Label1.Size = New System.Drawing.Size(131, 25)
+        Label1.TabIndex = 26
+        Label1.Text = "Search by ID:"
         '
         'OtralaDBDataSet
         '
@@ -170,6 +194,8 @@ Partial Class temporaryInputFormUserInfo
         'UserInfoBindingNavigator
         '
         Me.UserInfoBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
+        Me.UserInfoBindingNavigator.AutoSize = False
+        Me.UserInfoBindingNavigator.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.UserInfoBindingNavigator.BindingSource = Me.UserInfoBindingSource
         Me.UserInfoBindingNavigator.CountItem = Me.BindingNavigatorCountItem
         Me.UserInfoBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
@@ -182,7 +208,7 @@ Partial Class temporaryInputFormUserInfo
         Me.UserInfoBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.UserInfoBindingNavigator.Name = "UserInfoBindingNavigator"
         Me.UserInfoBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.UserInfoBindingNavigator.Size = New System.Drawing.Size(1262, 27)
+        Me.UserInfoBindingNavigator.Size = New System.Drawing.Size(1262, 40)
         Me.UserInfoBindingNavigator.TabIndex = 0
         Me.UserInfoBindingNavigator.Text = "BindingNavigator1"
         '
@@ -192,13 +218,13 @@ Partial Class temporaryInputFormUserInfo
         Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 37)
         Me.BindingNavigatorAddNewItem.Text = "Add new"
         '
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 24)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 37)
         Me.BindingNavigatorCountItem.Text = "of {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
         '
@@ -208,7 +234,7 @@ Partial Class temporaryInputFormUserInfo
         Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
         Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 37)
         Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
         'BindingNavigatorMoveFirstItem
@@ -217,7 +243,7 @@ Partial Class temporaryInputFormUserInfo
         Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
         Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 37)
         Me.BindingNavigatorMoveFirstItem.Text = "Move first"
         '
         'BindingNavigatorMovePreviousItem
@@ -226,13 +252,13 @@ Partial Class temporaryInputFormUserInfo
         Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
         Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 37)
         Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
         '
         'BindingNavigatorSeparator
         '
         Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 27)
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 40)
         '
         'BindingNavigatorPositionItem
         '
@@ -247,7 +273,7 @@ Partial Class temporaryInputFormUserInfo
         'BindingNavigatorSeparator1
         '
         Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 27)
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 40)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -255,7 +281,7 @@ Partial Class temporaryInputFormUserInfo
         Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
         Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 37)
         Me.BindingNavigatorMoveNextItem.Text = "Move next"
         '
         'BindingNavigatorMoveLastItem
@@ -264,20 +290,20 @@ Partial Class temporaryInputFormUserInfo
         Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
         Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 37)
         Me.BindingNavigatorMoveLastItem.Text = "Move last"
         '
         'BindingNavigatorSeparator2
         '
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 27)
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 40)
         '
         'UserInfoBindingNavigatorSaveItem
         '
         Me.UserInfoBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.UserInfoBindingNavigatorSaveItem.Image = CType(resources.GetObject("UserInfoBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.UserInfoBindingNavigatorSaveItem.Name = "UserInfoBindingNavigatorSaveItem"
-        Me.UserInfoBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 24)
+        Me.UserInfoBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 37)
         Me.UserInfoBindingNavigatorSaveItem.Text = "Save Data"
         '
         'UserInfoDataGridView
@@ -286,11 +312,11 @@ Partial Class temporaryInputFormUserInfo
         Me.UserInfoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.UserInfoDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewCheckBoxColumn1})
         Me.UserInfoDataGridView.DataSource = Me.UserInfoBindingSource
-        Me.UserInfoDataGridView.Location = New System.Drawing.Point(475, 69)
+        Me.UserInfoDataGridView.Location = New System.Drawing.Point(446, 106)
         Me.UserInfoDataGridView.Name = "UserInfoDataGridView"
         Me.UserInfoDataGridView.RowHeadersWidth = 51
         Me.UserInfoDataGridView.RowTemplate.Height = 24
-        Me.UserInfoDataGridView.Size = New System.Drawing.Size(680, 437)
+        Me.UserInfoDataGridView.Size = New System.Drawing.Size(804, 555)
         Me.UserInfoDataGridView.TabIndex = 1
         '
         'DataGridViewTextBoxColumn1
@@ -352,66 +378,130 @@ Partial Class temporaryInputFormUserInfo
         'UserIDTextBox
         '
         Me.UserIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserInfoBindingSource, "UserID", True))
-        Me.UserIDTextBox.Location = New System.Drawing.Point(139, 95)
+        Me.UserIDTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UserIDTextBox.Location = New System.Drawing.Point(181, 98)
         Me.UserIDTextBox.Name = "UserIDTextBox"
-        Me.UserIDTextBox.Size = New System.Drawing.Size(237, 22)
+        Me.UserIDTextBox.Size = New System.Drawing.Size(237, 30)
         Me.UserIDTextBox.TabIndex = 3
         '
         'RealNameTextBox
         '
         Me.RealNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserInfoBindingSource, "RealName", True))
-        Me.RealNameTextBox.Location = New System.Drawing.Point(139, 123)
+        Me.RealNameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RealNameTextBox.Location = New System.Drawing.Point(181, 156)
         Me.RealNameTextBox.Name = "RealNameTextBox"
-        Me.RealNameTextBox.Size = New System.Drawing.Size(237, 22)
+        Me.RealNameTextBox.Size = New System.Drawing.Size(237, 30)
         Me.RealNameTextBox.TabIndex = 5
         '
         'AgeTextBox
         '
         Me.AgeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserInfoBindingSource, "Age", True))
-        Me.AgeTextBox.Location = New System.Drawing.Point(139, 151)
+        Me.AgeTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AgeTextBox.Location = New System.Drawing.Point(181, 214)
         Me.AgeTextBox.Name = "AgeTextBox"
-        Me.AgeTextBox.Size = New System.Drawing.Size(237, 22)
+        Me.AgeTextBox.Size = New System.Drawing.Size(237, 30)
         Me.AgeTextBox.TabIndex = 7
         '
         'PhoneTextBox
         '
         Me.PhoneTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserInfoBindingSource, "Phone", True))
-        Me.PhoneTextBox.Location = New System.Drawing.Point(139, 179)
+        Me.PhoneTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PhoneTextBox.Location = New System.Drawing.Point(181, 272)
         Me.PhoneTextBox.Name = "PhoneTextBox"
-        Me.PhoneTextBox.Size = New System.Drawing.Size(237, 22)
+        Me.PhoneTextBox.Size = New System.Drawing.Size(237, 30)
         Me.PhoneTextBox.TabIndex = 9
         '
         'EmailTextBox
         '
         Me.EmailTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserInfoBindingSource, "Email", True))
-        Me.EmailTextBox.Location = New System.Drawing.Point(139, 207)
+        Me.EmailTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.EmailTextBox.Location = New System.Drawing.Point(181, 330)
         Me.EmailTextBox.Name = "EmailTextBox"
-        Me.EmailTextBox.Size = New System.Drawing.Size(237, 22)
+        Me.EmailTextBox.Size = New System.Drawing.Size(237, 30)
         Me.EmailTextBox.TabIndex = 11
         '
         'AddressTextBox
         '
         Me.AddressTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserInfoBindingSource, "Address", True))
-        Me.AddressTextBox.Location = New System.Drawing.Point(139, 235)
+        Me.AddressTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AddressTextBox.Location = New System.Drawing.Point(181, 388)
         Me.AddressTextBox.Name = "AddressTextBox"
-        Me.AddressTextBox.Size = New System.Drawing.Size(237, 22)
+        Me.AddressTextBox.Size = New System.Drawing.Size(237, 30)
         Me.AddressTextBox.TabIndex = 13
         '
         'SellerCheckBox
         '
         Me.SellerCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.UserInfoBindingSource, "Seller", True))
-        Me.SellerCheckBox.Location = New System.Drawing.Point(139, 263)
+        Me.SellerCheckBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.SellerCheckBox.Location = New System.Drawing.Point(181, 446)
         Me.SellerCheckBox.Name = "SellerCheckBox"
         Me.SellerCheckBox.Size = New System.Drawing.Size(237, 24)
         Me.SellerCheckBox.TabIndex = 15
-        Me.SellerCheckBox.Text = "CheckBox1"
+        Me.SellerCheckBox.Text = "IsSeller"
         Me.SellerCheckBox.UseVisualStyleBackColor = True
+        '
+        'btnSearch
+        '
+        Me.btnSearch.BackgroundImage = Global.Otrala_2._0.My.Resources.Resources.Search_Icon
+        Me.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnSearch.Location = New System.Drawing.Point(1146, 53)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(30, 30)
+        Me.btnSearch.TabIndex = 25
+        Me.btnSearch.UseVisualStyleBackColor = True
+        '
+        'txtFind
+        '
+        Me.txtFind.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFind.Location = New System.Drawing.Point(666, 53)
+        Me.txtFind.Name = "txtFind"
+        Me.txtFind.Size = New System.Drawing.Size(455, 30)
+        Me.txtFind.TabIndex = 24
+        '
+        'btnAddNew
+        '
+        Me.btnAddNew.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
+        Me.btnAddNew.ForeColor = System.Drawing.Color.White
+        Me.btnAddNew.Location = New System.Drawing.Point(315, 586)
+        Me.btnAddNew.Name = "btnAddNew"
+        Me.btnAddNew.Size = New System.Drawing.Size(102, 43)
+        Me.btnAddNew.TabIndex = 29
+        Me.btnAddNew.Text = "Add New"
+        Me.btnAddNew.UseVisualStyleBackColor = False
+        '
+        'btnDelete
+        '
+        Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
+        Me.btnDelete.ForeColor = System.Drawing.Color.White
+        Me.btnDelete.Location = New System.Drawing.Point(176, 586)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(102, 43)
+        Me.btnDelete.TabIndex = 28
+        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.UseVisualStyleBackColor = False
+        '
+        'BtnSave
+        '
+        Me.BtnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
+        Me.BtnSave.ForeColor = System.Drawing.Color.White
+        Me.BtnSave.Location = New System.Drawing.Point(37, 586)
+        Me.BtnSave.Name = "BtnSave"
+        Me.BtnSave.Size = New System.Drawing.Size(102, 43)
+        Me.BtnSave.TabIndex = 27
+        Me.BtnSave.Text = "Save"
+        Me.BtnSave.UseVisualStyleBackColor = False
         '
         'temporaryInputFormUserInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1262, 673)
+        Me.Controls.Add(Me.btnAddNew)
+        Me.Controls.Add(Me.btnDelete)
+        Me.Controls.Add(Me.BtnSave)
+        Me.Controls.Add(Label1)
+        Me.Controls.Add(Me.btnSearch)
+        Me.Controls.Add(Me.txtFind)
         Me.Controls.Add(UserIDLabel)
         Me.Controls.Add(Me.UserIDTextBox)
         Me.Controls.Add(RealNameLabel)
@@ -474,4 +564,9 @@ Partial Class temporaryInputFormUserInfo
     Friend WithEvents EmailTextBox As TextBox
     Friend WithEvents AddressTextBox As TextBox
     Friend WithEvents SellerCheckBox As CheckBox
+    Friend WithEvents btnSearch As Button
+    Friend WithEvents txtFind As TextBox
+    Friend WithEvents btnAddNew As Button
+    Friend WithEvents btnDelete As Button
+    Friend WithEvents BtnSave As Button
 End Class
