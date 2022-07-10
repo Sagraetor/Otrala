@@ -1,7 +1,7 @@
 ﻿Public Class Request
     Dim Price(1) As Decimal
     Dim MyRequestID As Integer
-    Dim LstOfferID As List(Of Integer)
+    Dim LstOfferID As New List(Of Integer)
     Private Function GetIndex(Name As String)
         Dim House As Short = 0
         Dim Index As Short = 0
@@ -14,7 +14,7 @@
     End Function
 
     Private Sub RemoveDefaultText(Sender As TextBox, e As EventArgs) Handles TbNotes.GotFocus
-        If Sender.Name = "TbNotes" And TbNotes.Text = "Additional Notes" Then
+        If TbNotes.Text = "Additional Notes" Then
             TbNotes.Clear()
             TbNotes.ForeColor = System.Drawing.SystemColors.WindowText
         End If
@@ -23,7 +23,7 @@
     Private Sub ToDefaultText(Sender As TextBox, e As EventArgs) Handles TbNotes.LostFocus
         TbNotes.Text = TbNotes.Text.TrimEnd(CChar(" "))
 
-        If Sender.Name = "TbNotes" And TbNotes.Text = "" Then
+        If TbNotes.Text = "" Then
             TbNotes.Text = "Additional Notes"
             TbNotes.ForeColor = System.Drawing.SystemColors.GrayText
         End If
@@ -63,7 +63,7 @@
         End If
 
         Dim OfferIndex As Integer = GetIndex(Sender.Name)
-        Dim OfferRow As DataRow = OtralaDBDataSet.RequestAnswer.Select("RequestAnswerID = " & LstOfferID(OfferIndex - 1))(0)
+        Dim OfferRow As DataRow = OtralaDBDataSet.RequestAnswer.Select("RequestAnswerID = " & LstOfferID(OfferIndex))(0)
         Dim OfferRowIndex As Integer = OtralaDBDataSet.RequestAnswer.Rows.IndexOf(OfferRow)
 
         If Ans = 7 Then
@@ -270,6 +270,11 @@
 
             Index += 1
 
+            AddHandler NewLblDate.Click, AddressOf ClickOffer
+            AddHandler NewLblDuration.Click, AddressOf ClickOffer
+            AddHandler NewLblPax.Click, AddressOf ClickOffer
+            AddHandler NewLblPrice.Click, AddressOf ClickOffer
+            AddHandler NewGrpBox.Click, AddressOf ClickOffer
             LstOfferID.Add(OfferRow("RequestAnswerID"))
         Next
     End Sub
