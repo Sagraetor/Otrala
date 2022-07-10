@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Otrala 2.0")>
-<Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("Otrala 2.0")>
+<Assembly: AssemblyTitle("Otrala")>
+<Assembly: AssemblyDescription("Otrala aims to be the number one solution for both users looking to find their perfect travelling packages and traveling agencies looking to get their name in the market. Otrala aims to achieve this by providing an easy to use but powerful application capable of fulfilling the users every needs")>
+<Assembly: AssemblyCompany("Otrala Enterprise")>
+<Assembly: AssemblyProduct("Otrala")>
 <Assembly: AssemblyCopyright("Copyright ©  2022")>
 <Assembly: AssemblyTrademark("")>
 

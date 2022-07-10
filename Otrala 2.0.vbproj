@@ -241,6 +241,12 @@
     <Compile Include="AdminForms\PackageAdmin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UserForms\SplashScreen.Designer.vb">
+      <DependentUpon>SplashScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\SplashScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UserForms\UserSettings.Designer.vb">
       <DependentUpon>UserSettings.vb</DependentUpon>
     </Compile>
@@ -342,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\Search.resx">
       <DependentUpon>Search.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\SplashScreen.resx">
+      <DependentUpon>SplashScreen.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\UserSettings.resx">
       <DependentUpon>UserSettings.vb</DependentUpon>
