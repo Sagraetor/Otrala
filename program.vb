@@ -2,6 +2,6 @@
     Shared Sub Main()
         Application.EnableVisualStyles()
         Application.SetCompatibleTextRenderingDefault(True)
-        Application.Run(Admin)
+        Application.Run(Catalogue)
     End Sub
 End Class
