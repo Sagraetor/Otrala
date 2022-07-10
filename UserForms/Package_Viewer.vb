@@ -89,11 +89,15 @@
         Dim BookingForm As New Bookings
         BookingForm.package = Package
         BookingForm.ShowDialog()
-        Me.Close()
     End Sub
 
     Private Sub btnSeller_Click(sender As Object, e As EventArgs) Handles btnSeller.Click
-        ' Go to seller profile using seller_id.
+        Me.Owner = Catalogue
+        Search.Show()
+        Search.SearchBox.Text = Package.SellerName
+        Search.SearchButton.PerformClick()
+        Me.Hide()
+        Me.Owner.Hide()
     End Sub
 
 End Class

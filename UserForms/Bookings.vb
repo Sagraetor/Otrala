@@ -11,6 +11,7 @@
         LblPax.Text = package.Pax
         LblUserName.Text = User.Name
         LblUserPhone.Text = User.PhoneNumber
+        LblNumberIC.Text = User.ICNum
 
         StartDateChanged()
 
@@ -64,7 +65,7 @@
         OtralaDBDataSet.Booking.AddBookingRow(NewBookingRow)
         BookingTableAdapter.Update(OtralaDBDataSet)
 
-        MsgBox("Bookking sucessful!")
+        MsgBox("Booking sucessful!")
 
         Me.Close()
     End Sub

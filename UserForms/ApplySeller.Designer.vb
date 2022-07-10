@@ -26,10 +26,10 @@ Partial Class ApplySeller
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.LblCommand = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.BtnCancel = New System.Windows.Forms.Button()
         Me.BtnSubmit = New System.Windows.Forms.Button()
         Me.BtnUpload = New System.Windows.Forms.Button()
         Me.PicBoxSubmission = New System.Windows.Forms.PictureBox()
-        Me.BtnCancel = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         CType(Me.PicBoxSubmission, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -67,6 +67,17 @@ Partial Class ApplySeller
         Me.Label1.Text = "To apply to be a seller. You must upload your IC and any document that can act as" &
     " a proof of business to be reviewed by an Admin"
         '
+        'BtnCancel
+        '
+        Me.BtnCancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
+        Me.BtnCancel.ForeColor = System.Drawing.Color.White
+        Me.BtnCancel.Location = New System.Drawing.Point(22, 422)
+        Me.BtnCancel.Name = "BtnCancel"
+        Me.BtnCancel.Size = New System.Drawing.Size(188, 43)
+        Me.BtnCancel.TabIndex = 3
+        Me.BtnCancel.Text = "Cancel"
+        Me.BtnCancel.UseVisualStyleBackColor = False
+        '
         'BtnSubmit
         '
         Me.BtnSubmit.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
@@ -97,17 +108,6 @@ Partial Class ApplySeller
         Me.PicBoxSubmission.TabIndex = 2
         Me.PicBoxSubmission.TabStop = False
         '
-        'BtnCancel
-        '
-        Me.BtnCancel.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
-        Me.BtnCancel.ForeColor = System.Drawing.Color.White
-        Me.BtnCancel.Location = New System.Drawing.Point(22, 422)
-        Me.BtnCancel.Name = "BtnCancel"
-        Me.BtnCancel.Size = New System.Drawing.Size(188, 43)
-        Me.BtnCancel.TabIndex = 3
-        Me.BtnCancel.Text = "Cancel"
-        Me.BtnCancel.UseVisualStyleBackColor = False
-        '
         'ApplySeller
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 23.0!)
@@ -120,6 +120,7 @@ Partial Class ApplySeller
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "ApplySeller"
         Me.Padding = New System.Windows.Forms.Padding(15)
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Otrala"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

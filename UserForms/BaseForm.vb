@@ -30,7 +30,7 @@
     End Sub
 
     Protected Sub ToUserSettings() Handles LblName.Click
-        If Me.Name = "UserSettings" Then
+        If Me.Name = "UserSettings" And User.LoggedIn Then
             Exit Sub
         End If
 
@@ -46,8 +46,8 @@
             If User.LoggedIn AndAlso User.Age = 0 Then
                 UserSettings.Show()
                 UserSettings.FormLoad()
-                UserSettings.Editing = True
                 UserSettings.ForceEdit()
+                UserSettings.PbProfile.Image = Otrala_2._0.My.Resources.Resources.NoAvatar
                 Me.Hide()
             End If
 
@@ -105,23 +105,23 @@
     End Sub
 
     Private Sub AddToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem.Click
-        temporaryInputFormPackage.ShowDialog()
+        PackageAdmin.ShowDialog()
     End Sub
 
     Private Sub AddFeedbackToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem1.Click
-        temporaryInputFormFeedback.ShowDialog()
+        FeedbackAdmin.ShowDialog()
     End Sub
 
     Private Sub AddLoginInfoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AddLoginInfoToolStripMenuItem1.Click
-        temporaryInputFormLoginInfo.ShowDialog()
+        LoginInfoAdmin.ShowDialog()
     End Sub
 
     Private Sub AddUserInfoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddUserInfoToolStripMenuItem.Click
-        temporaryInputFormUserInfo.ShowDialog()
+        UserInfoAdmin.ShowDialog()
     End Sub
 
     Private Sub AddRequestToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AddRequestToolStripMenuItem1.Click
-        temporaryInputFormRequest.ShowDialog()
+        RequestAdmin.ShowDialog()
     End Sub
 
     Private Sub ToCatalogue(sender As Object, e As EventArgs) Handles PbOtralaIcon.Click

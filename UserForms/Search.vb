@@ -123,6 +123,9 @@
                         bool_correct_text = True
                     End If
                 Next
+                If UCase(package.SellerName) Like "*" & UCase(search_term) & "*" Then
+                    bool_correct_text = True
+                End If
             Next
 
             If bool_correct_state And bool_correct_price And bool_correct_pax And bool_correct_duration And bool_correct_text Then
@@ -372,4 +375,9 @@
         c.BtnRequest.PerformClick()
         Me.Hide()
     End Sub
+
+    Private Sub CloseAll(sender As Object, e As EventArgs) Handles Me.Closed
+        Application.Exit()
+    End Sub
+
 End Class

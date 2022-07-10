@@ -208,4 +208,8 @@
         Next
     End Sub
 
+    Private Sub CloseAll(sender As Object, e As EventArgs) Handles Me.Closed
+        Application.Exit()
+    End Sub
+
 End Class

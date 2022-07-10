@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class temporaryInputFormFeedback
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+Partial Class FeedbackAdmin
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class temporaryInputFormFeedback
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim FeedbackIDLabel As System.Windows.Forms.Label
@@ -29,24 +29,18 @@ Partial Class temporaryInputFormFeedback
         Dim UserIDLabel As System.Windows.Forms.Label
         Dim DescriptionLabel As System.Windows.Forms.Label
         Dim DateSentLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(temporaryInputFormFeedback))
+        Dim Label1 As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FeedbackAdmin))
         Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
         Me.FeedbackBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.FeedbackTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.FeedbackTableAdapter()
         Me.TableAdapterManager = New Otrala_2._0.OtralaDBDataSetTableAdapters.TableAdapterManager()
         Me.FeedbackBindingNavigator = New System.Windows.Forms.BindingNavigator(Me.components)
-        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorCountItem = New System.Windows.Forms.ToolStripLabel()
-        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator = New System.Windows.Forms.ToolStripSeparator()
         Me.BindingNavigatorPositionItem = New System.Windows.Forms.ToolStripTextBox()
         Me.BindingNavigatorSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
-        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.FeedbackBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         Me.FeedbackDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -58,14 +52,28 @@ Partial Class temporaryInputFormFeedback
         Me.TitleTextBox = New System.Windows.Forms.TextBox()
         Me.TypeTextBox = New System.Windows.Forms.TextBox()
         Me.UserIDTextBox = New System.Windows.Forms.TextBox()
-        Me.DescriptionTextBox = New System.Windows.Forms.TextBox()
         Me.DateSentTextBox = New System.Windows.Forms.TextBox()
+        Me.DescriptionTextBox = New System.Windows.Forms.TextBox()
+        Me.TableAdapterManager1 = New Otrala_2._0.OtralaDBDataSetTableAdapters.TableAdapterManager()
+        Me.BtnSave = New System.Windows.Forms.Button()
+        Me.btnDelete = New System.Windows.Forms.Button()
+        Me.btnAddNew = New System.Windows.Forms.Button()
+        Me.txtFind = New System.Windows.Forms.TextBox()
+        Me.btnSearch = New System.Windows.Forms.Button()
+        Me.BindingNavigatorAddNewItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorDeleteItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMoveFirstItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMovePreviousItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMoveNextItem = New System.Windows.Forms.ToolStripButton()
+        Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
+        Me.FeedbackBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
         FeedbackIDLabel = New System.Windows.Forms.Label()
         TitleLabel = New System.Windows.Forms.Label()
         TypeLabel = New System.Windows.Forms.Label()
         UserIDLabel = New System.Windows.Forms.Label()
         DescriptionLabel = New System.Windows.Forms.Label()
         DateSentLabel = New System.Windows.Forms.Label()
+        Label1 = New System.Windows.Forms.Label()
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FeedbackBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FeedbackBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,7 +85,7 @@ Partial Class temporaryInputFormFeedback
         '
         FeedbackIDLabel.AutoSize = True
         FeedbackIDLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        FeedbackIDLabel.Location = New System.Drawing.Point(24, 106)
+        FeedbackIDLabel.Location = New System.Drawing.Point(26, 109)
         FeedbackIDLabel.Name = "FeedbackIDLabel"
         FeedbackIDLabel.Size = New System.Drawing.Size(129, 25)
         FeedbackIDLabel.TabIndex = 2
@@ -87,7 +95,7 @@ Partial Class temporaryInputFormFeedback
         '
         TitleLabel.AutoSize = True
         TitleLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        TitleLabel.Location = New System.Drawing.Point(24, 141)
+        TitleLabel.Location = New System.Drawing.Point(26, 165)
         TitleLabel.Name = "TitleLabel"
         TitleLabel.Size = New System.Drawing.Size(55, 25)
         TitleLabel.TabIndex = 4
@@ -97,7 +105,7 @@ Partial Class temporaryInputFormFeedback
         '
         TypeLabel.AutoSize = True
         TypeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        TypeLabel.Location = New System.Drawing.Point(24, 177)
+        TypeLabel.Location = New System.Drawing.Point(26, 221)
         TypeLabel.Name = "TypeLabel"
         TypeLabel.Size = New System.Drawing.Size(63, 25)
         TypeLabel.TabIndex = 6
@@ -107,7 +115,7 @@ Partial Class temporaryInputFormFeedback
         '
         UserIDLabel.AutoSize = True
         UserIDLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        UserIDLabel.Location = New System.Drawing.Point(24, 213)
+        UserIDLabel.Location = New System.Drawing.Point(26, 277)
         UserIDLabel.Name = "UserIDLabel"
         UserIDLabel.Size = New System.Drawing.Size(83, 25)
         UserIDLabel.TabIndex = 8
@@ -117,7 +125,7 @@ Partial Class temporaryInputFormFeedback
         '
         DescriptionLabel.AutoSize = True
         DescriptionLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DescriptionLabel.Location = New System.Drawing.Point(24, 248)
+        DescriptionLabel.Location = New System.Drawing.Point(26, 333)
         DescriptionLabel.Name = "DescriptionLabel"
         DescriptionLabel.Size = New System.Drawing.Size(115, 25)
         DescriptionLabel.TabIndex = 10
@@ -127,11 +135,21 @@ Partial Class temporaryInputFormFeedback
         '
         DateSentLabel.AutoSize = True
         DateSentLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DateSentLabel.Location = New System.Drawing.Point(24, 284)
+        DateSentLabel.Location = New System.Drawing.Point(26, 559)
         DateSentLabel.Name = "DateSentLabel"
         DateSentLabel.Size = New System.Drawing.Size(105, 25)
         DateSentLabel.TabIndex = 12
         DateSentLabel.Text = "Date Sent:"
+        '
+        'Label1
+        '
+        Label1.AutoSize = True
+        Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label1.Location = New System.Drawing.Point(465, 61)
+        Label1.Name = "Label1"
+        Label1.Size = New System.Drawing.Size(131, 25)
+        Label1.TabIndex = 19
+        Label1.Text = "Search by ID:"
         '
         'OtralaDBDataSet
         '
@@ -150,16 +168,21 @@ Partial Class temporaryInputFormFeedback
         'TableAdapterManager
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.BookingTableAdapter = Nothing
         Me.TableAdapterManager.FeedbackTableAdapter = Me.FeedbackTableAdapter
         Me.TableAdapterManager.LoginInfoTableAdapter = Nothing
         Me.TableAdapterManager.PackageTableAdapter = Nothing
+        Me.TableAdapterManager.RequestAnswerTableAdapter = Nothing
         Me.TableAdapterManager.RequestTableAdapter = Nothing
+        Me.TableAdapterManager.SellerApplicationTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = Otrala_2._0.OtralaDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.UserInfoTableAdapter = Nothing
         '
         'FeedbackBindingNavigator
         '
         Me.FeedbackBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
+        Me.FeedbackBindingNavigator.AutoSize = False
+        Me.FeedbackBindingNavigator.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.FeedbackBindingNavigator.BindingSource = Me.FeedbackBindingSource
         Me.FeedbackBindingNavigator.CountItem = Me.BindingNavigatorCountItem
         Me.FeedbackBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
@@ -172,57 +195,21 @@ Partial Class temporaryInputFormFeedback
         Me.FeedbackBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.FeedbackBindingNavigator.Name = "FeedbackBindingNavigator"
         Me.FeedbackBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.FeedbackBindingNavigator.Size = New System.Drawing.Size(1182, 27)
+        Me.FeedbackBindingNavigator.Size = New System.Drawing.Size(1262, 40)
         Me.FeedbackBindingNavigator.TabIndex = 0
         Me.FeedbackBindingNavigator.Text = "BindingNavigator1"
-        '
-        'BindingNavigatorAddNewItem
-        '
-        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
-        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 24)
-        Me.BindingNavigatorAddNewItem.Text = "Add new"
         '
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 24)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 37)
         Me.BindingNavigatorCountItem.Text = "of {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
-        '
-        'BindingNavigatorDeleteItem
-        '
-        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
-        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 24)
-        Me.BindingNavigatorDeleteItem.Text = "Delete"
-        '
-        'BindingNavigatorMoveFirstItem
-        '
-        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
-        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 24)
-        Me.BindingNavigatorMoveFirstItem.Text = "Move first"
-        '
-        'BindingNavigatorMovePreviousItem
-        '
-        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
-        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 24)
-        Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
         '
         'BindingNavigatorSeparator
         '
         Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 27)
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 40)
         '
         'BindingNavigatorPositionItem
         '
@@ -237,38 +224,12 @@ Partial Class temporaryInputFormFeedback
         'BindingNavigatorSeparator1
         '
         Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 27)
-        '
-        'BindingNavigatorMoveNextItem
-        '
-        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
-        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 24)
-        Me.BindingNavigatorMoveNextItem.Text = "Move next"
-        '
-        'BindingNavigatorMoveLastItem
-        '
-        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
-        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
-        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 24)
-        Me.BindingNavigatorMoveLastItem.Text = "Move last"
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 40)
         '
         'BindingNavigatorSeparator2
         '
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 27)
-        '
-        'FeedbackBindingNavigatorSaveItem
-        '
-        Me.FeedbackBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.FeedbackBindingNavigatorSaveItem.Image = CType(resources.GetObject("FeedbackBindingNavigatorSaveItem.Image"), System.Drawing.Image)
-        Me.FeedbackBindingNavigatorSaveItem.Name = "FeedbackBindingNavigatorSaveItem"
-        Me.FeedbackBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 24)
-        Me.FeedbackBindingNavigatorSaveItem.Text = "Save Data"
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 40)
         '
         'FeedbackDataGridView
         '
@@ -276,11 +237,11 @@ Partial Class temporaryInputFormFeedback
         Me.FeedbackDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.FeedbackDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6})
         Me.FeedbackDataGridView.DataSource = Me.FeedbackBindingSource
-        Me.FeedbackDataGridView.Location = New System.Drawing.Point(469, 73)
+        Me.FeedbackDataGridView.Location = New System.Drawing.Point(446, 106)
         Me.FeedbackDataGridView.Name = "FeedbackDataGridView"
         Me.FeedbackDataGridView.RowHeadersWidth = 51
         Me.FeedbackDataGridView.RowTemplate.Height = 24
-        Me.FeedbackDataGridView.Size = New System.Drawing.Size(656, 350)
+        Me.FeedbackDataGridView.Size = New System.Drawing.Size(804, 555)
         Me.FeedbackDataGridView.TabIndex = 1
         '
         'DataGridViewTextBoxColumn1
@@ -335,61 +296,197 @@ Partial Class temporaryInputFormFeedback
         '
         Me.FeedbackIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.FeedbackBindingSource, "FeedbackID", True))
         Me.FeedbackIDTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.FeedbackIDTextBox.Location = New System.Drawing.Point(185, 103)
+        Me.FeedbackIDTextBox.Location = New System.Drawing.Point(198, 106)
         Me.FeedbackIDTextBox.Name = "FeedbackIDTextBox"
-        Me.FeedbackIDTextBox.Size = New System.Drawing.Size(170, 30)
+        Me.FeedbackIDTextBox.Size = New System.Drawing.Size(229, 30)
         Me.FeedbackIDTextBox.TabIndex = 3
         '
         'TitleTextBox
         '
         Me.TitleTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.FeedbackBindingSource, "Title", True))
         Me.TitleTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TitleTextBox.Location = New System.Drawing.Point(185, 138)
+        Me.TitleTextBox.Location = New System.Drawing.Point(198, 162)
         Me.TitleTextBox.Name = "TitleTextBox"
-        Me.TitleTextBox.Size = New System.Drawing.Size(170, 30)
+        Me.TitleTextBox.Size = New System.Drawing.Size(229, 30)
         Me.TitleTextBox.TabIndex = 5
         '
         'TypeTextBox
         '
         Me.TypeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.FeedbackBindingSource, "Type", True))
         Me.TypeTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TypeTextBox.Location = New System.Drawing.Point(185, 174)
+        Me.TypeTextBox.Location = New System.Drawing.Point(198, 218)
         Me.TypeTextBox.Name = "TypeTextBox"
-        Me.TypeTextBox.Size = New System.Drawing.Size(170, 30)
+        Me.TypeTextBox.Size = New System.Drawing.Size(229, 30)
         Me.TypeTextBox.TabIndex = 7
         '
         'UserIDTextBox
         '
         Me.UserIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.FeedbackBindingSource, "UserID", True))
         Me.UserIDTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UserIDTextBox.Location = New System.Drawing.Point(185, 210)
+        Me.UserIDTextBox.Location = New System.Drawing.Point(198, 274)
         Me.UserIDTextBox.Name = "UserIDTextBox"
-        Me.UserIDTextBox.Size = New System.Drawing.Size(170, 30)
+        Me.UserIDTextBox.Size = New System.Drawing.Size(229, 30)
         Me.UserIDTextBox.TabIndex = 9
-        '
-        'DescriptionTextBox
-        '
-        Me.DescriptionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.FeedbackBindingSource, "Description", True))
-        Me.DescriptionTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DescriptionTextBox.Location = New System.Drawing.Point(185, 245)
-        Me.DescriptionTextBox.Name = "DescriptionTextBox"
-        Me.DescriptionTextBox.Size = New System.Drawing.Size(170, 30)
-        Me.DescriptionTextBox.TabIndex = 11
         '
         'DateSentTextBox
         '
         Me.DateSentTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.FeedbackBindingSource, "DateSent", True))
         Me.DateSentTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateSentTextBox.Location = New System.Drawing.Point(185, 281)
+        Me.DateSentTextBox.Location = New System.Drawing.Point(198, 556)
         Me.DateSentTextBox.Name = "DateSentTextBox"
-        Me.DateSentTextBox.Size = New System.Drawing.Size(170, 30)
+        Me.DateSentTextBox.Size = New System.Drawing.Size(229, 30)
         Me.DateSentTextBox.TabIndex = 13
         '
-        'temporaryInputFormFeedback
+        'DescriptionTextBox
+        '
+        Me.DescriptionTextBox.AllowDrop = True
+        Me.DescriptionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.FeedbackBindingSource, "Description", True))
+        Me.DescriptionTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DescriptionTextBox.Location = New System.Drawing.Point(198, 330)
+        Me.DescriptionTextBox.Multiline = True
+        Me.DescriptionTextBox.Name = "DescriptionTextBox"
+        Me.DescriptionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.DescriptionTextBox.Size = New System.Drawing.Size(229, 200)
+        Me.DescriptionTextBox.TabIndex = 11
+        '
+        'TableAdapterManager1
+        '
+        Me.TableAdapterManager1.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager1.BookingTableAdapter = Nothing
+        Me.TableAdapterManager1.Connection = Nothing
+        Me.TableAdapterManager1.FeedbackTableAdapter = Nothing
+        Me.TableAdapterManager1.LoginInfoTableAdapter = Nothing
+        Me.TableAdapterManager1.PackageTableAdapter = Nothing
+        Me.TableAdapterManager1.RequestAnswerTableAdapter = Nothing
+        Me.TableAdapterManager1.RequestTableAdapter = Nothing
+        Me.TableAdapterManager1.SellerApplicationTableAdapter = Nothing
+        Me.TableAdapterManager1.UpdateOrder = Otrala_2._0.OtralaDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager1.UserInfoTableAdapter = Nothing
+        '
+        'BtnSave
+        '
+        Me.BtnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
+        Me.BtnSave.ForeColor = System.Drawing.Color.White
+        Me.BtnSave.Location = New System.Drawing.Point(12, 618)
+        Me.BtnSave.Name = "BtnSave"
+        Me.BtnSave.Size = New System.Drawing.Size(111, 43)
+        Me.BtnSave.TabIndex = 14
+        Me.BtnSave.Text = "Save"
+        Me.BtnSave.UseVisualStyleBackColor = False
+        '
+        'btnDelete
+        '
+        Me.btnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
+        Me.btnDelete.ForeColor = System.Drawing.Color.White
+        Me.btnDelete.Location = New System.Drawing.Point(164, 618)
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(111, 43)
+        Me.btnDelete.TabIndex = 15
+        Me.btnDelete.Text = "Delete"
+        Me.btnDelete.UseVisualStyleBackColor = False
+        '
+        'btnAddNew
+        '
+        Me.btnAddNew.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
+        Me.btnAddNew.ForeColor = System.Drawing.Color.White
+        Me.btnAddNew.Location = New System.Drawing.Point(316, 618)
+        Me.btnAddNew.Name = "btnAddNew"
+        Me.btnAddNew.Size = New System.Drawing.Size(111, 43)
+        Me.btnAddNew.TabIndex = 16
+        Me.btnAddNew.Text = "Add New"
+        Me.btnAddNew.UseVisualStyleBackColor = False
+        '
+        'txtFind
+        '
+        Me.txtFind.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFind.Location = New System.Drawing.Point(619, 58)
+        Me.txtFind.Name = "txtFind"
+        Me.txtFind.Size = New System.Drawing.Size(455, 30)
+        Me.txtFind.TabIndex = 17
+        '
+        'btnSearch
+        '
+        Me.btnSearch.BackgroundImage = Global.Otrala_2._0.My.Resources.Resources.Search_Icon
+        Me.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnSearch.Location = New System.Drawing.Point(1099, 58)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(30, 30)
+        Me.btnSearch.TabIndex = 18
+        Me.btnSearch.UseVisualStyleBackColor = True
+        '
+        'BindingNavigatorAddNewItem
+        '
+        Me.BindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
+        Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 37)
+        Me.BindingNavigatorAddNewItem.Text = "Add new"
+        '
+        'BindingNavigatorDeleteItem
+        '
+        Me.BindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
+        Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 37)
+        Me.BindingNavigatorDeleteItem.Text = "Delete"
+        '
+        'BindingNavigatorMoveFirstItem
+        '
+        Me.BindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
+        Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 37)
+        Me.BindingNavigatorMoveFirstItem.Text = "Move first"
+        '
+        'BindingNavigatorMovePreviousItem
+        '
+        Me.BindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
+        Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 37)
+        Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
+        '
+        'BindingNavigatorMoveNextItem
+        '
+        Me.BindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
+        Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 37)
+        Me.BindingNavigatorMoveNextItem.Text = "Move next"
+        '
+        'BindingNavigatorMoveLastItem
+        '
+        Me.BindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
+        Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
+        Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 37)
+        Me.BindingNavigatorMoveLastItem.Text = "Move last"
+        '
+        'FeedbackBindingNavigatorSaveItem
+        '
+        Me.FeedbackBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.FeedbackBindingNavigatorSaveItem.Image = CType(resources.GetObject("FeedbackBindingNavigatorSaveItem.Image"), System.Drawing.Image)
+        Me.FeedbackBindingNavigatorSaveItem.Name = "FeedbackBindingNavigatorSaveItem"
+        Me.FeedbackBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 37)
+        Me.FeedbackBindingNavigatorSaveItem.Text = "Save Data"
+        '
+        'FeedbackAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1182, 553)
+        Me.ClientSize = New System.Drawing.Size(1262, 673)
+        Me.Controls.Add(Label1)
+        Me.Controls.Add(Me.btnSearch)
+        Me.Controls.Add(Me.txtFind)
+        Me.Controls.Add(Me.btnAddNew)
+        Me.Controls.Add(Me.btnDelete)
+        Me.Controls.Add(Me.BtnSave)
         Me.Controls.Add(FeedbackIDLabel)
         Me.Controls.Add(Me.FeedbackIDTextBox)
         Me.Controls.Add(TitleLabel)
@@ -404,9 +501,14 @@ Partial Class temporaryInputFormFeedback
         Me.Controls.Add(Me.DateSentTextBox)
         Me.Controls.Add(Me.FeedbackDataGridView)
         Me.Controls.Add(Me.FeedbackBindingNavigator)
-        Me.Name = "temporaryInputFormFeedback"
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
+        Me.Name = "FeedbackAdmin"
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form1"
+        Me.Text = "Feedback Database"
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FeedbackBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FeedbackBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
@@ -446,6 +548,12 @@ Partial Class temporaryInputFormFeedback
     Friend WithEvents TitleTextBox As TextBox
     Friend WithEvents TypeTextBox As TextBox
     Friend WithEvents UserIDTextBox As TextBox
-    Friend WithEvents DescriptionTextBox As TextBox
     Friend WithEvents DateSentTextBox As TextBox
+    Friend WithEvents DescriptionTextBox As TextBox
+    Friend WithEvents TableAdapterManager1 As OtralaDBDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents BtnSave As Button
+    Friend WithEvents btnDelete As Button
+    Friend WithEvents btnAddNew As Button
+    Friend WithEvents txtFind As TextBox
+    Friend WithEvents btnSearch As Button
 End Class

@@ -40,13 +40,13 @@
 
         FeedbackTableAdapter1.Update(Me.OtralaDBDataSet)
 
+        CBType.Text = ""
+        TbTitle.Text = ""
+        TbDescription.Text = ""
+
         Dim another_feedback As MsgBoxResult = MsgBox("Feedback submitted successfully! Thank you!" & System.Environment.NewLine & "Submit Another Ticket?", MsgBoxStyle.YesNo, "Thank you")
 
-        If another_feedback = MsgBoxResult.Yes Then
-            CBType.Text = ""
-            TbTitle.Text = ""
-            TbDescription.Text = ""
-        Else
+        If another_feedback = MsgBoxResult.No Then
             Me.ToCatalogue()
         End If
 
@@ -159,7 +159,7 @@
     End Sub
 
     Private Sub CloseAll(sender As Object, e As EventArgs) Handles Me.Closed
-
+        Application.Exit()
     End Sub
 
 End Class

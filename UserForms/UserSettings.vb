@@ -24,6 +24,8 @@
     Public Sub ForceEdit()
         If Editing = False Then
             EditMode()
+            Editing = True
+            BtnEdit.Text = "Double click fields to edit, Click me to save changes"
         End If
     End Sub
 
@@ -40,6 +42,12 @@
 
 
     Private Sub RequestToBeSeller() Handles BtnSeller.Click
+
+        If Editing Then
+            MsgBox("Please update your profile first")
+            Exit Sub
+        End If
+
         If User.IsSeller Then
             Exit Sub
         End If
@@ -66,21 +74,26 @@
     Private Sub OfferRequest(Sender As Object, e As EventArgs)
         Dim OfferIndex = GetIndex(Sender.Name)
 
+        Dim NewOfferRow As DataRow = OtralaDBDataSet.RequestAnswer.NewRequestAnswerRow
+
         Dim RequestRow As DataRow = OtralaDBDataSet.Request.Select("RequestID = " & OfferIndex)(0)
 
         Dim NewOfferForm As New AddPackage
         Dim RequestState As String = RequestRow("Location")
 
-        NewOfferForm.OfferPackage(RequestState)
-        NewOfferForm.ShowDialog()
+        Do While NewOfferForm.date_selected = False
+            NewOfferForm.OfferPackage(RequestState)
+            NewOfferForm.ShowDialog()
+            If Not NewOfferForm.date_selected Then
+                MsgBox("Date Not Selected")
+            End If
+        Loop
 
         Dim Offer As Package = NewOfferForm.NewPackage
 
         If Offer.Pax = "CANCEL" Then
             Exit Sub
         End If
-
-        Dim NewOfferRow As DataRow = OtralaDBDataSet.RequestAnswer.NewRequestAnswerRow
 
         NewOfferRow("RequestID") = RequestRow("RequestID")
         NewOfferRow("UserID") = User.UserID
@@ -91,12 +104,18 @@
         NewOfferRow("Description") = Offer.Description
         NewOfferRow("TripDate") = Offer.Location
 
+
         OtralaDBDataSet.RequestAnswer.AddRequestAnswerRow(NewOfferRow)
 
         RequestAnswerTableAdapter.Update(OtralaDBDataSet)
     End Sub
-    Private Sub EditPackage(Sender As Object, e As EventArgs)
-        Dim PackageIndex As Integer = GetIndex(Sender.name)
+
+    Private Sub ViewBooking(sender As Object, e As EventArgs)
+        Dim PackageIndex As Integer = GetIndex(sender.name)
+    End Sub
+
+    Private Sub EditPackage(sender As Object, e As EventArgs)
+        Dim PackageIndex As Integer = GetIndex(sender.name)
 
         Dim FormEditPackage As New AddPackage
         FormEditPackage.EditMode(MyPackageList(PackageIndex - 1))
@@ -332,6 +351,19 @@
                 PnlSeller.Controls.Add(no_result)
                 Exit Sub
             End If
+        Else
+            Dim no_result As New Label
+            With no_result
+                .Name = "lblNoResult"
+                .Location = New System.Drawing.Point(PnlSeller.Width / 2 - 400, PnlSeller.Height / 2 - 100)
+                .Text = "Oops, it looks like you don't have any clients currently."
+                .Font = New System.Drawing.Font("Arial", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+                .Size = New System.Drawing.Size(800, 300)
+                .TextAlign = ContentAlignment.TopLeft
+            End With
+
+            PnlSeller.Controls.Add(no_result)
+            Exit Sub
         End If
         Dim BookingIndex As Long = 1
         Const Dy As Short = 387
@@ -459,10 +491,10 @@
                 .TabIndex = 13
                 If BookedPackage("Duration") > 2 Then
                     .Text = BookedPackage("Duration") & " DAYS " & System.Environment.NewLine & CInt(BookedPackage("Duration")) - 1 & " NIGHTS"
-                ElseIf BookedPackage("Duration").Duration > 1 Then
-                    .Text = BookedPackage("Duration").Duration & " DAYS " & System.Environment.NewLine & CInt(BookedPackage("Duration")) - 1 & " NIGHT"
+                ElseIf BookedPackage("Duration") > 1 Then
+                    .Text = BookedPackage("Duration") & " DAYS " & System.Environment.NewLine & CInt(BookedPackage("Duration")) - 1 & " NIGHT"
                 Else
-                    .Text = BookedPackage("Duration").Duration & " DAY "
+                    .Text = BookedPackage("Duration") & " DAY "
                 End If
             End With
 
@@ -569,7 +601,7 @@
 
         ViewClients()
     End Sub
-    Private Sub AddPackage() Handles BtnAddPackage.Click
+    Private Sub btnAddPackage_CLick() Handles BtnAddPackage.Click
         Dim PackageToAdd As Package
         Dim AddPackageForm As New AddPackage
 
@@ -606,7 +638,7 @@
         End If
     End Sub
 
-    Private Sub GenerateCatalogue(CatalogueItems As List(Of Package), Optional CanEdit As Boolean = True)
+    Private Sub GenerateCatalogue(CatalogueItems As List(Of Package), Optional IsSeller As Boolean = True)
         Dim CatalogueIndex As Long = 1
         Dim CatalogueYIndex As Integer = 0
         ' Count will determine how many catalogues to generate.
@@ -711,7 +743,7 @@
             PnlSeller.Controls.Add(NewGrpBox)
             NewGrpBox.Top += Dy * CatalogueYIndex
 
-            If CanEdit Then
+            If IsSeller Then
                 AddHandler NewLblTitle.Click, AddressOf EditPackage
                 AddHandler NewLblSeller.Click, AddressOf EditPackage
                 AddHandler NewLblDesc.Click, AddressOf EditPackage
@@ -720,6 +752,17 @@
                 AddHandler NewLblPax.Click, AddressOf EditPackage
                 AddHandler NewPicBox.Click, AddressOf EditPackage
                 AddHandler NewGrpBox.Click, AddressOf EditPackage
+            End If
+
+            If Not IsSeller Then
+                AddHandler NewLblTitle.Click, AddressOf ViewBooking
+                AddHandler NewLblSeller.Click, AddressOf ViewBooking
+                AddHandler NewLblDesc.Click, AddressOf ViewBooking
+                AddHandler NewLblDuration.Click, AddressOf ViewBooking
+                AddHandler NewLblPrice.Click, AddressOf ViewBooking
+                AddHandler NewLblPax.Click, AddressOf ViewBooking
+                AddHandler NewPicBox.Click, AddressOf ViewBooking
+                AddHandler NewGrpBox.Click, AddressOf ViewBooking
             End If
 
             If CatalogueIndex Mod 2 = 0 Then
@@ -884,7 +927,7 @@
 
     Private Sub DeleteAcc() Handles BtnDelete.Click
         If Editing Then
-            MsgBox("Please Stop Editing first lah")
+            MsgBox("Please update your profile first")
             Exit Sub
         End If
         If ConfirmPass(OtralaDBDataSet.LoginInfo, "You are about to delete your account. Please re-enter password." & vbNewLine & "This process cannot be reverted") Then
@@ -925,10 +968,11 @@
             Editing = True
             BtnEdit.Text = "Double click fields to edit, Click me to save changes"
         Else
-            Editing = False
-            BtnEdit.Text = "Edit Profile"
-
             If MsgBox("Are you sure you want to save these changes?", MsgBoxStyle.YesNo, "Otrala") = MsgBoxResult.Yes Then
+
+                Editing = False
+                BtnEdit.Text = "Edit Profile"
+
                 Dim UserInfoDataRow As DataRow() = OtralaDBDataSet.UserInfo.Select("UserID = " & User.UserID)
                 Dim MyProfile As DataRow
 
@@ -1012,13 +1056,17 @@
                 UserInfoTableAdapter.Update(OtralaDBDataSet)
                 LoginInfoTableAdapter.Update(OtralaDBDataSet)
             End If
+
             Me.FormLoad()
             LoadUserInfo()
+
         End If
 
     End Sub
     Private Sub LoadUserInfo()
-        PbProfile.Image = User.Picture
+        If IsNothing(User.Picture) Then
+            PbProfile.Image = User.Picture
+        End If
         LblProfileName.Text = User.Name
         LblProfileAddress.Text = User.Address
         LblProfileAge.Text = User.Age
@@ -1102,6 +1150,27 @@
     Private Sub UserSettings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'OtralaDBDataSet.SellerApplication' table. You can move, or remove it, as needed.
         Me.SellerApplicationTableAdapter.Fill(Me.OtralaDBDataSet.SellerApplication)
+    End Sub
 
+
+    Private Sub DenyClosing(sender As Object, e As FormClosingEventArgs) Handles Me.Closing
+        If Editing Then
+            MsgBox("Please update your profile first")
+            e.Cancel = True
+        End If
+    End Sub
+
+    Private Sub CloseAll(sender As Object, e As EventArgs) Handles Me.Closed
+        Application.Exit()
+    End Sub
+
+    Private Sub btnSwitchAccount_Click(sender As Object, e As EventArgs) Handles btnSwitchAccount.Click
+        If MsgBox("Confirm Switch Account?", MsgBoxStyle.OkCancel, "Switch Account") = MsgBoxResult.Cancel Then
+            Exit Sub
+        End If
+        User.LogOut()
+        Me.ToCatalogue()
+        Me.ToUserSettings()
+        FormLoad()
     End Sub
 End Class

@@ -1,6 +1,7 @@
 ﻿Public Class AddPackage
     Public NewPackage As New Package
     Public TripDate As String
+    Public date_selected As Boolean
 
     Dim Price As Decimal
 
@@ -83,6 +84,7 @@
     End Sub
     Private Sub DtpChange(sender As DateTimePicker, e As EventArgs)
         NewPackage.Location = sender.Value.ToString("d")
+        date_selected = True
     End Sub
     Private Sub SubmitPackage() Handles BtnAdd.Click
         If TbPackageName.Text = "" OrElse TbPrice.Text = "" OrElse TbDesc.Text = "" OrElse CbState.Text = "" OrElse TbLocations.Text = "" OrElse TbPax.Text = "" OrElse TbDuration.Text = "" OrElse PicBox.Image Is Nothing Then

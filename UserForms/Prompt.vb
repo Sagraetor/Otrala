@@ -75,6 +75,20 @@
             Panel1.Controls.Add(NewValueReceiver)
             AddHandler NewValueReceiver.CloseUp, AddressOf EnterInfo
 
+        ElseIf sender.Name = "LblProfileGender" Then
+            Dim NewValueReceiver As New ComboBox With {
+                .Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte)),
+                .Location = New System.Drawing.Point(15, 46),
+                .Size = sender.Size,
+                .AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append,
+                .AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource,
+                .BackColor = System.Drawing.Color.White,
+                .DropDownStyle = ComboBoxStyle.DropDownList
+                    }
+            NewValueReceiver.Items.AddRange(New Object() {"Male", "Female"})
+            Panel1.Controls.Add(NewValueReceiver)
+            AddHandler NewValueReceiver.DropDownClosed, AddressOf EnterInfo
+
         Else
             Dim NewValueReceiver As New TextBox With {
             .Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte)),
