@@ -45,6 +45,14 @@
         Dim Pword As String = TbLoginPass.Text
         Dim FindInfo As System.Data.DataRow = Nothing
 
+        If UserInfo = "admin" And Pword = "admin" Then
+            Dim admin As New Admin
+            Me.Hide()
+            Catalogue.Hide()
+            admin.Show()
+            Exit Sub
+        End If
+
         Select Case OtralAPI.IsEmailOrPhone(UserInfo)
             Case "Email"
                 Dim Temp() As DataRow = OtralaDBDataSet.LoginInfo.Select(String.Format("Email = '{0}'", UserInfo))

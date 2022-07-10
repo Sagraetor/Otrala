@@ -51,4 +51,8 @@
     Private Sub SellerApprovalToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SellerApprovalToolStripMenuItem.Click
         Open_As_Child(Seller_Approval)
     End Sub
+
+    Private Sub CloseAll(sender As Object, e As EventArgs) Handles Me.Closed
+        Application.Exit()
+    End Sub
 End Class
