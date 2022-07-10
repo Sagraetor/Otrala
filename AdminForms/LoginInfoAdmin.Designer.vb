@@ -28,8 +28,8 @@ Partial Class LoginInfoAdmin
         Dim KeyLabel As System.Windows.Forms.Label
         Dim PhoneNumberLabel As System.Windows.Forms.Label
         Dim EmailLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginInfoAdmin))
         Dim Label1 As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginInfoAdmin))
         Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
         Me.LoginInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LoginInfoTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.LoginInfoTableAdapter()
@@ -61,8 +61,8 @@ Partial Class LoginInfoAdmin
         Me.BtnSave = New System.Windows.Forms.Button()
         Me.btnAddNew = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
-        Me.btnSearch = New System.Windows.Forms.Button()
         Me.txtFind = New System.Windows.Forms.TextBox()
+        Me.btnSearch = New System.Windows.Forms.Button()
         UserIDLabel = New System.Windows.Forms.Label()
         PasswordLabel = New System.Windows.Forms.Label()
         KeyLabel = New System.Windows.Forms.Label()
@@ -125,6 +125,16 @@ Partial Class LoginInfoAdmin
         EmailLabel.Size = New System.Drawing.Size(66, 25)
         EmailLabel.TabIndex = 10
         EmailLabel.Text = "Email:"
+        '
+        'Label1
+        '
+        Label1.AutoSize = True
+        Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label1.Location = New System.Drawing.Point(578, 60)
+        Label1.Name = "Label1"
+        Label1.Size = New System.Drawing.Size(131, 25)
+        Label1.TabIndex = 22
+        Label1.Text = "Search by ID:"
         '
         'OtralaDBDataSet
         '
@@ -399,15 +409,13 @@ Partial Class LoginInfoAdmin
         Me.btnDelete.Text = "Delete"
         Me.btnDelete.UseVisualStyleBackColor = False
         '
-        'Label1
+        'txtFind
         '
-        Label1.AutoSize = True
-        Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label1.Location = New System.Drawing.Point(578, 60)
-        Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(131, 25)
-        Label1.TabIndex = 22
-        Label1.Text = "Search by ID:"
+        Me.txtFind.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFind.Location = New System.Drawing.Point(732, 57)
+        Me.txtFind.Name = "txtFind"
+        Me.txtFind.Size = New System.Drawing.Size(455, 30)
+        Me.txtFind.TabIndex = 20
         '
         'btnSearch
         '
@@ -419,15 +427,7 @@ Partial Class LoginInfoAdmin
         Me.btnSearch.TabIndex = 21
         Me.btnSearch.UseVisualStyleBackColor = True
         '
-        'txtFind
-        '
-        Me.txtFind.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFind.Location = New System.Drawing.Point(732, 57)
-        Me.txtFind.Name = "txtFind"
-        Me.txtFind.Size = New System.Drawing.Size(455, 30)
-        Me.txtFind.TabIndex = 20
-        '
-        'temporaryInputFormLoginInfo
+        'LoginInfoAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -450,9 +450,11 @@ Partial Class LoginInfoAdmin
         Me.Controls.Add(Me.EmailTextBox)
         Me.Controls.Add(Me.LoginInfoDataGridView)
         Me.Controls.Add(Me.LoginInfoBindingNavigator)
-        Me.Name = "temporaryInputFormLoginInfo"
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Name = "LoginInfoAdmin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Add Login Info"
+        Me.Text = "Login Info Database"
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LoginInfoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LoginInfoBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()

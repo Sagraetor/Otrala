@@ -31,8 +31,8 @@ Partial Class RequestAdmin
         Dim PaxLabel As System.Windows.Forms.Label
         Dim PlannedDateLabel As System.Windows.Forms.Label
         Dim NotesLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RequestAdmin))
         Dim Label1 As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RequestAdmin))
         Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
         Me.RequestBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.RequestTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.RequestTableAdapter()
@@ -168,6 +168,16 @@ Partial Class RequestAdmin
         NotesLabel.TabIndex = 16
         NotesLabel.Text = "Notes:"
         '
+        'Label1
+        '
+        Label1.AutoSize = True
+        Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label1.Location = New System.Drawing.Point(513, 57)
+        Label1.Name = "Label1"
+        Label1.Size = New System.Drawing.Size(131, 25)
+        Label1.TabIndex = 23
+        Label1.Text = "Search by ID:"
+        '
         'OtralaDBDataSet
         '
         Me.OtralaDBDataSet.DataSetName = "OtralaDBDataSet"
@@ -198,6 +208,8 @@ Partial Class RequestAdmin
         'RequestBindingNavigator
         '
         Me.RequestBindingNavigator.AddNewItem = Me.BindingNavigatorAddNewItem
+        Me.RequestBindingNavigator.AutoSize = False
+        Me.RequestBindingNavigator.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.RequestBindingNavigator.BindingSource = Me.RequestBindingSource
         Me.RequestBindingNavigator.CountItem = Me.BindingNavigatorCountItem
         Me.RequestBindingNavigator.DeleteItem = Me.BindingNavigatorDeleteItem
@@ -210,7 +222,7 @@ Partial Class RequestAdmin
         Me.RequestBindingNavigator.MovePreviousItem = Me.BindingNavigatorMovePreviousItem
         Me.RequestBindingNavigator.Name = "RequestBindingNavigator"
         Me.RequestBindingNavigator.PositionItem = Me.BindingNavigatorPositionItem
-        Me.RequestBindingNavigator.Size = New System.Drawing.Size(1262, 27)
+        Me.RequestBindingNavigator.Size = New System.Drawing.Size(1262, 40)
         Me.RequestBindingNavigator.TabIndex = 0
         Me.RequestBindingNavigator.Text = "BindingNavigator1"
         '
@@ -220,13 +232,13 @@ Partial Class RequestAdmin
         Me.BindingNavigatorAddNewItem.Image = CType(resources.GetObject("BindingNavigatorAddNewItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorAddNewItem.Name = "BindingNavigatorAddNewItem"
         Me.BindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorAddNewItem.Size = New System.Drawing.Size(29, 37)
         Me.BindingNavigatorAddNewItem.Text = "Add new"
         '
         'BindingNavigatorCountItem
         '
         Me.BindingNavigatorCountItem.Name = "BindingNavigatorCountItem"
-        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 24)
+        Me.BindingNavigatorCountItem.Size = New System.Drawing.Size(45, 37)
         Me.BindingNavigatorCountItem.Text = "of {0}"
         Me.BindingNavigatorCountItem.ToolTipText = "Total number of items"
         '
@@ -236,7 +248,7 @@ Partial Class RequestAdmin
         Me.BindingNavigatorDeleteItem.Image = CType(resources.GetObject("BindingNavigatorDeleteItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorDeleteItem.Name = "BindingNavigatorDeleteItem"
         Me.BindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorDeleteItem.Size = New System.Drawing.Size(29, 37)
         Me.BindingNavigatorDeleteItem.Text = "Delete"
         '
         'BindingNavigatorMoveFirstItem
@@ -245,7 +257,7 @@ Partial Class RequestAdmin
         Me.BindingNavigatorMoveFirstItem.Image = CType(resources.GetObject("BindingNavigatorMoveFirstItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveFirstItem.Name = "BindingNavigatorMoveFirstItem"
         Me.BindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveFirstItem.Size = New System.Drawing.Size(29, 37)
         Me.BindingNavigatorMoveFirstItem.Text = "Move first"
         '
         'BindingNavigatorMovePreviousItem
@@ -254,13 +266,13 @@ Partial Class RequestAdmin
         Me.BindingNavigatorMovePreviousItem.Image = CType(resources.GetObject("BindingNavigatorMovePreviousItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMovePreviousItem.Name = "BindingNavigatorMovePreviousItem"
         Me.BindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMovePreviousItem.Size = New System.Drawing.Size(29, 37)
         Me.BindingNavigatorMovePreviousItem.Text = "Move previous"
         '
         'BindingNavigatorSeparator
         '
         Me.BindingNavigatorSeparator.Name = "BindingNavigatorSeparator"
-        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 27)
+        Me.BindingNavigatorSeparator.Size = New System.Drawing.Size(6, 40)
         '
         'BindingNavigatorPositionItem
         '
@@ -275,7 +287,7 @@ Partial Class RequestAdmin
         'BindingNavigatorSeparator1
         '
         Me.BindingNavigatorSeparator1.Name = "BindingNavigatorSeparator1"
-        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 27)
+        Me.BindingNavigatorSeparator1.Size = New System.Drawing.Size(6, 40)
         '
         'BindingNavigatorMoveNextItem
         '
@@ -283,7 +295,7 @@ Partial Class RequestAdmin
         Me.BindingNavigatorMoveNextItem.Image = CType(resources.GetObject("BindingNavigatorMoveNextItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveNextItem.Name = "BindingNavigatorMoveNextItem"
         Me.BindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveNextItem.Size = New System.Drawing.Size(29, 37)
         Me.BindingNavigatorMoveNextItem.Text = "Move next"
         '
         'BindingNavigatorMoveLastItem
@@ -292,20 +304,20 @@ Partial Class RequestAdmin
         Me.BindingNavigatorMoveLastItem.Image = CType(resources.GetObject("BindingNavigatorMoveLastItem.Image"), System.Drawing.Image)
         Me.BindingNavigatorMoveLastItem.Name = "BindingNavigatorMoveLastItem"
         Me.BindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = True
-        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 24)
+        Me.BindingNavigatorMoveLastItem.Size = New System.Drawing.Size(29, 37)
         Me.BindingNavigatorMoveLastItem.Text = "Move last"
         '
         'BindingNavigatorSeparator2
         '
         Me.BindingNavigatorSeparator2.Name = "BindingNavigatorSeparator2"
-        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 27)
+        Me.BindingNavigatorSeparator2.Size = New System.Drawing.Size(6, 40)
         '
         'RequestBindingNavigatorSaveItem
         '
         Me.RequestBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.RequestBindingNavigatorSaveItem.Image = CType(resources.GetObject("RequestBindingNavigatorSaveItem.Image"), System.Drawing.Image)
         Me.RequestBindingNavigatorSaveItem.Name = "RequestBindingNavigatorSaveItem"
-        Me.RequestBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 24)
+        Me.RequestBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 37)
         Me.RequestBindingNavigatorSaveItem.Text = "Save Data"
         '
         'RequestDataGridView
@@ -493,16 +505,6 @@ Partial Class RequestAdmin
         Me.BtnSave.Text = "Save"
         Me.BtnSave.UseVisualStyleBackColor = False
         '
-        'Label1
-        '
-        Label1.AutoSize = True
-        Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label1.Location = New System.Drawing.Point(513, 57)
-        Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(131, 25)
-        Label1.TabIndex = 23
-        Label1.Text = "Search by ID:"
-        '
         'btnSearch
         '
         Me.btnSearch.BackgroundImage = Global.Otrala_2._0.My.Resources.Resources.Search_Icon
@@ -521,7 +523,7 @@ Partial Class RequestAdmin
         Me.txtFind.Size = New System.Drawing.Size(455, 30)
         Me.txtFind.TabIndex = 21
         '
-        'temporaryInputFormRequest
+        'RequestAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -550,9 +552,11 @@ Partial Class RequestAdmin
         Me.Controls.Add(Me.NotesTextBox)
         Me.Controls.Add(Me.RequestDataGridView)
         Me.Controls.Add(Me.RequestBindingNavigator)
-        Me.Name = "temporaryInputFormRequest"
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Name = "RequestAdmin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Add Request"
+        Me.Text = "Request Database"
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RequestBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RequestBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()

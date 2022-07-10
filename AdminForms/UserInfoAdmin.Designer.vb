@@ -49,7 +49,7 @@ Partial Class UserInfoAdmin
         Me.BindingNavigatorMoveLastItem = New System.Windows.Forms.ToolStripButton()
         Me.BindingNavigatorSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.UserInfoBindingNavigatorSaveItem = New System.Windows.Forms.ToolStripButton()
-        Me.UserInfoDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewUserInfo = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -64,11 +64,14 @@ Partial Class UserInfoAdmin
         Me.EmailTextBox = New System.Windows.Forms.TextBox()
         Me.AddressTextBox = New System.Windows.Forms.TextBox()
         Me.SellerCheckBox = New System.Windows.Forms.CheckBox()
-        Me.btnSearch = New System.Windows.Forms.Button()
         Me.txtFind = New System.Windows.Forms.TextBox()
         Me.btnAddNew = New System.Windows.Forms.Button()
         Me.btnDelete = New System.Windows.Forms.Button()
         Me.BtnSave = New System.Windows.Forms.Button()
+        Me.btnSearch = New System.Windows.Forms.Button()
+        Me.btnAddPic = New System.Windows.Forms.Button()
+        Me.PicProfile = New System.Windows.Forms.PictureBox()
+        Me.btnViewSeller = New System.Windows.Forms.Button()
         UserIDLabel = New System.Windows.Forms.Label()
         RealNameLabel = New System.Windows.Forms.Label()
         AgeLabel = New System.Windows.Forms.Label()
@@ -81,14 +84,15 @@ Partial Class UserInfoAdmin
         CType(Me.UserInfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserInfoBindingNavigator, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.UserInfoBindingNavigator.SuspendLayout()
-        CType(Me.UserInfoDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridViewUserInfo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PicProfile, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'UserIDLabel
         '
         UserIDLabel.AutoSize = True
         UserIDLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        UserIDLabel.Location = New System.Drawing.Point(32, 101)
+        UserIDLabel.Location = New System.Drawing.Point(31, 106)
         UserIDLabel.Name = "UserIDLabel"
         UserIDLabel.Size = New System.Drawing.Size(83, 25)
         UserIDLabel.TabIndex = 2
@@ -98,7 +102,7 @@ Partial Class UserInfoAdmin
         '
         RealNameLabel.AutoSize = True
         RealNameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        RealNameLabel.Location = New System.Drawing.Point(32, 159)
+        RealNameLabel.Location = New System.Drawing.Point(31, 199)
         RealNameLabel.Name = "RealNameLabel"
         RealNameLabel.Size = New System.Drawing.Size(114, 25)
         RealNameLabel.TabIndex = 4
@@ -108,7 +112,7 @@ Partial Class UserInfoAdmin
         '
         AgeLabel.AutoSize = True
         AgeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        AgeLabel.Location = New System.Drawing.Point(32, 217)
+        AgeLabel.Location = New System.Drawing.Point(31, 307)
         AgeLabel.Name = "AgeLabel"
         AgeLabel.Size = New System.Drawing.Size(54, 25)
         AgeLabel.TabIndex = 6
@@ -118,7 +122,7 @@ Partial Class UserInfoAdmin
         '
         PhoneLabel.AutoSize = True
         PhoneLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        PhoneLabel.Location = New System.Drawing.Point(32, 275)
+        PhoneLabel.Location = New System.Drawing.Point(31, 357)
         PhoneLabel.Name = "PhoneLabel"
         PhoneLabel.Size = New System.Drawing.Size(75, 25)
         PhoneLabel.TabIndex = 8
@@ -128,7 +132,7 @@ Partial Class UserInfoAdmin
         '
         EmailLabel.AutoSize = True
         EmailLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        EmailLabel.Location = New System.Drawing.Point(32, 333)
+        EmailLabel.Location = New System.Drawing.Point(31, 407)
         EmailLabel.Name = "EmailLabel"
         EmailLabel.Size = New System.Drawing.Size(66, 25)
         EmailLabel.TabIndex = 10
@@ -138,7 +142,7 @@ Partial Class UserInfoAdmin
         '
         AddressLabel.AutoSize = True
         AddressLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        AddressLabel.Location = New System.Drawing.Point(32, 391)
+        AddressLabel.Location = New System.Drawing.Point(31, 457)
         AddressLabel.Name = "AddressLabel"
         AddressLabel.Size = New System.Drawing.Size(91, 25)
         AddressLabel.TabIndex = 12
@@ -148,7 +152,7 @@ Partial Class UserInfoAdmin
         '
         SellerLabel.AutoSize = True
         SellerLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        SellerLabel.Location = New System.Drawing.Point(32, 449)
+        SellerLabel.Location = New System.Drawing.Point(31, 507)
         SellerLabel.Name = "SellerLabel"
         SellerLabel.Size = New System.Drawing.Size(68, 25)
         SellerLabel.TabIndex = 14
@@ -306,18 +310,18 @@ Partial Class UserInfoAdmin
         Me.UserInfoBindingNavigatorSaveItem.Size = New System.Drawing.Size(29, 37)
         Me.UserInfoBindingNavigatorSaveItem.Text = "Save Data"
         '
-        'UserInfoDataGridView
+        'DataGridViewUserInfo
         '
-        Me.UserInfoDataGridView.AutoGenerateColumns = False
-        Me.UserInfoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.UserInfoDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewCheckBoxColumn1})
-        Me.UserInfoDataGridView.DataSource = Me.UserInfoBindingSource
-        Me.UserInfoDataGridView.Location = New System.Drawing.Point(446, 106)
-        Me.UserInfoDataGridView.Name = "UserInfoDataGridView"
-        Me.UserInfoDataGridView.RowHeadersWidth = 51
-        Me.UserInfoDataGridView.RowTemplate.Height = 24
-        Me.UserInfoDataGridView.Size = New System.Drawing.Size(804, 555)
-        Me.UserInfoDataGridView.TabIndex = 1
+        Me.DataGridViewUserInfo.AutoGenerateColumns = False
+        Me.DataGridViewUserInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewUserInfo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewCheckBoxColumn1})
+        Me.DataGridViewUserInfo.DataSource = Me.UserInfoBindingSource
+        Me.DataGridViewUserInfo.Location = New System.Drawing.Point(446, 106)
+        Me.DataGridViewUserInfo.Name = "DataGridViewUserInfo"
+        Me.DataGridViewUserInfo.RowHeadersWidth = 51
+        Me.DataGridViewUserInfo.RowTemplate.Height = 24
+        Me.DataGridViewUserInfo.Size = New System.Drawing.Size(804, 555)
+        Me.DataGridViewUserInfo.TabIndex = 1
         '
         'DataGridViewTextBoxColumn1
         '
@@ -379,25 +383,25 @@ Partial Class UserInfoAdmin
         '
         Me.UserIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserInfoBindingSource, "UserID", True))
         Me.UserIDTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.UserIDTextBox.Location = New System.Drawing.Point(181, 98)
+        Me.UserIDTextBox.Location = New System.Drawing.Point(36, 144)
         Me.UserIDTextBox.Name = "UserIDTextBox"
-        Me.UserIDTextBox.Size = New System.Drawing.Size(237, 30)
+        Me.UserIDTextBox.Size = New System.Drawing.Size(170, 30)
         Me.UserIDTextBox.TabIndex = 3
         '
         'RealNameTextBox
         '
         Me.RealNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserInfoBindingSource, "RealName", True))
         Me.RealNameTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RealNameTextBox.Location = New System.Drawing.Point(181, 156)
+        Me.RealNameTextBox.Location = New System.Drawing.Point(36, 233)
         Me.RealNameTextBox.Name = "RealNameTextBox"
-        Me.RealNameTextBox.Size = New System.Drawing.Size(237, 30)
+        Me.RealNameTextBox.Size = New System.Drawing.Size(170, 30)
         Me.RealNameTextBox.TabIndex = 5
         '
         'AgeTextBox
         '
         Me.AgeTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserInfoBindingSource, "Age", True))
         Me.AgeTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AgeTextBox.Location = New System.Drawing.Point(181, 214)
+        Me.AgeTextBox.Location = New System.Drawing.Point(180, 304)
         Me.AgeTextBox.Name = "AgeTextBox"
         Me.AgeTextBox.Size = New System.Drawing.Size(237, 30)
         Me.AgeTextBox.TabIndex = 7
@@ -406,7 +410,7 @@ Partial Class UserInfoAdmin
         '
         Me.PhoneTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserInfoBindingSource, "Phone", True))
         Me.PhoneTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PhoneTextBox.Location = New System.Drawing.Point(181, 272)
+        Me.PhoneTextBox.Location = New System.Drawing.Point(180, 354)
         Me.PhoneTextBox.Name = "PhoneTextBox"
         Me.PhoneTextBox.Size = New System.Drawing.Size(237, 30)
         Me.PhoneTextBox.TabIndex = 9
@@ -415,7 +419,7 @@ Partial Class UserInfoAdmin
         '
         Me.EmailTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserInfoBindingSource, "Email", True))
         Me.EmailTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.EmailTextBox.Location = New System.Drawing.Point(181, 330)
+        Me.EmailTextBox.Location = New System.Drawing.Point(180, 404)
         Me.EmailTextBox.Name = "EmailTextBox"
         Me.EmailTextBox.Size = New System.Drawing.Size(237, 30)
         Me.EmailTextBox.TabIndex = 11
@@ -424,7 +428,7 @@ Partial Class UserInfoAdmin
         '
         Me.AddressTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UserInfoBindingSource, "Address", True))
         Me.AddressTextBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AddressTextBox.Location = New System.Drawing.Point(181, 388)
+        Me.AddressTextBox.Location = New System.Drawing.Point(180, 454)
         Me.AddressTextBox.Name = "AddressTextBox"
         Me.AddressTextBox.Size = New System.Drawing.Size(237, 30)
         Me.AddressTextBox.TabIndex = 13
@@ -433,29 +437,19 @@ Partial Class UserInfoAdmin
         '
         Me.SellerCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.UserInfoBindingSource, "Seller", True))
         Me.SellerCheckBox.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.SellerCheckBox.Location = New System.Drawing.Point(181, 446)
+        Me.SellerCheckBox.Location = New System.Drawing.Point(180, 504)
         Me.SellerCheckBox.Name = "SellerCheckBox"
         Me.SellerCheckBox.Size = New System.Drawing.Size(237, 24)
         Me.SellerCheckBox.TabIndex = 15
         Me.SellerCheckBox.Text = "IsSeller"
         Me.SellerCheckBox.UseVisualStyleBackColor = True
         '
-        'btnSearch
-        '
-        Me.btnSearch.BackgroundImage = Global.Otrala_2._0.My.Resources.Resources.Search_Icon
-        Me.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnSearch.Location = New System.Drawing.Point(1146, 53)
-        Me.btnSearch.Name = "btnSearch"
-        Me.btnSearch.Size = New System.Drawing.Size(30, 30)
-        Me.btnSearch.TabIndex = 25
-        Me.btnSearch.UseVisualStyleBackColor = True
-        '
         'txtFind
         '
         Me.txtFind.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFind.Location = New System.Drawing.Point(666, 53)
         Me.txtFind.Name = "txtFind"
-        Me.txtFind.Size = New System.Drawing.Size(455, 30)
+        Me.txtFind.Size = New System.Drawing.Size(287, 30)
         Me.txtFind.TabIndex = 24
         '
         'btnAddNew
@@ -491,11 +485,57 @@ Partial Class UserInfoAdmin
         Me.BtnSave.Text = "Save"
         Me.BtnSave.UseVisualStyleBackColor = False
         '
+        'btnSearch
+        '
+        Me.btnSearch.BackgroundImage = Global.Otrala_2._0.My.Resources.Resources.Search_Icon
+        Me.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnSearch.Location = New System.Drawing.Point(978, 51)
+        Me.btnSearch.Name = "btnSearch"
+        Me.btnSearch.Size = New System.Drawing.Size(30, 30)
+        Me.btnSearch.TabIndex = 25
+        Me.btnSearch.UseVisualStyleBackColor = True
+        '
+        'btnAddPic
+        '
+        Me.btnAddPic.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
+        Me.btnAddPic.ForeColor = System.Drawing.Color.White
+        Me.btnAddPic.Location = New System.Drawing.Point(251, 230)
+        Me.btnAddPic.Name = "btnAddPic"
+        Me.btnAddPic.Size = New System.Drawing.Size(163, 43)
+        Me.btnAddPic.TabIndex = 31
+        Me.btnAddPic.Text = "Change Picture"
+        Me.btnAddPic.UseVisualStyleBackColor = False
+        '
+        'PicProfile
+        '
+        Me.PicProfile.Cursor = System.Windows.Forms.Cursors.Default
+        Me.PicProfile.DataBindings.Add(New System.Windows.Forms.Binding("Image", Me.UserInfoBindingSource, "Picture", True))
+        Me.PicProfile.Location = New System.Drawing.Point(267, 106)
+        Me.PicProfile.Name = "PicProfile"
+        Me.PicProfile.Size = New System.Drawing.Size(132, 118)
+        Me.PicProfile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PicProfile.TabIndex = 30
+        Me.PicProfile.TabStop = False
+        '
+        'btnViewSeller
+        '
+        Me.btnViewSeller.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
+        Me.btnViewSeller.ForeColor = System.Drawing.Color.White
+        Me.btnViewSeller.Location = New System.Drawing.Point(1022, 51)
+        Me.btnViewSeller.Name = "btnViewSeller"
+        Me.btnViewSeller.Size = New System.Drawing.Size(206, 32)
+        Me.btnViewSeller.TabIndex = 32
+        Me.btnViewSeller.Text = "Toggle View Seller Only"
+        Me.btnViewSeller.UseVisualStyleBackColor = False
+        '
         'UserInfoAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1262, 673)
+        Me.Controls.Add(Me.btnViewSeller)
+        Me.Controls.Add(Me.btnAddPic)
+        Me.Controls.Add(Me.PicProfile)
         Me.Controls.Add(Me.btnAddNew)
         Me.Controls.Add(Me.btnDelete)
         Me.Controls.Add(Me.BtnSave)
@@ -516,17 +556,20 @@ Partial Class UserInfoAdmin
         Me.Controls.Add(Me.AddressTextBox)
         Me.Controls.Add(SellerLabel)
         Me.Controls.Add(Me.SellerCheckBox)
-        Me.Controls.Add(Me.UserInfoDataGridView)
+        Me.Controls.Add(Me.DataGridViewUserInfo)
         Me.Controls.Add(Me.UserInfoBindingNavigator)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "UserInfoAdmin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Add User Info"
+        Me.Text = "User Info Database"
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UserInfoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UserInfoBindingNavigator, System.ComponentModel.ISupportInitialize).EndInit()
         Me.UserInfoBindingNavigator.ResumeLayout(False)
         Me.UserInfoBindingNavigator.PerformLayout()
-        CType(Me.UserInfoDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridViewUserInfo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PicProfile, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -549,7 +592,7 @@ Partial Class UserInfoAdmin
     Friend WithEvents BindingNavigatorMoveLastItem As ToolStripButton
     Friend WithEvents BindingNavigatorSeparator2 As ToolStripSeparator
     Friend WithEvents UserInfoBindingNavigatorSaveItem As ToolStripButton
-    Friend WithEvents UserInfoDataGridView As DataGridView
+    Friend WithEvents DataGridViewUserInfo As DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
@@ -569,4 +612,7 @@ Partial Class UserInfoAdmin
     Friend WithEvents btnAddNew As Button
     Friend WithEvents btnDelete As Button
     Friend WithEvents BtnSave As Button
+    Friend WithEvents btnAddPic As Button
+    Friend WithEvents PicProfile As PictureBox
+    Friend WithEvents btnViewSeller As Button
 End Class

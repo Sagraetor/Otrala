@@ -1,9 +1,11 @@
 ﻿Public Class BookingAdmin
 
+    Dim original
+
     Private Sub BookingAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'OtralaDBDataSet.Booking' table. You can move, or remove it, as needed.
         Me.BookingTableAdapter.Fill(Me.OtralaDBDataSet.Booking)
-
+        original = Me.BookingDataGridView
     End Sub
 
     Private Sub BookingBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs) Handles BookingBindingNavigatorSaveItem.Click
@@ -41,5 +43,4 @@
 
         BookingBindingSource.DataSource = find_record.AsDataView
     End Sub
-
 End Class

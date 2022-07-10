@@ -600,7 +600,7 @@ Partial Class PackageAdmin
         Me.BtnSave.Text = "Save"
         Me.BtnSave.UseVisualStyleBackColor = False
         '
-        'temporaryInputFormPackage
+        'PackageAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -635,7 +635,9 @@ Partial Class PackageAdmin
         Me.Controls.Add(Me.picPackage)
         Me.Controls.Add(Me.PackageDataGridView)
         Me.Controls.Add(Me.PackageBindingNavigator)
-        Me.Name = "temporaryInputFormPackage"
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Name = "PackageAdmin"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Package Database"
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
