@@ -2,6 +2,6 @@
     Shared Sub Main()
         Application.EnableVisualStyles()
         Application.SetCompatibleTextRenderingDefault(True)
-        Application.Run(Catalogue)
+        Application.Run(Otrala_SplashScreen)
     End Sub
 End Class

@@ -181,6 +181,12 @@
     <Compile Include="UserForms\ApplySeller.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UserForms\Otrala_SplashScreen.Designer.vb">
+      <DependentUpon>Otrala_SplashScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserForms\Otrala_SplashScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UserForms\RequestPrompt.Designer.vb">
       <DependentUpon>RequestPrompt.vb</DependentUpon>
     </Compile>
@@ -330,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\ApplySeller.resx">
       <DependentUpon>ApplySeller.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForms\Otrala_SplashScreen.resx">
+      <DependentUpon>Otrala_SplashScreen.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserForms\RequestPrompt.resx">
       <DependentUpon>RequestPrompt.vb</DependentUpon>

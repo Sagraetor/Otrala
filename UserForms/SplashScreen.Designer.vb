@@ -32,8 +32,8 @@ Partial Class SplashScreen
         Me.DetailsLayoutPanel = New System.Windows.Forms.TableLayoutPanel()
         Me.Version = New System.Windows.Forms.Label()
         Me.Copyright = New System.Windows.Forms.Label()
-        Me.ApplicationTitle = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.ApplicationTitle = New System.Windows.Forms.Label()
         Me.MainLayoutPanel.SuspendLayout()
         Me.DetailsLayoutPanel.SuspendLayout()
         Me.SuspendLayout()
@@ -95,19 +95,6 @@ Partial Class SplashScreen
         Me.Copyright.TabIndex = 2
         Me.Copyright.Text = "Copyright"
         '
-        'ApplicationTitle
-        '
-        Me.ApplicationTitle.BackColor = System.Drawing.Color.Transparent
-        Me.ApplicationTitle.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ApplicationTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ApplicationTitle.ForeColor = System.Drawing.Color.White
-        Me.ApplicationTitle.Location = New System.Drawing.Point(216, 0)
-        Me.ApplicationTitle.Name = "ApplicationTitle"
-        Me.ApplicationTitle.Size = New System.Drawing.Size(215, 172)
-        Me.ApplicationTitle.TabIndex = 0
-        Me.ApplicationTitle.Text = "Application Title"
-        Me.ApplicationTitle.TextAlign = System.Drawing.ContentAlignment.BottomLeft
-        '
         'Label1
         '
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
@@ -121,7 +108,20 @@ Partial Class SplashScreen
         Me.Label1.Text = "Oh Travel Lagi!"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'SplashScreen1
+        'ApplicationTitle
+        '
+        Me.ApplicationTitle.BackColor = System.Drawing.Color.Transparent
+        Me.ApplicationTitle.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ApplicationTitle.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ApplicationTitle.ForeColor = System.Drawing.Color.White
+        Me.ApplicationTitle.Location = New System.Drawing.Point(216, 0)
+        Me.ApplicationTitle.Name = "ApplicationTitle"
+        Me.ApplicationTitle.Size = New System.Drawing.Size(215, 172)
+        Me.ApplicationTitle.TabIndex = 0
+        Me.ApplicationTitle.Text = "Application Title"
+        Me.ApplicationTitle.TextAlign = System.Drawing.ContentAlignment.BottomLeft
+        '
+        'SplashScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -133,7 +133,7 @@ Partial Class SplashScreen
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "SplashScreen1"
+        Me.Name = "SplashScreen"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.MainLayoutPanel.ResumeLayout(False)
