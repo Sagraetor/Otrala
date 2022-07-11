@@ -55,4 +55,9 @@
     Private Sub CloseAll(sender As Object, e As EventArgs) Handles Me.Closed
         Application.Exit()
     End Sub
+
+    Private Sub BackToMainPageToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BackToMainPageToolStripMenuItem.Click
+        Catalogue.Show()
+        Me.Close()
+    End Sub
 End Class
