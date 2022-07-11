@@ -104,28 +104,4 @@
         End If
     End Sub
 
-    Private Sub AddToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem.Click
-        PackageAdmin.ShowDialog()
-    End Sub
-
-    Private Sub AddFeedbackToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem1.Click
-        FeedbackAdmin.ShowDialog()
-    End Sub
-
-    Private Sub AddLoginInfoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AddLoginInfoToolStripMenuItem1.Click
-        LoginInfoAdmin.ShowDialog()
-    End Sub
-
-    Private Sub AddUserInfoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddUserInfoToolStripMenuItem.Click
-        UserInfoAdmin.ShowDialog()
-    End Sub
-
-    Private Sub AddRequestToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AddRequestToolStripMenuItem1.Click
-        RequestAdmin.ShowDialog()
-    End Sub
-
-    Private Sub ToCatalogue(sender As Object, e As EventArgs) Handles PbOtralaIcon.Click
-
-    End Sub
-
 End Class
