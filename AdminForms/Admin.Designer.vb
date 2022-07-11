@@ -35,13 +35,14 @@ Partial Class Admin
         Me.SellerApplicationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SellerApprovalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FeedbackReviewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.BackToMainPageToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DatabaseToolStripMenuItem, Me.SellerApprovalToolStripMenuItem, Me.FeedbackReviewToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DatabaseToolStripMenuItem, Me.SellerApprovalToolStripMenuItem, Me.FeedbackReviewToolStripMenuItem, Me.BackToMainPageToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1262, 28)
@@ -115,6 +116,12 @@ Partial Class Admin
         Me.FeedbackReviewToolStripMenuItem.Size = New System.Drawing.Size(139, 24)
         Me.FeedbackReviewToolStripMenuItem.Text = "Feedback/Review"
         '
+        'BackToMainPageToolStripMenuItem
+        '
+        Me.BackToMainPageToolStripMenuItem.Name = "BackToMainPageToolStripMenuItem"
+        Me.BackToMainPageToolStripMenuItem.Size = New System.Drawing.Size(145, 24)
+        Me.BackToMainPageToolStripMenuItem.Text = "Back to Main Page"
+        '
         'Admin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -151,4 +158,5 @@ Partial Class Admin
     Friend WithEvents SellerApplicationToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents SellerApprovalToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FeedbackReviewToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BackToMainPageToolStripMenuItem As ToolStripMenuItem
 End Class
