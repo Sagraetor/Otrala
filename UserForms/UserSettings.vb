@@ -830,7 +830,9 @@
                 AddHandler NewBtnComplete.Click, AddressOf MarkComplete
             End If
 
-            'LstBookingID.Add(BookedPackage("PackageID"))
+            If MyClientsBookings.Contains(ClientBooking) Then
+                LstBookingID.Add(BookedPackage("PackageID"))
+            End If
         Next
     End Sub
 
