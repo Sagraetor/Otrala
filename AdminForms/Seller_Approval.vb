@@ -13,6 +13,12 @@
     End Sub
 
     Private Sub btnApprove_Click(sender As Object, e As EventArgs) Handles btnApprove.Click
+
+        If lblUserID.Text = "" Then
+            lblUserName.Text = ""
+            Exit Sub
+        End If
+
         Dim found As Boolean = False
         Dim SellerApplication As DataTable = OtralaDBDataSet.SellerApplication.Copy()
         Dim UserInfo As DataTable = OtralaDBDataSet.UserInfo.Copy()
@@ -98,4 +104,52 @@
 
     End Sub
 
+    Private Sub btnDeny_Click(sender As Object, e As EventArgs) Handles btnDeny.Click
+
+        If lblUserID.Text = "" Then
+            lblUserName.Text = ""
+            Exit Sub
+        End If
+
+        Dim found As Boolean = False
+        Dim SellerApplication As DataTable = OtralaDBDataSet.SellerApplication.Copy()
+        Dim UserInfo As DataTable = OtralaDBDataSet.UserInfo.Copy()
+        Dim info_user_id() As String = {}
+
+        For Each Row In UserInfo.Rows
+            ReDim Preserve info_user_id(info_user_id.Length)
+            info_user_id(info_user_id.Length - 1) = Row("UserID")
+        Next
+
+        For i = 0 To info_user_id.Length - 1
+            If found Then
+                Exit For
+            End If
+            For Each row In SellerApplication.Rows
+                If found Then
+                    Exit For
+                End If
+                If CType(SellerApplicationBindingSource.Current("UserID"), String) = info_user_id(i) Then
+
+                    Dim find_record As EnumerableRowCollection(Of OtralaDBDataSet.UserInfoRow)
+                    find_record = From g In OtralaDBDataSet.UserInfo
+                                  Where g.UserID = info_user_id(i)
+                                  Select g
+
+                    UserInfoBindingSource.DataSource = find_record.AsDataView
+                    SellerApplicationBindingSource.Remove(SellerApplicationBindingSource.Current)
+
+                    Me.Validate()
+                    Me.UserInfoBindingSource.EndEdit()
+                    Me.TableAdapterManager.UpdateAll(Me.OtralaDBDataSet)
+                    Me.UserInfoTableAdapter.Update(Me.OtralaDBDataSet)
+                    Me.UserInfoTableAdapter.Fill(Me.OtralaDBDataSet.UserInfo)
+
+                    MsgBox("Denied " & UserInfoBindingSource.Current("RealName") & " as a Seller")
+
+                    found = True
+                End If
+            Next
+        Next
+    End Sub
 End Class
