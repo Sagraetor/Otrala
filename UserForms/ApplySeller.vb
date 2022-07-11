@@ -25,11 +25,15 @@
         If ImgIC Is Nothing Then
             LblCommand.Text = "Next, please upload your proof of business"
 
+            BtnUpload.Text = "Upload Proof of Business"
+
             ImgIC = PicBoxSubmission.Image
 
             PicBoxSubmission.Image = Nothing
         Else
             ImgDocument = PicBoxSubmission.Image
+
+            MsgBox("Please wait for our admin to approve your application.", MsgBoxStyle.OkOnly, "Application Submitted Succesfully")
 
             Me.Close()
         End If

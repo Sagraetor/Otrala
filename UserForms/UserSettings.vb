@@ -52,6 +52,15 @@
             Exit Sub
         End If
 
+        Dim ApplicationExist As DataRow() = OtralaDBDataSet.SellerApplication.Select("UserID = " & User.UserID)
+
+        For Each row In ApplicationExist
+            If Not row.IsNull(0) Then
+                MsgBox("You have already submitted a previous application." & Environment.NewLine & "Please wait patiently for the approval of our admins.")
+                Exit Sub
+            End If
+        Next
+
         Dim NewApplicationForm As New ApplySeller
         NewApplicationForm.ShowDialog()
 
