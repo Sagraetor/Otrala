@@ -2472,6 +2472,10 @@ Partial Public Class OtralaDBDataSet
         
         Private columnAccepted As Global.System.Data.DataColumn
         
+        Private columnClientFulfilled As Global.System.Data.DataColumn
+        
+        Private columnSellerFulfilled As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
@@ -2588,6 +2592,22 @@ Partial Public Class OtralaDBDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property ClientFulfilledColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnClientFulfilled
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property SellerFulfilledColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnSellerFulfilled
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -2624,9 +2644,9 @@ Partial Public Class OtralaDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddRequestAnswerRow(ByVal RequestID As String, ByVal UserID As String, ByVal Pax As String, ByVal Price As String, ByVal SellerName As String, ByVal Duration As String, ByVal Description As String, ByVal TripDate As String, ByVal Accepted As String) As RequestAnswerRow
+        Public Overloads Function AddRequestAnswerRow(ByVal RequestID As String, ByVal UserID As String, ByVal Pax As String, ByVal Price As String, ByVal SellerName As String, ByVal Duration As String, ByVal Description As String, ByVal TripDate As String, ByVal Accepted As String, ByVal ClientFulfilled As String, ByVal SellerFulfilled As String) As RequestAnswerRow
             Dim rowRequestAnswerRow As RequestAnswerRow = CType(Me.NewRow,RequestAnswerRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, RequestID, UserID, Pax, Price, SellerName, Duration, Description, TripDate, Accepted}
+            Dim columnValuesArray() As Object = New Object() {Nothing, RequestID, UserID, Pax, Price, SellerName, Duration, Description, TripDate, Accepted, ClientFulfilled, SellerFulfilled}
             rowRequestAnswerRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowRequestAnswerRow)
             Return rowRequestAnswerRow
@@ -2665,6 +2685,8 @@ Partial Public Class OtralaDBDataSet
             Me.columnDescription = MyBase.Columns("Description")
             Me.columnTripDate = MyBase.Columns("TripDate")
             Me.columnAccepted = MyBase.Columns("Accepted")
+            Me.columnClientFulfilled = MyBase.Columns("ClientFulfilled")
+            Me.columnSellerFulfilled = MyBase.Columns("SellerFulfilled")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2690,6 +2712,10 @@ Partial Public Class OtralaDBDataSet
             MyBase.Columns.Add(Me.columnTripDate)
             Me.columnAccepted = New Global.System.Data.DataColumn("Accepted", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnAccepted)
+            Me.columnClientFulfilled = New Global.System.Data.DataColumn("ClientFulfilled", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnClientFulfilled)
+            Me.columnSellerFulfilled = New Global.System.Data.DataColumn("SellerFulfilled", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnSellerFulfilled)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnRequestAnswerID}, true))
             Me.columnRequestAnswerID.AutoIncrement = true
             Me.columnRequestAnswerID.AutoIncrementSeed = -1
@@ -2705,6 +2731,8 @@ Partial Public Class OtralaDBDataSet
             Me.columnDescription.MaxLength = 255
             Me.columnTripDate.MaxLength = 255
             Me.columnAccepted.MaxLength = 255
+            Me.columnClientFulfilled.MaxLength = 255
+            Me.columnSellerFulfilled.MaxLength = 255
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5072,6 +5100,36 @@ Partial Public Class OtralaDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property ClientFulfilled() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableRequestAnswer.ClientFulfilledColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'ClientFulfilled' in table 'RequestAnswer' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRequestAnswer.ClientFulfilledColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property SellerFulfilled() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableRequestAnswer.SellerFulfilledColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'SellerFulfilled' in table 'RequestAnswer' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableRequestAnswer.SellerFulfilledColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsRequestIDNull() As Boolean
             Return Me.IsNull(Me.tableRequestAnswer.RequestIDColumn)
         End Function
@@ -5176,6 +5234,30 @@ Partial Public Class OtralaDBDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetAcceptedNull()
             Me(Me.tableRequestAnswer.AcceptedColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsClientFulfilledNull() As Boolean
+            Return Me.IsNull(Me.tableRequestAnswer.ClientFulfilledColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetClientFulfilledNull()
+            Me(Me.tableRequestAnswer.ClientFulfilledColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsSellerFulfilledNull() As Boolean
+            Return Me.IsNull(Me.tableRequestAnswer.SellerFulfilledColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetSellerFulfilledNull()
+            Me(Me.tableRequestAnswer.SellerFulfilledColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -8694,6 +8776,8 @@ Namespace OtralaDBDataSetTableAdapters
             tableMapping.ColumnMappings.Add("Description", "Description")
             tableMapping.ColumnMappings.Add("TripDate", "TripDate")
             tableMapping.ColumnMappings.Add("Accepted", "Accepted")
+            tableMapping.ColumnMappings.Add("ClientFulfilled", "ClientFulfilled")
+            tableMapping.ColumnMappings.Add("SellerFulfilled", "SellerFulfilled")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -8704,7 +8788,8 @@ Namespace OtralaDBDataSetTableAdapters
                 "e` = ?)) AND ((? = 1 AND `Duration` IS NULL) OR (`Duration` = ?)) AND ((? = 1 AN"& _ 
                 "D `Description` IS NULL) OR (`Description` = ?)) AND ((? = 1 AND `TripDate` IS N"& _ 
                 "ULL) OR (`TripDate` = ?)) AND ((? = 1 AND `Accepted` IS NULL) OR (`Accepted` = ?"& _ 
-                ")))"
+                ")) AND ((? = 1 AND `ClientFulfilled` IS NULL) OR (`ClientFulfilled` = ?)) AND (("& _ 
+                "? = 1 AND `SellerFulfilled` IS NULL) OR (`SellerFulfilled` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_RequestAnswerID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RequestAnswerID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_RequestID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RequestID", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -8725,11 +8810,15 @@ Namespace OtralaDBDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_TripDate", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TripDate", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Accepted", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Accepted", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Accepted", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Accepted", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ClientFulfilled", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientFulfilled", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ClientFulfilled", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientFulfilled", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_SellerFulfilled", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SellerFulfilled", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_SellerFulfilled", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SellerFulfilled", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO `RequestAnswer` (`RequestID`, `UserID`, `Pax`, `Price`, `SellerName`,"& _ 
-                " `Duration`, `Description`, `TripDate`, `Accepted`) VALUES (?, ?, ?, ?, ?, ?, ?,"& _ 
-                " ?, ?)"
+                " `Duration`, `Description`, `TripDate`, `Accepted`, `ClientFulfilled`, `SellerFu"& _ 
+                "lfilled`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RequestID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RequestID", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("UserID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "UserID", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -8740,17 +8829,22 @@ Namespace OtralaDBDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Description", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Description", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("TripDate", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TripDate", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Accepted", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Accepted", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ClientFulfilled", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientFulfilled", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("SellerFulfilled", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SellerFulfilled", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE `RequestAnswer` SET `RequestID` = ?, `UserID` = ?, `Pax` = ?, `Price` = ?,"& _ 
                 " `SellerName` = ?, `Duration` = ?, `Description` = ?, `TripDate` = ?, `Accepted`"& _ 
-                " = ? WHERE ((`RequestAnswerID` = ?) AND ((? = 1 AND `RequestID` IS NULL) OR (`Re"& _ 
-                "questID` = ?)) AND ((? = 1 AND `UserID` IS NULL) OR (`UserID` = ?)) AND ((? = 1 "& _ 
-                "AND `Pax` IS NULL) OR (`Pax` = ?)) AND ((? = 1 AND `Price` IS NULL) OR (`Price` "& _ 
-                "= ?)) AND ((? = 1 AND `SellerName` IS NULL) OR (`SellerName` = ?)) AND ((? = 1 A"& _ 
-                "ND `Duration` IS NULL) OR (`Duration` = ?)) AND ((? = 1 AND `Description` IS NUL"& _ 
-                "L) OR (`Description` = ?)) AND ((? = 1 AND `TripDate` IS NULL) OR (`TripDate` = "& _ 
-                "?)) AND ((? = 1 AND `Accepted` IS NULL) OR (`Accepted` = ?)))"
+                " = ?, `ClientFulfilled` = ?, `SellerFulfilled` = ? WHERE ((`RequestAnswerID` = ?"& _ 
+                ") AND ((? = 1 AND `RequestID` IS NULL) OR (`RequestID` = ?)) AND ((? = 1 AND `Us"& _ 
+                "erID` IS NULL) OR (`UserID` = ?)) AND ((? = 1 AND `Pax` IS NULL) OR (`Pax` = ?))"& _ 
+                " AND ((? = 1 AND `Price` IS NULL) OR (`Price` = ?)) AND ((? = 1 AND `SellerName`"& _ 
+                " IS NULL) OR (`SellerName` = ?)) AND ((? = 1 AND `Duration` IS NULL) OR (`Durati"& _ 
+                "on` = ?)) AND ((? = 1 AND `Description` IS NULL) OR (`Description` = ?)) AND ((?"& _ 
+                " = 1 AND `TripDate` IS NULL) OR (`TripDate` = ?)) AND ((? = 1 AND `Accepted` IS "& _ 
+                "NULL) OR (`Accepted` = ?)) AND ((? = 1 AND `ClientFulfilled` IS NULL) OR (`Clien"& _ 
+                "tFulfilled` = ?)) AND ((? = 1 AND `SellerFulfilled` IS NULL) OR (`SellerFulfille"& _ 
+                "d` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("RequestID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RequestID", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("UserID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "UserID", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -8761,6 +8855,8 @@ Namespace OtralaDBDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Description", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Description", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("TripDate", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TripDate", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Accepted", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Accepted", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("ClientFulfilled", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientFulfilled", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("SellerFulfilled", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SellerFulfilled", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_RequestAnswerID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RequestAnswerID", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_RequestID", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RequestID", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_RequestID", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "RequestID", Global.System.Data.DataRowVersion.Original, false, Nothing))
@@ -8780,6 +8876,10 @@ Namespace OtralaDBDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_TripDate", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "TripDate", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_Accepted", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Accepted", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_Accepted", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "Accepted", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_ClientFulfilled", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientFulfilled", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_ClientFulfilled", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "ClientFulfilled", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_SellerFulfilled", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SellerFulfilled", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_SellerFulfilled", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "SellerFulfilled", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8796,7 +8896,8 @@ Namespace OtralaDBDataSetTableAdapters
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT RequestAnswerID, RequestID, UserID, Pax, Price, SellerName, Duration, Desc"& _ 
-                "ription, TripDate, Accepted FROM RequestAnswer"
+                "ription, TripDate, Accepted, ClientFulfilled, SellerFulfilled FROM RequestAnswer"& _ 
+                ""
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -8856,7 +8957,7 @@ Namespace OtralaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_RequestAnswerID As Integer, ByVal Original_RequestID As String, ByVal Original_UserID As String, ByVal Original_Pax As String, ByVal Original_Price As String, ByVal Original_SellerName As String, ByVal Original_Duration As String, ByVal Original_Description As String, ByVal Original_TripDate As String, ByVal Original_Accepted As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_RequestAnswerID As Integer, ByVal Original_RequestID As String, ByVal Original_UserID As String, ByVal Original_Pax As String, ByVal Original_Price As String, ByVal Original_SellerName As String, ByVal Original_Duration As String, ByVal Original_Description As String, ByVal Original_TripDate As String, ByVal Original_Accepted As String, ByVal Original_ClientFulfilled As String, ByVal Original_SellerFulfilled As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_RequestAnswerID,Integer)
             If (Original_RequestID Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
@@ -8921,6 +9022,20 @@ Namespace OtralaDBDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_Accepted,String)
             End If
+            If (Original_ClientFulfilled Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = CType(Original_ClientFulfilled,String)
+            End If
+            If (Original_SellerFulfilled Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = CType(Original_SellerFulfilled,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -8940,7 +9055,7 @@ Namespace OtralaDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal RequestID As String, ByVal UserID As String, ByVal Pax As String, ByVal Price As String, ByVal SellerName As String, ByVal Duration As String, ByVal Description As String, ByVal TripDate As String, ByVal Accepted As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal RequestID As String, ByVal UserID As String, ByVal Pax As String, ByVal Price As String, ByVal SellerName As String, ByVal Duration As String, ByVal Description As String, ByVal TripDate As String, ByVal Accepted As String, ByVal ClientFulfilled As String, ByVal SellerFulfilled As String) As Integer
             If (RequestID Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -8986,6 +9101,16 @@ Namespace OtralaDBDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(8).Value = CType(Accepted,String)
             End If
+            If (ClientFulfilled Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(9).Value = CType(ClientFulfilled,String)
+            End If
+            If (SellerFulfilled Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(10).Value = CType(SellerFulfilled,String)
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -9015,6 +9140,8 @@ Namespace OtralaDBDataSetTableAdapters
                     ByVal Description As String,  _
                     ByVal TripDate As String,  _
                     ByVal Accepted As String,  _
+                    ByVal ClientFulfilled As String,  _
+                    ByVal SellerFulfilled As String,  _
                     ByVal Original_RequestAnswerID As Integer,  _
                     ByVal Original_RequestID As String,  _
                     ByVal Original_UserID As String,  _
@@ -9024,7 +9151,9 @@ Namespace OtralaDBDataSetTableAdapters
                     ByVal Original_Duration As String,  _
                     ByVal Original_Description As String,  _
                     ByVal Original_TripDate As String,  _
-                    ByVal Original_Accepted As String) As Integer
+                    ByVal Original_Accepted As String,  _
+                    ByVal Original_ClientFulfilled As String,  _
+                    ByVal Original_SellerFulfilled As String) As Integer
             If (RequestID Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -9070,69 +9199,93 @@ Namespace OtralaDBDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(Accepted,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_RequestAnswerID,Integer)
-            If (Original_RequestID Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+            If (ClientFulfilled Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_RequestID,String)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(ClientFulfilled,String)
             End If
-            If (Original_UserID Is Nothing) Then
+            If (SellerFulfilled Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(SellerFulfilled,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_RequestAnswerID,Integer)
+            If (Original_RequestID Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_UserID,String)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_RequestID,String)
             End If
-            If (Original_Pax Is Nothing) Then
+            If (Original_UserID Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_Pax,String)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_UserID,String)
             End If
-            If (Original_Price Is Nothing) Then
+            If (Original_Pax Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_Price,String)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_Pax,String)
             End If
-            If (Original_SellerName Is Nothing) Then
+            If (Original_Price Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_SellerName,String)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_Price,String)
             End If
-            If (Original_Duration Is Nothing) Then
+            If (Original_SellerName Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_Duration,String)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_SellerName,String)
             End If
-            If (Original_Description Is Nothing) Then
+            If (Original_Duration Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(22).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(22).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_Description,String)
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(Original_Duration,String)
             End If
-            If (Original_TripDate Is Nothing) Then
+            If (Original_Description Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(24).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(24).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_TripDate,String)
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(Original_Description,String)
             End If
-            If (Original_Accepted Is Nothing) Then
+            If (Original_TripDate Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(26).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(27).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(26).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(Original_Accepted,String)
+                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(Original_TripDate,String)
+            End If
+            If (Original_Accepted Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(Original_Accepted,String)
+            End If
+            If (Original_ClientFulfilled Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(Original_ClientFulfilled,String)
+            End If
+            If (Original_SellerFulfilled Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(Original_SellerFulfilled,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _

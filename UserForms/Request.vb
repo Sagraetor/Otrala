@@ -77,8 +77,8 @@
             'NewBookingRow("UserID") = User.UserID
             'NewBookingRow("DateBooked") = DateTime.Today.ToString("d")
             'NewBookingRow("Quantity") = 1
-            ''NewBookingRow("CardName") = txtCardName.Text
-            ''NewBookingRow("CardNumber") = mskCardNum.Text
+            'NewBookingRow("CardName") = txtCardName.Text
+            'NewBookingRow("CardNumber") = mskCardNum.Text
             'NewBookingRow("PlannedDate") = OfferRow("TripDate")
             'NewBookingRow("SellerFulfilled") = ""
             'NewBookingRow("ClientFulfilled") = ""
@@ -186,7 +186,77 @@
 
             BtnSubmit.Text = "Cancel Request"
 
-            ViewOffers()
+            Dim RequestAnswer() As DataRow = OtralaDBDataSet.RequestAnswer.Select("RequestID = " & MyRequestID & " AND Accepted <> ''")
+            If RequestAnswer.Count = 0 Then
+                ViewOffers()
+            Else
+                Dim OfferRow As DataRow = RequestAnswer(0)
+                lblInfo.Text = "You have accepted the offer to the right. Press mark as complete when your package has been fulfilled"
+                BtnComplete.Visible = True
+                BtnComplete.Enabled = True
+
+                PnlOffers.Controls.Clear()
+
+                Dim NewLblPrice As New Label
+                With NewLblPrice
+                    .Location = New System.Drawing.Point(6, 40)
+                    .Name = "OffersLblPrice"
+                    .AutoSize = True
+                    .TabIndex = 0
+                    .Text = Val(OfferRow("Price")).ToString("C")
+                End With
+
+                Dim NewLblPax As New Label
+                With NewLblPax
+                    .Location = New System.Drawing.Point(6, 80)
+                    .Name = "OfferLblPax"
+                    .AutoSize = True
+                    .TabIndex = 0
+                    .Text = OfferRow("Pax") & "People"
+                End With
+
+                Dim NewLblDuration As New Label
+                With NewLblDuration
+                    .Location = New System.Drawing.Point(6, 121)
+                    .Name = "OfferLblDuration"
+                    .AutoSize = True
+                    .TabIndex = 0
+                    If OfferRow("Duration") > 2 Then
+                        .Text = OfferRow("Duration") & " DAYS " & System.Environment.NewLine & CInt(OfferRow("Duration")) - 1 & " NIGHTS"
+                    ElseIf OfferRow("Duration") > 1 Then
+                        .Text = OfferRow("Duration") & " DAYS " & System.Environment.NewLine & CInt(OfferRow("Duration")) - 1 & " NIGHT"
+                    Else
+                        .Text = OfferRow("Duration") & " DAY "
+                    End If
+                End With
+
+                Dim NewLblDate As New Label
+                With NewLblDate
+                    .Location = New System.Drawing.Point(6, 164)
+                    .Name = "OfferLblDate"
+                    .Size = New System.Drawing.Size(209, 53)
+                    .TabIndex = 0
+                    .Text = "Starting On " + Convert.ToDateTime(OfferRow("TripDate")).ToString("dddd, dd/MM/yyyy")
+                End With
+
+                Dim NewGrpBox As New GroupBox
+                With NewGrpBox
+                    .ForeColor = System.Drawing.Color.White
+                    .Controls.Add(NewLblDate)
+                    .Controls.Add(NewLblDuration)
+                    .Controls.Add(NewLblPax)
+                    .Controls.Add(NewLblPrice)
+                    .Location = New System.Drawing.Point(7, 7)
+                    .Name = "OfferGrpBox"
+                    .Size = New System.Drawing.Size(266, 226)
+                    .TabIndex = 0
+                    .TabStop = False
+                    .Text = "From " & OfferRow("SellerName")
+                End With
+
+                PnlOffers.Controls.Add(NewGrpBox)
+
+            End If
         Else
             TbDuration.ReadOnly = False
             TbNotes.ReadOnly = False
@@ -303,5 +373,26 @@
         'TODO: This line of code loads data into the 'OtralaDBDataSet.Booking' table. You can move, or remove it, as needed.
         Me.BookingTableAdapter.Fill(Me.OtralaDBDataSet.Booking)
 
+    End Sub
+
+    Private Sub CompleteOffer() Handles BtnComplete.Click
+        Dim MyOffer As DataRow = OtralaDBDataSet.RequestAnswer.Select("RequestID = " & MyRequestID & " AND Accepted <> ''")(0)
+        Dim MyRequest As DataRow = OtralaDBDataSet.Request.Select(String.Format("UserID = '{0}' AND Fulfilled = False", User.UserID))(0)
+
+        Dim MyReqIndex As Integer = OtralaDBDataSet.Request.Rows.IndexOf(MyRequest)
+        Dim MyOfferIndex As Integer = OtralaDBDataSet.RequestAnswer.Rows.IndexOf(MyOffer)
+
+        OtralaDBDataSet.Request.Rows(MyReqIndex)("Fulfilled") = True
+        OtralaDBDataSet.RequestAnswer.Rows(MyOfferIndex)("ClientFulfilled") = DateTime.Now.ToString("d")
+
+        RequestTableAdapter.Update(OtralaDBDataSet)
+        RequestAnswerTableAdapter.Update(OtralaDBDataSet)
+
+        Me.FormLoad()
+
+        BtnComplete.Visible = False
+        BtnComplete.Enabled = False
+
+        PnlOffers.Controls.Clear()
     End Sub
 End Class

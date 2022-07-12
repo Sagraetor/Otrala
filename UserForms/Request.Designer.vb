@@ -54,6 +54,7 @@ Partial Class Request
         Me.RequestAnswerTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.RequestAnswerTableAdapter()
         Me.BookingBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.BookingTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.BookingTableAdapter()
+        Me.BtnComplete = New System.Windows.Forms.Button()
         Me.PnlOffers.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -306,6 +307,19 @@ Partial Class Request
         '
         Me.BookingTableAdapter.ClearBeforeFill = True
         '
+        'BtnComplete
+        '
+        Me.BtnComplete.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
+        Me.BtnComplete.Enabled = False
+        Me.BtnComplete.ForeColor = System.Drawing.Color.White
+        Me.BtnComplete.Location = New System.Drawing.Point(414, 594)
+        Me.BtnComplete.Name = "BtnComplete"
+        Me.BtnComplete.Size = New System.Drawing.Size(331, 41)
+        Me.BtnComplete.TabIndex = 15
+        Me.BtnComplete.Text = "Mark As Completed"
+        Me.BtnComplete.UseVisualStyleBackColor = False
+        Me.BtnComplete.Visible = False
+        '
         'Request
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 23.0!)
@@ -325,6 +339,7 @@ Partial Class Request
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.PnlOffers)
+        Me.Controls.Add(Me.BtnComplete)
         Me.Controls.Add(Me.BtnSubmit)
         Me.Controls.Add(Me.lblInfo)
         Me.Controls.Add(Me.TbNotes)
@@ -333,6 +348,7 @@ Partial Class Request
         Me.Controls.SetChildIndex(Me.TbNotes, 0)
         Me.Controls.SetChildIndex(Me.lblInfo, 0)
         Me.Controls.SetChildIndex(Me.BtnSubmit, 0)
+        Me.Controls.SetChildIndex(Me.BtnComplete, 0)
         Me.Controls.SetChildIndex(Me.PnlOffers, 0)
         Me.Controls.SetChildIndex(Me.Label5, 0)
         Me.Controls.SetChildIndex(Me.Label6, 0)
@@ -388,4 +404,5 @@ Partial Class Request
     Friend WithEvents RequestAnswerTableAdapter As OtralaDBDataSetTableAdapters.RequestAnswerTableAdapter
     Friend WithEvents BookingBindingSource As BindingSource
     Friend WithEvents BookingTableAdapter As OtralaDBDataSetTableAdapters.BookingTableAdapter
+    Friend WithEvents BtnComplete As Button
 End Class

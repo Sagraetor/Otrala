@@ -4,6 +4,7 @@
     Dim NewPass As String
     Dim StrMyPackages As String
     Dim LstBookingID As New List(Of Integer)
+    Dim LstOfferID As New List(Of Integer)
     Dim MyPackageList As List(Of Package)
 
     Public Overrides Sub AddFormLoad()
@@ -197,10 +198,9 @@
 
             Dim NewLblDate As New Label
             With NewLblDate
-                .AutoSize = True
+                .Size = New System.Drawing.Size(295, 46)
                 .Location = New System.Drawing.Point(181, 137)
                 .Name = "LblRequestDate" & RequestID
-                .Size = New System.Drawing.Size(234, 23)
                 .TabIndex = 31
                 .Text = "Planned Date : " & RequestRow("PlannedDate")
             End With
@@ -388,10 +388,9 @@
 
             Dim NewLblDate As New Label
             With NewLblDate
-                .AutoSize = True
+                .Size = New System.Drawing.Size(295, 46)
                 .Location = New System.Drawing.Point(181, 137)
                 .Name = "LblBookingDate" & BookingIndex
-                .Size = New System.Drawing.Size(234, 23)
                 .TabIndex = 31
                 If MyClientsBookings.Contains(ClientBooking) Then
                     If ClientBooking("ClientFulfilled") = "" Then
@@ -630,10 +629,9 @@
 
             Dim NewLblDate As New Label
             With NewLblDate
-                .AutoSize = True
+                .Size = New System.Drawing.Size(295, 46)
                 .Location = New System.Drawing.Point(181, 137)
                 .Name = "LblBookingDate" & BookingIndex
-                .Size = New System.Drawing.Size(234, 23)
                 .TabIndex = 31
                 If MyClientsBookings.Contains(ClientBooking) Then
                     If ClientBooking("ClientFulfilled") = "" Then
@@ -696,6 +694,8 @@
                 .TabIndex = 33
                 .Text = "Cancel"
                 .UseVisualStyleBackColor = True
+                .BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
+                .ForeColor = System.Drawing.Color.White
             End With
 
             Dim NewBtnComplete As New Button
@@ -706,12 +706,15 @@
                 .TabIndex = 33
                 .Text = "Mark As Completed"
                 .UseVisualStyleBackColor = True
+                .BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
+                .ForeColor = System.Drawing.Color.White
             End With
-
-            If ClientBooking("SellerFulfilled") <> "" Then
-                NewBtnCancel.Enabled = False
-                NewBtnComplete.Enabled = False
-                NewLblDate.Text = "You have marked this package as complete on : " & ClientBooking("SellerFulfilled")
+            If Not IsDBNull(ClientBooking("SellerFulfilled")) Then
+                If ClientBooking("SellerFulfilled") <> "" Then
+                    NewBtnCancel.Enabled = False
+                    NewBtnComplete.Enabled = False
+                    NewLblDate.Text = "You have marked this package as complete on : " & ClientBooking("SellerFulfilled")
+                End If
             End If
 
             'Creates package
@@ -841,14 +844,10 @@
             NewBookingPanel.Top += Dy * (BookingIndex - 1)
             BookingIndex += 1
 
-            If MyClientsBookings.Contains(ClientBooking) Then
-                AddHandler NewBtnCancel.Click, AddressOf CancelBooked
-                AddHandler NewBtnComplete.Click, AddressOf MarkComplete
-            End If
+            AddHandler NewBtnCancel.Click, AddressOf CancelOfferBooked
+            AddHandler NewBtnComplete.Click, AddressOf MarkOfferComplete
 
-            If MyClientsBookings.Contains(ClientBooking) Then
-                LstBookingID.Add(ClientBooking("BookingID"))
-            End If
+            LstOfferID.Add(ClientBooking("RequestAnswerID"))
         Next
     End Sub
 
@@ -875,6 +874,25 @@
             ViewClients()
         End If
     End Sub
+    Private Sub MarkOfferComplete(sender As Object, e As EventArgs)
+        Dim BookingIndex As Short = GetIndex(sender.Name)
+
+        Dim BookingRow As DataRow = OtralaDBDataSet.RequestAnswer.Select("RequestAnswerID = " & LstOfferID(BookingIndex - 1))(0)
+        Dim BookingRowIndex As Integer = OtralaDBDataSet.RequestAnswer.Rows.IndexOf(BookingRow)
+
+        If sender.Name.Contains("User") Then
+            OtralaDBDataSet.RequestAnswer.Rows(BookingRowIndex)("ClientFulfilled") = DateTime.Today.ToString("d")
+        Else
+            OtralaDBDataSet.RequestAnswer.Rows(BookingRowIndex)("SellerFulfilled") = DateTime.Today.ToString("d")
+        End If
+
+
+        RequestAnswerTableAdapter.Update(OtralaDBDataSet)
+
+        Me.RequestAnswerTableAdapter.Fill(Me.OtralaDBDataSet.RequestAnswer)
+
+        ViewClients()
+    End Sub
     Private Sub CancelBooked(sender As Object, e As EventArgs)
         Dim BookingIndex As Short = GetIndex(sender.Name)
 
@@ -892,6 +910,20 @@
         Else
             ViewClients()
         End If
+    End Sub
+    Private Sub CancelOfferBooked(sender As Object, e As EventArgs)
+        Dim BookingIndex As Short = GetIndex(sender.Name)
+
+        Dim BookingRow As DataRow = OtralaDBDataSet.RequestAnswer.Select("RequestAnswerID = " & LstOfferID(BookingIndex - 1))(0)
+        Dim BookingRowIndex As Integer = OtralaDBDataSet.RequestAnswer.Rows.IndexOf(BookingRow)
+
+        OtralaDBDataSet.RequestAnswer.Rows(BookingRowIndex).Delete()
+
+        RequestAnswerTableAdapter.Update(OtralaDBDataSet)
+
+        Me.RequestAnswerTableAdapter.Fill(Me.OtralaDBDataSet.RequestAnswer)
+
+        ViewClients()
     End Sub
     Private Sub btnAddPackage_CLick() Handles BtnAddPackage.Click
         Dim PackageToAdd As Package
@@ -1236,10 +1268,9 @@
 
             Dim NewLblDate As New Label
             With NewLblDate
-                .AutoSize = True
+                .Size = New System.Drawing.Size(295, 46)
                 .Location = New System.Drawing.Point(181, 137)
                 .Name = "LblBookingDate" & BookingIndex
-                .Size = New System.Drawing.Size(234, 23)
                 .TabIndex = 31
                 If MyBooking("SellerFulfilled") = "" Then
                     .Text = "Planned Date : " & MyBooking("PlannedDate")

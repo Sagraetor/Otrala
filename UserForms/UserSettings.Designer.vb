@@ -600,10 +600,9 @@ Partial Class UserSettings
         '
         'Label18
         '
-        Me.Label18.AutoSize = True
         Me.Label18.Location = New System.Drawing.Point(181, 137)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(234, 23)
+        Me.Label18.Size = New System.Drawing.Size(295, 46)
         Me.Label18.TabIndex = 31
         Me.Label18.Text = "Planned Date : 11/7/2003"
         '
@@ -737,12 +736,12 @@ Partial Class UserSettings
         Me.Controls.Add(Me.BtnUser)
         Me.Controls.Add(Me.BtnSeeBookings)
         Me.Controls.Add(Me.BtnAddPackage)
-        Me.Controls.Add(Me.PnlSeller)
         Me.Controls.Add(Me.PnlUser)
+        Me.Controls.Add(Me.PnlSeller)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "UserSettings"
-        Me.Controls.SetChildIndex(Me.PnlUser, 0)
         Me.Controls.SetChildIndex(Me.PnlSeller, 0)
+        Me.Controls.SetChildIndex(Me.PnlUser, 0)
         Me.Controls.SetChildIndex(Me.BtnAddPackage, 0)
         Me.Controls.SetChildIndex(Me.BtnSeeBookings, 0)
         Me.Controls.SetChildIndex(Me.BtnUser, 0)
