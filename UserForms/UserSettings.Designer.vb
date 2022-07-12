@@ -55,10 +55,6 @@ Partial Class UserSettings
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
-        Me.UserInfoTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.UserInfoTableAdapter()
-        Me.PackageTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.PackageTableAdapter()
-        Me.LoginInfoTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.LoginInfoTableAdapter()
         Me.PnlSeller = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -82,12 +78,16 @@ Partial Class UserSettings
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.BtnAddPackage = New System.Windows.Forms.Button()
         Me.BtnSeeReqs = New System.Windows.Forms.Button()
+        Me.BtnClient = New System.Windows.Forms.Button()
+        Me.BtnSeeBookings = New System.Windows.Forms.Button()
+        Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
+        Me.UserInfoTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.UserInfoTableAdapter()
+        Me.PackageTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.PackageTableAdapter()
+        Me.LoginInfoTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.LoginInfoTableAdapter()
         Me.RequestTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.RequestTableAdapter()
         Me.RequestAnswerTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.RequestAnswerTableAdapter()
-        Me.BtnClient = New System.Windows.Forms.Button()
         Me.BookingTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.BookingTableAdapter()
         Me.BookingBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.BtnSeeBookings = New System.Windows.Forms.Button()
         Me.SellerApplicationBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SellerApplicationTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.SellerApplicationTableAdapter()
         CType(Me.PbProfile, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -95,12 +95,12 @@ Partial Class UserSettings
         Me.GroupBox2.SuspendLayout()
         Me.SecurityInformation.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PnlSeller.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SellerApplicationBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -426,23 +426,6 @@ Partial Class UserSettings
         Me.Label4.TabIndex = 26
         Me.Label4.Text = "Address: "
         '
-        'OtralaDBDataSet
-        '
-        Me.OtralaDBDataSet.DataSetName = "OtralaDBDataSet"
-        Me.OtralaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'UserInfoTableAdapter
-        '
-        Me.UserInfoTableAdapter.ClearBeforeFill = True
-        '
-        'PackageTableAdapter
-        '
-        Me.PackageTableAdapter.ClearBeforeFill = True
-        '
-        'LoginInfoTableAdapter
-        '
-        Me.LoginInfoTableAdapter.ClearBeforeFill = True
-        '
         'PnlSeller
         '
         Me.PnlSeller.AutoScroll = True
@@ -676,14 +659,6 @@ Partial Class UserSettings
         Me.BtnSeeReqs.UseVisualStyleBackColor = False
         Me.BtnSeeReqs.Visible = False
         '
-        'RequestTableAdapter
-        '
-        Me.RequestTableAdapter.ClearBeforeFill = True
-        '
-        'RequestAnswerTableAdapter
-        '
-        Me.RequestAnswerTableAdapter.ClearBeforeFill = True
-        '
         'BtnClient
         '
         Me.BtnClient.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
@@ -697,15 +672,6 @@ Partial Class UserSettings
         Me.BtnClient.UseVisualStyleBackColor = False
         Me.BtnClient.Visible = False
         '
-        'BookingTableAdapter
-        '
-        Me.BookingTableAdapter.ClearBeforeFill = True
-        '
-        'BookingBindingSource
-        '
-        Me.BookingBindingSource.DataMember = "Booking"
-        Me.BookingBindingSource.DataSource = Me.OtralaDBDataSet
-        '
         'BtnSeeBookings
         '
         Me.BtnSeeBookings.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
@@ -716,6 +682,40 @@ Partial Class UserSettings
         Me.BtnSeeBookings.TabIndex = 24
         Me.BtnSeeBookings.Text = "See Bookings"
         Me.BtnSeeBookings.UseVisualStyleBackColor = False
+        '
+        'OtralaDBDataSet
+        '
+        Me.OtralaDBDataSet.DataSetName = "OtralaDBDataSet"
+        Me.OtralaDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'UserInfoTableAdapter
+        '
+        Me.UserInfoTableAdapter.ClearBeforeFill = True
+        '
+        'PackageTableAdapter
+        '
+        Me.PackageTableAdapter.ClearBeforeFill = True
+        '
+        'LoginInfoTableAdapter
+        '
+        Me.LoginInfoTableAdapter.ClearBeforeFill = True
+        '
+        'RequestTableAdapter
+        '
+        Me.RequestTableAdapter.ClearBeforeFill = True
+        '
+        'RequestAnswerTableAdapter
+        '
+        Me.RequestAnswerTableAdapter.ClearBeforeFill = True
+        '
+        'BookingTableAdapter
+        '
+        Me.BookingTableAdapter.ClearBeforeFill = True
+        '
+        'BookingBindingSource
+        '
+        Me.BookingBindingSource.DataMember = "Booking"
+        Me.BookingBindingSource.DataSource = Me.OtralaDBDataSet
         '
         'SellerApplicationBindingSource
         '
@@ -756,7 +756,6 @@ Partial Class UserSettings
         Me.SecurityInformation.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PnlSeller.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
@@ -764,6 +763,7 @@ Partial Class UserSettings
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SellerApplicationBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

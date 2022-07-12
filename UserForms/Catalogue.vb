@@ -5,6 +5,20 @@
 
     Dim CatalogueList As New List(Of Package)
 
+    Function Shuffle(Of T)(list As IEnumerable(Of T)) As List(Of T)
+        Dim r = New Random
+        Dim shuffled = list.ToList
+        For index = 0 To shuffled.Count - 1
+            Dim randomIndex = r.Next(index, shuffled.Count)
+            If index <> randomIndex Then
+                Dim temp = shuffled(index)
+                shuffled(index) = shuffled(randomIndex)
+                shuffled(randomIndex) = temp
+            End If
+        Next
+        Return shuffled
+    End Function
+
     Private Sub GenerateCatalogue(CatalogueItems As List(Of Package))
         CatalogueIndex = 1
         CatalogueYIndex = 0
@@ -140,15 +154,15 @@
     Overrides Sub AddFormLoad()
         'TODO: This line of code loads data into the 'OtralaDBDataSet.Package' table. You can move, or remove it, as needed.
         Me.PackageTableAdapter.Fill(Me.OtralaDBDataSet.Package)
-
         OpenRecommendations()
     End Sub
 
     Private Sub OpenRecommendations() Handles BtnRecommendation.Click
         PnlCatalogue.Controls.Clear()
-        CatalogueList.Clear()
 
         Dim CatalogueData As DataTable = OtralaDBDataSet.Package.Copy()
+
+        CatalogueList.Clear()
 
         For Each Row In CatalogueData.Rows
             Dim NewPackage As New Package
@@ -169,7 +183,8 @@
             CatalogueList.Add(NewPackage)
         Next
 
-        GenerateCatalogue(CatalogueList)
+        Dim ShuffledCatalogue As List(Of Package) = Shuffle(CatalogueList)
+        GenerateCatalogue(ShuffledCatalogue)
     End Sub
 
     Private Sub OpenWishlist() Handles BtnWishlist.Click

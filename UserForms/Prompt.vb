@@ -1,6 +1,9 @@
 ﻿Public Class Prompt
     Public Result As String
-
+    Private Sub RemoveDefaultText(Sender As TextBox, e As EventArgs)
+        Sender.Clear()
+        Sender.ForeColor = System.Drawing.SystemColors.WindowText
+    End Sub
     Public Sub CheckPass(Prompt)
         LblNew.Text = Prompt
         Dim NewValueReceiver As New TextBox With {
@@ -58,11 +61,17 @@
             .Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte)),
             .Multiline = True,
             .Size = New System.Drawing.Size(398, 123),
-            .Text = sender.Text
+            .Text = sender.Text,
+            .ForeColor = System.Drawing.SystemColors.GrayText
             }
+
+            If NewValueReceiver.Text = "" Then
+                NewValueReceiver.Text = "Press 'Enter' to submit" & vbNewLine & "Press 'Shift' and 'Enter' To go to new line or use the keypad"
+            End If
 
             Panel1.Controls.Add(NewValueReceiver)
             AddHandler NewValueReceiver.KeyDown, AddressOf EnterInfo
+            AddHandler NewValueReceiver.KeyDown, AddressOf RemoveDefaultText
 
         ElseIf sender.Name = "LblProfileBirthday" Then
             Dim NewValueReceiver As New DateTimePicker With {
@@ -93,10 +102,13 @@
             Dim NewValueReceiver As New TextBox With {
             .Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte)),
             .Location = New System.Drawing.Point(15, 35),
-            .Size = sender.Size
+            .Size = sender.Size,
+            .Text = "Press 'Enter' to submit",
+            .ForeColor = System.Drawing.SystemColors.GrayText
             }
             Panel1.Controls.Add(NewValueReceiver)
             AddHandler NewValueReceiver.KeyPress, AddressOf EnterInfo
+            AddHandler NewValueReceiver.KeyDown, AddressOf RemoveDefaultText
         End If
     End Sub
 
