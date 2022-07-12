@@ -181,7 +181,7 @@
             DtpPlanned.Enabled = True
 
             TbDuration.Clear()
-            TbNotes.Clear()
+            TbNotes.Text = "Additional Notes"
             TbPax.Clear()
             TbPrice1.Clear()
             TbPrice2.Clear()

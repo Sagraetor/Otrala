@@ -24,13 +24,13 @@
             Email = Nothing
             PhoneNumber = Nothing
             Picture = Nothing
-            Wishlist = Nothing
+            Wishlist = New List(Of Integer)
             ICNum = Nothing
             Gender = Nothing
             Birthday = Nothing
             nationality = Nothing
             IsAdmin = Nothing
-            LoggedIn = Nothing
+            LoggedIn = False
         End Sub
     End Structure
 

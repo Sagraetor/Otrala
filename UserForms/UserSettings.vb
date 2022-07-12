@@ -306,6 +306,8 @@
                 .TabIndex = 33
                 .Text = "Make an Offer"
                 .UseVisualStyleBackColor = True
+                .BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
+                .ForeColor = System.Drawing.Color.White
             End With
 
             Dim NewRequestPanel As New Panel
@@ -451,7 +453,8 @@
                 .Size = New System.Drawing.Size(195, 31)
                 .TabIndex = 33
                 .Text = "Cancel"
-                .UseVisualStyleBackColor = True
+                .BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
+                .ForeColor = System.Drawing.Color.White
             End With
 
             Dim NewBtnComplete As New Button
@@ -461,7 +464,8 @@
                 .Size = New System.Drawing.Size(195, 31)
                 .TabIndex = 33
                 .Text = "Mark As Completed"
-                .UseVisualStyleBackColor = True
+                .BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(2, Byte), Integer))
+                .ForeColor = System.Drawing.Color.White
             End With
 
             'Creates package
@@ -1231,7 +1235,8 @@
             Editing = True
             BtnEdit.Text = "Double click fields to edit, Click me to save changes"
         Else
-            If MsgBox("Are you sure you want to save these changes?", MsgBoxStyle.YesNo, "Otrala") = MsgBoxResult.Yes Then
+            Dim UserInput As Integer = MsgBox("Do you want to save these changes?", MsgBoxStyle.YesNoCancel, "Otrala")
+            If UserInput = MsgBoxResult.Yes Then
 
                 Editing = False
                 BtnEdit.Text = "Edit Profile"
@@ -1318,6 +1323,10 @@
 
                 UserInfoTableAdapter.Update(OtralaDBDataSet)
                 LoginInfoTableAdapter.Update(OtralaDBDataSet)
+            ElseIf UserInput = MsgBoxResult.No Then
+
+                Editing = False
+                BtnEdit.Text = "Edit Profile"
             End If
 
             Me.FormLoad()
@@ -1327,7 +1336,7 @@
 
     End Sub
     Private Sub LoadUserInfo()
-        If IsNothing(User.Picture) Then
+        If Not IsNothing(User.Picture) Then
             PbProfile.Image = User.Picture
         End If
         LblProfileName.Text = User.Name

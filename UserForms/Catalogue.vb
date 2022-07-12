@@ -104,7 +104,6 @@
                 .Size = New System.Drawing.Size(435, 306)
                 .Location = New System.Drawing.Point(58, 56)
                 .Name = "GrpBoxCatalogue" & CatalogueIndex
-                ' DO NOT CHANGE THE ORDER OF THE CONTROLS BELOW (code will 100% break)
                 .Controls.Add(NewLblDesc)
                 .Controls.Add(NewLblDuration)
                 .Controls.Add(NewLblPax)

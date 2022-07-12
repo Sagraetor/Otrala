@@ -104,23 +104,23 @@
         End If
     End Sub
 
-    Private Sub AddToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem.Click
+    Private Sub AddToolStripMenuItem_Click(sender As Object, e As EventArgs)
         PackageAdmin.ShowDialog()
     End Sub
 
-    Private Sub AddFeedbackToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem1.Click
+    Private Sub AddFeedbackToolStripMenuItem1_Click(sender As Object, e As EventArgs)
         FeedbackAdmin.ShowDialog()
     End Sub
 
-    Private Sub AddLoginInfoToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AddLoginInfoToolStripMenuItem1.Click
+    Private Sub AddLoginInfoToolStripMenuItem1_Click(sender As Object, e As EventArgs)
         LoginInfoAdmin.ShowDialog()
     End Sub
 
-    Private Sub AddUserInfoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddUserInfoToolStripMenuItem.Click
+    Private Sub AddUserInfoToolStripMenuItem_Click(sender As Object, e As EventArgs)
         UserInfoAdmin.ShowDialog()
     End Sub
 
-    Private Sub AddRequestToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles AddRequestToolStripMenuItem1.Click
+    Private Sub AddRequestToolStripMenuItem1_Click(sender As Object, e As EventArgs)
         RequestAdmin.ShowDialog()
     End Sub
 

@@ -34,17 +34,7 @@ Partial Class BaseForm
         Me.AddLoginInfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RequestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AddRequestToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
-        Me.AddItemsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AddToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AddToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AddLoginInfoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AddUserInfoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AddRequestToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.PbOtralaIcon = New System.Windows.Forms.PictureBox()
-        Me.Panel1.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
         CType(Me.PbOtralaIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -141,61 +131,6 @@ Partial Class BaseForm
         Me.AddRequestToolStripMenuItem.Size = New System.Drawing.Size(177, 24)
         Me.AddRequestToolStripMenuItem.Text = "Add Request"
         '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.MenuStrip1)
-        Me.Panel1.Location = New System.Drawing.Point(764, 35)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(186, 32)
-        Me.Panel1.TabIndex = 12
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddItemsToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(186, 30)
-        Me.MenuStrip1.TabIndex = 0
-        Me.MenuStrip1.Text = "MenuStrip1"
-        '
-        'AddItemsToolStripMenuItem
-        '
-        Me.AddItemsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddToolStripMenuItem, Me.AddToolStripMenuItem1, Me.AddLoginInfoToolStripMenuItem1, Me.AddUserInfoToolStripMenuItem, Me.AddRequestToolStripMenuItem1})
-        Me.AddItemsToolStripMenuItem.Name = "AddItemsToolStripMenuItem"
-        Me.AddItemsToolStripMenuItem.Size = New System.Drawing.Size(126, 26)
-        Me.AddItemsToolStripMenuItem.Text = "Database Items"
-        '
-        'AddToolStripMenuItem
-        '
-        Me.AddToolStripMenuItem.Name = "AddToolStripMenuItem"
-        Me.AddToolStripMenuItem.Size = New System.Drawing.Size(191, 26)
-        Me.AddToolStripMenuItem.Text = "Add Package"
-        '
-        'AddToolStripMenuItem1
-        '
-        Me.AddToolStripMenuItem1.Name = "AddToolStripMenuItem1"
-        Me.AddToolStripMenuItem1.Size = New System.Drawing.Size(191, 26)
-        Me.AddToolStripMenuItem1.Text = "Add Feedback"
-        '
-        'AddLoginInfoToolStripMenuItem1
-        '
-        Me.AddLoginInfoToolStripMenuItem1.Name = "AddLoginInfoToolStripMenuItem1"
-        Me.AddLoginInfoToolStripMenuItem1.Size = New System.Drawing.Size(191, 26)
-        Me.AddLoginInfoToolStripMenuItem1.Text = "Add Login Info"
-        '
-        'AddUserInfoToolStripMenuItem
-        '
-        Me.AddUserInfoToolStripMenuItem.Name = "AddUserInfoToolStripMenuItem"
-        Me.AddUserInfoToolStripMenuItem.Size = New System.Drawing.Size(191, 26)
-        Me.AddUserInfoToolStripMenuItem.Text = "Add User Info"
-        '
-        'AddRequestToolStripMenuItem1
-        '
-        Me.AddRequestToolStripMenuItem1.Name = "AddRequestToolStripMenuItem1"
-        Me.AddRequestToolStripMenuItem1.Size = New System.Drawing.Size(191, 26)
-        Me.AddRequestToolStripMenuItem1.Text = "Add Request"
-        '
         'PbOtralaIcon
         '
         Me.PbOtralaIcon.BackColor = System.Drawing.Color.Transparent
@@ -212,7 +147,6 @@ Partial Class BaseForm
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.ClientSize = New System.Drawing.Size(1262, 673)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.LblName)
         Me.Controls.Add(Me.BtnFeedback)
         Me.Controls.Add(Me.btnLogOut)
@@ -223,16 +157,11 @@ Partial Class BaseForm
         Me.Font = New System.Drawing.Font("Arial", 12.0!)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(4, 3, 4, 3)
         Me.MaximizeBox = False
         Me.Name = "BaseForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Otrala"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.MenuStrip1.ResumeLayout(False)
-        Me.MenuStrip1.PerformLayout()
         CType(Me.PbOtralaIcon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -254,12 +183,4 @@ Partial Class BaseForm
     Friend WithEvents AddLoginInfoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RequestToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AddRequestToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents MenuStrip1 As MenuStrip
-    Friend WithEvents AddItemsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AddToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AddToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents AddLoginInfoToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents AddUserInfoToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AddRequestToolStripMenuItem1 As ToolStripMenuItem
 End Class
