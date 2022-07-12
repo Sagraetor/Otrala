@@ -47,14 +47,11 @@ Partial Class Package_Viewer
         Me.OtralaDBDataSet = New Otrala_2._0.OtralaDBDataSet()
         Me.UserInfoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UserInfoTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.UserInfoTableAdapter()
-        Me.pctSeller = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.tableDetails.SuspendLayout()
         CType(Me.pctTravelPic, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pctSeller, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserInfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pctTravelPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'lblTitle
@@ -289,7 +286,7 @@ Partial Class Package_Viewer
         Me.btnSeller.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSeller.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Bold)
         Me.btnSeller.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btnSeller.Location = New System.Drawing.Point(126, 524)
+        Me.btnSeller.Location = New System.Drawing.Point(12, 525)
         Me.btnSeller.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.btnSeller.Name = "btnSeller"
         Me.btnSeller.Size = New System.Drawing.Size(251, 86)
@@ -306,18 +303,6 @@ Partial Class Package_Viewer
         Me.blocking_panel.Name = "blocking_panel"
         Me.blocking_panel.Size = New System.Drawing.Size(1262, 22)
         Me.blocking_panel.TabIndex = 10
-        '
-        'pctSeller
-        '
-        Me.pctSeller.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.pctSeller.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pctSeller.Location = New System.Drawing.Point(12, 524)
-        Me.pctSeller.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.pctSeller.Name = "pctSeller"
-        Me.pctSeller.Size = New System.Drawing.Size(108, 87)
-        Me.pctSeller.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pctSeller.TabIndex = 9
-        Me.pctSeller.TabStop = False
         '
         'pctTravelPic
         '
@@ -355,7 +340,6 @@ Partial Class Package_Viewer
         Me.Controls.Add(Me.lblTitle)
         Me.Controls.Add(Me.lblPrice)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.pctSeller)
         Me.Controls.Add(Me.btnSeller)
         Me.Controls.Add(Me.btnBook)
         Me.Controls.Add(Me.btnWishlist)
@@ -371,7 +355,7 @@ Partial Class Package_Viewer
         Me.Panel1.ResumeLayout(False)
         Me.tableDetails.ResumeLayout(False)
         Me.tableDetails.PerformLayout()
-        CType(Me.pctSeller, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pctTravelPic, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UserInfoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -397,7 +381,6 @@ Partial Class Package_Viewer
     Friend WithEvents btnWishlist As Button
     Friend WithEvents after_load As Timer
     Friend WithEvents btnSeller As Button
-    Friend WithEvents pctSeller As PictureBox
     Friend WithEvents blocking_panel As Panel
     Friend WithEvents OtralaDBDataSet As OtralaDBDataSet
     Friend WithEvents UserInfoBindingSource As BindingSource

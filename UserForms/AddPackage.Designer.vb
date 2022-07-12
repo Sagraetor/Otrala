@@ -232,6 +232,7 @@ Partial Class AddPackage
         '
         'PicBox
         '
+        Me.PicBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.PicBox.Location = New System.Drawing.Point(13, 18)
         Me.PicBox.Name = "PicBox"
         Me.PicBox.Size = New System.Drawing.Size(170, 170)
