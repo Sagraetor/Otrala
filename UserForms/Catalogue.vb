@@ -184,6 +184,11 @@
         Next
 
         Dim ShuffledCatalogue As List(Of Package) = Shuffle(CatalogueList)
+        CatalogueList.Clear()
+        For Each Package In ShuffledCatalogue
+            CatalogueList.Add(Package)
+        Next
+
         GenerateCatalogue(ShuffledCatalogue)
     End Sub
 

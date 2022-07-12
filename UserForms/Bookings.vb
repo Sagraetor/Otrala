@@ -12,6 +12,7 @@
         LblUserName.Text = User.Name
         LblUserPhone.Text = User.PhoneNumber
         LblNumberIC.Text = User.ICNum
+        LblTotPrice.Text = (Val(TbQuantity.Text) * package.Price).ToString("c")
 
         StartDateChanged()
 

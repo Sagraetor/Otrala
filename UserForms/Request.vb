@@ -70,6 +70,22 @@
             OtralaDBDataSet.RequestAnswer.Rows(OfferRowIndex).Delete()
         ElseIf Ans = 6 Then
             OtralaDBDataSet.RequestAnswer.Rows(OfferRowIndex)("Accepted") = DateAndTime.Now.ToString("d")
+
+            'Dim NewBookingRow As DataRow = OtralaDBDataSet.Booking.NewBookingRow
+
+            'NewBookingRow("RequestAnswerID") = OfferRow("RequestAnswerID")
+            'NewBookingRow("UserID") = User.UserID
+            'NewBookingRow("DateBooked") = DateTime.Today.ToString("d")
+            'NewBookingRow("Quantity") = 1
+            ''NewBookingRow("CardName") = txtCardName.Text
+            ''NewBookingRow("CardNumber") = mskCardNum.Text
+            'NewBookingRow("PlannedDate") = OfferRow("TripDate")
+            'NewBookingRow("SellerFulfilled") = ""
+            'NewBookingRow("ClientFulfilled") = ""
+            'NewBookingRow("TotalPrice") = OfferRow("Price")
+
+            'OtralaDBDataSet.Booking.AddBookingRow(NewBookingRow)
+            'BookingTableAdapter.Update(OtralaDBDataSet)
         End If
 
         RequestAnswerTableAdapter.Update(OtralaDBDataSet)
@@ -283,4 +299,9 @@
         Application.Exit()
     End Sub
 
+    Private Sub Request_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'OtralaDBDataSet.Booking' table. You can move, or remove it, as needed.
+        Me.BookingTableAdapter.Fill(Me.OtralaDBDataSet.Booking)
+
+    End Sub
 End Class

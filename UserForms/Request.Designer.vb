@@ -52,11 +52,14 @@ Partial Class Request
         Me.RequestTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.RequestTableAdapter()
         Me.RequestAnswerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.RequestAnswerTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.RequestAnswerTableAdapter()
+        Me.BookingBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.BookingTableAdapter = New Otrala_2._0.OtralaDBDataSetTableAdapters.BookingTableAdapter()
         Me.PnlOffers.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RequestBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RequestAnswerBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TbNotes
@@ -294,6 +297,15 @@ Partial Class Request
         '
         Me.RequestAnswerTableAdapter.ClearBeforeFill = True
         '
+        'BookingBindingSource
+        '
+        Me.BookingBindingSource.DataMember = "Booking"
+        Me.BookingBindingSource.DataSource = Me.OtralaDBDataSet
+        '
+        'BookingTableAdapter
+        '
+        Me.BookingTableAdapter.ClearBeforeFill = True
+        '
         'Request
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 23.0!)
@@ -341,6 +353,7 @@ Partial Class Request
         CType(Me.OtralaDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RequestBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RequestAnswerBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BookingBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -373,4 +386,6 @@ Partial Class Request
     Friend WithEvents Label12 As Label
     Friend WithEvents RequestAnswerBindingSource As BindingSource
     Friend WithEvents RequestAnswerTableAdapter As OtralaDBDataSetTableAdapters.RequestAnswerTableAdapter
+    Friend WithEvents BookingBindingSource As BindingSource
+    Friend WithEvents BookingTableAdapter As OtralaDBDataSetTableAdapters.BookingTableAdapter
 End Class
