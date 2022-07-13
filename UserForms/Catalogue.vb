@@ -261,7 +261,7 @@
         Dim PackageViewForm As New Package_Viewer With {
             .Package = CatalogueList(SenderIndex - 1)
         }
-
+        PackageViewForm.Owner = "Catalogue"
         PackageViewForm.ShowDialog()
     End Sub
 

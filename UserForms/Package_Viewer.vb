@@ -1,4 +1,6 @@
 ﻿Public Class Package_Viewer
+    Public Owner As String
+    Public SellerSearch As String
 
     Public Package As New Package With {
     .SellerID = Nothing,
@@ -89,15 +91,19 @@
         Dim BookingForm As New Bookings
         BookingForm.package = Package
         BookingForm.ShowDialog()
+        Me.Close()
     End Sub
 
     Private Sub btnSeller_Click(sender As Object, e As EventArgs) Handles btnSeller.Click
-        Me.Owner = Catalogue
-        Search.Show()
-        Search.SearchBox.Text = Package.SellerName
-        Search.SearchButton.PerformClick()
-        Me.Hide()
-        Me.Owner.Hide()
+        If Owner = "Catalogue" Then
+            Search.Show()
+            Search.SearchBox.Text = Package.SellerName
+            Search.SearchButton.PerformClick()
+            Me.Close()
+        Else
+            SellerSearch = Package.SellerName
+            Me.Close()
+        End If
     End Sub
 
 End Class

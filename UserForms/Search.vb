@@ -353,6 +353,10 @@
         }
 
         PackageViewForm.ShowDialog()
+        If PackageViewForm.SellerSearch <> "" Then
+            SearchBox.Text = PackageViewForm.SellerSearch
+            SearchButton.PerformClick()
+        End If
     End Sub
 
     Private Sub BtnRecommendation_Click(sender As Object, e As EventArgs) Handles BtnRecommendation.Click
