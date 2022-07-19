@@ -165,12 +165,14 @@ Partial Class LoginSignUp
         'LinkLabel1
         '
         Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Enabled = False
         Me.LinkLabel1.Location = New System.Drawing.Point(31, 325)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(116, 16)
         Me.LinkLabel1.TabIndex = 8
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "Forgot Password?"
+        Me.LinkLabel1.Visible = False
         '
         'TbLoginPass
         '

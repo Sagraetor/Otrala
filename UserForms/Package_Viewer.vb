@@ -99,6 +99,7 @@
             Search.Show()
             Search.SearchBox.Text = Package.SellerName
             Search.SearchButton.PerformClick()
+            Catalogue.Hide()
             Me.Close()
         Else
             SellerSearch = Package.SellerName

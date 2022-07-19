@@ -1122,6 +1122,10 @@
         BtnClient.Visible = False
     End Sub
     Private Sub SwapToSeller() Handles BtnSeller.Click
+        If Editing Then
+            Exit Sub
+        End If
+
         If User.IsSeller Then
             PnlSeller.Visible = True
             PnlSeller.Enabled = True

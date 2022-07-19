@@ -1,8 +1,10 @@
 ﻿Public Class Prompt
     Public Result As String
     Private Sub RemoveDefaultText(Sender As TextBox, e As EventArgs)
-        Sender.Clear()
-        Sender.ForeColor = System.Drawing.SystemColors.WindowText
+        If Sender.Text.Contains("'Enter'") Then
+            Sender.Clear()
+            Sender.ForeColor = System.Drawing.SystemColors.WindowText
+        End If
     End Sub
     Public Sub CheckPass(Prompt)
         LblNew.Text = Prompt

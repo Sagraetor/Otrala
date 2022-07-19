@@ -352,7 +352,9 @@
             .Package = selected_package
         }
 
+        PackageViewForm.Owner = "Search"
         PackageViewForm.ShowDialog()
+
         If PackageViewForm.SellerSearch <> "" Then
             SearchBox.Text = PackageViewForm.SellerSearch
             SearchButton.PerformClick()
